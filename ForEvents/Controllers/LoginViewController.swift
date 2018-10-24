@@ -15,10 +15,17 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //Gesture to hide keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Put username in userTextField
+        if let username = UserDefaults.standard.value(forKey: Constants.username) {
+            self.userTextField.text = username as? String
+            self.passwordTextField.becomeFirstResponder()
+        }
     }
     
     @objc func dismissKeyboard() {

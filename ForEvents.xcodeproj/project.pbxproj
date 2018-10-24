@@ -33,6 +33,8 @@
 		BA5CF75D2180788A00419990 /* EventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5CF7572180788A00419990 /* EventsViewController.xib */; };
 		BA5CF75E2180788A00419990 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5CF7582180788A00419990 /* MapViewController.xib */; };
 		BA5CF75F2180788A00419990 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5CF7592180788A00419990 /* RegisterViewController.xib */; };
+		BA5CF7612180CDDE00419990 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7602180CDDE00419990 /* Constants.swift */; };
+		BA5CF7632180D0D500419990 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7622180D0D500419990 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		BA5CF7572180788A00419990 /* EventsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsViewController.xib; sourceTree = "<group>"; };
 		BA5CF7582180788A00419990 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		BA5CF7592180788A00419990 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		BA5CF7602180CDDE00419990 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BA5CF7622180D0D500419990 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +138,7 @@
 				BA5CF73A21806A4200419990 /* Model */,
 				BA59882521768F100065D77D /* Info.plist */,
 				BA59883B217691340065D77D /* GoogleService-Info.plist */,
-				BA5CF74D2180775800419990 /* UIKitExtensions */,
+				BA5CF74D2180775800419990 /* Extensions */,
 			);
 			path = ForEvents;
 			sourceTree = "<group>";
@@ -151,6 +155,7 @@
 		BA5CF73621806A0300419990 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				BA5CF7602180CDDE00419990 /* Constants.swift */,
 				BA5CF7512180783400419990 /* Alerts.swift */,
 				BA5CF7502180783400419990 /* Typealias.swift */,
 				BA5CF73B21806C9F00419990 /* KeychainTokenItem.swift */,
@@ -202,12 +207,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		BA5CF74D2180775800419990 /* UIKitExtensions */ = {
+		BA5CF74D2180775800419990 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				BA5CF74E2180777500419990 /* UIviewController+Additions.swift */,
+				BA5CF7622180D0D500419990 /* StringExtensions.swift */,
 			);
-			path = UIKitExtensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C1FE8CC19F0CD5740BBAE7ED /* Pods */ = {
@@ -432,6 +438,8 @@
 				BA5CF7532180783400419990 /* Alerts.swift in Sources */,
 				BA5CF74B2180772700419990 /* ProfileViewController.swift in Sources */,
 				BA5CF7402180766D00419990 /* LoginTabBarController.swift in Sources */,
+				BA5CF7612180CDDE00419990 /* Constants.swift in Sources */,
+				BA5CF7632180D0D500419990 /* StringExtensions.swift in Sources */,
 				BA5CF7522180783400419990 /* Typealias.swift in Sources */,
 				BA5CF74A2180772700419990 /* MapViewController.swift in Sources */,
 			);

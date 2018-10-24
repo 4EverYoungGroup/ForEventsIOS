@@ -15,7 +15,7 @@ struct KeychainConfiguration {
     static let accessGroup: String? = nil
 }
 
-class ValidateToken: UIViewController {
+class ValidateToken {
     
     func checkToken(username: String) -> Any {
         guard username == UserDefaults.standard.value(forKey: "username") as? String else {

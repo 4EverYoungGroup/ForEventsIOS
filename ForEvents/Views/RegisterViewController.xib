@@ -12,6 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="ForEvents" customModuleProvider="target">
             <connections>
+                <outlet property="nameTextField" destination="LAu-4K-Nkp" id="vjn-FM-VbV"/>
+                <outlet property="psw1TextField" destination="hX3-ka-59o" id="xhF-Y4-CgD"/>
+                <outlet property="psw2TextField" destination="ELi-vC-g37" id="zKv-7p-ULL"/>
+                <outlet property="userTextField" destination="SUA-m5-hm9" id="5OR-wP-qdg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -21,15 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
+        //UserDefaults.standard.removeObject(forKey: "hasLoginKey")
+        //UserDefaults.standard.removeObject(forKey: "username")
+        
         // Check if app have a token
-        let hasLogin = UserDefaults.standard.bool(forKey: "hasLoginKey")
+        let hasLogin = UserDefaults.standard.bool(forKey: Constants.hasLoginKey)
         if hasLogin {
-            if let username = UserDefaults.standard.object(forKey: "username") {
+            if let username = UserDefaults.standard.value(forKey: Constants.username) {
                 let token = ValidateToken().checkToken(username: username as! String)
                 print("token: \(token)")
             }
         } else {
             let loginTabBarController = LoginTabBarController()
+            // Check if app have a username, then register screen is show
+            let username = UserDefaults.standard.value(forKey: Constants.username)
+            if username == nil {
+                loginTabBarController.selectedIndex = 1
+            }
+            
             window?.rootViewController = loginTabBarController
         }
         
