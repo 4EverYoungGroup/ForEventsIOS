@@ -35,6 +35,11 @@
 		BA5CF75F2180788A00419990 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5CF7592180788A00419990 /* RegisterViewController.xib */; };
 		BA5CF7612180CDDE00419990 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7602180CDDE00419990 /* Constants.swift */; };
 		BA5CF7632180D0D500419990 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7622180D0D500419990 /* StringExtensions.swift */; };
+		BA602D302181AD320075B64B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D2F2181AD320075B64B /* User.swift */; };
+		BA602D322181B6970075B64B /* ExecuteOnceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D312181B6970075B64B /* ExecuteOnceInteractor.swift */; };
+		BA602D342181BB4D0075B64B /* ExecuteOnceInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D332181BB4D0075B64B /* ExecuteOnceInteractorImpl.swift */; };
+		BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */; };
+		BA602D382181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +89,11 @@
 		BA5CF7592180788A00419990 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		BA5CF7602180CDDE00419990 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA5CF7622180D0D500419990 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		BA602D2F2181AD320075B64B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA602D312181B6970075B64B /* ExecuteOnceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecuteOnceInteractor.swift; sourceTree = "<group>"; };
+		BA602D332181BB4D0075B64B /* ExecuteOnceInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecuteOnceInteractorImpl.swift; sourceTree = "<group>"; };
+		BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractor.swift; sourceTree = "<group>"; };
+		BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +206,10 @@
 		BA5CF73921806A2F00419990 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				BA602D312181B6970075B64B /* ExecuteOnceInteractor.swift */,
+				BA602D332181BB4D0075B64B /* ExecuteOnceInteractorImpl.swift */,
+				BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */,
+				BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -203,6 +217,7 @@
 		BA5CF73A21806A4200419990 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA602D2F2181AD320075B64B /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -427,19 +442,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA602D382181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA59881A21768F0F0065D77D /* AppDelegate.swift in Sources */,
 				BA5CF73E21806F8A00419990 /* ValidateToken.swift in Sources */,
 				BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */,
 				BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */,
+				BA602D302181AD320075B64B /* User.swift in Sources */,
 				BA5CF7492180772700419990 /* EventsViewController.swift in Sources */,
 				BA5CF74C2180772700419990 /* NotificationsViewController.swift in Sources */,
 				BA5CF74F2180777500419990 /* UIviewController+Additions.swift in Sources */,
 				BA5CF7432180769400419990 /* LoginViewController.swift in Sources */,
+				BA602D322181B6970075B64B /* ExecuteOnceInteractor.swift in Sources */,
+				BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */,
 				BA5CF7532180783400419990 /* Alerts.swift in Sources */,
 				BA5CF74B2180772700419990 /* ProfileViewController.swift in Sources */,
 				BA5CF7402180766D00419990 /* LoginTabBarController.swift in Sources */,
 				BA5CF7612180CDDE00419990 /* Constants.swift in Sources */,
 				BA5CF7632180D0D500419990 /* StringExtensions.swift in Sources */,
+				BA602D342181BB4D0075B64B /* ExecuteOnceInteractorImpl.swift in Sources */,
 				BA5CF7522180783400419990 /* Typealias.swift in Sources */,
 				BA5CF74A2180772700419990 /* MapViewController.swift in Sources */,
 			);
@@ -598,10 +618,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEvents/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -616,10 +633,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEvents/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -635,11 +649,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEventsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEventsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -656,11 +666,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEventsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEventsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

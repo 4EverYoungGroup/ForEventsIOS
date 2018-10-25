@@ -25,6 +25,11 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButtonPress(_ sender: UIButton) {
         if self.validateRegister() {
+            //Configure activity indicator
+            
+            ExecuteOnceInteractorImpl().execute {
+                registerUser()
+            }
             UserDefaults.standard.set(true, forKey: Constants.username)
             UserDefaults.standard.setValue(userTextField.text, forKey: Constants.username)
             self.tabBarController?.selectedIndex = 0
@@ -66,5 +71,15 @@ class RegisterViewController: UIViewController {
         }
         return true
     }
-
+    
+    func registerUser() {
+        let user = User(email: userTextField.text!, password: psw1TextField.text!, firstname: nameTextField.text!)
+        let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorNSURLSessionImpl()
+        
+        registerUserInteractor.execute(user: user, onSuccess: {
+            
+        }) { (myError) in
+            print(myError)
+        }
+    }
 }

@@ -9,8 +9,18 @@
 import Foundation
 
 struct Constants {
+    //userDefaults
     static let hasLoginKey = "hasLoginKey"
     static let username = "username"
+    //email validation reg-expression
     static let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     static let alertTitle = "Registro ForEvents"
+    //url parameters
+    static let urlScheme = "https"
+    static let urlHost = "services.4events.net"
+    static let urlRegPath = "/apiv1/users/register"
+    static let urlPostMethod = "POST"
+    static let urlGetMethod = "GET"
+    static let urlHeadersConst = "Content-Type"
+    static let urlJsonContentType = "application/json"
 }

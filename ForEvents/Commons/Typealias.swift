@@ -9,3 +9,6 @@
 import Foundation
 
 typealias errorClosure = ((Error) -> Void)?
+typealias Codable = Decodable & Encodable
+
+
