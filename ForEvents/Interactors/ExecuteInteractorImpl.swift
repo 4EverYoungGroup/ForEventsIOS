@@ -1,5 +1,5 @@
 //
-//  ExecuteOnceInteractor.swift
+//  ExecuteOnceInteractorImpl.swift
 //  MadridShops
 //
 //  Created by luis gomez alonso on 12/9/18.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol ExecuteOnceInteractor {
-    func execute(closure: () -> Void)
+class ExecuteInteractorImpl: ExecuteInteractor {
+    func execute(closure: () -> Void) {
+        closure()
+    }
 }

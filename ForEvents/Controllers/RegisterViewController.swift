@@ -32,7 +32,7 @@ class RegisterViewController: UIViewController {
             activityIndicator.frame = view.bounds
             activityIndicator.startAnimating()
             
-            ExecuteOnceInteractorImpl().execute {
+            ExecuteInteractorImpl().execute {
                 registerUser()
             }
         }

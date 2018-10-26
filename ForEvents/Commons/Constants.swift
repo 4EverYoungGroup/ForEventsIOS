@@ -18,6 +18,7 @@ struct Constants {
     //url parameters
     static let urlScheme = "https"
     static let urlHost = "services.4events.net"
+    static let urlLoginPath = "/apiv1/users/login"
     static let urlRegPath = "/apiv1/users/register"
     static let urlPostMethod = "POST"
     static let urlGetMethod = "GET"

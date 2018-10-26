@@ -11,10 +11,5 @@ import Foundation
 struct ResponseApi: Codable {
     let ok: Bool
     let message: String
-    
-    init(ok: Bool, message: String) {
-        self.ok = ok
-        self.message = message
-    }
 }
 

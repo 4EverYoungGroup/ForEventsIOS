@@ -1,19 +1,20 @@
 //
-//  RegisterUserInteractorNSURLSessionImpl.swift
+//  LoginUserInteractorNSURLSessionImpl.swift
 //  ForEvents
 //
-//  Created by luis gomez alonso on 25/10/2018.
+//  Created by luis gomez alonso on 26/10/2018.
 //  Copyright © 2018 4Everyoung.group. All rights reserved.
 //
 
 import Foundation
 
-class RegisterUserInteractorNSURLSessionImpl: RegisterUserInteractor {
-    func execute(user: User, onSuccess: @escaping (ResponseApi?) -> Void, onError: errorClosure) {
+class LoginUserInteractorNSURLSessionImpl: LoginUserInteractor {
+    
+    func execute(user: UserLogin, onSuccess: @escaping (UserLogin?, ResponseApi?) -> Void, onError: errorClosure) {
         var urlComponents = URLComponents()
         urlComponents.scheme = Constants.urlScheme
         urlComponents.host = Constants.urlHost
-        urlComponents.path = Constants.urlRegPath
+        urlComponents.path = Constants.urlLoginPath
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         
         // Specify this request as being a POST method
@@ -45,14 +46,23 @@ class RegisterUserInteractorNSURLSessionImpl: RegisterUserInteractor {
                 if error == nil {
                     activityIndicator.removeFromSuperview()
                     if (self.checkStatusCode(response: response)) {
-                        onSuccess(nil)
+                        //prepare token
+                        do {
+                            let decoder = JSONDecoder()
+                            let userLogin = try decoder.decode(UserLogin.self, from:
+                                data!)
+                            print(userLogin)
+                            onSuccess(userLogin, nil)
+                        } catch let parsingError {
+                            print("Error", parsingError)
+                        }
                     } else {
                         //prepare responseApi
                         do {
                             let decoder = JSONDecoder()
                             let responseApi = try decoder.decode(ResponseApi.self, from:
                                 data!)
-                            onSuccess(responseApi)
+                            onSuccess(nil, responseApi)
                         } catch let parsingError {
                             print("Error", parsingError)
                         }
@@ -67,7 +77,7 @@ class RegisterUserInteractorNSURLSessionImpl: RegisterUserInteractor {
         task.resume()
     }
     
-    func execute(user: User, onSuccess: @escaping (ResponseApi?) -> Void) {
+    func execute(user: UserLogin, onSuccess: @escaping (UserLogin?, ResponseApi?) -> Void) {
         execute(user: user, onSuccess: onSuccess, onError: nil)
     }
     

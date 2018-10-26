@@ -3,7 +3,7 @@
     See LICENSE.txt for this sample’s licensing information
     
     Abstract:
-    A struct for accessing generic password keychain items.
+    A struct for accessing generic token keychain items.
 */
 
 import Foundation
@@ -56,7 +56,7 @@ struct KeychainTokenItem {
         guard status != errSecItemNotFound else { throw KeychainError.noToken }
         guard status == noErr else { throw KeychainError.unhandledError(status: status) }
         
-        // Parse the password string from the query result.
+        // Parse the token string from the query result.
         guard let existingItem = queryResult as? [String : AnyObject],
             let tokenData = existingItem[kSecValueData as String] as? Data,
             let token = String(data: tokenData, encoding: String.Encoding.utf8)
@@ -68,7 +68,7 @@ struct KeychainTokenItem {
     }
     
     func saveToken(_ token: String) throws {
-        // Encode the password into an Data object.
+        // Encode the token into an Data object.
         let encodedToken = token.data(using: String.Encoding.utf8)!
         
         do {
