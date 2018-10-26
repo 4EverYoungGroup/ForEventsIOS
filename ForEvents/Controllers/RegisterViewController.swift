@@ -8,6 +8,8 @@
 
 import UIKit
 
+let activityIndicator = UIActivityIndicatorView(style: .gray)
+
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var userTextField: UITextField!
@@ -26,13 +28,13 @@ class RegisterViewController: UIViewController {
     @IBAction func registerButtonPress(_ sender: UIButton) {
         if self.validateRegister() {
             //Configure activity indicator
+            view.addSubview(activityIndicator)
+            activityIndicator.frame = view.bounds
+            activityIndicator.startAnimating()
             
             ExecuteOnceInteractorImpl().execute {
                 registerUser()
             }
-            UserDefaults.standard.set(true, forKey: Constants.username)
-            UserDefaults.standard.setValue(userTextField.text, forKey: Constants.username)
-            self.tabBarController?.selectedIndex = 0
         }
     }
     
@@ -76,10 +78,17 @@ class RegisterViewController: UIViewController {
         let user = User(email: userTextField.text!, password: psw1TextField.text!, firstname: nameTextField.text!)
         let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorNSURLSessionImpl()
         
-        registerUserInteractor.execute(user: user, onSuccess: {
-            
-        }) { (myError) in
-            print(myError)
+        registerUserInteractor.execute(user: user) { (responseApi: ResponseApi?) in
+            if responseApi == nil {
+                UserDefaults.standard.set(true, forKey: Constants.username)
+                UserDefaults.standard.setValue(self.userTextField.text, forKey: Constants.username)
+                self.tabBarController?.selectedIndex = 0
+            } else {
+                let message = responseApi!.message
+                let alert = Alerts().alert(title: Constants.alertTitle, message: message)
+                self.nameTextField.becomeFirstResponder()
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
 }

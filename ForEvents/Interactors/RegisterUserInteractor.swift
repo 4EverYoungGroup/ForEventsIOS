@@ -9,6 +9,6 @@
 import Foundation
 
 protocol RegisterUserInteractor {
-    func execute(user: User, onSuccess: @escaping () -> Void, onError: errorClosure)
-    func execute(user: User, onSuccess: @escaping () -> Void)
+    func execute(user: User, onSuccess: @escaping (ResponseApi?) -> Void, onError: errorClosure)
+    func execute(user: User, onSuccess: @escaping (ResponseApi?) -> Void)
 }

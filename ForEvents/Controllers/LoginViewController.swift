@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
         // Put username in userTextField
         if let username = UserDefaults.standard.value(forKey: Constants.username) {
             self.userTextField.text = username as? String
-            self.passwordTextField.becomeFirstResponder()
         }
     }
     

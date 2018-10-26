@@ -40,6 +40,7 @@
 		BA602D342181BB4D0075B64B /* ExecuteOnceInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D332181BB4D0075B64B /* ExecuteOnceInteractorImpl.swift */; };
 		BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */; };
 		BA602D382181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */; };
+		BA602D41218226C40075B64B /* ResponseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D40218226C40075B64B /* ResponseApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		BA602D332181BB4D0075B64B /* ExecuteOnceInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecuteOnceInteractorImpl.swift; sourceTree = "<group>"; };
 		BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractor.swift; sourceTree = "<group>"; };
 		BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BA602D40218226C40075B64B /* ResponseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				BA602D2F2181AD320075B64B /* User.swift */,
+				BA602D40218226C40075B64B /* ResponseApi.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */,
 				BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */,
 				BA602D302181AD320075B64B /* User.swift in Sources */,
+				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
 				BA5CF7492180772700419990 /* EventsViewController.swift in Sources */,
 				BA5CF74C2180772700419990 /* NotificationsViewController.swift in Sources */,
 				BA5CF74F2180777500419990 /* UIviewController+Additions.swift in Sources */,
@@ -618,7 +622,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEvents/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -633,7 +640,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEvents/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -649,7 +659,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEventsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEventsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -666,7 +680,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEventsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEventsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

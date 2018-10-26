@@ -9,7 +9,7 @@
 import Foundation
 
 class RegisterUserInteractorNSURLSessionImpl: RegisterUserInteractor {
-    func execute(user: User, onSuccess: @escaping () -> Void, onError: errorClosure) {
+    func execute(user: User, onSuccess: @escaping (ResponseApi?) -> Void, onError: errorClosure) {
         var urlComponents = URLComponents()
         urlComponents.scheme = Constants.urlScheme
         urlComponents.host = Constants.urlHost
@@ -37,19 +37,29 @@ class RegisterUserInteractorNSURLSessionImpl: RegisterUserInteractor {
         // Create and run a URLSession data task with our JSON encoded POST request
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
-        let task = session.dataTask(with: request) { (responseData, response, responseError) in
+        let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             
             OperationQueue.main.addOperation {
                 assert(Thread.current == Thread.main)
                 
-                if responseError == nil {
-                    // APIs usually respond with the data you just sent in your POST request
-                    if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
-                        print("response: ", utf8Representation)
+                if error == nil {
+                    activityIndicator.removeFromSuperview()
+                    if (self.checkStatusCode(response: response)) {
+                        onSuccess(nil)
+                    } else {
+                        //added an alert
+                        do {
+                            let decoder = JSONDecoder()
+                            let responseApi = try decoder.decode(ResponseApi.self, from:
+                                data!)
+                            onSuccess(responseApi)
+                        } catch let parsingError {
+                            print("Error", parsingError)
+                        }
                     }
                 } else {
                     if let myError = onError {
-                        myError(responseError!)
+                        myError(error!)
                     }
                 }
             }
@@ -57,9 +67,17 @@ class RegisterUserInteractorNSURLSessionImpl: RegisterUserInteractor {
         task.resume()
     }
     
-    func execute(user: User, onSuccess: @escaping () -> Void) {
+    func execute(user: User, onSuccess: @escaping (ResponseApi?) -> Void) {
         execute(user: user, onSuccess: onSuccess, onError: nil)
     }
     
-    
+    func checkStatusCode(response:URLResponse?) -> Bool {
+        guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
+            return false
+        }
+        if statusCode != 200 && statusCode != 201 {
+            return false
+        }
+        return true
+    }
 }
