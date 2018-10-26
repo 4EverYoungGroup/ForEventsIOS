@@ -28,8 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let hasLogin = UserDefaults.standard.bool(forKey: Constants.hasLoginKey)
         if hasLogin {
             if let username = UserDefaults.standard.value(forKey: Constants.username) {
-                let token = ValidateToken().checkToken(username: username as! String)
-                print("token: \(token)")
+                if checkToken(username: username as! String) != nil {
+                    let eventsTabBarController = createEventsTabBar()
+                    window?.rootViewController = eventsTabBarController
+                }
             }
         } else {
             let loginTabBarController = LoginTabBarController()

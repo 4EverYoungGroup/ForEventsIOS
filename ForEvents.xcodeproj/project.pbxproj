@@ -12,6 +12,7 @@
 		BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47754121831E5E00B8AA40 /* UserLogin.swift */; };
 		BA4775442183225400B8AA40 /* LoginUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4775432183225400B8AA40 /* LoginUserInteractor.swift */; };
 		BA4775462183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4775452183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift */; };
+		BA477548218378BC00B8AA40 /* createTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA477547218378BC00B8AA40 /* createTabBar.swift */; };
 		BA59881A21768F0F0065D77D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59881921768F0F0065D77D /* AppDelegate.swift */; };
 		BA59882121768F100065D77D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA59882021768F100065D77D /* Assets.xcassets */; };
 		BA59882421768F100065D77D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA59882221768F100065D77D /* LaunchScreen.storyboard */; };
@@ -66,6 +67,7 @@
 		BA47754121831E5E00B8AA40 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		BA4775432183225400B8AA40 /* LoginUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractor.swift; sourceTree = "<group>"; };
 		BA4775452183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BA477547218378BC00B8AA40 /* createTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createTabBar.swift; sourceTree = "<group>"; };
 		BA59881621768F0F0065D77D /* ForEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA59881921768F0F0065D77D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA59882021768F100065D77D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				BA5CF7502180783400419990 /* Typealias.swift */,
 				BA5CF73B21806C9F00419990 /* KeychainTokenItem.swift */,
 				BA5CF73D21806F8A00419990 /* ValidateToken.swift */,
+				BA477547218378BC00B8AA40 /* createTabBar.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */,
 				BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */,
 				BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */,
+				BA477548218378BC00B8AA40 /* createTabBar.swift in Sources */,
 				BA602D302181AD320075B64B /* User.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
 				BA5CF7492180772700419990 /* EventsViewController.swift in Sources */,

@@ -9,7 +9,11 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
+    var tokenItems: [KeychainTokenItem] = []
+    let createLoginButtonTag = 0
+    let loginButtonTag = 1
+    
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -75,34 +79,30 @@ class LoginViewController: UIViewController {
             } else {
                 //Save token in keychain
                 if let token: String = userLogin?.token {
-                    print ("Token: ", token)
+                    self.saveTokenInKeychain(token: token)
+                    //Go to Events tabBar
+                    let eventsTabBarController = createEventsTabBar()
+                    UIApplication.shared.keyWindow?.rootViewController = eventsTabBarController
                 }
             }
         }
     }
     
-    func createEventsTabBar() -> UITabBarController {
+    func saveTokenInKeychain(token: String) {
+        //Save Token and user defaults with haslogin and username
+        UserDefaults.standard.set(true, forKey: "hasLoginKey")
+        UserDefaults.standard.setValue(userTextField.text, forKey: "username")
         
-        //Configure EventsTabBarController
-        let firstVC = EventsViewController().wrappedInNavigation()
-        let secondVC = MapViewController().wrappedInNavigation()
-        let thirdVC = NotificationsViewController().wrappedInNavigation()
-        let fourthVC = ProfileViewController().wrappedInNavigation()
-        
-        let tabBarList = UITabBarController()
-        
-        firstVC.tabBarItem =
-            UITabBarItem(title: "Eventos", image: nil, tag: 0)
-        
-        secondVC.tabBarItem = UITabBarItem(title: "Mapa de Eventos", image: nil, tag: 1)
-        
-        thirdVC.tabBarItem = UITabBarItem(title: "Notificaciones", image: nil, tag: 2)
-        
-        fourthVC.tabBarItem = UITabBarItem(title: "Perfil usuario", image: nil, tag: 3)
-        
-        tabBarList.viewControllers = [firstVC, secondVC, thirdVC, fourthVC]
-        
-        return tabBarList
+        do {
+            // Create a new keychain item with the token.
+            let tokenItem = KeychainTokenItem(service: KeychainConfiguration.serviceName,
+                                              account: userTextField.text!,
+                                                    accessGroup: KeychainConfiguration.accessGroup)
+            
+            // Save token for the new item.
+            try tokenItem.saveToken(token)
+        } catch {
+            fatalError("Error updating keychain - \(error)")
+        }
     }
-
 }

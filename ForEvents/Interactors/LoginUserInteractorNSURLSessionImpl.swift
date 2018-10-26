@@ -51,12 +51,12 @@ class LoginUserInteractorNSURLSessionImpl: LoginUserInteractor {
                             let decoder = JSONDecoder()
                             let userLogin = try decoder.decode(UserLogin.self, from:
                                 data!)
-                            print(userLogin)
                             onSuccess(userLogin, nil)
                         } catch let parsingError {
                             print("Error", parsingError)
                         }
                     } else {
+                        // TODO reponse login service must be ok and message only
                         //prepare responseApi
                         do {
                             let decoder = JSONDecoder()
