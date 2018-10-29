@@ -45,6 +45,8 @@
 		BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */; };
 		BA602D382181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */; };
 		BA602D41218226C40075B64B /* ResponseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D40218226C40075B64B /* ResponseApi.swift */; };
+		BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */; };
+		BAB1E286218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB1E285218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,8 @@
 		BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractor.swift; sourceTree = "<group>"; };
 		BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BA602D40218226C40075B64B /* ResponseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseApi.swift; sourceTree = "<group>"; };
+		BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverUserInteractor.swift; sourceTree = "<group>"; };
+		BAB1E285218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,8 @@
 				BA4775452183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift */,
 				BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */,
 				BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */,
+				BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */,
+				BAB1E285218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -463,12 +469,14 @@
 				BA4775442183225400B8AA40 /* LoginUserInteractor.swift in Sources */,
 				BA5CF73E21806F8A00419990 /* ValidateToken.swift in Sources */,
 				BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */,
+				BAB1E286218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */,
 				BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */,
 				BA477548218378BC00B8AA40 /* createTabBar.swift in Sources */,
 				BA602D302181AD320075B64B /* User.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
 				BA5CF7492180772700419990 /* EventsViewController.swift in Sources */,
+				BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */,
 				BA5CF74C2180772700419990 /* NotificationsViewController.swift in Sources */,
 				BA5CF74F2180777500419990 /* UIviewController+Additions.swift in Sources */,
 				BA5CF7432180769400419990 /* LoginViewController.swift in Sources */,

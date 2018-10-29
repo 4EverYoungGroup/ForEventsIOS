@@ -48,6 +48,19 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func recoverButtonPress(_ sender: UIButton) {
+        if self.validateRecover() {
+            //Configure activity indicator
+            view.addSubview(activityIndicator)
+            activityIndicator.frame = view.bounds
+            activityIndicator.startAnimating()
+            
+            ExecuteInteractorImpl().execute {
+                recoverUser()
+            }
+        }
+    }
+    
     func validateLogin() -> Bool {
         //email format validate
         if !(userTextField.text?.isValidEmail())! {
@@ -60,6 +73,17 @@ class LoginViewController: UIViewController {
         if (passwordTextField.text?.isEmpty)! {
             let alert = Alerts().alert(title: Constants.alertTitle, message: "La password es obligatoria.")
             self.passwordTextField.becomeFirstResponder()
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        return true
+    }
+    
+    func validateRecover() -> Bool {
+        //email format validate
+        if !(userTextField.text?.isValidEmail())! {
+            let alert = Alerts().alert(title: Constants.alertTitle, message: "El dato de usuario debe de ser un email válido.")
+            self.userTextField.becomeFirstResponder()
             self.present(alert, animated: true, completion: nil)
             return false
         }
@@ -84,6 +108,25 @@ class LoginViewController: UIViewController {
                     let eventsTabBarController = createEventsTabBar()
                     UIApplication.shared.keyWindow?.rootViewController = eventsTabBarController
                 }
+            }
+        }
+    }
+    
+    func recoverUser() {
+        let userLogin = UserLogin(email: userTextField.text!, password: nil, token: nil)
+        let recoverUserInteractor: RecoverUserInteractor = RecoverUserInteractorNSURLSessionImpl()
+        
+        recoverUserInteractor.execute(user: userLogin) { (responseApi: ResponseApi?) in
+            if responseApi == nil {
+                let message = "Se le ha enviado un email para recuperar su password."
+                let alert = Alerts().alert(title: Constants.alertTitle, message: message)
+                self.userTextField.becomeFirstResponder()
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                let message = responseApi!.message
+                let alert = Alerts().alert(title: Constants.alertTitle, message: message)
+                self.userTextField.becomeFirstResponder()
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }

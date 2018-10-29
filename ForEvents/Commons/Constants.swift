@@ -20,6 +20,7 @@ struct Constants {
     static let urlHost = "services.4events.net"
     static let urlLoginPath = "/apiv1/users/login"
     static let urlRegPath = "/apiv1/users/register"
+    static let urlRecoverPath = "/apiv1/users/recover"
     static let urlPostMethod = "POST"
     static let urlGetMethod = "GET"
     static let urlHeadersConst = "Content-Type"
