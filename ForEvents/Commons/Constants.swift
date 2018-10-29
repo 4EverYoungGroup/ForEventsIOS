@@ -14,7 +14,8 @@ struct Constants {
     static let username = "username"
     //email validation reg-expression
     static let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    static let alertTitle = "Registro ForEvents"
+    static let regTitle = "Registro ForEvents"
+    static let loginTitle = "Login ForEvents"
     //url parameters
     static let urlScheme = "https"
     static let urlHost = "services.4events.net"

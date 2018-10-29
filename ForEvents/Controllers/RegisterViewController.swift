@@ -45,28 +45,28 @@ class RegisterViewController: UIViewController {
     func validateRegister() -> Bool {
         //email format validate
         if !(userTextField.text?.isValidEmail())! {
-            let alert = Alerts().alert(title: Constants.alertTitle, message: "El dato de usuario debe de ser un email válido.")
+            let alert = Alerts().alert(title: Constants.regTitle, message: "El dato de usuario debe de ser un email válido.")
             self.userTextField.becomeFirstResponder()
             self.present(alert, animated: true, completion: nil)
             return false
         }
         //passwords is valid, must include uppercase, lowercase and digits and 6 long min
         if !(psw1TextField.text?.isValidPassword())! {
-            let alert = Alerts().alert(title: Constants.alertTitle, message: "El formato de la password es erróneo. Debe contener al menos 6 caracteres, una mayúscula y un dígito.")
+            let alert = Alerts().alert(title: Constants.regTitle, message: "El formato de la password es erróneo. Debe contener al menos 6 caracteres, una mayúscula y un dígito.")
             self.psw1TextField.becomeFirstResponder()
             self.present(alert, animated: true, completion: nil)
             return false
         }
         //passwords are the same
         if psw1TextField.text != psw2TextField.text {
-            let alert = Alerts().alert(title: Constants.alertTitle, message: "Las password son distintas.")
+            let alert = Alerts().alert(title: Constants.regTitle, message: "Las password son distintas.")
             self.psw1TextField.becomeFirstResponder()
             self.present(alert, animated: true, completion: nil)
             return false
         }
         //name is valid
         if (nameTextField.text?.isEmptyOrWhitespace())! {
-            let alert = Alerts().alert(title: Constants.alertTitle, message: "Debe introducir un nombre.")
+            let alert = Alerts().alert(title: Constants.regTitle, message: "Debe introducir un nombre.")
             self.nameTextField.becomeFirstResponder()
             self.present(alert, animated: true, completion: nil)
             return false
@@ -85,7 +85,7 @@ class RegisterViewController: UIViewController {
                 self.tabBarController?.selectedIndex = 0
             } else {
                 let message = responseApi!.message
-                let alert = Alerts().alert(title: Constants.alertTitle, message: message)
+                let alert = Alerts().alert(title: Constants.regTitle, message: message)
                 self.nameTextField.becomeFirstResponder()
                 self.present(alert, animated: true, completion: nil)
             }

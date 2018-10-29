@@ -64,14 +64,14 @@ class LoginViewController: UIViewController {
     func validateLogin() -> Bool {
         //email format validate
         if !(userTextField.text?.isValidEmail())! {
-            let alert = Alerts().alert(title: Constants.alertTitle, message: "El dato de usuario debe de ser un email válido.")
+            let alert = Alerts().alert(title: Constants.loginTitle, message: "El dato de usuario debe de ser un email válido.")
             self.userTextField.becomeFirstResponder()
             self.present(alert, animated: true, completion: nil)
             return false
         }
         //passwords is valid, must include uppercase, lowercase and digits and 6 long min
         if (passwordTextField.text?.isEmpty)! {
-            let alert = Alerts().alert(title: Constants.alertTitle, message: "La password es obligatoria.")
+            let alert = Alerts().alert(title: Constants.loginTitle, message: "La password es obligatoria.")
             self.passwordTextField.becomeFirstResponder()
             self.present(alert, animated: true, completion: nil)
             return false
@@ -82,7 +82,7 @@ class LoginViewController: UIViewController {
     func validateRecover() -> Bool {
         //email format validate
         if !(userTextField.text?.isValidEmail())! {
-            let alert = Alerts().alert(title: Constants.alertTitle, message: "El dato de usuario debe de ser un email válido.")
+            let alert = Alerts().alert(title: Constants.loginTitle, message: "El dato de usuario debe de ser un email válido.")
             self.userTextField.becomeFirstResponder()
             self.present(alert, animated: true, completion: nil)
             return false
@@ -97,7 +97,7 @@ class LoginViewController: UIViewController {
         loginUserInteractor.execute(user: userLogin) { (userLogin: UserLogin?, responseApi: ResponseApi?) in
             if userLogin == nil {
                 let message = responseApi!.message
-                let alert = Alerts().alert(title: Constants.alertTitle, message: message)
+                let alert = Alerts().alert(title: Constants.loginTitle, message: message)
                 self.userTextField.becomeFirstResponder()
                 self.present(alert, animated: true, completion: nil)
             } else {
@@ -119,12 +119,12 @@ class LoginViewController: UIViewController {
         recoverUserInteractor.execute(user: userLogin) { (responseApi: ResponseApi?) in
             if responseApi == nil {
                 let message = "Se le ha enviado un email para recuperar su password."
-                let alert = Alerts().alert(title: Constants.alertTitle, message: message)
+                let alert = Alerts().alert(title: Constants.loginTitle, message: message)
                 self.userTextField.becomeFirstResponder()
                 self.present(alert, animated: true, completion: nil)
             } else {
                 let message = responseApi!.message
-                let alert = Alerts().alert(title: Constants.alertTitle, message: message)
+                let alert = Alerts().alert(title: Constants.loginTitle, message: message)
                 self.userTextField.becomeFirstResponder()
                 self.present(alert, animated: true, completion: nil)
             }
