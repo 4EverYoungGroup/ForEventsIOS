@@ -10,11 +10,11 @@ import Foundation
 
 struct UserLogin: Codable {
     
-    let email: String
+    let email: String?
     let password: String?
     let token: String?
     
-    init(email: String, password: String?, token: String?) {
+    init(email: String?, password: String?, token: String?) {
         self.email = email
         self.password = password
         self.token = token

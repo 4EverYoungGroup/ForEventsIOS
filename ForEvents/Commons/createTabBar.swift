@@ -22,16 +22,17 @@ func createEventsTabBar() -> UITabBarController {
     firstVC.tabBarItem =
         UITabBarItem(title: "Eventos", image: nil, tag: 0)
     
-    secondVC.tabBarItem = UITabBarItem(title: "Mapa de Eventos", image: nil, tag: 1)
+    secondVC.tabBarItem = UITabBarItem(title: "Mapa Eventos", image: nil, tag: 1)
     
     thirdVC.tabBarItem = UITabBarItem(title: "Notificaciones", image: nil, tag: 2)
     
     fourthVC.tabBarItem = UITabBarItem(title: "Perfil usuario", image: nil, tag: 3)
     
     tabBarList.viewControllers = [firstVC, secondVC, thirdVC, fourthVC]
-    
-    UITabBar.appearance().tintColor = .black
-    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 12)], for: [.normal])
+   
+    //Configure text of tabbaritem
+    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 255/255, green: 166/255, blue: 89/255, alpha: 1), NSAttributedString.Key.font : UIFont(name: "AvenirNext-Bold", size: 15) as Any], for: .selected)
+    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.7),NSAttributedString.Key.font : UIFont(name: "AvenirNext-Bold", size: 15) as Any], for: .normal)
     
     return tabBarList
 }

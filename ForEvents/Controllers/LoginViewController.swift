@@ -106,6 +106,10 @@ class LoginViewController: UIViewController {
                     self.saveTokenInKeychain(token: token)
                     //Go to Events tabBar
                     let eventsTabBarController = createEventsTabBar()
+                    //Configure tabbar without background and shadow
+                    eventsTabBarController.tabBar.backgroundImage = UIImage()
+                    eventsTabBarController.tabBar.shadowImage = UIImage()
+                    
                     UIApplication.shared.keyWindow?.rootViewController = eventsTabBarController
                 }
             }

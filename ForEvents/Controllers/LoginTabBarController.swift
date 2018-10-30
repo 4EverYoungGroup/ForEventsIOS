@@ -12,11 +12,11 @@ class LoginTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //Configure loginTabBarController
-        UITabBar.appearance().tintColor = .black
-        UITabBar.appearance().alpha = 0.3
         
+        //Configure text of tabbaritem
+    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 255/255, green: 166/255, blue: 89/255, alpha: 1), NSAttributedString.Key.font : UIFont(name: "AvenirNext-Bold", size: 15) as Any], for: .selected)
+    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.7),NSAttributedString.Key.font : UIFont(name: "AvenirNext-Bold", size: 15) as Any], for: .normal)
+
         let firstVC = LoginViewController()
         let secondVC = RegisterViewController()
         
@@ -24,7 +24,6 @@ class LoginTabBarController: UITabBarController {
             UITabBarItem(title: "Inicio sesión", image: nil, tag: 0)
         
         secondVC.tabBarItem = UITabBarItem(title: "Registro", image: nil, tag: 1)
-    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20)], for: [.normal])
         
         let tabBarList = [firstVC, secondVC]
         

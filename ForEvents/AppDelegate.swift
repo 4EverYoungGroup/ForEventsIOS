@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let username = UserDefaults.standard.value(forKey: Constants.username) {
                 if checkToken(username: username as! String) != nil {
                     let eventsTabBarController = createEventsTabBar()
+                    //Configure tabbar without background and shadow
+                    eventsTabBarController.tabBar.backgroundImage = UIImage()
+                    eventsTabBarController.tabBar.shadowImage = UIImage()
+                    
                     window?.rootViewController = eventsTabBarController
                 }
             }
@@ -40,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if username == nil {
                 loginTabBarController.selectedIndex = 1
             }
+            //Configure tabbar without background and shadow
+            loginTabBarController.tabBar.backgroundImage = UIImage()
+            loginTabBarController.tabBar.shadowImage = UIImage()
             
             window?.rootViewController = loginTabBarController
         }
