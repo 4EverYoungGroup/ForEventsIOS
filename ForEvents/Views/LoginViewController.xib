@@ -22,7 +22,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v36-Iw-Nrq">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="concert-3387324_1920" translatesAutoresizingMaskIntoConstraints="NO" id="c3W-PA-HTA">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <textField opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v36-Iw-Nrq">
                     <rect key="frame" x="20" y="449.5" width="374" height="32"/>
                     <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="textColor"/>
@@ -33,16 +36,16 @@
                     <rect key="frame" x="174.5" y="501.5" width="65" height="47"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
                     <state key="normal" title="Login">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
                         <action selector="loginButtonPress:" destination="-1" eventType="touchUpInside" id="irW-yl-SrF"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForEvents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bJ-dl-VLa">
-                    <rect key="frame" x="139.5" y="74" width="135" height="41"/>
-                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="135.5" y="74" width="143.5" height="41"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USUARIO *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AF5-3A-kqX">
@@ -51,7 +54,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ejemplo@mail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCB-5n-2Ut">
+                <textField opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ejemplo@mail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCB-5n-2Ut">
                     <rect key="frame" x="20" y="367" width="374" height="32"/>
                     <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="textColor"/>
@@ -68,18 +71,18 @@
                     <rect key="frame" x="129.5" y="568.5" width="155" height="36"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                     <state key="normal" title="Olvidé mi password">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="recoverButtonPress:" destination="-1" eventType="touchUpInside" id="QGy-8H-oJS"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="r8N-6o-wlp" firstAttribute="top" secondItem="aCB-5n-2Ut" secondAttribute="bottom" constant="20" id="3A5-Vw-ybK"/>
                 <constraint firstItem="aCB-5n-2Ut" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5FP-Rb-d31"/>
                 <constraint firstItem="AF5-3A-kqX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="68Z-5k-dHK"/>
+                <constraint firstItem="c3W-PA-HTA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6rK-6O-LLc"/>
                 <constraint firstItem="KM6-gE-aSm" firstAttribute="centerX" secondItem="v36-Iw-Nrq" secondAttribute="centerX" id="D1n-qx-94J"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aCB-5n-2Ut" secondAttribute="trailing" constant="20" id="DTr-R7-JtL"/>
                 <constraint firstItem="aCB-5n-2Ut" firstAttribute="top" secondItem="AF5-3A-kqX" secondAttribute="bottom" constant="10" id="ECu-iP-Kqa"/>
@@ -88,13 +91,16 @@
                 <constraint firstItem="r8N-6o-wlp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IAB-6Y-GR3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v36-Iw-Nrq" secondAttribute="trailing" constant="20" id="RBo-dx-btu"/>
                 <constraint firstItem="aCB-5n-2Ut" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="VL4-GC-CxS"/>
+                <constraint firstAttribute="bottom" secondItem="c3W-PA-HTA" secondAttribute="bottom" id="ZCg-vG-E1r"/>
                 <constraint firstItem="v36-Iw-Nrq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dEQ-qA-U6M"/>
                 <constraint firstItem="oOb-0i-IaR" firstAttribute="top" secondItem="KM6-gE-aSm" secondAttribute="bottom" constant="20" id="izu-um-OZP"/>
                 <constraint firstItem="r8N-6o-wlp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="kET-9q-cc1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r8N-6o-wlp" secondAttribute="trailing" constant="20" id="knk-7R-Zqz"/>
+                <constraint firstItem="c3W-PA-HTA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="llf-Ex-bv1"/>
                 <constraint firstItem="v36-Iw-Nrq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nIb-EX-td8"/>
                 <constraint firstItem="AF5-3A-kqX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pfw-nV-0R9"/>
                 <constraint firstItem="2bJ-dl-VLa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="rIr-uI-aby"/>
+                <constraint firstAttribute="trailing" secondItem="c3W-PA-HTA" secondAttribute="trailing" id="s8m-8c-UiH"/>
                 <constraint firstItem="oOb-0i-IaR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="u01-Tj-J2t"/>
                 <constraint firstItem="KM6-gE-aSm" firstAttribute="top" secondItem="v36-Iw-Nrq" secondAttribute="bottom" constant="20" id="u8U-mE-jLW"/>
                 <constraint firstItem="aCB-5n-2Ut" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-70" id="xkm-Fy-xae"/>
@@ -104,4 +110,7 @@
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
+    <resources>
+        <image name="concert-3387324_1920" width="460.79998779296875" height="307.20001220703125"/>
+    </resources>
 </document>

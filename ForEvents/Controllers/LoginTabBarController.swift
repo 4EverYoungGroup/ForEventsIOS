@@ -14,6 +14,9 @@ class LoginTabBarController: UITabBarController {
         super.viewDidLoad()
 
         //Configure loginTabBarController
+        UITabBar.appearance().tintColor = .black
+        UITabBar.appearance().alpha = 0.3
+        
         let firstVC = LoginViewController()
         let secondVC = RegisterViewController()
         
@@ -21,9 +24,7 @@ class LoginTabBarController: UITabBarController {
             UITabBarItem(title: "Inicio sesión", image: nil, tag: 0)
         
         secondVC.tabBarItem = UITabBarItem(title: "Registro", image: nil, tag: 1)
-        
-        UITabBar.appearance().tintColor = .black
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20)], for: [.normal])
+    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20)], for: [.normal])
         
         let tabBarList = [firstVC, secondVC]
         
