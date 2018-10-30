@@ -21,7 +21,6 @@
 		BA59883C217691340065D77D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA59883B217691340065D77D /* GoogleService-Info.plist */; };
 		BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF73B21806C9F00419990 /* KeychainTokenItem.swift */; };
 		BA5CF73E21806F8A00419990 /* ValidateToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF73D21806F8A00419990 /* ValidateToken.swift */; };
-		BA5CF7402180766D00419990 /* LoginTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF73F2180766D00419990 /* LoginTabBarController.swift */; };
 		BA5CF7432180769400419990 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7412180769400419990 /* LoginViewController.swift */; };
 		BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7422180769400419990 /* RegisterViewController.swift */; };
 		BA5CF7492180772700419990 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7452180772700419990 /* EventsViewController.swift */; };
@@ -82,7 +81,6 @@
 		BA59883B217691340065D77D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA5CF73B21806C9F00419990 /* KeychainTokenItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainTokenItem.swift; sourceTree = "<group>"; };
 		BA5CF73D21806F8A00419990 /* ValidateToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateToken.swift; sourceTree = "<group>"; };
-		BA5CF73F2180766D00419990 /* LoginTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTabBarController.swift; sourceTree = "<group>"; };
 		BA5CF7412180769400419990 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BA5CF7422180769400419990 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BA5CF7452180772700419990 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 			children = (
 				BA5CF7412180769400419990 /* LoginViewController.swift */,
 				BA5CF7422180769400419990 /* RegisterViewController.swift */,
-				BA5CF73F2180766D00419990 /* LoginTabBarController.swift */,
 				BA5CF7452180772700419990 /* EventsViewController.swift */,
 				BA5CF7462180772700419990 /* MapViewController.swift */,
 				BA5CF7482180772700419990 /* NotificationsViewController.swift */,
@@ -484,7 +481,6 @@
 				BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */,
 				BA5CF7532180783400419990 /* Alerts.swift in Sources */,
 				BA5CF74B2180772700419990 /* ProfileViewController.swift in Sources */,
-				BA5CF7402180766D00419990 /* LoginTabBarController.swift in Sources */,
 				BA5CF7612180CDDE00419990 /* Constants.swift in Sources */,
 				BA5CF7632180D0D500419990 /* StringExtensions.swift in Sources */,
 				BA602D342181BB4D0075B64B /* ExecuteInteractorImpl.swift in Sources */,

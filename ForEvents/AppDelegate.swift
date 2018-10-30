@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         } else {
-            let loginTabBarController = LoginTabBarController()
+            let loginTabBarController = createLoginTabBar()
             // Check if app have a username, then register screen is show
             let username = UserDefaults.standard.value(forKey: Constants.username)
             if username == nil {
