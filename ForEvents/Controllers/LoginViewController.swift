@@ -106,10 +106,9 @@ class LoginViewController: UIViewController {
                     self.saveTokenInKeychain(token: token)
                     //Go to Events tabBar
                     let eventsTabBarController = createEventsTabBar()
-                    //Configure tabbar without background and shadow
-                    eventsTabBarController.tabBar.backgroundImage = UIImage()
-                    eventsTabBarController.tabBar.shadowImage = UIImage()
-                    
+                    //Configure tabbar opaque and black
+                    eventsTabBarController.tabBar.isOpaque = true
+                    eventsTabBarController.tabBar.barTintColor = .black
                     UIApplication.shared.keyWindow?.rootViewController = eventsTabBarController
                 }
             }
@@ -151,5 +150,9 @@ class LoginViewController: UIViewController {
         } catch {
             fatalError("Error updating keychain - \(error)")
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

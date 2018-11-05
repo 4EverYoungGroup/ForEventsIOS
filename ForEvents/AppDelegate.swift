@@ -30,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let username = UserDefaults.standard.value(forKey: Constants.username) {
                 if checkToken(username: username as! String) != nil {
                     let eventsTabBarController = createEventsTabBar()
-                    //Configure tabbar without background and shadow
-                    eventsTabBarController.tabBar.backgroundImage = UIImage()
-                    eventsTabBarController.tabBar.shadowImage = UIImage()
+                    //Configure tabbar opaque and black
+                    eventsTabBarController.tabBar.isOpaque = true
+                    eventsTabBarController.tabBar.barTintColor = .black
                     
                     window?.rootViewController = eventsTabBarController
                 }

@@ -44,8 +44,21 @@
 		BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */; };
 		BA602D382181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */; };
 		BA602D41218226C40075B64B /* ResponseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D40218226C40075B64B /* ResponseApi.swift */; };
+		BAA6AE63218F74440029F421 /* SectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA6AE61218F74440029F421 /* SectionHeaderCollectionReusableView.swift */; };
+		BAA6AE64218F74440029F421 /* SectionHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA6AE62218F74440029F421 /* SectionHeaderCollectionReusableView.xib */; };
 		BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */; };
 		BAB1E286218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB1E285218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift */; };
+		BAC173772190BCB4000A94A0 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC173752190BCB4000A94A0 /* FilterViewController.swift */; };
+		BAC173782190BCB4000A94A0 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC173762190BCB4000A94A0 /* FilterViewController.xib */; };
+		BAC1737B2190CE7D000A94A0 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC173792190CE7D000A94A0 /* EventDetailViewController.swift */; };
+		BAC1737C2190CE7D000A94A0 /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC1737A2190CE7D000A94A0 /* EventDetailViewController.xib */; };
+		BAC57666218B8F4900C735C6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC57665218B8F4900C735C6 /* Event.swift */; };
+		BAC57668218B906F00C735C6 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC57667218B906F00C735C6 /* Events.swift */; };
+		BAC5766A218B912600C735C6 /* DownloadEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC57669218B912600C735C6 /* DownloadEventsInteractor.swift */; };
+		BAC5766C218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5766B218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift */; };
+		BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5766D218B947500C735C6 /* EventsViewController+CollectionViewController.swift */; };
+		BAC57672218B97A200C735C6 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC57670218B97A200C735C6 /* EventCollectionViewCell.swift */; };
+		BAC57673218B97A200C735C6 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,8 +117,21 @@
 		BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractor.swift; sourceTree = "<group>"; };
 		BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BA602D40218226C40075B64B /* ResponseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseApi.swift; sourceTree = "<group>"; };
+		BAA6AE61218F74440029F421 /* SectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		BAA6AE62218F74440029F421 /* SectionHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverUserInteractor.swift; sourceTree = "<group>"; };
 		BAB1E285218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BAC173752190BCB4000A94A0 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		BAC173762190BCB4000A94A0 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		BAC173792190CE7D000A94A0 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		BAC1737A2190CE7D000A94A0 /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
+		BAC57665218B8F4900C735C6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		BAC57667218B906F00C735C6 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		BAC57669218B912600C735C6 /* DownloadEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadEventsInteractor.swift; sourceTree = "<group>"; };
+		BAC5766B218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadEventsInteractorFakeImpl.swift; sourceTree = "<group>"; };
+		BAC5766D218B947500C735C6 /* EventsViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
+		BAC57670218B97A200C735C6 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				BA59881921768F0F0065D77D /* AppDelegate.swift */,
+				BAC5766F218B977200C735C6 /* Cells */,
 				BA5CF73621806A0300419990 /* Commons */,
 				BA5CF73721806A0F00419990 /* Controllers */,
 				BA5CF73821806A1C00419990 /* Views */,
@@ -193,6 +220,8 @@
 				BA5CF7412180769400419990 /* LoginViewController.swift */,
 				BA5CF7422180769400419990 /* RegisterViewController.swift */,
 				BA5CF7452180772700419990 /* EventsViewController.swift */,
+				BAC5766D218B947500C735C6 /* EventsViewController+CollectionViewController.swift */,
+				BAC173792190CE7D000A94A0 /* EventDetailViewController.swift */,
 				BA5CF7462180772700419990 /* MapViewController.swift */,
 				BA5CF7482180772700419990 /* NotificationsViewController.swift */,
 				BA5CF7472180772700419990 /* ProfileViewController.swift */,
@@ -206,6 +235,7 @@
 				BA5CF7562180788A00419990 /* LoginViewController.xib */,
 				BA5CF7592180788A00419990 /* RegisterViewController.xib */,
 				BA5CF7572180788A00419990 /* EventsViewController.xib */,
+				BAC1737A2190CE7D000A94A0 /* EventDetailViewController.xib */,
 				BA5CF7582180788A00419990 /* MapViewController.xib */,
 				BA5CF7542180788A00419990 /* NotificationsViewController.xib */,
 				BA5CF7552180788A00419990 /* ProfileViewController.xib */,
@@ -226,6 +256,8 @@
 				BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */,
 				BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */,
 				BAB1E285218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift */,
+				BAC57669218B912600C735C6 /* DownloadEventsInteractor.swift */,
+				BAC5766B218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -236,6 +268,8 @@
 				BA602D2F2181AD320075B64B /* User.swift */,
 				BA47754121831E5E00B8AA40 /* UserLogin.swift */,
 				BA602D40218226C40075B64B /* ResponseApi.swift */,
+				BAC57665218B8F4900C735C6 /* Event.swift */,
+				BAC57667218B906F00C735C6 /* Events.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +281,19 @@
 				BA5CF7622180D0D500419990 /* StringExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BAC5766F218B977200C735C6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BAC57670218B97A200C735C6 /* EventCollectionViewCell.swift */,
+				BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */,
+				BAA6AE61218F74440029F421 /* SectionHeaderCollectionReusableView.swift */,
+				BAA6AE62218F74440029F421 /* SectionHeaderCollectionReusableView.xib */,
+				BAC173752190BCB4000A94A0 /* FilterViewController.swift */,
+				BAC173762190BCB4000A94A0 /* FilterViewController.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		C1FE8CC19F0CD5740BBAE7ED /* Pods */ = {
@@ -358,9 +405,13 @@
 				BA5CF75F2180788A00419990 /* RegisterViewController.xib in Resources */,
 				BA59882421768F100065D77D /* LaunchScreen.storyboard in Resources */,
 				BA5CF75A2180788A00419990 /* NotificationsViewController.xib in Resources */,
+				BAC173782190BCB4000A94A0 /* FilterViewController.xib in Resources */,
 				BA59882121768F100065D77D /* Assets.xcassets in Resources */,
+				BAC1737C2190CE7D000A94A0 /* EventDetailViewController.xib in Resources */,
+				BAC57673218B97A200C735C6 /* EventCollectionViewCell.xib in Resources */,
 				BA5CF75E2180788A00419990 /* MapViewController.xib in Resources */,
 				BA59883C217691340065D77D /* GoogleService-Info.plist in Resources */,
+				BAA6AE64218F74440029F421 /* SectionHeaderCollectionReusableView.xib in Resources */,
 				BA5CF75D2180788A00419990 /* EventsViewController.xib in Resources */,
 				BA5CF75C2180788A00419990 /* LoginViewController.xib in Resources */,
 				BA59883A217690C60065D77D /* Podfile in Resources */,
@@ -460,24 +511,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC5766C218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift in Sources */,
+				BAC57672218B97A200C735C6 /* EventCollectionViewCell.swift in Sources */,
 				BA602D382181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA4775462183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA59881A21768F0F0065D77D /* AppDelegate.swift in Sources */,
 				BA4775442183225400B8AA40 /* LoginUserInteractor.swift in Sources */,
+				BAC57668218B906F00C735C6 /* Events.swift in Sources */,
 				BA5CF73E21806F8A00419990 /* ValidateToken.swift in Sources */,
 				BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */,
 				BAB1E286218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */,
+				BAC5766A218B912600C735C6 /* DownloadEventsInteractor.swift in Sources */,
 				BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */,
 				BA477548218378BC00B8AA40 /* createTabBar.swift in Sources */,
+				BAC57666218B8F4900C735C6 /* Event.swift in Sources */,
+				BAA6AE63218F74440029F421 /* SectionHeaderCollectionReusableView.swift in Sources */,
 				BA602D302181AD320075B64B /* User.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
 				BA5CF7492180772700419990 /* EventsViewController.swift in Sources */,
+				BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */,
+				BAC173772190BCB4000A94A0 /* FilterViewController.swift in Sources */,
 				BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */,
 				BA5CF74C2180772700419990 /* NotificationsViewController.swift in Sources */,
 				BA5CF74F2180777500419990 /* UIviewController+Additions.swift in Sources */,
 				BA5CF7432180769400419990 /* LoginViewController.swift in Sources */,
 				BA602D322181B6970075B64B /* ExecuteInteractor.swift in Sources */,
+				BAC1737B2190CE7D000A94A0 /* EventDetailViewController.swift in Sources */,
 				BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */,
 				BA5CF7532180783400419990 /* Alerts.swift in Sources */,
 				BA5CF74B2180772700419990 /* ProfileViewController.swift in Sources */,
@@ -642,7 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VJ3XGT65D5;
 				INFOPLIST_FILE = ForEvents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -663,7 +723,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VJ3XGT65D5;
 				INFOPLIST_FILE = ForEvents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
