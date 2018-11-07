@@ -27,29 +27,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         self.event = event
         
         self.eventLabelCell.text = event.name
-        switch index {
-        case 0:
-            self.eventImageCell.image = UIImage.init(imageLiteralResourceName: "events")
-        case 1:
-            self.eventImageCell.image = UIImage.init(imageLiteralResourceName: "admission")
-        case 2:
-            self.eventImageCell.image = UIImage.init(imageLiteralResourceName: "cheers")
-        case 3:
-            self.eventImageCell.image = UIImage.init(imageLiteralResourceName: "hot-air-balloons")
-        case 4:
-            self.eventImageCell.image = UIImage.init(imageLiteralResourceName: "marathon")
-        case 5:
-            self.eventImageCell.image = UIImage.init(imageLiteralResourceName: "piano")
-        case 6:
-            self.eventImageCell.image = UIImage.init(imageLiteralResourceName: "reiter")
-        case 7:
-            self.eventImageCell.image = UIImage.init(imageLiteralResourceName: "theater")
-        case 8:
-            self.eventImageCell.image = UIImage.init(imageLiteralResourceName: "fireworks")
-        default:
-            self.eventImageCell.image = UIImage.init(imageLiteralResourceName: "events")
-        }
-        
+        event.images?[0].loadImage(into: eventImageCell)
         
     }
 

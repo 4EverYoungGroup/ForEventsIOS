@@ -27,6 +27,9 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Set title
+        title = "Eventos"
+        
         //Request location Authorization
         self.locationManager.requestWhenInUseAuthorization()
         

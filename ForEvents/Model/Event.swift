@@ -13,7 +13,7 @@ public class Event {
     var description: String = ""
     var latitude: Float? = nil
     var longitude: Float? = nil
-    var image: String = ""
+    var images: [String]? = []
     
     public init(name: String) {
         self.name = name
