@@ -12,13 +12,13 @@ extension EventDetailViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let event = self.event {
-            let numPhotos = (event.images?.count)!
+            let numPhotos = (event.images.count)
             if numPhotos == 1 {
                 photosLabel.text = "\(numPhotos) Foto"
             } else {
                 photosLabel.text = "\(numPhotos) Fotos"
             }
-            return (event.images?.count)!
+            return (event.images.count)
         }
         return 0
     }

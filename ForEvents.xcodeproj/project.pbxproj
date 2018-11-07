@@ -63,6 +63,8 @@
 		BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5766D218B947500C735C6 /* EventsViewController+CollectionViewController.swift */; };
 		BAC57672218B97A200C735C6 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC57670218B97A200C735C6 /* EventCollectionViewCell.swift */; };
 		BAC57673218B97A200C735C6 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */; };
+		BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */; };
+		BAF74D7221936FEE00E731DC /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D7121936FEE00E731DC /* EventAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,8 @@
 		BAC5766D218B947500C735C6 /* EventsViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
 		BAC57670218B97A200C735C6 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
+		BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventDetailViewController+MapKit.swift"; sourceTree = "<group>"; };
+		BAF74D7121936FEE00E731DC /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +223,7 @@
 				BA5CF73D21806F8A00419990 /* ValidateToken.swift */,
 				BA477547218378BC00B8AA40 /* createTabBar.swift */,
 				BA1E2D972191AC63006D3CBD /* String+Image.swift */,
+				BAF74D7121936FEE00E731DC /* EventAnnotation.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				BAC5766D218B947500C735C6 /* EventsViewController+CollectionViewController.swift */,
 				BAC173792190CE7D000A94A0 /* EventDetailViewController.swift */,
 				BA5F70BD21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift */,
+				BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */,
 				BA5CF7462180772700419990 /* MapViewController.swift */,
 				BA5CF7482180772700419990 /* NotificationsViewController.swift */,
 				BA5CF7472180772700419990 /* ProfileViewController.swift */,
@@ -537,6 +543,7 @@
 				BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */,
 				BAC5766A218B912600C735C6 /* DownloadEventsInteractor.swift in Sources */,
 				BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */,
+				BAF74D7221936FEE00E731DC /* EventAnnotation.swift in Sources */,
 				BA477548218378BC00B8AA40 /* createTabBar.swift in Sources */,
 				BAC57666218B8F4900C735C6 /* Event.swift in Sources */,
 				BAA6AE63218F74440029F421 /* SectionHeaderCollectionReusableView.swift in Sources */,
@@ -544,6 +551,7 @@
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
 				BA5CF7492180772700419990 /* EventsViewController.swift in Sources */,
 				BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */,
+				BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */,
 				BAC173772190BCB4000A94A0 /* FilterViewController.swift in Sources */,
 				BA5F70BE21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift in Sources */,
 				BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */,

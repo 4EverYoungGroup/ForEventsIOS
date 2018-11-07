@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 import MapKit
 
 class EventDetailViewController: UIViewController {
@@ -25,15 +26,18 @@ class EventDetailViewController: UIViewController {
     
     @IBOutlet weak var eventMap: MKMapView!
     
-    
     @IBOutlet weak var detailScrollView: UIScrollView!
     
     var event: Event?
     
     let eventDetailCollectionViewCellId = "EventDetailCollectionViewCell"
     
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationManager.requestWhenInUseAuthorization()
         
         //Configure assistButton aspect
         //assistButton.backgroundColor = .clear
@@ -62,6 +66,9 @@ class EventDetailViewController: UIViewController {
         self.detailCollectionView.delegate = self
         self.detailCollectionView.dataSource = self
         detailCollectionView.reloadData()
+        
+        self.locationManager.delegate = self
+        self.eventMap.delegate = self
     }
 
     @IBAction func assistButtonPress(_ sender: UIButton) {

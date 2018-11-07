@@ -27,7 +27,7 @@ class EventDetailCollectionViewCell: UICollectionViewCell {
     func refresh(event: Event, index: Int) {
         self.event = event
         
-        event.images?[index].loadImage(into: eventDetailCollectionViewCell)
+        event.images[index].loadImage(into: eventDetailCollectionViewCell)
         
     }
 

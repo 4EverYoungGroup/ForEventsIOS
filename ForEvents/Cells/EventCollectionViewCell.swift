@@ -27,7 +27,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         self.event = event
         
         self.eventLabelCell.text = event.name
-        event.images?[0].loadImage(into: eventImageCell)
+        event.images[0].loadImage(into: eventImageCell)
         
     }
 
