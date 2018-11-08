@@ -51,11 +51,12 @@ class EventDetailViewController: UIViewController {
         //Configure event name
         eventNameLabel.text = event?.name
         
-        //Ajust height constraints
-        self.detailCollectionView.heightAnchor.constraint(equalToConstant: (250 * (UIScreen.main.bounds.width)) / 414 ).isActive = true
-        self.eventDesTextView.heightAnchor.constraint(equalToConstant: (150 * (UIScreen.main.bounds.width)) / 414 ).isActive = true
-        self.eventMap.heightAnchor.constraint(equalToConstant: (200 * (UIScreen.main.bounds.width)) / 414 ).isActive = true
-        self.detailScrollView.heightAnchor.constraint(equalToConstant: (752 * (UIScreen.main.bounds.width)) / 414 ).isActive = true
+        //Configure constraints depending on device orientation
+        if UIDevice.current.orientation.isPortrait {
+            self.configurePortrait()
+        } else {
+            self.configureLandscape()
+        }
         
         self.navigationController?.navigationBar.tintColor = .white
         
@@ -69,6 +70,41 @@ class EventDetailViewController: UIViewController {
         
         self.locationManager.delegate = self
         self.eventMap.delegate = self
+        
+        //Center map to event location
+        if let latitude = event?.latitude, let longitude = event?.longitude {
+            let center = CLLocationCoordinate2D(latitude: Double(latitude), longitude: Double(longitude))
+            let region = MKCoordinateRegion(center: center, latitudinalMeters: 0, longitudinalMeters: 250)
+            eventMap.setRegion(region, animated: true)
+        }
+        
+        //Configure share button
+        self.configureShare()
+        
+    }
+    
+    func configureShare() {
+        var shareButton: UIBarButtonItem = UIBarButtonItem()
+        shareButton = UIBarButtonItem(title: "Compartir", style: .plain, target: self, action: #selector(shareTapped))
+        shareButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "AvenirNext-Bold", size: 17)!], for: .normal)
+        navigationItem.rightBarButtonItem = shareButton
+    }
+    
+    func configurePortrait() {
+        //Ajust height constraints
+        self.detailCollectionView.heightAnchor.constraint(equalToConstant: (250 * (UIScreen.main.bounds.width)) / 414 ).isActive = true
+        self.eventDesTextView.heightAnchor.constraint(equalToConstant: (150 * (UIScreen.main.bounds.width)) / 414 ).isActive = true
+        self.detailScrollView.heightAnchor.constraint(equalToConstant: (752 * (UIScreen.main.bounds.width)) / 414 ).isActive = true
+        self.assistButton.heightAnchor.constraint(equalToConstant: (40 * (UIScreen.main.bounds.width)) / 414 ).isActive = true
+        self.photosLabel.heightAnchor.constraint(equalToConstant: (30 * (UIScreen.main.bounds.width)) / 414 ).isActive = true
+    }
+    
+    func configureLandscape() {
+        self.detailCollectionView.heightAnchor.constraint(equalToConstant: (250 * (detailCollectionView.bounds.width)) / 404 ).isActive = true
+        self.eventDesTextView.heightAnchor.constraint(equalToConstant: (150 * (detailCollectionView.bounds.width)) / 404 ).isActive = true
+        self.detailScrollView.heightAnchor.constraint(equalToConstant: (752 * (detailCollectionView.bounds.width)) / 404 ).isActive = true
+        self.assistButton.heightAnchor.constraint(equalToConstant: (40 * (detailCollectionView.bounds.width)) / 404 ).isActive = true
+        self.photosLabel.heightAnchor.constraint(equalToConstant: (30 * (detailCollectionView.bounds.width)) / 404 ).isActive = true
     }
 
     @IBAction func assistButtonPress(_ sender: UIButton) {
@@ -80,6 +116,32 @@ class EventDetailViewController: UIViewController {
             assistButton.setTitleColor(.black, for: .normal)
             assistButton.backgroundColor = .green
             assistButton.isSelected = true
+        }
+    }
+    
+    @objc func shareTapped() {
+        //TODO decide what to share
+        if let textToShare = event?.name,
+           let website = NSURL(string: "https://4events.net") {
+            let objectsToShare = [textToShare, website] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            //New Excluded Activities Code
+            activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+            //activityVC.popoverPresentationController?.sourceView = sender
+            self.present(activityVC, animated: true, completion: nil)
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        //Configure constraints depending on device orientation
+        if UIDevice.current.orientation.isPortrait {
+            let sizePortrait = CGSize(width: (UIScreen.main.bounds.width), height: (250 * (UIScreen.main.bounds.width)) / 414 )
+            detailCollectionView.contentSize = sizePortrait
+            self.configurePortrait()
+        } else {
+            let sizeLandscape = CGSize(width: (detailCollectionView.bounds.width)/2, height: (250 * (detailCollectionView.bounds.width + 20)/2) / 404 )
+            detailCollectionView.contentSize = sizeLandscape
+            self.configureLandscape()
         }
     }
 }

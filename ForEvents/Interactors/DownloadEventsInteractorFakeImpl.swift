@@ -73,6 +73,7 @@ class DownloadEventsInteractorFakeImpl: DownloadEventsInteractor {
         }
         
         OperationQueue.main.addOperation {
+            activityIndicator.removeFromSuperview()
             onSuccess(events)
         }
     }

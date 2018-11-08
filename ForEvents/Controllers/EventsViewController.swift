@@ -9,9 +9,6 @@
 import UIKit
 import CoreLocation
 
-let searchBar: UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 250, height: 20))
-var filterButton: UIBarButtonItem = UIBarButtonItem()
-
 class EventsViewController: UIViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
     var events: Events?
@@ -40,9 +37,9 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         self.configureFilter()
         
         //Configure activity indicator
-        //view.addSubview(activityIndicator)
-        //activityIndicator.frame = view.bounds
-        //activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+        activityIndicator.frame = view.bounds
+        activityIndicator.startAnimating()
         
         //register header
         eventsCollectionView.register(UINib(nibName: "SectionHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCollectionViewId)
@@ -109,6 +106,7 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
     }
     
     func configureFilter() {
+        var filterButton: UIBarButtonItem = UIBarButtonItem()
         filterButton = UIBarButtonItem(title: "Filtros", style: .plain, target: self, action: #selector(filterTapped))
         filterButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "AvenirNext-Bold", size: 17)!], for: .normal)
         navigationItem.rightBarButtonItem = filterButton

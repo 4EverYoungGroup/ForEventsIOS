@@ -27,11 +27,6 @@ extension EventDetailViewController: CLLocationManagerDelegate, MKMapViewDelegat
         
         self.eventMap.addAnnotation(annotation)
         
-        //Center map to event location
-        let center = CLLocationCoordinate2D(latitude: Double(event.latitude!), longitude: Double(event.longitude!))
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 0, longitudinalMeters: 250)
-        eventMap.setRegion(region, animated: true)
-        
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
