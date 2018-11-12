@@ -99,7 +99,7 @@
 		BA59882A21768F100065D77D /* ForEventsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForEventsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA59882E21768F100065D77D /* ForEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEventsTests.swift; sourceTree = "<group>"; };
 		BA59883021768F100065D77D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA598839217690C60065D77D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		BA598839217690C60065D77D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BA59883B217691340065D77D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA5CF73B21806C9F00419990 /* KeychainTokenItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainTokenItem.swift; sourceTree = "<group>"; };
 		BA5CF73D21806F8A00419990 /* ValidateToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateToken.swift; sourceTree = "<group>"; };

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,8 +42,8 @@
                         <action selector="loginButtonPress:" destination="-1" eventType="touchUpInside" id="irW-yl-SrF"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForEvents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bJ-dl-VLa">
-                    <rect key="frame" x="135.5" y="74" width="143.5" height="41"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bJ-dl-VLa">
+                    <rect key="frame" x="207" y="74" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -77,6 +77,13 @@
                         <action selector="recoverButtonPress:" destination="-1" eventType="touchUpInside" id="QGy-8H-oJS"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sketches 1 2" translatesAutoresizingMaskIntoConstraints="NO" id="02R-si-Rlo">
+                    <rect key="frame" x="82" y="10" width="250" height="188"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="CoW-h3-T4u"/>
+                        <constraint firstAttribute="height" constant="188" id="hYW-1h-Ogi"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <constraints>
                 <constraint firstItem="r8N-6o-wlp" firstAttribute="top" secondItem="aCB-5n-2Ut" secondAttribute="bottom" constant="20" id="3A5-Vw-ybK"/>
@@ -87,11 +94,13 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aCB-5n-2Ut" secondAttribute="trailing" constant="20" id="DTr-R7-JtL"/>
                 <constraint firstItem="aCB-5n-2Ut" firstAttribute="top" secondItem="AF5-3A-kqX" secondAttribute="bottom" constant="10" id="ECu-iP-Kqa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AF5-3A-kqX" secondAttribute="trailing" constant="20" id="Faq-CI-0wB"/>
+                <constraint firstItem="02R-si-Rlo" firstAttribute="centerX" secondItem="AF5-3A-kqX" secondAttribute="centerX" id="GQI-6B-SA4"/>
                 <constraint firstItem="v36-Iw-Nrq" firstAttribute="top" secondItem="r8N-6o-wlp" secondAttribute="bottom" constant="10" id="HPe-Ea-M3g"/>
                 <constraint firstItem="r8N-6o-wlp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IAB-6Y-GR3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v36-Iw-Nrq" secondAttribute="trailing" constant="20" id="RBo-dx-btu"/>
                 <constraint firstItem="aCB-5n-2Ut" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="VL4-GC-CxS"/>
                 <constraint firstAttribute="bottom" secondItem="c3W-PA-HTA" secondAttribute="bottom" id="ZCg-vG-E1r"/>
+                <constraint firstItem="02R-si-Rlo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="ccI-qU-xGp"/>
                 <constraint firstItem="v36-Iw-Nrq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dEQ-qA-U6M"/>
                 <constraint firstItem="oOb-0i-IaR" firstAttribute="top" secondItem="KM6-gE-aSm" secondAttribute="bottom" constant="20" id="izu-um-OZP"/>
                 <constraint firstItem="r8N-6o-wlp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="kET-9q-cc1"/>
@@ -111,6 +120,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Sketches 1 2" width="2048" height="1536"/>
         <image name="concert-3387324_1920" width="460.79998779296875" height="307.20001220703125"/>
     </resources>
 </document>

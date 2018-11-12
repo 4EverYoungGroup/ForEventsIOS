@@ -24,4 +24,8 @@ class EventAnnotation: NSObject, MKAnnotation {
         self.event       = event
     }
     
+    func getEvent() -> Event {
+        return event
+    }
+    
 }

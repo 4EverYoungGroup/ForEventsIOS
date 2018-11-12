@@ -27,12 +27,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="audience-868074_1920" translatesAutoresizingMaskIntoConstraints="NO" id="9Xc-Os-aXK">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForEvents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKq-4E-d6h">
-                    <rect key="frame" x="135.5" y="74" width="143.5" height="41"/>
-                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="erf-pc-e3g">
                     <rect key="frame" x="15" y="125" width="384" height="707"/>
                     <subviews>
@@ -271,26 +265,35 @@
                         <constraint firstItem="lfO-kv-0RU" firstAttribute="leading" secondItem="5b4-av-DuD" secondAttribute="leading" id="za2-nn-Lbu"/>
                     </constraints>
                 </scrollView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sketches 1 2" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-pK-ICr">
+                    <rect key="frame" x="82" y="10" width="250" height="188"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="188" id="Ezd-a1-ovp"/>
+                        <constraint firstAttribute="width" constant="250" id="ZyL-O7-Nx0"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="erf-pc-e3g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="9kq-Ho-TMJ"/>
+                <constraint firstItem="hJW-pK-ICr" firstAttribute="centerX" secondItem="erf-pc-e3g" secondAttribute="centerX" id="BAh-aC-tMj"/>
                 <constraint firstAttribute="bottom" secondItem="9Xc-Os-aXK" secondAttribute="bottom" id="FdR-kL-sQE"/>
                 <constraint firstItem="9Xc-Os-aXK" firstAttribute="leading" secondItem="erf-pc-e3g" secondAttribute="leading" constant="-15" id="KTJ-wO-0rA"/>
-                <constraint firstItem="yKq-4E-d6h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="ReN-i0-7Fb"/>
-                <constraint firstItem="yKq-4E-d6h" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TJz-eR-ZqR"/>
                 <constraint firstItem="9Xc-Os-aXK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ywh-DB-xny"/>
+                <constraint firstItem="erf-pc-e3g" firstAttribute="top" secondItem="hJW-pK-ICr" secondAttribute="bottom" constant="-73" id="dyD-C8-Jjr"/>
+                <constraint firstItem="hJW-pK-ICr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-34" id="mS3-jL-mvm"/>
                 <constraint firstItem="erf-pc-e3g" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-30" id="ot1-Xw-VzK"/>
-                <constraint firstItem="erf-pc-e3g" firstAttribute="centerX" secondItem="yKq-4E-d6h" secondAttribute="centerX" id="rMb-ve-TCC"/>
+                <constraint firstItem="erf-pc-e3g" firstAttribute="top" secondItem="hJW-pK-ICr" secondAttribute="bottom" constant="-73" id="qQI-Pe-0o8"/>
                 <constraint firstAttribute="trailing" secondItem="9Xc-Os-aXK" secondAttribute="trailing" id="rlP-lV-Tld"/>
-                <constraint firstItem="erf-pc-e3g" firstAttribute="top" secondItem="yKq-4E-d6h" secondAttribute="bottom" constant="10" id="sD8-hg-IxI"/>
+                <constraint firstItem="hJW-pK-ICr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="za9-mK-nrR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="46.376811594202906" y="34.151785714285715"/>
         </view>
     </objects>
     <resources>
+        <image name="Sketches 1 2" width="2048" height="1536"/>
         <image name="audience-868074_1920" width="1920" height="1276"/>
     </resources>
 </document>

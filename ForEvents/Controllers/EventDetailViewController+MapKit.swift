@@ -49,9 +49,17 @@ extension EventDetailViewController: CLLocationManagerDelegate, MKMapViewDelegat
             // It is activated to show the pin when you click on it
             pinView?.canShowCallout = true
             
+            // Se informa la imagen de la tienda
+            let eventImageview = UIImageView()
+            event!.images[0].loadImage(into: eventImageview)
+            
             let rigthButton = UIButton(type: .detailDisclosure)
+            let leftButton = eventImageview
+            leftButton.frame.size.height = 30
+            leftButton.frame.size.width = 44
             
             pinView?.rightCalloutAccessoryView = rigthButton
+            pinView?.leftCalloutAccessoryView = leftButton
         } else {
             pinView?.annotation = annotation
         }
