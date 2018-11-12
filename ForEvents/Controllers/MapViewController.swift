@@ -12,8 +12,6 @@ import MapKit
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    var events: Events?
-    
     var event: Event? = nil
     
     let eventsMapView = MKMapView()
@@ -29,10 +27,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //Request location Authorization
         self.locationManager.requestWhenInUseAuthorization()
         
-        //Download Events
-        ExecuteInteractorImpl().execute {
-            eventsDownload()
-        }
+        //Create map
+        self.createMap()
+        
+        self.eventsMapView.delegate = self
        
     }
     
@@ -41,19 +39,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.barStyle = .blackTranslucent
-    }
-    
-    func eventsDownload() {
-        let downloadEventsInteractor: DownloadEventsInteractor = DownloadEventsInteractorFakeImpl()
-        
-        downloadEventsInteractor.execute { (events: Events) in
-            // Todo OK
-            self.events = events
-            //Create map
-            self.createMap()
-            
-            self.eventsMapView.delegate = self
-        }
     }
     
     func createMap() {
@@ -80,9 +65,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
         // Create anotation for event
-        if let numberEvents = events?.count() {
+        if let numberEvents = Global.events?.count() {
             for i in 0..<numberEvents {
-                if let event = events?.get(index: i) {
+                if let event = Global.events?.get(index: i) {
                     self.event = event
                     createAnotation(event: self.event!)
                 }
@@ -126,7 +111,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let event = (annotation as! EventAnnotation).getEvent()
             // Add The image of the event
             let eventImageview = UIImageView()
-            event.images[0].loadImage(into: eventImageview)
+            let url = URL(string: event.images[0])
+            eventImageview.kf.setImage(with: url)
             
             let rigthButton = UIButton(type: .detailDisclosure)
             let leftButton = eventImageview

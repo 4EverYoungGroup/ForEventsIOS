@@ -26,9 +26,8 @@ class EventDetailCollectionViewCell: UICollectionViewCell {
     
     func refresh(event: Event, index: Int) {
         self.event = event
-        
-        event.images[index].loadImage(into: eventDetailCollectionViewCell)
-        
+        let url = URL(string: event.images[index])
+        eventDetailCollectionViewCell.kf.setImage(with: url)
     }
 
 }

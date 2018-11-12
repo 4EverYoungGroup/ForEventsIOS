@@ -27,3 +27,7 @@ struct Constants {
     static let urlHeadersConst = "Content-Type"
     static let urlJsonContentType = "application/json"
 }
+
+struct Global {
+    static var events: Events? = nil
+}

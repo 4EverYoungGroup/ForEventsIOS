@@ -11,7 +11,7 @@ import UIKit
 extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let events = self.events {
+        if let events = Global.events {
             return events.count()
         }
         return 0
@@ -20,7 +20,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = eventCollectionViewCellId
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! EventCollectionViewCell
-        let event: Event = ((self.events?.get(index: indexPath.row))!)
+        let event: Event = ((Global.events?.get(index: indexPath.row))!)
         cell.refresh(event: event, index: indexPath.row)
         
         return cell
@@ -28,7 +28,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let eventDetailViewController = EventDetailViewController()
-        let event: Event = ((self.events?.get(index: indexPath.row))!)
+        let event: Event = ((Global.events?.get(index: indexPath.row))!)
         eventDetailViewController.event = event
         
         navigationController?.pushViewController(eventDetailViewController, animated: true)

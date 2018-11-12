@@ -10,8 +10,6 @@ import UIKit
 import CoreLocation
 
 class EventsViewController: UIViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
-    
-    var events: Events?
 
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     
@@ -65,7 +63,7 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         
         downloadEventsInteractor.execute { (events: Events) in
             // Todo OK
-            self.events = events
+            Global.events = events
             
             self.eventsCollectionView.delegate = self
             self.eventsCollectionView.dataSource = self

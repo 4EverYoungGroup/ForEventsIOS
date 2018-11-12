@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EventCollectionViewCell: UICollectionViewCell {
     var event: Event?
@@ -27,8 +28,8 @@ class EventCollectionViewCell: UICollectionViewCell {
         self.event = event
         
         self.eventLabelCell.text = event.name
-        event.images[0].loadImage(into: eventImageCell)
-        
+        let url = URL(string: event.images[0])
+        eventImageCell.kf.setImage(with: url)
     }
 
 }

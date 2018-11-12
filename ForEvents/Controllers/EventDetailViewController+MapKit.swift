@@ -51,7 +51,8 @@ extension EventDetailViewController: CLLocationManagerDelegate, MKMapViewDelegat
             
             // Se informa la imagen de la tienda
             let eventImageview = UIImageView()
-            event!.images[0].loadImage(into: eventImageview)
+            let url = URL(string: event!.images[0])
+            eventImageview.kf.setImage(with: url)
             
             let rigthButton = UIButton(type: .detailDisclosure)
             let leftButton = eventImageview
