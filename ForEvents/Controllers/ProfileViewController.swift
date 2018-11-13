@@ -7,24 +7,94 @@
 //
 
 import UIKit
+import Photos
+import CoreLocation
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController, CLLocationManagerDelegate {
+    
+    //Create UIImagePickerController
+    let imagePicker = UIImagePickerController()
+    
+    let locationManager = CLLocationManager()
+    
+    @IBOutlet weak var userButton: UIButton!
+    
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var userCity: UILabel!
+    
+    @IBOutlet weak var userLocation: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //Set title
+        title = "Perfil"
+        
+        //Configure button circular
+        userButton.layer.cornerRadius = 0.5 * userButton.bounds.size.width
+        userButton.clipsToBounds = true
+        
+        //Recover userPhoto of userDefaults
+        if let userPhoto = UserDefaults.standard.imageForKey(key: "userPhoto") {
+            userButton.setBackgroundImage(userPhoto, for: .normal)
+        }
+        //Set user name and city
+        self.userName.text = "Jesús"
+        self.userCity.text = "Candeleda"
+        
+        //Set user location
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.startUpdatingLocation()
+        }
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //Configure navigationBar opaque and black, status bar white
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.barStyle = .blackTranslucent
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func userButtonPress(_ sender: UIButton) {
+        
+        if self.photoLibraryAvailabilityCheck() {
+            createPhotosAlert()
+        } else {
+            PHPhotoLibrary.requestAuthorization(requestAuthorizationHandler)
+        }
     }
-    */
-
+    
+    //MARK: - location delegate methods
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation :CLLocation = locations[0] as CLLocation
+        
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(userLocation) { (placemarks, error) in
+            if (error != nil){
+                print("error in reverseGeocode")
+            }
+            let placemark = placemarks! as [CLPlacemark]
+            if placemark.count>0{
+                let placemark = placemarks![0]
+                
+                self.userLocation.text = "\(placemark.locality!), \(placemark.administrativeArea!), \(placemark.country!)"
+                self.locationManager.stopUpdatingLocation()
+            }
+        }
+        
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        self.userLocation.text = ""
+        self.locationManager.stopUpdatingLocation()
+    }
+    
 }
+
+

@@ -63,6 +63,8 @@
 		BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5766D218B947500C735C6 /* EventsViewController+CollectionViewController.swift */; };
 		BAC57672218B97A200C735C6 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC57670218B97A200C735C6 /* EventCollectionViewCell.swift */; };
 		BAC57673218B97A200C735C6 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */; };
+		BAD7876D219B4406000A44EC /* ProfileViewController+ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */; };
+		BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */; };
 		BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */; };
 		BAF74D7221936FEE00E731DC /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D7121936FEE00E731DC /* EventAnnotation.swift */; };
 /* End PBXBuildFile section */
@@ -142,6 +144,8 @@
 		BAC5766D218B947500C735C6 /* EventsViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
 		BAC57670218B97A200C735C6 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
+		BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+ImagePickerController.swift"; sourceTree = "<group>"; };
+		BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventDetailViewController+MapKit.swift"; sourceTree = "<group>"; };
 		BAF74D7121936FEE00E731DC /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,6 +245,7 @@
 				BA5CF7462180772700419990 /* MapViewController.swift */,
 				BA5CF7482180772700419990 /* NotificationsViewController.swift */,
 				BA5CF7472180772700419990 /* ProfileViewController.swift */,
+				BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			children = (
 				BA5CF74E2180777500419990 /* UIviewController+Additions.swift */,
 				BA5CF7622180D0D500419990 /* StringExtensions.swift */,
+				BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -559,12 +565,14 @@
 				BAC173772190BCB4000A94A0 /* FilterViewController.swift in Sources */,
 				BA5F70BE21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift in Sources */,
 				BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */,
+				BAD7876D219B4406000A44EC /* ProfileViewController+ImagePickerController.swift in Sources */,
 				BA5CF74C2180772700419990 /* NotificationsViewController.swift in Sources */,
 				BA5CF74F2180777500419990 /* UIviewController+Additions.swift in Sources */,
 				BA5CF7432180769400419990 /* LoginViewController.swift in Sources */,
 				BA602D322181B6970075B64B /* ExecuteInteractor.swift in Sources */,
 				BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */,
 				BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */,
+				BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */,
 				BAC1737B2190CE7D000A94A0 /* EventDetailViewController.swift in Sources */,
 				BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */,
 				BA5CF7532180783400419990 /* Alerts.swift in Sources */,
@@ -732,7 +740,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VJ3XGT65D5;
 				INFOPLIST_FILE = ForEvents/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -750,7 +761,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VJ3XGT65D5;
 				INFOPLIST_FILE = ForEvents/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -767,7 +781,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEventsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEventsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -784,7 +802,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEventsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEventsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

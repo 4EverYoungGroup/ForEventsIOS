@@ -265,7 +265,7 @@
                         <constraint firstItem="lfO-kv-0RU" firstAttribute="leading" secondItem="5b4-av-DuD" secondAttribute="leading" id="za2-nn-Lbu"/>
                     </constraints>
                 </scrollView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sketches 1 2" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-pK-ICr">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo4eventsWhite" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-pK-ICr">
                     <rect key="frame" x="82" y="10" width="250" height="188"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="188" id="Ezd-a1-ovp"/>
@@ -293,7 +293,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Sketches 1 2" width="2048" height="1536"/>
+        <image name="Logo4eventsWhite" width="2048" height="1536"/>
         <image name="audience-868074_1920" width="1920" height="1276"/>
     </resources>
 </document>
