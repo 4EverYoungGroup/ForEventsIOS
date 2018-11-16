@@ -49,10 +49,12 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Parchment (1.4.1)
 
 DEPENDENCIES:
   - Firebase/Core
   - Kingfisher (~> 4.0)
+  - Parchment
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -64,6 +66,7 @@ SPEC REPOS:
     - GoogleUtilities
     - Kingfisher
     - nanopb
+    - Parchment
 
 SPEC CHECKSUMS:
   Firebase: 6691d47562a780c26281ce8464518faafc90c610
@@ -74,7 +77,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: 82f04aeff8426309dbdbc75f6c8accd1e584a5da
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Parchment: e6c2a3a0063739382dd207e21d48fe5e81f3324a
 
-PODFILE CHECKSUM: 21a3fc053b7e72a9cf8fc29f490b7d6c8f86c556
+PODFILE CHECKSUM: c1fd33e1938fbf290a3fcd9ccdab4feeb3fce61b
 
 COCOAPODS: 1.5.3

@@ -48,6 +48,11 @@
 		BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */; };
 		BA602D382181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */; };
 		BA602D41218226C40075B64B /* ResponseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D40218226C40075B64B /* ResponseApi.swift */; };
+		BA65EDE8219ED28B00B26C96 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65EDE6219ED28B00B26C96 /* EventTableViewCell.swift */; };
+		BA65EDE9219ED28B00B26C96 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA65EDE7219ED28B00B26C96 /* EventTableViewCell.xib */; };
+		BA65EDEC219F3B6E00B26C96 /* AssistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65EDEA219F3B6E00B26C96 /* AssistsViewController.swift */; };
+		BA65EDED219F3B6E00B26C96 /* AssistsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA65EDEB219F3B6E00B26C96 /* AssistsViewController.xib */; };
+		BA65EDEF219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65EDEE219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift */; };
 		BAA6AE63218F74440029F421 /* SectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA6AE61218F74440029F421 /* SectionHeaderCollectionReusableView.swift */; };
 		BAA6AE64218F74440029F421 /* SectionHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA6AE62218F74440029F421 /* SectionHeaderCollectionReusableView.xib */; };
 		BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */; };
@@ -56,6 +61,8 @@
 		BAC173782190BCB4000A94A0 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC173762190BCB4000A94A0 /* FilterViewController.xib */; };
 		BAC1737B2190CE7D000A94A0 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC173792190CE7D000A94A0 /* EventDetailViewController.swift */; };
 		BAC1737C2190CE7D000A94A0 /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC1737A2190CE7D000A94A0 /* EventDetailViewController.xib */; };
+		BAC28898219C3709000AA7B2 /* UIViewAssists+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC28897219C3709000AA7B2 /* UIViewAssists+constraints.swift */; };
+		BAC2889C219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2889B219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift */; };
 		BAC57666218B8F4900C735C6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC57665218B8F4900C735C6 /* Event.swift */; };
 		BAC57668218B906F00C735C6 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC57667218B906F00C735C6 /* Events.swift */; };
 		BAC5766A218B912600C735C6 /* DownloadEventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC57669218B912600C735C6 /* DownloadEventsInteractor.swift */; };
@@ -129,6 +136,11 @@
 		BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractor.swift; sourceTree = "<group>"; };
 		BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BA602D40218226C40075B64B /* ResponseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseApi.swift; sourceTree = "<group>"; };
+		BA65EDE6219ED28B00B26C96 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		BA65EDE7219ED28B00B26C96 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		BA65EDEA219F3B6E00B26C96 /* AssistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistsViewController.swift; sourceTree = "<group>"; };
+		BA65EDEB219F3B6E00B26C96 /* AssistsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssistsViewController.xib; sourceTree = "<group>"; };
+		BA65EDEE219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssistsViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
 		BAA6AE61218F74440029F421 /* SectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		BAA6AE62218F74440029F421 /* SectionHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverUserInteractor.swift; sourceTree = "<group>"; };
@@ -137,6 +149,8 @@
 		BAC173762190BCB4000A94A0 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 		BAC173792190CE7D000A94A0 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		BAC1737A2190CE7D000A94A0 /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
+		BAC28897219C3709000AA7B2 /* UIViewAssists+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewAssists+constraints.swift"; sourceTree = "<group>"; };
+		BAC2889B219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAssistsInteractorFakeImpl.swift; sourceTree = "<group>"; };
 		BAC57665218B8F4900C735C6 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		BAC57667218B906F00C735C6 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		BAC57669218B912600C735C6 /* DownloadEventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadEventsInteractor.swift; sourceTree = "<group>"; };
@@ -246,6 +260,8 @@
 				BA5CF7482180772700419990 /* NotificationsViewController.swift */,
 				BA5CF7472180772700419990 /* ProfileViewController.swift */,
 				BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */,
+				BA65EDEA219F3B6E00B26C96 /* AssistsViewController.swift */,
+				BA65EDEE219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -260,6 +276,7 @@
 				BA5CF7582180788A00419990 /* MapViewController.xib */,
 				BA5CF7542180788A00419990 /* NotificationsViewController.xib */,
 				BA5CF7552180788A00419990 /* ProfileViewController.xib */,
+				BA65EDEB219F3B6E00B26C96 /* AssistsViewController.xib */,
 				BA59882021768F100065D77D /* Assets.xcassets */,
 				BA59882221768F100065D77D /* LaunchScreen.storyboard */,
 			);
@@ -279,6 +296,7 @@
 				BAB1E285218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift */,
 				BAC57669218B912600C735C6 /* DownloadEventsInteractor.swift */,
 				BAC5766B218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift */,
+				BAC2889B219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -301,6 +319,7 @@
 				BA5CF74E2180777500419990 /* UIviewController+Additions.swift */,
 				BA5CF7622180D0D500419990 /* StringExtensions.swift */,
 				BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */,
+				BAC28897219C3709000AA7B2 /* UIViewAssists+constraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -316,6 +335,8 @@
 				BAC173762190BCB4000A94A0 /* FilterViewController.xib */,
 				BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */,
 				BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */,
+				BA65EDE6219ED28B00B26C96 /* EventTableViewCell.swift */,
+				BA65EDE7219ED28B00B26C96 /* EventTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -427,10 +448,12 @@
 			files = (
 				BA5CF75B2180788A00419990 /* ProfileViewController.xib in Resources */,
 				BA5CF75F2180788A00419990 /* RegisterViewController.xib in Resources */,
+				BA65EDED219F3B6E00B26C96 /* AssistsViewController.xib in Resources */,
 				BA59882421768F100065D77D /* LaunchScreen.storyboard in Resources */,
 				BA5CF75A2180788A00419990 /* NotificationsViewController.xib in Resources */,
 				BAC173782190BCB4000A94A0 /* FilterViewController.xib in Resources */,
 				BA59882121768F100065D77D /* Assets.xcassets in Resources */,
+				BA65EDE9219ED28B00B26C96 /* EventTableViewCell.xib in Resources */,
 				BAC1737C2190CE7D000A94A0 /* EventDetailViewController.xib in Resources */,
 				BAC57673218B97A200C735C6 /* EventCollectionViewCell.xib in Resources */,
 				BA5CF75E2180788A00419990 /* MapViewController.xib in Resources */,
@@ -462,12 +485,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ForEventsTests/Pods-ForEventsTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,12 +509,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ForEvents/Pods-ForEvents-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +567,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA65EDEF219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift in Sources */,
 				BAC5766C218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift in Sources */,
 				BAC57672218B97A200C735C6 /* EventCollectionViewCell.swift in Sources */,
 				BA602D382181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift in Sources */,
@@ -559,6 +587,7 @@
 				BAA6AE63218F74440029F421 /* SectionHeaderCollectionReusableView.swift in Sources */,
 				BA602D302181AD320075B64B /* User.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
+				BA65EDE8219ED28B00B26C96 /* EventTableViewCell.swift in Sources */,
 				BA5CF7492180772700419990 /* EventsViewController.swift in Sources */,
 				BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */,
 				BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */,
@@ -566,10 +595,13 @@
 				BA5F70BE21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift in Sources */,
 				BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */,
 				BAD7876D219B4406000A44EC /* ProfileViewController+ImagePickerController.swift in Sources */,
+				BAC2889C219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift in Sources */,
 				BA5CF74C2180772700419990 /* NotificationsViewController.swift in Sources */,
 				BA5CF74F2180777500419990 /* UIviewController+Additions.swift in Sources */,
 				BA5CF7432180769400419990 /* LoginViewController.swift in Sources */,
 				BA602D322181B6970075B64B /* ExecuteInteractor.swift in Sources */,
+				BA65EDEC219F3B6E00B26C96 /* AssistsViewController.swift in Sources */,
+				BAC28898219C3709000AA7B2 /* UIViewAssists+constraints.swift in Sources */,
 				BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */,
 				BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */,
 				BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */,

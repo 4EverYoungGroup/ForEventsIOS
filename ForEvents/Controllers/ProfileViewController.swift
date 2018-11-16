@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import CoreLocation
+import Parchment
 
 class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -52,6 +53,19 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        
+        //PageMenu
+        let firstViewController = AssistsViewController()
+        let secondViewController = AssistsViewController()
+        let thirdViewController = AssistsViewController()
+        
+        let viewControllers = [firstViewController, secondViewController, thirdViewController]
+        let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
+        addChild(pagingViewController)
+        view.addSubview(pagingViewController.view)
+        view.constrainToEdges(pagingViewController.view)
+        pagingViewController.didMove(toParent: self)
         
     }
     
@@ -71,7 +85,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    //MARK: - location delegate methods
+    //MARK: - location delegate methods to determine user location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation :CLLocation = locations[0] as CLLocation
         

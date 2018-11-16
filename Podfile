@@ -5,6 +5,7 @@ use_frameworks!
 def common_pods
     pod 'Firebase/Core'
     pod 'Kingfisher', '~> 4.0'
+    pod 'Parchment'
 end
 
 target 'ForEvents' do
