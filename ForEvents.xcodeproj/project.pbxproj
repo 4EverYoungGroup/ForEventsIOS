@@ -12,6 +12,7 @@
 		BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E2D972191AC63006D3CBD /* String+Image.swift */; };
 		BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */; };
 		BA1E2D9C21920878006D3CBD /* EventDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */; };
+		BA1F8E7A21A0128200037716 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F8E7921A0128200037716 /* CustomColors.swift */; };
 		BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47754121831E5E00B8AA40 /* UserLogin.swift */; };
 		BA4775442183225400B8AA40 /* LoginUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4775432183225400B8AA40 /* LoginUserInteractor.swift */; };
 		BA4775462183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4775452183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift */; };
@@ -96,6 +97,7 @@
 		BA1E2D972191AC63006D3CBD /* String+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
 		BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		BA1F8E7921A0128200037716 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		BA47754121831E5E00B8AA40 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		BA4775432183225400B8AA40 /* LoginUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractor.swift; sourceTree = "<group>"; };
 		BA4775452183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				BA5CF7602180CDDE00419990 /* Constants.swift */,
+				BA1F8E7921A0128200037716 /* CustomColors.swift */,
 				BA5CF7512180783400419990 /* Alerts.swift */,
 				BA5CF7502180783400419990 /* Typealias.swift */,
 				BA5CF73B21806C9F00419990 /* KeychainTokenItem.swift */,
@@ -592,6 +595,7 @@
 				BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */,
 				BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */,
 				BAC173772190BCB4000A94A0 /* FilterViewController.swift in Sources */,
+				BA1F8E7A21A0128200037716 /* CustomColors.swift in Sources */,
 				BA5F70BE21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift in Sources */,
 				BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */,
 				BAD7876D219B4406000A44EC /* ProfileViewController+ImagePickerController.swift in Sources */,

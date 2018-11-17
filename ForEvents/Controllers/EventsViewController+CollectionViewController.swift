@@ -38,7 +38,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if UIScreen.main.bounds.height > UIScreen.main.bounds.width {
             return CGSize(width: (UIScreen.main.bounds.width - 40), height: (200 * (UIScreen.main.bounds.width - 40)) / 300 )
         } else {
-            return CGSize(width: (collectionView.bounds.width - 50)/2, height: (200 * (collectionView.bounds.width - 50)/2) / 300 )
+            return CGSize(width: (UIScreen.main.bounds.width - 120)/2, height: (200 * (UIScreen.main.bounds.width - 120)/2) / 300 )
         }
     }
 

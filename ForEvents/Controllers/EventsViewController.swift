@@ -109,4 +109,8 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         filterButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "AvenirNext-Bold", size: 17)!], for: .normal)
         navigationItem.rightBarButtonItem = filterButton
     }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print(viewController)
+    }
 }

@@ -13,23 +13,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventCollectionViewCell" id="gTV-IL-0wX" customClass="EventCollectionViewCell" customModule="ForEvents" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="244"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="244"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kkz-TF-Sck">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="156"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evento de Prueba" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEG-V3-niF">
-                        <rect key="frame" x="0.0" y="201" width="300" height="24"/>
+                        <rect key="frame" x="0.0" y="157" width="300" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1Ze-9g-Jc2">
-                        <rect key="frame" x="3" y="223.5" width="294" height="20.5"/>
+                        <rect key="frame" x="3" y="179.5" width="294" height="20.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="12/12/2018 19:00 h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMR-YT-SaS">
                                 <rect key="frame" x="0.0" y="0.0" width="255.5" height="20.5"/>
@@ -65,7 +65,7 @@
                 <outlet property="eventImageCell" destination="kkz-TF-Sck" id="pUJ-rW-Ewj"/>
                 <outlet property="eventLabelCell" destination="FEG-V3-niF" id="QPh-XQ-bCm"/>
             </connections>
-            <point key="canvasLocation" x="11.199999999999999" y="138.53073463268368"/>
+            <point key="canvasLocation" x="10.144927536231885" y="137.94642857142856"/>
         </collectionViewCell>
     </objects>
 </document>

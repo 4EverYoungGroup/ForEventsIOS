@@ -53,19 +53,8 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
-        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
-        
-        //PageMenu
-        let firstViewController = AssistsViewController()
-        let secondViewController = AssistsViewController()
-        let thirdViewController = AssistsViewController()
-        
-        let viewControllers = [firstViewController, secondViewController, thirdViewController]
-        let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
-        addChild(pagingViewController)
-        view.addSubview(pagingViewController.view)
-        view.constrainToEdges(pagingViewController.view)
-        pagingViewController.didMove(toParent: self)
+        //Create PageMenu
+        self.createPageMenu()
         
     }
     
@@ -107,6 +96,28 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         self.userLocation.text = ""
         self.locationManager.stopUpdatingLocation()
+    }
+    
+    func createPageMenu() {
+        
+        //Add the viewcontrollers to pagemenu
+        let firstViewController = AssistsViewController()
+        let secondViewController = AssistsViewController()
+        let thirdViewController = AssistsViewController()
+        let viewControllers = [firstViewController, secondViewController, thirdViewController]
+        let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
+        //Configure pagemenu
+        pagingViewController.indicatorColor = CustomColors.orangeColor
+        pagingViewController.textColor = CustomColors.orangeColor
+        pagingViewController.selectedTextColor = .white
+        pagingViewController.backgroundColor = .black
+        pagingViewController.menuBackgroundColor = .black
+        pagingViewController.font = UIFont(name: "AvenirNext-Medium", size: 15)!
+        
+        addChild(pagingViewController)
+        view.addSubview(pagingViewController.view)
+        view.constrainToEdges(pagingViewController.view)
+        pagingViewController.didMove(toParent: self)
     }
     
 }

@@ -38,12 +38,8 @@ extension AssistsViewController: UICollectionViewDelegate, UICollectionViewDataS
         if UIScreen.main.bounds.height > UIScreen.main.bounds.width {
             return CGSize(width: (UIScreen.main.bounds.width - 40), height: (200 * (UIScreen.main.bounds.width - 40)) / 300 )
         } else {
-            return CGSize(width: (collectionView.bounds.width - 50)/2, height: (200 * (collectionView.bounds.width - 50)/2) / 300 )
+            return CGSize(width: (UIScreen.main.bounds.width - 150)/2, height: (200 * (UIScreen.main.bounds.width - 150)/2) / 300 )
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 50)
     }
     
 }

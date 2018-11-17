@@ -22,24 +22,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="atf-YC-LgD">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="15" y="44" width="384" height="852"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pQw-2u-efF">
-                        <size key="itemSize" width="50" height="50"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="5" id="pQw-2u-efF">
+                        <size key="itemSize" width="300" height="200"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
             <constraints>
-                <constraint firstItem="atf-YC-LgD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="JHq-Bk-d1c"/>
-                <constraint firstItem="atf-YC-LgD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JM4-4N-Suw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="atf-YC-LgD" secondAttribute="bottom" id="ckn-sD-xCg"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="atf-YC-LgD" secondAttribute="trailing" id="ctf-lC-lu4"/>
+                <constraint firstItem="atf-YC-LgD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="JM4-4N-Suw"/>
+                <constraint firstAttribute="bottom" secondItem="atf-YC-LgD" secondAttribute="bottom" id="ckn-sD-xCg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="atf-YC-LgD" secondAttribute="trailing" constant="15" id="ctf-lC-lu4"/>
+                <constraint firstItem="atf-YC-LgD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rNg-qX-M10"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
 </document>
