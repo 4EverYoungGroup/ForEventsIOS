@@ -6,7 +6,7 @@ def common_pods
     pod 'Firebase/Core'
     pod 'Kingfisher', '~> 4.0'
     pod 'Parchment'
-    pod 'KDCalendar', '~> 1.6.5'
+    pod 'VACalendar'
 end
 
 target 'ForEvents' do

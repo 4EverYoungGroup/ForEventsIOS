@@ -43,7 +43,6 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.3.2):
     - GoogleUtilities/Logger
-  - KDCalendar (1.6.5)
   - Kingfisher (4.10.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -51,12 +50,13 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Parchment (1.4.1)
+  - VACalendar (1.3)
 
 DEPENDENCIES:
   - Firebase/Core
-  - KDCalendar (~> 1.6.5)
   - Kingfisher (~> 4.0)
   - Parchment
+  - VACalendar
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -66,10 +66,10 @@ SPEC REPOS:
     - FirebaseInstanceID
     - GoogleAppMeasurement
     - GoogleUtilities
-    - KDCalendar
     - Kingfisher
     - nanopb
     - Parchment
+    - VACalendar
 
 SPEC CHECKSUMS:
   Firebase: 6691d47562a780c26281ce8464518faafc90c610
@@ -78,11 +78,11 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 78ba376fcd5b94c001f9999b2cbd3d1f1e56e78d
   GoogleAppMeasurement: 2b3a023a61239c8d002e6e4fcf4abce8eddce0e0
   GoogleUtilities: 82f04aeff8426309dbdbc75f6c8accd1e584a5da
-  KDCalendar: 15e74f37bd3d206bf7549c594fd08e0347c276f4
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Parchment: e6c2a3a0063739382dd207e21d48fe5e81f3324a
+  VACalendar: 3e5a001cbf437ebed2bcfc747f3187e555d65175
 
-PODFILE CHECKSUM: 6bd621c9c0ce535173224cd207917a8f2e443ecf
+PODFILE CHECKSUM: 4ddfb3484c8e17e3ba4508aa0b1829fbdd2f87d8
 
 COCOAPODS: 1.5.3

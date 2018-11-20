@@ -12,15 +12,40 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarViewController" customModule="ForEvents" customModuleProvider="target">
             <connections>
+                <outlet property="monthHeaderView" destination="MBB-63-mRF" id="ydF-cy-Unf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weekDaysView" destination="wxf-8X-yBQ" id="hkj-Q6-A1l"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBB-63-mRF" customClass="VAMonthHeaderView" customModule="VACalendar">
+                    <rect key="frame" x="0.0" y="54" width="414" height="40"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxf-8X-yBQ" customClass="VAWeekDaysView" customModule="VACalendar">
+                    <rect key="frame" x="0.0" y="94" width="414" height="50"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="wXo-RS-aWY"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="wxf-8X-yBQ" firstAttribute="top" secondItem="MBB-63-mRF" secondAttribute="bottom" id="1p8-H4-MH5"/>
+                <constraint firstItem="MBB-63-mRF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3HG-en-TtF"/>
+                <constraint firstItem="MBB-63-mRF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="3xd-TS-Thq"/>
+                <constraint firstItem="wxf-8X-yBQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7eQ-Do-tqB"/>
+                <constraint firstItem="wxf-8X-yBQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="TH9-jD-f87"/>
+                <constraint firstItem="MBB-63-mRF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kUu-QH-qYA"/>
+                <constraint firstItem="wxf-8X-yBQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="tL9-NR-PuK"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </view>
     </objects>
 </document>
