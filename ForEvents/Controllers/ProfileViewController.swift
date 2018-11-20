@@ -32,6 +32,9 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         //Set title
         title = "Perfil"
         
+        //Configure edit Button
+        self.configureEditProfile()
+        
         //Configure button circular
         userButton.layer.cornerRadius = 0.5 * userButton.bounds.size.width
         userButton.clipsToBounds = true
@@ -102,8 +105,8 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         
         //Add the viewcontrollers to pagemenu
         let firstViewController = AssistsViewController()
-        let secondViewController = AssistsViewController()
-        let thirdViewController = AssistsViewController()
+        let secondViewController = SearchesViewController()
+        let thirdViewController = NotificationsViewController()
         let viewControllers = [firstViewController, secondViewController, thirdViewController]
         let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
         //Configure pagemenu
@@ -119,6 +122,19 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         view.constrainToEdges(pagingViewController.view)
         pagingViewController.didMove(toParent: self)
     }
+    
+    func configureEditProfile() {
+        var editButton: UIBarButtonItem = UIBarButtonItem()
+        editButton = UIBarButtonItem(title: "Editar", style: .plain, target: self, action: #selector(editTapped))
+        editButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "AvenirNext-Bold", size: 17)!], for: .normal)
+        navigationItem.rightBarButtonItem = editButton
+    }
+    
+    @objc func editTapped() {
+        let registerViewController = RegisterViewController()
+        navigationController?.pushViewController(registerViewController, animated: true)
+    }
+    
     
 }
 

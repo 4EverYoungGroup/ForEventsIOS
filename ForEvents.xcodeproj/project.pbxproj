@@ -13,6 +13,8 @@
 		BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */; };
 		BA1E2D9C21920878006D3CBD /* EventDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */; };
 		BA1F8E7A21A0128200037716 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F8E7921A0128200037716 /* CustomColors.swift */; };
+		BA20100D21A3FF1D008425CB /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20100B21A3FF1D008425CB /* NotificationsViewController.swift */; };
+		BA20100E21A3FF1D008425CB /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA20100C21A3FF1D008425CB /* NotificationsViewController.xib */; };
 		BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47754121831E5E00B8AA40 /* UserLogin.swift */; };
 		BA4775442183225400B8AA40 /* LoginUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4775432183225400B8AA40 /* LoginUserInteractor.swift */; };
 		BA4775462183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4775452183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift */; };
@@ -23,6 +25,14 @@
 		BA59882F21768F100065D77D /* ForEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59882E21768F100065D77D /* ForEventsTests.swift */; };
 		BA59883A217690C60065D77D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BA598839217690C60065D77D /* Podfile */; };
 		BA59883C217691340065D77D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA59883B217691340065D77D /* GoogleService-Info.plist */; };
+		BA5C730D21A2D91400CE40EB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C730C21A2D91400CE40EB /* DateExtensions.swift */; };
+		BA5C731021A32F1700CE40EB /* SearchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C730E21A32F1700CE40EB /* SearchesViewController.swift */; };
+		BA5C731121A32F1700CE40EB /* SearchesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5C730F21A32F1700CE40EB /* SearchesViewController.xib */; };
+		BA5C731321A33D1F00CE40EB /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C731221A33D1F00CE40EB /* Search.swift */; };
+		BA5C731521A33DBD00CE40EB /* Searches.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C731421A33DBD00CE40EB /* Searches.swift */; };
+		BA5C731721A33E6100CE40EB /* DownloadSearchesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C731621A33E6100CE40EB /* DownloadSearchesInteractor.swift */; };
+		BA5C731921A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C731821A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift */; };
+		BA5C731B21A3424600CE40EB /* SearchesViewController+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C731A21A3424600CE40EB /* SearchesViewController+TableViewController.swift */; };
 		BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF73B21806C9F00419990 /* KeychainTokenItem.swift */; };
 		BA5CF73E21806F8A00419990 /* ValidateToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF73D21806F8A00419990 /* ValidateToken.swift */; };
 		BA5CF7432180769400419990 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7412180769400419990 /* LoginViewController.swift */; };
@@ -30,11 +40,11 @@
 		BA5CF7492180772700419990 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7452180772700419990 /* EventsViewController.swift */; };
 		BA5CF74A2180772700419990 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7462180772700419990 /* MapViewController.swift */; };
 		BA5CF74B2180772700419990 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7472180772700419990 /* ProfileViewController.swift */; };
-		BA5CF74C2180772700419990 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7482180772700419990 /* NotificationsViewController.swift */; };
+		BA5CF74C2180772700419990 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7482180772700419990 /* CalendarViewController.swift */; };
 		BA5CF74F2180777500419990 /* UIviewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF74E2180777500419990 /* UIviewController+Additions.swift */; };
 		BA5CF7522180783400419990 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7502180783400419990 /* Typealias.swift */; };
 		BA5CF7532180783400419990 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF7512180783400419990 /* Alerts.swift */; };
-		BA5CF75A2180788A00419990 /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5CF7542180788A00419990 /* NotificationsViewController.xib */; };
+		BA5CF75A2180788A00419990 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5CF7542180788A00419990 /* CalendarViewController.xib */; };
 		BA5CF75B2180788A00419990 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5CF7552180788A00419990 /* ProfileViewController.xib */; };
 		BA5CF75C2180788A00419990 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5CF7562180788A00419990 /* LoginViewController.xib */; };
 		BA5CF75D2180788A00419990 /* EventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5CF7572180788A00419990 /* EventsViewController.xib */; };
@@ -49,8 +59,8 @@
 		BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */; };
 		BA602D382181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */; };
 		BA602D41218226C40075B64B /* ResponseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602D40218226C40075B64B /* ResponseApi.swift */; };
-		BA65EDE8219ED28B00B26C96 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65EDE6219ED28B00B26C96 /* EventTableViewCell.swift */; };
-		BA65EDE9219ED28B00B26C96 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA65EDE7219ED28B00B26C96 /* EventTableViewCell.xib */; };
+		BA65EDE8219ED28B00B26C96 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65EDE6219ED28B00B26C96 /* SearchTableViewCell.swift */; };
+		BA65EDE9219ED28B00B26C96 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA65EDE7219ED28B00B26C96 /* SearchTableViewCell.xib */; };
 		BA65EDEC219F3B6E00B26C96 /* AssistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65EDEA219F3B6E00B26C96 /* AssistsViewController.swift */; };
 		BA65EDED219F3B6E00B26C96 /* AssistsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA65EDEB219F3B6E00B26C96 /* AssistsViewController.xib */; };
 		BA65EDEF219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65EDEE219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift */; };
@@ -98,6 +108,8 @@
 		BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		BA1F8E7921A0128200037716 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		BA20100B21A3FF1D008425CB /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		BA20100C21A3FF1D008425CB /* NotificationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
 		BA47754121831E5E00B8AA40 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		BA4775432183225400B8AA40 /* LoginUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractor.swift; sourceTree = "<group>"; };
 		BA4775452183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
@@ -112,6 +124,14 @@
 		BA59883021768F100065D77D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA598839217690C60065D77D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BA59883B217691340065D77D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA5C730C21A2D91400CE40EB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		BA5C730E21A32F1700CE40EB /* SearchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchesViewController.swift; sourceTree = "<group>"; };
+		BA5C730F21A32F1700CE40EB /* SearchesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchesViewController.xib; sourceTree = "<group>"; };
+		BA5C731221A33D1F00CE40EB /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		BA5C731421A33DBD00CE40EB /* Searches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searches.swift; sourceTree = "<group>"; };
+		BA5C731621A33E6100CE40EB /* DownloadSearchesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSearchesInteractor.swift; sourceTree = "<group>"; };
+		BA5C731821A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSearchesInteractorFakeImpl.swift; sourceTree = "<group>"; };
+		BA5C731A21A3424600CE40EB /* SearchesViewController+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchesViewController+TableViewController.swift"; sourceTree = "<group>"; };
 		BA5CF73B21806C9F00419990 /* KeychainTokenItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainTokenItem.swift; sourceTree = "<group>"; };
 		BA5CF73D21806F8A00419990 /* ValidateToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateToken.swift; sourceTree = "<group>"; };
 		BA5CF7412180769400419990 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -119,11 +139,11 @@
 		BA5CF7452180772700419990 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		BA5CF7462180772700419990 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BA5CF7472180772700419990 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		BA5CF7482180772700419990 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		BA5CF7482180772700419990 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BA5CF74E2180777500419990 /* UIviewController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIviewController+Additions.swift"; sourceTree = "<group>"; };
 		BA5CF7502180783400419990 /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		BA5CF7512180783400419990 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
-		BA5CF7542180788A00419990 /* NotificationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
+		BA5CF7542180788A00419990 /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		BA5CF7552180788A00419990 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		BA5CF7562180788A00419990 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BA5CF7572180788A00419990 /* EventsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsViewController.xib; sourceTree = "<group>"; };
@@ -138,8 +158,8 @@
 		BA602D352181BBC40075B64B /* RegisterUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractor.swift; sourceTree = "<group>"; };
 		BA602D372181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BA602D40218226C40075B64B /* ResponseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseApi.swift; sourceTree = "<group>"; };
-		BA65EDE6219ED28B00B26C96 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		BA65EDE7219ED28B00B26C96 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		BA65EDE6219ED28B00B26C96 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		BA65EDE7219ED28B00B26C96 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		BA65EDEA219F3B6E00B26C96 /* AssistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistsViewController.swift; sourceTree = "<group>"; };
 		BA65EDEB219F3B6E00B26C96 /* AssistsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssistsViewController.xib; sourceTree = "<group>"; };
 		BA65EDEE219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssistsViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
@@ -260,11 +280,14 @@
 				BA5F70BD21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift */,
 				BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */,
 				BA5CF7462180772700419990 /* MapViewController.swift */,
-				BA5CF7482180772700419990 /* NotificationsViewController.swift */,
+				BA5CF7482180772700419990 /* CalendarViewController.swift */,
 				BA5CF7472180772700419990 /* ProfileViewController.swift */,
 				BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */,
 				BA65EDEA219F3B6E00B26C96 /* AssistsViewController.swift */,
 				BA65EDEE219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift */,
+				BA5C730E21A32F1700CE40EB /* SearchesViewController.swift */,
+				BA5C731A21A3424600CE40EB /* SearchesViewController+TableViewController.swift */,
+				BA20100B21A3FF1D008425CB /* NotificationsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -277,9 +300,11 @@
 				BA5CF7572180788A00419990 /* EventsViewController.xib */,
 				BAC1737A2190CE7D000A94A0 /* EventDetailViewController.xib */,
 				BA5CF7582180788A00419990 /* MapViewController.xib */,
-				BA5CF7542180788A00419990 /* NotificationsViewController.xib */,
+				BA5CF7542180788A00419990 /* CalendarViewController.xib */,
 				BA5CF7552180788A00419990 /* ProfileViewController.xib */,
 				BA65EDEB219F3B6E00B26C96 /* AssistsViewController.xib */,
+				BA5C730F21A32F1700CE40EB /* SearchesViewController.xib */,
+				BA20100C21A3FF1D008425CB /* NotificationsViewController.xib */,
 				BA59882021768F100065D77D /* Assets.xcassets */,
 				BA59882221768F100065D77D /* LaunchScreen.storyboard */,
 			);
@@ -300,6 +325,8 @@
 				BAC57669218B912600C735C6 /* DownloadEventsInteractor.swift */,
 				BAC5766B218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift */,
 				BAC2889B219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift */,
+				BA5C731621A33E6100CE40EB /* DownloadSearchesInteractor.swift */,
+				BA5C731821A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -312,6 +339,8 @@
 				BA602D40218226C40075B64B /* ResponseApi.swift */,
 				BAC57665218B8F4900C735C6 /* Event.swift */,
 				BAC57667218B906F00C735C6 /* Events.swift */,
+				BA5C731221A33D1F00CE40EB /* Search.swift */,
+				BA5C731421A33DBD00CE40EB /* Searches.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,6 +352,7 @@
 				BA5CF7622180D0D500419990 /* StringExtensions.swift */,
 				BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */,
 				BAC28897219C3709000AA7B2 /* UIViewAssists+constraints.swift */,
+				BA5C730C21A2D91400CE40EB /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -338,8 +368,8 @@
 				BAC173762190BCB4000A94A0 /* FilterViewController.xib */,
 				BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */,
 				BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */,
-				BA65EDE6219ED28B00B26C96 /* EventTableViewCell.swift */,
-				BA65EDE7219ED28B00B26C96 /* EventTableViewCell.xib */,
+				BA65EDE6219ED28B00B26C96 /* SearchTableViewCell.swift */,
+				BA65EDE7219ED28B00B26C96 /* SearchTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -452,11 +482,13 @@
 				BA5CF75B2180788A00419990 /* ProfileViewController.xib in Resources */,
 				BA5CF75F2180788A00419990 /* RegisterViewController.xib in Resources */,
 				BA65EDED219F3B6E00B26C96 /* AssistsViewController.xib in Resources */,
+				BA20100E21A3FF1D008425CB /* NotificationsViewController.xib in Resources */,
 				BA59882421768F100065D77D /* LaunchScreen.storyboard in Resources */,
-				BA5CF75A2180788A00419990 /* NotificationsViewController.xib in Resources */,
+				BA5CF75A2180788A00419990 /* CalendarViewController.xib in Resources */,
 				BAC173782190BCB4000A94A0 /* FilterViewController.xib in Resources */,
 				BA59882121768F100065D77D /* Assets.xcassets in Resources */,
-				BA65EDE9219ED28B00B26C96 /* EventTableViewCell.xib in Resources */,
+				BA65EDE9219ED28B00B26C96 /* SearchTableViewCell.xib in Resources */,
+				BA5C731121A32F1700CE40EB /* SearchesViewController.xib in Resources */,
 				BAC1737C2190CE7D000A94A0 /* EventDetailViewController.xib in Resources */,
 				BAC57673218B97A200C735C6 /* EventCollectionViewCell.xib in Resources */,
 				BA5CF75E2180788A00419990 /* MapViewController.xib in Resources */,
@@ -487,6 +519,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ForEventsTests/Pods-ForEventsTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KDCalendar/KDCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -494,6 +527,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KDCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -511,6 +545,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ForEvents/Pods-ForEvents-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KDCalendar/KDCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -518,6 +553,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KDCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -570,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA5C730D21A2D91400CE40EB /* DateExtensions.swift in Sources */,
 				BA65EDEF219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift in Sources */,
 				BAC5766C218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift in Sources */,
 				BAC57672218B97A200C735C6 /* EventCollectionViewCell.swift in Sources */,
@@ -581,16 +618,19 @@
 				BA5CF73E21806F8A00419990 /* ValidateToken.swift in Sources */,
 				BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */,
 				BAB1E286218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift in Sources */,
+				BA5C731021A32F1700CE40EB /* SearchesViewController.swift in Sources */,
 				BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */,
 				BAC5766A218B912600C735C6 /* DownloadEventsInteractor.swift in Sources */,
 				BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */,
 				BAF74D7221936FEE00E731DC /* EventAnnotation.swift in Sources */,
+				BA5C731921A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift in Sources */,
 				BA477548218378BC00B8AA40 /* createTabBar.swift in Sources */,
 				BAC57666218B8F4900C735C6 /* Event.swift in Sources */,
 				BAA6AE63218F74440029F421 /* SectionHeaderCollectionReusableView.swift in Sources */,
 				BA602D302181AD320075B64B /* User.swift in Sources */,
+				BA5C731321A33D1F00CE40EB /* Search.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
-				BA65EDE8219ED28B00B26C96 /* EventTableViewCell.swift in Sources */,
+				BA65EDE8219ED28B00B26C96 /* SearchTableViewCell.swift in Sources */,
 				BA5CF7492180772700419990 /* EventsViewController.swift in Sources */,
 				BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */,
 				BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */,
@@ -599,8 +639,9 @@
 				BA5F70BE21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift in Sources */,
 				BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */,
 				BAD7876D219B4406000A44EC /* ProfileViewController+ImagePickerController.swift in Sources */,
+				BA5C731721A33E6100CE40EB /* DownloadSearchesInteractor.swift in Sources */,
 				BAC2889C219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift in Sources */,
-				BA5CF74C2180772700419990 /* NotificationsViewController.swift in Sources */,
+				BA5CF74C2180772700419990 /* CalendarViewController.swift in Sources */,
 				BA5CF74F2180777500419990 /* UIviewController+Additions.swift in Sources */,
 				BA5CF7432180769400419990 /* LoginViewController.swift in Sources */,
 				BA602D322181B6970075B64B /* ExecuteInteractor.swift in Sources */,
@@ -608,9 +649,12 @@
 				BAC28898219C3709000AA7B2 /* UIViewAssists+constraints.swift in Sources */,
 				BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */,
 				BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */,
+				BA5C731521A33DBD00CE40EB /* Searches.swift in Sources */,
 				BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */,
 				BAC1737B2190CE7D000A94A0 /* EventDetailViewController.swift in Sources */,
 				BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */,
+				BA20100D21A3FF1D008425CB /* NotificationsViewController.swift in Sources */,
+				BA5C731B21A3424600CE40EB /* SearchesViewController+TableViewController.swift in Sources */,
 				BA5CF7532180783400419990 /* Alerts.swift in Sources */,
 				BA5CF74B2180772700419990 /* ProfileViewController.swift in Sources */,
 				BA5CF7612180CDDE00419990 /* Constants.swift in Sources */,

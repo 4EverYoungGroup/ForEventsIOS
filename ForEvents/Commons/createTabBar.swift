@@ -35,7 +35,7 @@ func createEventsTabBar() -> UITabBarController {
     //Configure EventsTabBarController
     let firstVC = EventsViewController().wrappedInNavigation()
     let secondVC = MapViewController().wrappedInNavigation()
-    let thirdVC = NotificationsViewController().wrappedInNavigation()
+    let thirdVC = CalendarViewController().wrappedInNavigation()
     let fourthVC = ProfileViewController().wrappedInNavigation()
     
     let tabBarList = UITabBarController()
