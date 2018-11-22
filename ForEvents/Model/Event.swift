@@ -14,6 +14,7 @@ public class Event {
     var latitude: Float? = nil
     var longitude: Float? = nil
     var images: [String] = []
+    var eventDate: Date? = nil
     
     public init(name: String) {
         self.name = name

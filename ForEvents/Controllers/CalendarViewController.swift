@@ -8,6 +8,10 @@
 
 import UIKit
 import VACalendar
+import Parchment
+
+let DayDidChangeNotificationName = "DayDidChange"
+let DayKey = "DayKey"
 
 class CalendarViewController: UIViewController {
     
@@ -53,23 +57,11 @@ class CalendarViewController: UIViewController {
         //Set title
         title = "Calendario de eventos"
         
-        let calendar = VACalendar(calendar: defaultCalendar)
-        calendarView = VACalendarView(frame: .zero, calendar: calendar)
-        calendarView.showDaysOut = true
-        calendarView.selectionStyle = .single
-        calendarView.monthDelegate = monthHeaderView
-        calendarView.dayViewAppearanceDelegate = self
-        calendarView.monthViewAppearanceDelegate = self
-        calendarView.calendarDelegate = self
-        calendarView.scrollDirection = .horizontal
-        calendarView.setSupplementaries([
-            (Date(), [VADaySupplementary.bottomDots([.green, .magenta])]),
-            (Date().addingTimeInterval((60 * 60 * 40)), [VADaySupplementary.bottomDots([.cyan])]),
-            (Date().addingTimeInterval((60 * 60 * 80)), [VADaySupplementary.bottomDots([.red])]),
-            (Date().addingTimeInterval((60 * 60 * 370)), [VADaySupplementary.bottomDots([.blue, .darkGray])]),
-            (Date().addingTimeInterval((60 * 60 * 430)), [VADaySupplementary.bottomDots([.orange, .purple, .cyan])])
-            ])
-        view.addSubview(calendarView)
+        //Create calendar
+        self.createCalendar()
+        
+        //Create PageMenu
+        self.createPageMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,9 +85,53 @@ class CalendarViewController: UIViewController {
         }
     }
     
-    @IBAction func changeMode(_ sender: Any) {
+    func createCalendar() {
+        let calendar = VACalendar(calendar: defaultCalendar)
+        calendarView = VACalendarView(frame: .zero, calendar: calendar)
+        calendarView.showDaysOut = true
+        calendarView.selectionStyle = .single
+        calendarView.monthDelegate = monthHeaderView
+        calendarView.dayViewAppearanceDelegate = self
+        calendarView.monthViewAppearanceDelegate = self
+        calendarView.calendarDelegate = self
+        calendarView.scrollDirection = .horizontal
         calendarView.changeViewType()
+        self.createEventsDays()
+        
+        view.addSubview(calendarView)
     }
+    
+    func createEventsDays() {
+        let events = Global.events
+        if let numberEvents = events?.count() {
+            for i in 0..<numberEvents {
+                let event : Event = ((Global.events?.get(index: i))!)
+                calendarView.setSupplementaries([
+                    (event.eventDate!, [VADaySupplementary.bottomDots([.cyan])])])
+            }
+        }
+    }
+    
+    func createPageMenu() {
+        //Add the viewcontrollers to pagemenu
+        let firstViewController = EventsDayViewController()
+        //firstViewController.eventsDay = Date()
+        let viewControllers = [firstViewController]
+        let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
+        //Configure pagemenu
+        pagingViewController.indicatorColor = CustomColors.orangeColor
+        pagingViewController.textColor = CustomColors.orangeColor
+        pagingViewController.selectedTextColor = .white
+        pagingViewController.backgroundColor = .black
+        pagingViewController.menuBackgroundColor = .black
+        pagingViewController.font = UIFont(name: "AvenirNext-Medium", size: 15)!
+        
+        addChild(pagingViewController)
+        view.addSubview(pagingViewController.view)
+        view.constrainToEdges(pagingViewController.view)
+        pagingViewController.didMove(toParent: self)
+    }
+    
 }
 
 extension CalendarViewController: VAMonthHeaderViewDelegate {
@@ -178,6 +214,12 @@ extension CalendarViewController: VACalendarViewDelegate {
     func selectedDates(_ dates: [Date]) {
         calendarView.startDate = dates.last ?? Date()
         print(dates)
+        if dates.count > 0 {
+            //Send day selected notifications for update collectionView
+            let notificationCenter = NotificationCenter.default
+            let notification = Notification(name: Notification.Name(DayDidChangeNotificationName), object: self, userInfo: [DayKey: dates.last ?? Date()])
+            notificationCenter.post(notification)
+        }
     }
     
 }

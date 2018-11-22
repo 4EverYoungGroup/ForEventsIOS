@@ -14,6 +14,7 @@ class EventCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var eventLabelCell: UILabel!
     @IBOutlet weak var eventImageCell: UIImageView!
+    @IBOutlet weak var eventDateCell: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,14 @@ class EventCollectionViewCell: UICollectionViewCell {
         self.eventLabelCell.text = event.name
         let url = URL(string: event.images[0])
         eventImageCell.kf.setImage(with: url)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy HH:mm"
+        if let date = event.eventDate {
+            let day = formatter.string(from: date)
+            self.eventDateCell.text = "\(day) h"
+        } else {
+            let day = ""
+            self.eventDateCell.text = "\(day) h"
+        }
     }
-
 }

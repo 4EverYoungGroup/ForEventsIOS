@@ -40,22 +40,21 @@ class AssistsViewController: UIViewController {
         ExecuteInteractorImpl().execute {
             assistsDownload()
         }
+    }
+    
+    func assistsDownload() {
+        let downloadEventsInteractor: DownloadEventsInteractor = DownloadAssistsInteractorFakeImpl()
         
-        func assistsDownload() {
-            let downloadEventsInteractor: DownloadEventsInteractor = DownloadAssistsInteractorFakeImpl()
+        downloadEventsInteractor.execute { (events: Events) in
+            // Todo OK
+            self.events = events
             
-            downloadEventsInteractor.execute { (events: Events) in
-                // Todo OK
-                self.events = events
-                
-                self.assistsCollectionView.collectionViewLayout.invalidateLayout()
-                self.assistsCollectionView.delegate = self
-                self.assistsCollectionView.dataSource = self
-                self.assistsCollectionView.reloadData()
-                
-            }
+            self.assistsCollectionView.collectionViewLayout.invalidateLayout()
+            self.assistsCollectionView.delegate = self
+            self.assistsCollectionView.dataSource = self
+            self.assistsCollectionView.reloadData()
+            
         }
-        
     }
     
 }
