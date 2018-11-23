@@ -96,7 +96,7 @@ class LoginViewController: UIViewController {
         
         loginUserInteractor.execute(user: userLogin) { (userLogin: UserLogin?, responseApi: ResponseApi?) in
             if userLogin == nil {
-                let message = responseApi!.message
+                guard let message = responseApi!.message else { return }
                 let alert = Alerts().alert(title: Constants.loginTitle, message: message)
                 self.userTextField.becomeFirstResponder()
                 self.present(alert, animated: true, completion: nil)
@@ -126,7 +126,7 @@ class LoginViewController: UIViewController {
                 self.userTextField.becomeFirstResponder()
                 self.present(alert, animated: true, completion: nil)
             } else {
-                let message = responseApi!.message
+                guard let message = responseApi!.message else { return }
                 let alert = Alerts().alert(title: Constants.loginTitle, message: message)
                 self.userTextField.becomeFirstResponder()
                 self.present(alert, animated: true, completion: nil)

@@ -29,6 +29,7 @@ class RegisterUserInteractorNSURLSessionImpl: RegisterUserInteractor {
         let encoder = JSONEncoder()
         do {
             let jsonData = try encoder.encode(user)
+            //print(String(data: jsonData, encoding: .utf8)!)
             // ... and set our request's HTTP body
             request.httpBody = jsonData
         } catch {
@@ -54,6 +55,7 @@ class RegisterUserInteractorNSURLSessionImpl: RegisterUserInteractor {
                                 data!)
                             onSuccess(responseApi)
                         } catch let parsingError {
+                            //TODO alert with error
                             print("Error", parsingError)
                         }
                     }

@@ -10,6 +10,13 @@ import Foundation
 
 struct ResponseApi: Codable {
     let ok: Bool
-    let message: String
+    let errors: [ErrorDescription]?
+    let message: String?
 }
+
+struct ErrorDescription: Codable {
+    let field: String?
+    let message: String?
+}
+
 

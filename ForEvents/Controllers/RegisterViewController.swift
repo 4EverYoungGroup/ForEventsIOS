@@ -16,6 +16,15 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var psw1TextField: UITextField!
     @IBOutlet weak var psw2TextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var lastnameTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var provinceTextField: UITextField!
+    @IBOutlet weak var countryTextField: UITextField!
+    @IBOutlet weak var zipCodeTextField: UITextField!
+    @IBOutlet weak var aliasTextField: UITextField!
+    @IBOutlet weak var genderSegmented: UISegmentedControl!
+    
+    var gender: String = "H"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +84,9 @@ class RegisterViewController: UIViewController {
     }
     
     func registerUser() {
-        let user = User(email: userTextField.text!, password: psw1TextField.text!, firstname: nameTextField.text!)
+        
+        let user = User(email: userTextField.text!, password: psw1TextField.text!, firstname: nameTextField.text!, profile: "User", lastname: lastnameTextField.text ?? nil, country: countryTextField.text ?? nil, province: provinceTextField.text ?? nil, zipCode: zipCodeTextField.text ?? nil, city: nil, alias: aliasTextField.text ?? nil, gender: gender, birthdayDate: nil)
+        
         let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorNSURLSessionImpl()
         
         registerUserInteractor.execute(user: user) { (responseApi: ResponseApi?) in
@@ -84,7 +95,7 @@ class RegisterViewController: UIViewController {
                 UserDefaults.standard.setValue(self.userTextField.text, forKey: Constants.username)
                 self.tabBarController?.selectedIndex = 0
             } else {
-                let message = responseApi!.message
+                guard let message = responseApi!.errors![0].message else { return }
                 let alert = Alerts().alert(title: Constants.regTitle, message: message)
                 self.nameTextField.becomeFirstResponder()
                 self.present(alert, animated: true, completion: nil)
@@ -95,4 +106,18 @@ class RegisterViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    @IBAction func genderSegmentPress(_ sender: UISegmentedControl) {
+        switch genderSegmented.selectedSegmentIndex {
+        case 0:
+            gender = "M"
+        case 1:
+            gender = "F"
+        case 2:
+            gender = "O"
+        default:
+            break
+        }
+    }
+    
 }

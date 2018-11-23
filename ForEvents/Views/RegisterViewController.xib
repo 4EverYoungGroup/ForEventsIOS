@@ -12,11 +12,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="ForEvents" customModuleProvider="target">
             <connections>
+                <outlet property="aliasTextField" destination="N7M-zV-iQd" id="vA3-wT-zvr"/>
+                <outlet property="cityTextField" destination="eXy-Cn-Eep" id="Rhv-sc-SMm"/>
+                <outlet property="countryTextField" destination="VuK-0l-MDy" id="q57-v7-wIR"/>
+                <outlet property="genderSegmented" destination="Ddl-Ur-j5f" id="lgR-nC-UDH"/>
+                <outlet property="lastnameTextField" destination="lfO-kv-0RU" id="8IX-ch-qBP"/>
                 <outlet property="nameTextField" destination="LAu-4K-Nkp" id="vjn-FM-VbV"/>
+                <outlet property="provinceTextField" destination="Pc9-l8-v93" id="g8Q-zJ-TsJ"/>
                 <outlet property="psw1TextField" destination="hX3-ka-59o" id="xhF-Y4-CgD"/>
                 <outlet property="psw2TextField" destination="ELi-vC-g37" id="zKv-7p-ULL"/>
                 <outlet property="userTextField" destination="SUA-m5-hm9" id="5OR-wP-qdg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="zipCodeTextField" destination="pZL-Lh-jde" id="tun-bc-RHy"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -159,8 +166,12 @@
                                     <segments>
                                         <segment title="Hombre"/>
                                         <segment title="Mujer"/>
+                                        <segment title="Otro"/>
                                     </segments>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="genderSegmentPress:" destination="-1" eventType="valueChanged" id="rdA-Qj-fRx"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                         </stackView>
