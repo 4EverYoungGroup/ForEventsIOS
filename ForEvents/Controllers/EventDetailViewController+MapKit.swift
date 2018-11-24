@@ -36,7 +36,7 @@ extension EventDetailViewController: CLLocationManagerDelegate, MKMapViewDelegat
         }
         
         // An identifier is created for the pin
-        let pinID = "shopPin"
+        let pinID = "eventPin"
         
         // Asked to assign an annotation to the pin
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: pinID)

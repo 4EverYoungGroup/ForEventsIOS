@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class EventsViewController: UIViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
+class EventsViewController: UIViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     
@@ -18,15 +18,15 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
     var resultSearchController : UISearchController!
     
     let locationManager = CLLocationManager()
+    var locationAuth: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        locationManager.delegate = self
+        
         //Set title
         title = "Eventos"
-        
-        //Request location Authorization
-        self.locationManager.requestWhenInUseAuthorization()
         
         //Configure searchBar
         self.configureSearch()
@@ -34,6 +34,22 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         //Configure filter Button
         self.configureFilter()
         
+        //Validate location Authorization
+        self.validateLocationAuthorization()
+        
+        if  locationAuth == true {
+            self.startEvents()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //Configure navigationBar opaque and black, status bar white
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.barStyle = .blackTranslucent
+    }
+    
+    func startEvents() {
         //Configure activity indicator
         view.addSubview(activityIndicator)
         activityIndicator.frame = view.bounds
@@ -48,14 +64,6 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         ExecuteInteractorImpl().execute {
             eventsDownload()
         }
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //Configure navigationBar opaque and black, status bar white
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.barStyle = .blackTranslucent
     }
 
     func eventsDownload() {
@@ -112,5 +120,68 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         print(viewController)
+    }
+    
+    func validateLocationAuthorization() {
+        
+        let status  = CLLocationManager.authorizationStatus()
+        if status == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+        
+        if status == .denied || status == .restricted {
+            let alert = UIAlertController(title: "Localización no disponible", message: "Por favor, habilite la localización en Ajustes", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            
+            present(alert, animated: true, completion: nil)
+        }
+        
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+            self.locationAuth = true
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let currentLocation = locations.last!
+        print("Current location: \(currentLocation)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            // If status has not yet been determied, ask for authorization
+            manager.requestWhenInUseAuthorization()
+            break
+        case .authorizedWhenInUse:
+            // If authorized when in use
+            manager.startUpdatingLocation()
+            self.locationAuth = true
+            self.startEvents()
+            break
+        case .authorizedAlways:
+            // If always authorized
+            manager.startUpdatingLocation()
+            self.locationAuth = true
+            self.startEvents()
+            break
+        case .restricted:
+            break
+        case .denied:
+            // If restricted by e.g. parental controls. User can't enable Location Services
+            let alert = UIAlertController(title: "Localización no disponible", message: "Por favor, habilite la localización en Ajustes", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            
+            present(alert, animated: true, completion: nil)
+            break
+        default:
+            break
+        }
     }
 }
