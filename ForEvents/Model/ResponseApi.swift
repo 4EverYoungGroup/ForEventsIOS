@@ -12,11 +12,16 @@ struct ResponseApi: Codable {
     let ok: Bool
     let errors: [ErrorDescription]?
     let message: String?
+    let error: ErrorRecover?
 }
 
 struct ErrorDescription: Codable {
     let field: String?
     let message: String?
+}
+
+struct ErrorRecover: Codable {
+    let message: String
 }
 
 

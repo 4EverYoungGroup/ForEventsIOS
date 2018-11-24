@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
     func validateLogin() -> Bool {
         //email format validate
         if !(userTextField.text?.isValidEmail())! {
-            let alert = Alerts().alert(title: Constants.loginTitle, message: "El dato de usuario debe de ser un email válido.")
+            let alert = Alerts().alert(title: Constants.loginTitle, message: "El dato de email debe de ser un correo electrónico válido.")
             self.userTextField.becomeFirstResponder()
             self.present(alert, animated: true, completion: nil)
             return false
@@ -91,7 +91,7 @@ class LoginViewController: UIViewController {
     }
     
     func loginUser() {
-        let userLogin = UserLogin(email: userTextField.text!, password: passwordTextField.text!, token: nil)
+        let userLogin = UserLogin(email: userTextField.text!, password: passwordTextField.text!, token: nil, user: nil)
         let loginUserInteractor: LoginUserInteractor = LoginUserInteractorNSURLSessionImpl()
         
         loginUserInteractor.execute(user: userLogin) { (userLogin: UserLogin?, responseApi: ResponseApi?) in
@@ -104,6 +104,8 @@ class LoginViewController: UIViewController {
                 //Save token in keychain
                 if let token: String = userLogin?.token {
                     self.saveTokenInKeychain(token: token)
+                    //Save userID in usersdefaults
+                    UserDefaults.standard.setValue(userLogin?.user?.id, forKey: Constants.userID)
                     //Go to Events tabBar
                     let eventsTabBarController = createEventsTabBar()
                     //Configure tabbar opaque and black
@@ -116,7 +118,7 @@ class LoginViewController: UIViewController {
     }
     
     func recoverUser() {
-        let userLogin = UserLogin(email: userTextField.text!, password: nil, token: nil)
+        let userLogin = UserLogin(email: userTextField.text!, password: nil, token: nil, user: nil)
         let recoverUserInteractor: RecoverUserInteractor = RecoverUserInteractorNSURLSessionImpl()
         
         recoverUserInteractor.execute(user: userLogin) { (responseApi: ResponseApi?) in

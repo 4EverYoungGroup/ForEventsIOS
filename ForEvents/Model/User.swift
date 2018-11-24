@@ -14,12 +14,12 @@ struct User: Codable {
     let password: String
     let firstname: String
     let profile: String
-    let lastname: String?
-    let country: String?
-    let province: String?
-    let zipCode: String?
-    let city: String?
-    let alias: String?
+    var lastname: String?
+    var country: String?
+    var province: String?
+    var zipCode: String?
+    var city: String?
+    var alias: String?
     let gender: String
     let birthdayDate: Date?
     

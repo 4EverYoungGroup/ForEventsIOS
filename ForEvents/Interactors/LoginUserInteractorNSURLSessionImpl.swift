@@ -56,8 +56,6 @@ class LoginUserInteractorNSURLSessionImpl: LoginUserInteractor {
                             print("Error", parsingError)
                         }
                     } else {
-                        // TODO reponse login service must be ok and message only
-                        //prepare responseApi
                         do {
                             let decoder = JSONDecoder()
                             let responseApi = try decoder.decode(ResponseApi.self, from:

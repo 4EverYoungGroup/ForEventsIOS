@@ -25,11 +25,28 @@ class RegisterUserInteractorNSURLSessionImpl: RegisterUserInteractor {
         headers[Constants.urlHeadersConst] = Constants.urlJsonContentType
         request.allHTTPHeaderFields = headers
         
+        //Validate if user fields are empty to pass nil
+        var userNil = user
+        if (userNil.lastname?.isEmpty)! {
+            userNil.lastname = nil
+        }
+        if (userNil.alias?.isEmpty)! {
+            userNil.alias = nil
+        }
+        if (userNil.province?.isEmpty)! {
+            userNil.province = nil
+        }
+        if (userNil.zipCode?.isEmpty)! {
+            userNil.zipCode = nil
+        }
+        if (userNil.country?.isEmpty)! {
+            userNil.country = nil
+        }
+        
         // Now let's encode out Post struct into JSON data...
         let encoder = JSONEncoder()
         do {
-            let jsonData = try encoder.encode(user)
-            //print(String(data: jsonData, encoding: .utf8)!)
+            let jsonData = try encoder.encode(userNil)
             // ... and set our request's HTTP body
             request.httpBody = jsonData
         } catch {

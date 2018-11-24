@@ -84,6 +84,7 @@
 		BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC5766D218B947500C735C6 /* EventsViewController+CollectionViewController.swift */; };
 		BAC57672218B97A200C735C6 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC57670218B97A200C735C6 /* EventCollectionViewCell.swift */; };
 		BAC57673218B97A200C735C6 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */; };
+		BACDE3E921A9493B007452F0 /* OptionalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3E821A9493B007452F0 /* OptionalExtensions.swift */; };
 		BAD7876D219B4406000A44EC /* ProfileViewController+ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */; };
 		BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */; };
 		BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */; };
@@ -186,6 +187,7 @@
 		BAC5766D218B947500C735C6 /* EventsViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
 		BAC57670218B97A200C735C6 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
+		BACDE3E821A9493B007452F0 /* OptionalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtensions.swift; sourceTree = "<group>"; };
 		BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+ImagePickerController.swift"; sourceTree = "<group>"; };
 		BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventDetailViewController+MapKit.swift"; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */,
 				BAC28897219C3709000AA7B2 /* UIViewAssists+constraints.swift */,
 				BA5C730C21A2D91400CE40EB /* DateExtensions.swift */,
+				BACDE3E821A9493B007452F0 /* OptionalExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				BA477548218378BC00B8AA40 /* createTabBar.swift in Sources */,
 				BAC57666218B8F4900C735C6 /* Event.swift in Sources */,
 				BAA6AE63218F74440029F421 /* SectionHeaderCollectionReusableView.swift in Sources */,
+				BACDE3E921A9493B007452F0 /* OptionalExtensions.swift in Sources */,
 				BA602D302181AD320075B64B /* User.swift in Sources */,
 				BA5C731321A33D1F00CE40EB /* Search.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,

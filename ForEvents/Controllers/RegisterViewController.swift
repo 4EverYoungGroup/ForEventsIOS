@@ -24,7 +24,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var aliasTextField: UITextField!
     @IBOutlet weak var genderSegmented: UISegmentedControl!
     
-    var gender: String = "H"
+    var gender: String = "M"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +85,7 @@ class RegisterViewController: UIViewController {
     
     func registerUser() {
         
-        let user = User(email: userTextField.text!, password: psw1TextField.text!, firstname: nameTextField.text!, profile: "User", lastname: lastnameTextField.text ?? nil, country: countryTextField.text ?? nil, province: provinceTextField.text ?? nil, zipCode: zipCodeTextField.text ?? nil, city: nil, alias: aliasTextField.text ?? nil, gender: gender, birthdayDate: nil)
+        let user = User(email: userTextField.text!, password: psw1TextField.text!, firstname: nameTextField.text!, profile: "User", lastname: lastnameTextField.text, country: countryTextField.text, province: provinceTextField.text, zipCode: zipCodeTextField.text, city: nil, alias: aliasTextField.text, gender: gender, birthdayDate: nil)
         
         let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorNSURLSessionImpl()
         
