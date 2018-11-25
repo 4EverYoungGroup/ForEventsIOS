@@ -67,7 +67,7 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
     }
 
     func eventsDownload() {
-        let downloadEventsInteractor: DownloadEventsInteractor = DownloadEventsInteractorFakeImpl()
+        let downloadEventsInteractor: DownloadEventsInteractor = DownloadEventsInteractorNSURLSessionImpl()
         
         downloadEventsInteractor.execute { (events: Events) in
             // Todo OK
@@ -143,6 +143,7 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
             locationManager.delegate = self
             locationManager.startUpdatingLocation()
             self.locationAuth = true
+            self.locationManager.stopUpdatingLocation()
         }
     }
     

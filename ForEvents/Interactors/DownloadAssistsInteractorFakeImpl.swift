@@ -17,7 +17,7 @@ class DownloadAssistsInteractorFakeImpl: DownloadEventsInteractor {
         let events = Events()
         
         for i in 0...3 {
-            let event = Event(name: "Evento número \( i )")
+            let event = Event(id: "\( i )", name: "Evento número \( i )")
             switch i {
             case 0:
                 event.name = "Marathon urbano"

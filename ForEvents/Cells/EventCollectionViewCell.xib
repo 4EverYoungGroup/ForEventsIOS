@@ -21,9 +21,15 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kkz-TF-Sck">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="156"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="156" id="YGM-8V-qhX"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evento de Prueba" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEG-V3-niF">
                         <rect key="frame" x="0.0" y="157" width="300" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="Tbf-Qp-HBK"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -32,18 +38,21 @@
                         <rect key="frame" x="3" y="179.5" width="294" height="20.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="12/12/2018 19:00 h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMR-YT-SaS">
-                                <rect key="frame" x="0.0" y="0.0" width="255.5" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="234" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmQ-i6-UYf">
-                                <rect key="frame" x="257.5" y="0.0" width="36.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Madrid" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="EmQ-i6-UYf">
+                                <rect key="frame" x="236" y="0.0" width="58" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20.5" id="twP-by-LNI"/>
+                        </constraints>
                     </stackView>
                 </subviews>
             </view>
@@ -62,9 +71,10 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="300" height="244"/>
             <connections>
+                <outlet property="eventCityCell" destination="EmQ-i6-UYf" id="oyL-dE-GWt"/>
                 <outlet property="eventDateCell" destination="rMR-YT-SaS" id="0X7-cB-05w"/>
                 <outlet property="eventImageCell" destination="kkz-TF-Sck" id="pUJ-rW-Ewj"/>
-                <outlet property="eventLabelCell" destination="FEG-V3-niF" id="QPh-XQ-bCm"/>
+                <outlet property="eventNameCell" destination="FEG-V3-niF" id="QPh-XQ-bCm"/>
             </connections>
             <point key="canvasLocation" x="10.144927536231885" y="137.94642857142856"/>
         </collectionViewCell>

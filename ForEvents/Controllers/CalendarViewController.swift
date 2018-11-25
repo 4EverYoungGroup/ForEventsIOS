@@ -107,7 +107,7 @@ class CalendarViewController: UIViewController {
             for i in 0..<numberEvents {
                 let event : Event = ((Global.events?.get(index: i))!)
                 calendarView.setSupplementaries([
-                    (event.eventDate!, [VADaySupplementary.bottomDots([.cyan])])])
+                    (event.beginDate!, [VADaySupplementary.bottomDots([.cyan])])])
             }
         }
     }

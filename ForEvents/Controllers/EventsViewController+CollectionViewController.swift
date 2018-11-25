@@ -46,7 +46,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCollectionViewId, for: indexPath) as! SectionHeaderCollectionReusableView
         
-        header.headerLabel.text = "EVENTOS de Candeleda"
+        header.headerLabel.text = "EVENTOS"
         return header
     }
     

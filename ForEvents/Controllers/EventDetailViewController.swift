@@ -13,19 +13,13 @@ import MapKit
 class EventDetailViewController: UIViewController {
 
     @IBOutlet weak var detailCollectionView: UICollectionView!
-    
     @IBOutlet weak var assistButton: UIButton!
-    
     @IBOutlet weak var photosLabel: UILabel!
-    
-    @IBOutlet weak var priceLabel: UILabel!
-    
+    @IBOutlet weak var eventDateLabel: UILabel!
+    @IBOutlet weak var eventCityLabel: UILabel!
     @IBOutlet weak var eventNameLabel: UILabel!
-    
     @IBOutlet weak var eventDesTextView: UITextView!
-    
     @IBOutlet weak var eventMap: MKMapView!
-    
     @IBOutlet weak var detailScrollView: UIScrollView!
     
     var event: Event?
@@ -48,8 +42,8 @@ class EventDetailViewController: UIViewController {
         photosLabel.layer.cornerRadius = 5
         photosLabel.layer.borderWidth = 1
         photosLabel.layer.borderColor = UIColor.white.cgColor
-        //Configure event name
-        eventNameLabel.text = event?.name
+        //Configure event labels
+        self.putLabelsText()
         
         //Configure constraints depending on device orientation
         if UIDevice.current.orientation.isPortrait {
@@ -143,5 +137,20 @@ class EventDetailViewController: UIViewController {
             detailCollectionView.contentSize = sizeLandscape
             self.configureLandscape()
         }
+    }
+    
+    func putLabelsText() {
+        eventNameLabel.text = event?.name
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy HH:mm"
+        if let date = event?.beginDate {
+            let day = formatter.string(from: date)
+            self.eventDateLabel.text = "\(day) h"
+        } else {
+            let day = ""
+            self.eventDateLabel.text = "\(day) h"
+        }
+        self.eventCityLabel.text = event?.city
+        self.eventDesTextView.text = event?.description
     }
 }

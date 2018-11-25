@@ -23,10 +23,14 @@ struct Constants {
     static let urlLoginPath = "/apiv1/users/login"
     static let urlRegPath = "/apiv1/users/register"
     static let urlRecoverPath = "/apiv1/users/recover"
+    static let urlEventsPath = "/apiv1/events"
     static let urlPostMethod = "POST"
     static let urlGetMethod = "GET"
     static let urlHeadersConst = "Content-Type"
     static let urlJsonContentType = "application/json"
+    //location
+    static let latitudeDefault = 41.522585
+    static let longitudeDefault = -5.800537
 }
 
 struct Global {

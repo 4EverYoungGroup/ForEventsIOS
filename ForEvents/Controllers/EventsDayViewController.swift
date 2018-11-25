@@ -64,7 +64,7 @@ class EventsDayViewController: UIViewController {
         if let numberEvents = eventsG?.count() {
             for i in 0..<numberEvents {
                 let event : Event = ((Global.events?.get(index: i))!)
-                if let date = event.eventDate {
+                if let date = event.beginDate {
                     let day = formatter.string(from: date)
                     if day == daySelected {
                         self.eventsDaySelect.append(event)

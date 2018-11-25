@@ -15,11 +15,12 @@
                 <outlet property="assistButton" destination="eHn-GJ-D46" id="ZmI-OA-tM4"/>
                 <outlet property="detailCollectionView" destination="n7U-4U-XhF" id="kF5-ty-TJ5"/>
                 <outlet property="detailScrollView" destination="GH5-lX-nc1" id="bUr-BL-dGa"/>
+                <outlet property="eventCityLabel" destination="RvZ-Ba-W5z" id="3Ej-mj-2Qr"/>
+                <outlet property="eventDateLabel" destination="4bT-qY-DJj" id="r0l-S9-82r"/>
                 <outlet property="eventDesTextView" destination="B08-hU-xGn" id="mz6-g2-Gv7"/>
                 <outlet property="eventMap" destination="hjY-qV-vDv" id="af9-4a-WQx"/>
                 <outlet property="eventNameLabel" destination="wWG-A4-gmb" id="bbY-UJ-a1L"/>
                 <outlet property="photosLabel" destination="Iov-QH-FSC" id="n0F-8S-fSo"/>
-                <outlet property="priceLabel" destination="RvZ-Ba-W5z" id="9Ci-hU-Up7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -65,7 +66,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvZ-Ba-W5z">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Madrid" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvZ-Ba-W5z">
                             <rect key="frame" x="324" y="266" width="80" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="rcQ-kv-Wkz"/>
@@ -96,7 +97,7 @@
                         </textView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iov-QH-FSC">
                             <rect key="frame" x="10" y="203" width="70" height="0.0"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="Anr-cj-RJI"/>
                             </constraints>

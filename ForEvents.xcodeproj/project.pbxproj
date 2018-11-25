@@ -85,6 +85,10 @@
 		BAC57672218B97A200C735C6 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC57670218B97A200C735C6 /* EventCollectionViewCell.swift */; };
 		BAC57673218B97A200C735C6 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */; };
 		BACDE3E921A9493B007452F0 /* OptionalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3E821A9493B007452F0 /* OptionalExtensions.swift */; };
+		BACDE3EB21A9DA5E007452F0 /* EventAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3EA21A9DA5E007452F0 /* EventAPI.swift */; };
+		BACDE3ED21A9DF5A007452F0 /* DownloadEventsInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3EC21A9DF5A007452F0 /* DownloadEventsInteractorNSURLSessionImpl.swift */; };
+		BACDE3F021AA9E47007452F0 /* MapEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3EF21AA9E47007452F0 /* MapEvent.swift */; };
+		BACDE3F321AAA80B007452F0 /* JSONParserEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3F221AAA80B007452F0 /* JSONParserEvent.swift */; };
 		BAD7876D219B4406000A44EC /* ProfileViewController+ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */; };
 		BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */; };
 		BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */; };
@@ -188,6 +192,10 @@
 		BAC57670218B97A200C735C6 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		BACDE3E821A9493B007452F0 /* OptionalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtensions.swift; sourceTree = "<group>"; };
+		BACDE3EA21A9DA5E007452F0 /* EventAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAPI.swift; sourceTree = "<group>"; };
+		BACDE3EC21A9DF5A007452F0 /* DownloadEventsInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadEventsInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BACDE3EF21AA9E47007452F0 /* MapEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEvent.swift; sourceTree = "<group>"; };
+		BACDE3F221AAA80B007452F0 /* JSONParserEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserEvent.swift; sourceTree = "<group>"; };
 		BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+ImagePickerController.swift"; sourceTree = "<group>"; };
 		BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventDetailViewController+MapKit.swift"; sourceTree = "<group>"; };
@@ -335,6 +343,7 @@
 				BAB1E285218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift */,
 				BAC57669218B912600C735C6 /* DownloadEventsInteractor.swift */,
 				BAC5766B218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift */,
+				BACDE3EC21A9DF5A007452F0 /* DownloadEventsInteractorNSURLSessionImpl.swift */,
 				BAC2889B219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift */,
 				BA5C731621A33E6100CE40EB /* DownloadSearchesInteractor.swift */,
 				BA5C731821A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift */,
@@ -345,10 +354,13 @@
 		BA5CF73A21806A4200419990 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BACDE3F121AAA7F6007452F0 /* JSONParser */,
+				BACDE3EE21AA9DF4007452F0 /* Mappers */,
 				BA602D2F2181AD320075B64B /* User.swift */,
 				BA47754121831E5E00B8AA40 /* UserLogin.swift */,
 				BA602D40218226C40075B64B /* ResponseApi.swift */,
 				BAC57665218B8F4900C735C6 /* Event.swift */,
+				BACDE3EA21A9DA5E007452F0 /* EventAPI.swift */,
 				BAC57667218B906F00C735C6 /* Events.swift */,
 				BA5C731221A33D1F00CE40EB /* Search.swift */,
 				BA5C731421A33DBD00CE40EB /* Searches.swift */,
@@ -384,6 +396,22 @@
 				BA65EDE7219ED28B00B26C96 /* SearchTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		BACDE3EE21AA9DF4007452F0 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				BACDE3EF21AA9E47007452F0 /* MapEvent.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		BACDE3F121AAA7F6007452F0 /* JSONParser */ = {
+			isa = PBXGroup;
+			children = (
+				BACDE3F221AAA80B007452F0 /* JSONParserEvent.swift */,
+			);
+			path = JSONParser;
 			sourceTree = "<group>";
 		};
 		C1FE8CC19F0CD5740BBAE7ED /* Pods */ = {
@@ -644,11 +672,13 @@
 				BA602D302181AD320075B64B /* User.swift in Sources */,
 				BA5C731321A33D1F00CE40EB /* Search.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
+				BACDE3ED21A9DF5A007452F0 /* DownloadEventsInteractorNSURLSessionImpl.swift in Sources */,
 				BA20101121A498C1008425CB /* EventsDayViewController.swift in Sources */,
 				BA65EDE8219ED28B00B26C96 /* SearchTableViewCell.swift in Sources */,
 				BA5CF7492180772700419990 /* EventsViewController.swift in Sources */,
 				BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */,
 				BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */,
+				BACDE3F321AAA80B007452F0 /* JSONParserEvent.swift in Sources */,
 				BAC173772190BCB4000A94A0 /* FilterViewController.swift in Sources */,
 				BA1F8E7A21A0128200037716 /* CustomColors.swift in Sources */,
 				BA5F70BE21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift in Sources */,
@@ -657,6 +687,7 @@
 				BA5C731721A33E6100CE40EB /* DownloadSearchesInteractor.swift in Sources */,
 				BAC2889C219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift in Sources */,
 				BA5CF74C2180772700419990 /* CalendarViewController.swift in Sources */,
+				BACDE3F021AA9E47007452F0 /* MapEvent.swift in Sources */,
 				BA5CF74F2180777500419990 /* UIviewController+Additions.swift in Sources */,
 				BA5CF7432180769400419990 /* LoginViewController.swift in Sources */,
 				BA602D322181B6970075B64B /* ExecuteInteractor.swift in Sources */,
@@ -664,6 +695,7 @@
 				BAC28898219C3709000AA7B2 /* UIViewAssists+constraints.swift in Sources */,
 				BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */,
 				BA20101421A49B99008425CB /* EventsDayViewController+CollectionViewController.swift in Sources */,
+				BACDE3EB21A9DA5E007452F0 /* EventAPI.swift in Sources */,
 				BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */,
 				BA5C731521A33DBD00CE40EB /* Searches.swift in Sources */,
 				BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */,

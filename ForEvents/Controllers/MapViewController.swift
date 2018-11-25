@@ -56,7 +56,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         //Center map to city location
         //TODO recuperar la posición de la city
-        let center = CLLocationCoordinate2D(latitude: Double(40.155365), longitude: Double(-5.241073))
+        //let center = CLLocationCoordinate2D(latitude: Double(40.155365), longitude: Double(-5.241073))
+        let center = CLLocationCoordinate2D(latitude: Double(Constants.latitudeDefault), longitude: Double(Constants.longitudeDefault))
         let region = MKCoordinateRegion(center: center, latitudinalMeters: 0, longitudinalMeters: 1000)
         eventsMapView.setRegion(region, animated: true)
         
@@ -111,8 +112,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let event = (annotation as! EventAnnotation).getEvent()
             // Add The image of the event
             let eventImageview = UIImageView()
-            let url = URL(string: event.images[0])
-            eventImageview.kf.setImage(with: url)
+            if event.images.isEmpty == false {
+                let url = URL(string: event.images[0])
+                eventImageview.kf.setImage(with: url)
+            } else {
+                let url = URL(string: "https://cdn.pixabay.com/photo/2017/11/24/10/43/admission-2974645_960_720.jpg")
+                eventImageview.kf.setImage(with: url)
+            }
             
             let rigthButton = UIButton(type: .detailDisclosure)
             let leftButton = eventImageview
