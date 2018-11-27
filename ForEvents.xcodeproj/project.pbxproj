@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		6AA6434291FCE4FC56E01430 /* Pods_ForEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C105BB7677DFCF0CBFD4AC7 /* Pods_ForEvents.framework */; };
 		A709ADFA605E282969AA5840 /* Pods_ForEventsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9820569C11C02EFE44C387A7 /* Pods_ForEventsTests.framework */; };
+		BA09DDFB21AC0AF20009FAF4 /* GetUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DDFA21AC0AF20009FAF4 /* GetUserInteractor.swift */; };
+		BA09DDFD21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DDFC21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift */; };
+		BA09DE0121AC159D0009FAF4 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0021AC159D0009FAF4 /* Token.swift */; };
+		BA09DE0321AC33D30009FAF4 /* UserGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0221AC33D30009FAF4 /* UserGet.swift */; };
+		BA09DE0521AC6EE40009FAF4 /* UpdateUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0421AC6EE40009FAF4 /* UpdateUserInteractor.swift */; };
+		BA09DE0721AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0621AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift */; };
 		BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E2D972191AC63006D3CBD /* String+Image.swift */; };
 		BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */; };
 		BA1E2D9C21920878006D3CBD /* EventDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */; };
@@ -112,6 +118,12 @@
 		94B2021C0C5DDA398A29DB0A /* Pods-ForEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForEvents.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForEvents/Pods-ForEvents.release.xcconfig"; sourceTree = "<group>"; };
 		9820569C11C02EFE44C387A7 /* Pods_ForEventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForEventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C105BB7677DFCF0CBFD4AC7 /* Pods_ForEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA09DDFA21AC0AF20009FAF4 /* GetUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInteractor.swift; sourceTree = "<group>"; };
+		BA09DDFC21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BA09DE0021AC159D0009FAF4 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		BA09DE0221AC33D30009FAF4 /* UserGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGet.swift; sourceTree = "<group>"; };
+		BA09DE0421AC6EE40009FAF4 /* UpdateUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInteractor.swift; sourceTree = "<group>"; };
+		BA09DE0621AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BA1E2D972191AC63006D3CBD /* String+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
 		BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -347,6 +359,10 @@
 				BAC2889B219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift */,
 				BA5C731621A33E6100CE40EB /* DownloadSearchesInteractor.swift */,
 				BA5C731821A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift */,
+				BA09DDFA21AC0AF20009FAF4 /* GetUserInteractor.swift */,
+				BA09DDFC21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift */,
+				BA09DE0421AC6EE40009FAF4 /* UpdateUserInteractor.swift */,
+				BA09DE0621AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -358,12 +374,14 @@
 				BACDE3EE21AA9DF4007452F0 /* Mappers */,
 				BA602D2F2181AD320075B64B /* User.swift */,
 				BA47754121831E5E00B8AA40 /* UserLogin.swift */,
+				BA09DE0221AC33D30009FAF4 /* UserGet.swift */,
 				BA602D40218226C40075B64B /* ResponseApi.swift */,
 				BAC57665218B8F4900C735C6 /* Event.swift */,
 				BACDE3EA21A9DA5E007452F0 /* EventAPI.swift */,
 				BAC57667218B906F00C735C6 /* Events.swift */,
 				BA5C731221A33D1F00CE40EB /* Search.swift */,
 				BA5C731421A33DBD00CE40EB /* Searches.swift */,
+				BA09DE0021AC159D0009FAF4 /* Token.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -659,6 +677,7 @@
 				BA5CF73E21806F8A00419990 /* ValidateToken.swift in Sources */,
 				BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */,
 				BAB1E286218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift in Sources */,
+				BA09DDFB21AC0AF20009FAF4 /* GetUserInteractor.swift in Sources */,
 				BA5C731021A32F1700CE40EB /* SearchesViewController.swift in Sources */,
 				BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */,
 				BAC5766A218B912600C735C6 /* DownloadEventsInteractor.swift in Sources */,
@@ -671,7 +690,9 @@
 				BACDE3E921A9493B007452F0 /* OptionalExtensions.swift in Sources */,
 				BA602D302181AD320075B64B /* User.swift in Sources */,
 				BA5C731321A33D1F00CE40EB /* Search.swift in Sources */,
+				BA09DE0721AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
+				BA09DDFD21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift in Sources */,
 				BACDE3ED21A9DF5A007452F0 /* DownloadEventsInteractorNSURLSessionImpl.swift in Sources */,
 				BA20101121A498C1008425CB /* EventsDayViewController.swift in Sources */,
 				BA65EDE8219ED28B00B26C96 /* SearchTableViewCell.swift in Sources */,
@@ -695,13 +716,16 @@
 				BAC28898219C3709000AA7B2 /* UIViewAssists+constraints.swift in Sources */,
 				BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */,
 				BA20101421A49B99008425CB /* EventsDayViewController+CollectionViewController.swift in Sources */,
+				BA09DE0521AC6EE40009FAF4 /* UpdateUserInteractor.swift in Sources */,
 				BACDE3EB21A9DA5E007452F0 /* EventAPI.swift in Sources */,
+				BA09DE0121AC159D0009FAF4 /* Token.swift in Sources */,
 				BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */,
 				BA5C731521A33DBD00CE40EB /* Searches.swift in Sources */,
 				BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */,
 				BAC1737B2190CE7D000A94A0 /* EventDetailViewController.swift in Sources */,
 				BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */,
 				BA20100D21A3FF1D008425CB /* NotificationsViewController.swift in Sources */,
+				BA09DE0321AC33D30009FAF4 /* UserGet.swift in Sources */,
 				BA5C731B21A3424600CE40EB /* SearchesViewController+TableViewController.swift in Sources */,
 				BA5CF7532180783400419990 /* Alerts.swift in Sources */,
 				BA5CF74B2180772700419990 /* ProfileViewController.swift in Sources */,

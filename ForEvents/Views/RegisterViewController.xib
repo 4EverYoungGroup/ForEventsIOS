@@ -21,6 +21,7 @@
                 <outlet property="provinceTextField" destination="Pc9-l8-v93" id="g8Q-zJ-TsJ"/>
                 <outlet property="psw1TextField" destination="hX3-ka-59o" id="xhF-Y4-CgD"/>
                 <outlet property="psw2TextField" destination="ELi-vC-g37" id="zKv-7p-ULL"/>
+                <outlet property="registerButton" destination="wlL-x9-Mca" id="4Lm-1D-Z8c"/>
                 <outlet property="userTextField" destination="SUA-m5-hm9" id="5OR-wP-qdg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="zipCodeTextField" destination="pZL-Lh-jde" id="tun-bc-RHy"/>

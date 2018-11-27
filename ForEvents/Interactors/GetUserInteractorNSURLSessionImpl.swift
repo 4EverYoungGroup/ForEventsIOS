@@ -1,24 +1,24 @@
 //
-//  DownloadEventsInteractorNSURLSessionImpl.swift
+//  GetUserInteractorNSURLSessionImpl.swift
 //  ForEvents
 //
-//  Created by luis gomez alonso on 24/11/2018.
+//  Created by luis gomez alonso on 26/11/2018.
 //  Copyright © 2018 4Everyoung.group. All rights reserved.
 //
 
 import Foundation
 
-class DownloadEventsInteractorNSURLSessionImpl: DownloadEventsInteractor {
-    func execute(onSuccess: @escaping (Events) -> Void, onError: errorClosure) {
+class GetUserInteractorNSURLSessionImpl: GetUserInteractor {
+    func execute(userID: String, onSuccess: @escaping (User?) -> Void, onError: errorClosure) {
         var urlComponents = URLComponents()
         urlComponents.scheme = Constants.urlScheme
         urlComponents.host = Constants.urlHost
-        urlComponents.path = Constants.urlEventsPath
-        urlComponents.queryItems = [
-            URLQueryItem(name: "sort", value: "begin_date"),
-            URLQueryItem(name: "location", value: String(Constants.latitudeDefault)+","+String(Constants.longitudeDefault)+",1400000"),
-            URLQueryItem(name: "media", value: "url"),
-            URLQueryItem(name: "event_type", value: "name")]
+        urlComponents.path = Constants.urlGetUserPath+userID
+        if let username = UserDefaults.standard.value(forKey: Constants.username) {
+            if let tokenValue = checkToken(username: username as! String) {
+                urlComponents.queryItems = [URLQueryItem(name: "token", value: tokenValue)]
+            }
+        }
         
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         
@@ -31,14 +31,10 @@ class DownloadEventsInteractorNSURLSessionImpl: DownloadEventsInteractor {
         headers[Constants.urlHeadersConst] = Constants.urlJsonContentType
         request.allHTTPHeaderFields = headers
         
-        //TODO Include Token
-        let token = ""
-        request.httpBody = Data(base64Encoded: token)
-        
         // Create and run a URLSession data task with our JSON encoded POST request
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
-    
+        
         let task = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             
             OperationQueue.main.addOperation {
@@ -48,12 +44,16 @@ class DownloadEventsInteractorNSURLSessionImpl: DownloadEventsInteractor {
                     //OK
                     activityIndicator.removeFromSuperview()
                     if (self.checkStatusCode(response: response)) {
-                        let events = parseEvents(data: data!)
-                        //return Movements
-                        onSuccess(events)
-                    } else {
-                        let events = Events()
-                        onSuccess(events)
+                        do {
+                            let decoder = JSONDecoder()
+                            let userGet = try decoder.decode(UserGet.self, from: data!)
+                            let user = userGet.user
+                            //return User
+                            onSuccess(user)
+                        } catch let parsingError {
+                            //TODO alert with error
+                            print("Error", parsingError)
+                        }
                     }
                 } else {
                     if let myError = onError {
@@ -65,8 +65,8 @@ class DownloadEventsInteractorNSURLSessionImpl: DownloadEventsInteractor {
         task.resume()
     }
     
-    func execute(onSuccess: @escaping (Events) -> Void) {
-        execute(onSuccess: onSuccess, onError: nil)
+    func execute(userID: String, onSuccess: @escaping (User?) -> Void) {
+        execute(userID: userID, onSuccess: onSuccess, onError: nil)
     }
     
     func checkStatusCode(response:URLResponse?) -> Bool {

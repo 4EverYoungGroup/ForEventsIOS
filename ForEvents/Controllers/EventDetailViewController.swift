@@ -31,8 +31,6 @@ class EventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.locationManager.requestWhenInUseAuthorization()
-        
         //Configure assistButton aspect
         //assistButton.backgroundColor = .clear
         assistButton.layer.cornerRadius = 5

@@ -11,7 +11,7 @@ import Foundation
 struct User: Codable {
     
     let email: String
-    let password: String
+    var password: String?
     let firstname: String
     let profile: String
     var lastname: String?
@@ -20,7 +20,7 @@ struct User: Codable {
     var zipCode: String?
     var city: String?
     var alias: String?
-    let gender: String
+    let gender: String?
     let birthdayDate: Date?
     
     enum CodingKeys: String, CodingKey
@@ -39,7 +39,7 @@ struct User: Codable {
         case birthdayDate = "birthday_date"
     }
     
-    init(email: String, password: String, firstname: String, profile: String, lastname: String?, country: String?, province: String?, zipCode: String?, city: String?, alias: String?, gender: String, birthdayDate: Date?) {
+    init(email: String, password: String?, firstname: String, profile: String, lastname: String?, country: String?, province: String?, zipCode: String?, city: String?, alias: String?, gender: String?, birthdayDate: Date?) {
         self.email = email
         self.password = password
         self.firstname = firstname

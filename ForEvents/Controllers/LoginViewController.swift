@@ -104,7 +104,8 @@ class LoginViewController: UIViewController {
                 //Save token in keychain
                 if let token: String = userLogin?.token {
                     self.saveTokenInKeychain(token: token)
-                    //Save userID in usersdefaults
+                    //Save user and userID in usersdefaults
+                    UserDefaults.standard.setValue(self.userTextField.text, forKey: Constants.username)
                     UserDefaults.standard.setValue(userLogin?.user?.id, forKey: Constants.userID)
                     //Go to Events tabBar
                     let eventsTabBarController = createEventsTabBar()

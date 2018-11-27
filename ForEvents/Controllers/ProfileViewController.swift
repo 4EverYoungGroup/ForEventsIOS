@@ -132,7 +132,8 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     
     @objc func editTapped() {
         let registerViewController = RegisterViewController()
-        navigationController?.pushViewController(registerViewController, animated: true)
+        registerViewController.originCall = "update"
+        navigationController?.pushViewController(registerViewController, animated: false)
     }
     
     

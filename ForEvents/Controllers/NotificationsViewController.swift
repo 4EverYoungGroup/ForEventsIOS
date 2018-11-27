@@ -12,7 +12,7 @@ class NotificationsViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        self.title = "Notificaciones"
+        self.title = "Preferencias"
         view.backgroundColor = .black
     }
     

@@ -13,6 +13,7 @@ func createLoginTabBar() -> UITabBarController {
     
     let firstVC = LoginViewController()
     let secondVC = RegisterViewController()
+    secondVC.originCall = "initial"
     
     let tabBarList = UITabBarController()
     

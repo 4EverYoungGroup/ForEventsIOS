@@ -45,7 +45,7 @@ class CalendarViewController: UIViewController {
     let defaultCalendar: Calendar = {
         var calendar = Calendar.current
         calendar.firstWeekday = 2
-        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        calendar.timeZone = TimeZone.current
         return calendar
     }()
     
