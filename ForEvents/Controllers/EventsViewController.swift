@@ -29,10 +29,12 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         title = "Eventos"
         
         //Configure searchBar
-        self.configureSearch()
+        //self.configureSearch()
         
-        //Configure filter Button
-        self.configureFilter()
+        //Configure logout Button
+        self.configureLogout()
+        //Configure find Button
+        self.configureFind()
         
         //Validate location Authorization
         self.validateLocationAuthorization()
@@ -91,14 +93,8 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         if resultSearchController.isActive == true {
             self.navigationItem.rightBarButtonItem = nil
         }  else {
-            self.configureFilter()
+            self.configureFind()
         }
-    }
-    
-    @objc func filterTapped() {
-        let filterViewController = FilterViewController()
-        filterViewController.modalPresentationStyle = .overFullScreen
-        present(filterViewController, animated: true, completion: nil)
     }
     
     func configureSearch() {
@@ -114,11 +110,40 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes , for: .normal)
     }
     
-    func configureFilter() {
+    func configureFind() {
         var filterButton: UIBarButtonItem = UIBarButtonItem()
-        filterButton = UIBarButtonItem(title: "Filtros", style: .plain, target: self, action: #selector(filterTapped))
+        let image = UIImage(named: "find")?.withRenderingMode(.alwaysOriginal)
+        filterButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(findTapped))
         filterButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "AvenirNext-Bold", size: 17)!], for: .normal)
         navigationItem.rightBarButtonItem = filterButton
+    }
+    
+    func configureLogout() {
+        var logoutButton: UIBarButtonItem = UIBarButtonItem()
+        let image = UIImage(named: "logoutUser")?.withRenderingMode(.alwaysOriginal)
+        logoutButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(logoutTapped))
+        logoutButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "AvenirNext-Bold", size: 17)!], for: .normal)
+        navigationItem.leftBarButtonItem = logoutButton
+    }
+    
+    @objc func findTapped() {
+        let filterViewController = FilterViewController()
+        filterViewController.modalPresentationStyle = .overFullScreen
+        present(filterViewController, animated: true, completion: nil)
+    }
+    
+    @objc func logoutTapped() {
+        //Logout user - Alert
+        let logoutUserAlertController = UIAlertController (title: "Atención, ha solicitado salir de la app", message: "Esta acción le desconectará de la app.", preferredStyle: .alert)
+        
+        let settingsAction = UIAlertAction(title: "Salir", style: .destructive) { (_) -> Void in
+            //Delete user
+            self.logoutUser()
+        }
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        logoutUserAlertController .addAction(settingsAction)
+        logoutUserAlertController .addAction(cancelAction)
+        self.present(logoutUserAlertController, animated: true, completion: nil)
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
@@ -187,5 +212,16 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         default:
             break
         }
+    }
+    
+    func logoutUser() {
+        let loginTabBarController = createLoginTabBar()
+        //Show login in tabbar
+        loginTabBarController.selectedIndex = 0
+        //Configure tabbar without background and shadow
+        loginTabBarController.tabBar.backgroundImage = UIImage()
+        loginTabBarController.tabBar.shadowImage = UIImage()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = loginTabBarController
     }
 }
