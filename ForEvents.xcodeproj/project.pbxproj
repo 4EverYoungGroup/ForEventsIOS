@@ -15,6 +15,8 @@
 		BA09DE0321AC33D30009FAF4 /* UserGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0221AC33D30009FAF4 /* UserGet.swift */; };
 		BA09DE0521AC6EE40009FAF4 /* UpdateUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0421AC6EE40009FAF4 /* UpdateUserInteractor.swift */; };
 		BA09DE0721AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0621AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift */; };
+		BA0C52D521AD611A00C3D1E5 /* DeleteUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52D421AD611A00C3D1E5 /* DeleteUserInteractor.swift */; };
+		BA0C52D721AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52D621AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift */; };
 		BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E2D972191AC63006D3CBD /* String+Image.swift */; };
 		BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */; };
 		BA1E2D9C21920878006D3CBD /* EventDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */; };
@@ -124,6 +126,8 @@
 		BA09DE0221AC33D30009FAF4 /* UserGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGet.swift; sourceTree = "<group>"; };
 		BA09DE0421AC6EE40009FAF4 /* UpdateUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInteractor.swift; sourceTree = "<group>"; };
 		BA09DE0621AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BA0C52D421AD611A00C3D1E5 /* DeleteUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInteractor.swift; sourceTree = "<group>"; };
+		BA0C52D621AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BA1E2D972191AC63006D3CBD /* String+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
 		BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -363,6 +367,8 @@
 				BA09DDFC21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift */,
 				BA09DE0421AC6EE40009FAF4 /* UpdateUserInteractor.swift */,
 				BA09DE0621AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift */,
+				BA0C52D421AD611A00C3D1E5 /* DeleteUserInteractor.swift */,
+				BA0C52D621AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -669,6 +675,7 @@
 				BA65EDEF219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift in Sources */,
 				BAC5766C218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift in Sources */,
 				BAC57672218B97A200C735C6 /* EventCollectionViewCell.swift in Sources */,
+				BA0C52D521AD611A00C3D1E5 /* DeleteUserInteractor.swift in Sources */,
 				BA602D382181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA4775462183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA59881A21768F0F0065D77D /* AppDelegate.swift in Sources */,
@@ -676,6 +683,7 @@
 				BAC57668218B906F00C735C6 /* Events.swift in Sources */,
 				BA5CF73E21806F8A00419990 /* ValidateToken.swift in Sources */,
 				BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */,
+				BA0C52D721AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift in Sources */,
 				BAB1E286218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA09DDFB21AC0AF20009FAF4 /* GetUserInteractor.swift in Sources */,
 				BA5C731021A32F1700CE40EB /* SearchesViewController.swift in Sources */,

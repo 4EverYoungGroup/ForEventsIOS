@@ -16,7 +16,7 @@ struct Response: Codable {
 struct EventAPI: Codable {
     let id: String
     let name: String
-    let description: String
+    let description: String?
     let beginDate: Date
     let endDate: Date
     let country: String?

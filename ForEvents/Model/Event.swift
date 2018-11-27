@@ -11,7 +11,7 @@ import Foundation
 public class Event {
     var id: String
     var name: String
-    var description: String = ""
+    var description: String? = nil
     var beginDate: Date? = nil
     var endDate: Date? = nil
     var country: String? = nil

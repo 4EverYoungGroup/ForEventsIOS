@@ -1,15 +1,15 @@
 //
-//  UpdateUserInteractorNSURLSessionImpl.swift
+//  DeleteUserInteractorNSURLSessionImpl.swift
 //  ForEvents
 //
-//  Created by luis gomez alonso on 26/11/2018.
+//  Created by luis gomez alonso on 27/11/2018.
 //  Copyright © 2018 4Everyoung.group. All rights reserved.
 //
 
 import Foundation
 
-class UpdateUserInteractorNSURLSessionImpl: UpdateUserInteractor {
-    func execute(user: User, onSuccess: @escaping (User?) -> Void, onError: errorClosure) {
+class DeleteUserInteractorNSURLSessionImpl: DeleteUserInteractor {
+    func execute(onSuccess: @escaping () -> Void, onError: errorClosure) {
         let userID: String = UserDefaults.standard.value(forKey: Constants.userID) as! String
         var urlComponents = URLComponents()
         urlComponents.scheme = Constants.urlScheme
@@ -25,43 +25,12 @@ class UpdateUserInteractorNSURLSessionImpl: UpdateUserInteractor {
         
         // Specify this request as being a POST method
         var request = URLRequest(url: url)
-        request.httpMethod = Constants.urlPutMethod
+        request.httpMethod = Constants.urlDelMethod
         // Make sure that we include headers specifying that our request's HTTP body
         // will be JSON encoded
         var headers = request.allHTTPHeaderFields ?? [:]
         headers[Constants.urlHeadersConst] = Constants.urlJsonContentType
         request.allHTTPHeaderFields = headers
-        
-        //Validate if user fields are empty to pass nil
-        var userNil = user
-        if (userNil.password?.isEmpty)! {
-            userNil.password = nil
-        }
-        if (userNil.lastname?.isEmpty)! {
-            userNil.lastname = nil
-        }
-        if (userNil.alias?.isEmpty)! {
-            userNil.alias = nil
-        }
-        if (userNil.province?.isEmpty)! {
-            userNil.province = nil
-        }
-        if (userNil.zipCode?.isEmpty)! {
-            userNil.zipCode = nil
-        }
-        if (userNil.country?.isEmpty)! {
-            userNil.country = nil
-        }
-        
-        // Now let's encode out Post struct into JSON data...
-        let encoder = JSONEncoder()
-        do {
-            let jsonData = try encoder.encode(userNil)
-            // ... and set our request's HTTP body
-            request.httpBody = jsonData
-        } catch {
-            print(error)
-        }
         
         // Create and run a URLSession data task with our JSON encoded POST request
         let config = URLSessionConfiguration.default
@@ -75,18 +44,9 @@ class UpdateUserInteractorNSURLSessionImpl: UpdateUserInteractor {
                 if error == nil {
                     //OK
                     activityIndicator.removeFromSuperview()
-                    //if (self.checkStatusCode(response: response)) {
-                        do {
-                            let decoder = JSONDecoder()
-                            let userGet = try decoder.decode(UserGet.self, from: data!)
-                            let user = userGet.user
-                            //return User
-                            onSuccess(user)
-                        } catch let parsingError {
-                            //TODO alert with error
-                            print("Error", parsingError)
-                        }
-                    //}
+                    if (self.checkStatusCode(response: response)) {
+                        onSuccess()
+                    }
                 } else {
                     if let myError = onError {
                         myError(error!)
@@ -97,15 +57,15 @@ class UpdateUserInteractorNSURLSessionImpl: UpdateUserInteractor {
         task.resume()
     }
     
-    func execute(user: User, onSuccess: @escaping (User?) -> Void) {
-        execute(user: user, onSuccess: onSuccess, onError: nil)
+    func execute(onSuccess: @escaping () -> Void) {
+        execute(onSuccess: onSuccess, onError: nil)
     }
     
     func checkStatusCode(response:URLResponse?) -> Bool {
         guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
             return false
         }
-        if statusCode != 200 && statusCode != 201 {
+        if statusCode != 200 && statusCode != 201 && statusCode != 204 {
             return false
         }
         return true

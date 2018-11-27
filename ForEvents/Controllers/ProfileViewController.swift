@@ -125,7 +125,8 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     
     func configureEditProfile() {
         var editButton: UIBarButtonItem = UIBarButtonItem()
-        editButton = UIBarButtonItem(title: "Editar", style: .plain, target: self, action: #selector(editTapped))
+        let image = UIImage(named: "updateUser")?.withRenderingMode(.alwaysOriginal)
+        editButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(editTapped))
         editButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "AvenirNext-Bold", size: 17)!], for: .normal)
         navigationItem.rightBarButtonItem = editButton
     }

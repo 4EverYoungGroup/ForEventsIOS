@@ -29,6 +29,7 @@ struct Constants {
     static let urlPostMethod = "POST"
     static let urlGetMethod = "GET"
     static let urlPutMethod = "PUT"
+    static let urlDelMethod = "DELETE"
     static let urlHeadersConst = "Content-Type"
     static let urlJsonContentType = "application/json"
     //location

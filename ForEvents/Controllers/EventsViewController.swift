@@ -71,12 +71,15 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         
         downloadEventsInteractor.execute { (events: Events) in
             // Todo OK
-            Global.events = events
-            
-            self.eventsCollectionView.delegate = self
-            self.eventsCollectionView.dataSource = self
-            self.eventsCollectionView.reloadData()
-            
+            if events.count() > 0 {
+                Global.events = events
+                
+                self.eventsCollectionView.delegate = self
+                self.eventsCollectionView.dataSource = self
+                self.eventsCollectionView.reloadData()
+            } else {
+                //TODO alert with no events
+            }
         }
     }
     

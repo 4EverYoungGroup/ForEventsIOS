@@ -41,6 +41,7 @@ class RegisterViewController: UIViewController {
         //If viewcontroller is call from edit mode recover de user data
         if self.originCall == "update" {
             self.registerButton.setTitle("Guardar", for: .normal)
+            self.configureDeleteButton()
             ExecuteInteractorImpl().execute {
                 self.getUserData()
             }
@@ -156,7 +157,7 @@ class RegisterViewController: UIViewController {
         
         let user = User(email: userTextField.text!, password: psw1TextField.text, firstname: nameTextField.text!, profile: "User", lastname: lastnameTextField.text, country: countryTextField.text, province: provinceTextField.text, zipCode: zipCodeTextField.text, city: nil, alias: aliasTextField.text, gender: gender, birthdayDate: nil)
         
-        let upadateUserInteractor: UpdateUserInteractor = UpdateUserInteravarrNSURLSessionImpl()
+        let upadateUserInteractor: UpdateUserInteractor = UpdateUserInteractorNSURLSessionImpl()
         
         upadateUserInteractor.execute(user: user) { (user: User?) in
             if user != nil {
@@ -211,6 +212,43 @@ class RegisterViewController: UIViewController {
                     }
                 }
             }
+        }
+    }
+    
+    func configureDeleteButton() {
+        var editButton: UIBarButtonItem = UIBarButtonItem()
+        let image = UIImage(named: "deleteUser")?.withRenderingMode(.alwaysOriginal)
+        editButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(deleteUserTapped))
+        editButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "AvenirNext-Bold", size: 17)!], for: .normal)
+        navigationItem.rightBarButtonItem = editButton
+    }
+    
+    @objc func deleteUserTapped() {
+        //Delete user - Alert
+        let deleteUserAlertController = UIAlertController (title: "Atención, ha solicitado borrar su usuario", message: "Esta acción borrará su usuario y todos sus datos de la app.", preferredStyle: .alert)
+        
+        let settingsAction = UIAlertAction(title: "Borrar", style: .destructive) { (_) -> Void in
+            //Delete user
+            self.deleteUser()
+        }
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        deleteUserAlertController .addAction(settingsAction)
+        deleteUserAlertController .addAction(cancelAction)
+        self.present(deleteUserAlertController, animated: true, completion: nil)
+    }
+    
+    func deleteUser() {
+        let deleteUserInteractor: DeleteUserInteractor = DeleteUserInteractorNSURLSessionImpl()
+        
+        deleteUserInteractor.execute { 
+            let loginTabBarController = createLoginTabBar()
+            //Show login in tabbar
+            loginTabBarController.selectedIndex = 0
+            //Configure tabbar without background and shadow
+            loginTabBarController.tabBar.backgroundImage = UIImage()
+            loginTabBarController.tabBar.shadowImage = UIImage()
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = loginTabBarController
         }
     }
     
