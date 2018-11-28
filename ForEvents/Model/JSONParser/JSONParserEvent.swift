@@ -28,7 +28,7 @@ func parseEvents(data: Data) -> Events {
             }
             return date
         })
-        let jsonData = try decoder.decode(Response.self, from: data)
+        let jsonData = try decoder.decode(ResponseEvent.self, from: data)
         let result = jsonData.result
         //Filter transactions from JSON with requirements
         //Map TransactionCodable to Transaction class

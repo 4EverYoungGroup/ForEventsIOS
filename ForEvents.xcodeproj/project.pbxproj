@@ -17,6 +17,14 @@
 		BA09DE0721AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0621AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift */; };
 		BA0C52D521AD611A00C3D1E5 /* DeleteUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52D421AD611A00C3D1E5 /* DeleteUserInteractor.swift */; };
 		BA0C52D721AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52D621AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift */; };
+		BA0C52DA21ADA7ED00C3D1E5 /* EventTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52D821ADA7ED00C3D1E5 /* EventTypeTableViewCell.swift */; };
+		BA0C52DB21ADA7ED00C3D1E5 /* EventTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0C52D921ADA7ED00C3D1E5 /* EventTypeTableViewCell.xib */; };
+		BA0C52DD21ADAA8D00C3D1E5 /* EventTypeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52DC21ADAA8D00C3D1E5 /* EventTypeAPI.swift */; };
+		BA0C52DF21ADAAD700C3D1E5 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52DE21ADAAD700C3D1E5 /* EventType.swift */; };
+		BA0C52E121ADAF2800C3D1E5 /* DownloadEventTypesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52E021ADAF2800C3D1E5 /* DownloadEventTypesInteractor.swift */; };
+		BA0C52E321ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52E221ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift */; };
+		BA0C52E521ADB30A00C3D1E5 /* FindViewController+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52E421ADB30A00C3D1E5 /* FindViewController+TableViewController.swift */; };
+		BA0C52E721ADC9DC00C3D1E5 /* EventTypeCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52E621ADC9DC00C3D1E5 /* EventTypeCheck.swift */; };
 		BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E2D972191AC63006D3CBD /* String+Image.swift */; };
 		BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */; };
 		BA1E2D9C21920878006D3CBD /* EventDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */; };
@@ -79,8 +87,8 @@
 		BAA6AE64218F74440029F421 /* SectionHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA6AE62218F74440029F421 /* SectionHeaderCollectionReusableView.xib */; };
 		BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */; };
 		BAB1E286218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB1E285218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift */; };
-		BAC173772190BCB4000A94A0 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC173752190BCB4000A94A0 /* FilterViewController.swift */; };
-		BAC173782190BCB4000A94A0 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC173762190BCB4000A94A0 /* FilterViewController.xib */; };
+		BAC173772190BCB4000A94A0 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC173752190BCB4000A94A0 /* FindViewController.swift */; };
+		BAC173782190BCB4000A94A0 /* FindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC173762190BCB4000A94A0 /* FindViewController.xib */; };
 		BAC1737B2190CE7D000A94A0 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC173792190CE7D000A94A0 /* EventDetailViewController.swift */; };
 		BAC1737C2190CE7D000A94A0 /* EventDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC1737A2190CE7D000A94A0 /* EventDetailViewController.xib */; };
 		BAC28898219C3709000AA7B2 /* UIViewAssists+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC28897219C3709000AA7B2 /* UIViewAssists+constraints.swift */; };
@@ -128,6 +136,14 @@
 		BA09DE0621AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BA0C52D421AD611A00C3D1E5 /* DeleteUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInteractor.swift; sourceTree = "<group>"; };
 		BA0C52D621AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BA0C52D821ADA7ED00C3D1E5 /* EventTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypeTableViewCell.swift; sourceTree = "<group>"; };
+		BA0C52D921ADA7ED00C3D1E5 /* EventTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTypeTableViewCell.xib; sourceTree = "<group>"; };
+		BA0C52DC21ADAA8D00C3D1E5 /* EventTypeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypeAPI.swift; sourceTree = "<group>"; };
+		BA0C52DE21ADAAD700C3D1E5 /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
+		BA0C52E021ADAF2800C3D1E5 /* DownloadEventTypesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadEventTypesInteractor.swift; sourceTree = "<group>"; };
+		BA0C52E221ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadEventTypesInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BA0C52E421ADB30A00C3D1E5 /* FindViewController+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FindViewController+TableViewController.swift"; sourceTree = "<group>"; };
+		BA0C52E621ADC9DC00C3D1E5 /* EventTypeCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypeCheck.swift; sourceTree = "<group>"; };
 		BA1E2D972191AC63006D3CBD /* String+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
 		BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -194,8 +210,8 @@
 		BAA6AE62218F74440029F421 /* SectionHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverUserInteractor.swift; sourceTree = "<group>"; };
 		BAB1E285218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
-		BAC173752190BCB4000A94A0 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
-		BAC173762190BCB4000A94A0 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		BAC173752190BCB4000A94A0 /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
+		BAC173762190BCB4000A94A0 /* FindViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindViewController.xib; sourceTree = "<group>"; };
 		BAC173792190CE7D000A94A0 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		BAC1737A2190CE7D000A94A0 /* EventDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailViewController.xib; sourceTree = "<group>"; };
 		BAC28897219C3709000AA7B2 /* UIViewAssists+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewAssists+constraints.swift"; sourceTree = "<group>"; };
@@ -311,6 +327,8 @@
 				BAC173792190CE7D000A94A0 /* EventDetailViewController.swift */,
 				BA5F70BD21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift */,
 				BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */,
+				BAC173752190BCB4000A94A0 /* FindViewController.swift */,
+				BA0C52E421ADB30A00C3D1E5 /* FindViewController+TableViewController.swift */,
 				BA5CF7462180772700419990 /* MapViewController.swift */,
 				BA5CF7482180772700419990 /* CalendarViewController.swift */,
 				BA20100F21A498C1008425CB /* EventsDayViewController.swift */,
@@ -333,6 +351,7 @@
 				BA5CF7592180788A00419990 /* RegisterViewController.xib */,
 				BA5CF7572180788A00419990 /* EventsViewController.xib */,
 				BAC1737A2190CE7D000A94A0 /* EventDetailViewController.xib */,
+				BAC173762190BCB4000A94A0 /* FindViewController.xib */,
 				BA5CF7582180788A00419990 /* MapViewController.xib */,
 				BA5CF7542180788A00419990 /* CalendarViewController.xib */,
 				BA20101021A498C1008425CB /* EventsDayViewController.xib */,
@@ -369,6 +388,8 @@
 				BA09DE0621AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift */,
 				BA0C52D421AD611A00C3D1E5 /* DeleteUserInteractor.swift */,
 				BA0C52D621AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift */,
+				BA0C52E021ADAF2800C3D1E5 /* DownloadEventTypesInteractor.swift */,
+				BA0C52E221ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -385,6 +406,9 @@
 				BAC57665218B8F4900C735C6 /* Event.swift */,
 				BACDE3EA21A9DA5E007452F0 /* EventAPI.swift */,
 				BAC57667218B906F00C735C6 /* Events.swift */,
+				BA0C52DC21ADAA8D00C3D1E5 /* EventTypeAPI.swift */,
+				BA0C52DE21ADAAD700C3D1E5 /* EventType.swift */,
+				BA0C52E621ADC9DC00C3D1E5 /* EventTypeCheck.swift */,
 				BA5C731221A33D1F00CE40EB /* Search.swift */,
 				BA5C731421A33DBD00CE40EB /* Searches.swift */,
 				BA09DE0021AC159D0009FAF4 /* Token.swift */,
@@ -412,12 +436,12 @@
 				BAC57671218B97A200C735C6 /* EventCollectionViewCell.xib */,
 				BAA6AE61218F74440029F421 /* SectionHeaderCollectionReusableView.swift */,
 				BAA6AE62218F74440029F421 /* SectionHeaderCollectionReusableView.xib */,
-				BAC173752190BCB4000A94A0 /* FilterViewController.swift */,
-				BAC173762190BCB4000A94A0 /* FilterViewController.xib */,
 				BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */,
 				BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */,
 				BA65EDE6219ED28B00B26C96 /* SearchTableViewCell.swift */,
 				BA65EDE7219ED28B00B26C96 /* SearchTableViewCell.xib */,
+				BA0C52D821ADA7ED00C3D1E5 /* EventTypeTableViewCell.swift */,
+				BA0C52D921ADA7ED00C3D1E5 /* EventTypeTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -549,12 +573,13 @@
 				BA20100E21A3FF1D008425CB /* NotificationsViewController.xib in Resources */,
 				BA59882421768F100065D77D /* LaunchScreen.storyboard in Resources */,
 				BA5CF75A2180788A00419990 /* CalendarViewController.xib in Resources */,
-				BAC173782190BCB4000A94A0 /* FilterViewController.xib in Resources */,
+				BAC173782190BCB4000A94A0 /* FindViewController.xib in Resources */,
 				BA59882121768F100065D77D /* Assets.xcassets in Resources */,
 				BA65EDE9219ED28B00B26C96 /* SearchTableViewCell.xib in Resources */,
 				BA5C731121A32F1700CE40EB /* SearchesViewController.xib in Resources */,
 				BA20101221A498C1008425CB /* EventsDayViewController.xib in Resources */,
 				BAC1737C2190CE7D000A94A0 /* EventDetailViewController.xib in Resources */,
+				BA0C52DB21ADA7ED00C3D1E5 /* EventTypeTableViewCell.xib in Resources */,
 				BAC57673218B97A200C735C6 /* EventCollectionViewCell.xib in Resources */,
 				BA5CF75E2180788A00419990 /* MapViewController.xib in Resources */,
 				BA59883C217691340065D77D /* GoogleService-Info.plist in Resources */,
@@ -688,9 +713,11 @@
 				BA09DDFB21AC0AF20009FAF4 /* GetUserInteractor.swift in Sources */,
 				BA5C731021A32F1700CE40EB /* SearchesViewController.swift in Sources */,
 				BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */,
+				BA0C52E521ADB30A00C3D1E5 /* FindViewController+TableViewController.swift in Sources */,
 				BAC5766A218B912600C735C6 /* DownloadEventsInteractor.swift in Sources */,
 				BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */,
 				BAF74D7221936FEE00E731DC /* EventAnnotation.swift in Sources */,
+				BA0C52DD21ADAA8D00C3D1E5 /* EventTypeAPI.swift in Sources */,
 				BA5C731921A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift in Sources */,
 				BA477548218378BC00B8AA40 /* createTabBar.swift in Sources */,
 				BAC57666218B8F4900C735C6 /* Event.swift in Sources */,
@@ -701,6 +728,7 @@
 				BA09DE0721AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
 				BA09DDFD21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift in Sources */,
+				BA0C52DA21ADA7ED00C3D1E5 /* EventTypeTableViewCell.swift in Sources */,
 				BACDE3ED21A9DF5A007452F0 /* DownloadEventsInteractorNSURLSessionImpl.swift in Sources */,
 				BA20101121A498C1008425CB /* EventsDayViewController.swift in Sources */,
 				BA65EDE8219ED28B00B26C96 /* SearchTableViewCell.swift in Sources */,
@@ -708,7 +736,7 @@
 				BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */,
 				BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */,
 				BACDE3F321AAA80B007452F0 /* JSONParserEvent.swift in Sources */,
-				BAC173772190BCB4000A94A0 /* FilterViewController.swift in Sources */,
+				BAC173772190BCB4000A94A0 /* FindViewController.swift in Sources */,
 				BA1F8E7A21A0128200037716 /* CustomColors.swift in Sources */,
 				BA5F70BE21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift in Sources */,
 				BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */,
@@ -723,6 +751,8 @@
 				BA65EDEC219F3B6E00B26C96 /* AssistsViewController.swift in Sources */,
 				BAC28898219C3709000AA7B2 /* UIViewAssists+constraints.swift in Sources */,
 				BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */,
+				BA0C52E721ADC9DC00C3D1E5 /* EventTypeCheck.swift in Sources */,
+				BA0C52E121ADAF2800C3D1E5 /* DownloadEventTypesInteractor.swift in Sources */,
 				BA20101421A49B99008425CB /* EventsDayViewController+CollectionViewController.swift in Sources */,
 				BA09DE0521AC6EE40009FAF4 /* UpdateUserInteractor.swift in Sources */,
 				BACDE3EB21A9DA5E007452F0 /* EventAPI.swift in Sources */,
@@ -733,12 +763,14 @@
 				BAC1737B2190CE7D000A94A0 /* EventDetailViewController.swift in Sources */,
 				BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */,
 				BA20100D21A3FF1D008425CB /* NotificationsViewController.swift in Sources */,
+				BA0C52E321ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift in Sources */,
 				BA09DE0321AC33D30009FAF4 /* UserGet.swift in Sources */,
 				BA5C731B21A3424600CE40EB /* SearchesViewController+TableViewController.swift in Sources */,
 				BA5CF7532180783400419990 /* Alerts.swift in Sources */,
 				BA5CF74B2180772700419990 /* ProfileViewController.swift in Sources */,
 				BA5CF7612180CDDE00419990 /* Constants.swift in Sources */,
 				BA5CF7632180D0D500419990 /* StringExtensions.swift in Sources */,
+				BA0C52DF21ADAAD700C3D1E5 /* EventType.swift in Sources */,
 				BA602D342181BB4D0075B64B /* ExecuteInteractorImpl.swift in Sources */,
 				BA5CF7522180783400419990 /* Typealias.swift in Sources */,
 				BA5CF74A2180772700419990 /* MapViewController.swift in Sources */,

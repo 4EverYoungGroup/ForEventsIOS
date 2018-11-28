@@ -41,20 +41,19 @@ class SearchesViewController: UIViewController {
             searchesDownload()
         }
         
-        func searchesDownload() {
-            let downloadSearchesInteractor: DownloadSearchesInteractor = DownloadSearchesInteractorFakeImpl()
-            
-            downloadSearchesInteractor.execute { (searches: Searches) in
-                // Todo OK
-                self.searches = searches
-                
-                self.searchesTableView.delegate = self
-                self.searchesTableView.dataSource = self
-                self.searchesTableView.reloadData()
-                
-            }
-        }
-        
     }
     
+    func searchesDownload() {
+        let downloadSearchesInteractor: DownloadSearchesInteractor = DownloadSearchesInteractorFakeImpl()
+        
+        downloadSearchesInteractor.execute { (searches: Searches) in
+            // Todo OK
+            self.searches = searches
+            
+            self.searchesTableView.delegate = self
+            self.searchesTableView.dataSource = self
+            self.searchesTableView.reloadData()
+            
+        }
+    }
 }

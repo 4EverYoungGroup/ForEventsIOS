@@ -26,6 +26,7 @@ struct Constants {
     static let urlEventsPath = "/apiv1/events"
     static let urlGetUserPath = "/apiv1/users/"
     static let urlUpdateUserPath = "/apiv1/users/"
+    static let urlEventTypePath = "/apiv1/EventTypes/"
     static let urlPostMethod = "POST"
     static let urlGetMethod = "GET"
     static let urlPutMethod = "PUT"
@@ -39,4 +40,5 @@ struct Constants {
 
 struct Global {
     static var events: Events? = nil
+    static var eventTypesCheck: [EventTypeCheck]? = []
 }

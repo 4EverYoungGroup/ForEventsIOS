@@ -127,7 +127,7 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
     }
     
     @objc func findTapped() {
-        let filterViewController = FilterViewController()
+        let filterViewController = FindViewController()
         filterViewController.modalPresentationStyle = .overFullScreen
         present(filterViewController, animated: true, completion: nil)
     }

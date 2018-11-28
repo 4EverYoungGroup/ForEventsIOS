@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Response: Codable {
+struct ResponseEvent: Codable {
     let ok: Bool
     let result: [EventAPI]
 }
