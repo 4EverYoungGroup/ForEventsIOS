@@ -111,6 +111,8 @@
 		BAF21FDF21AEF51A005BE449 /* CityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FDE21AEF51A005BE449 /* CityAPI.swift */; };
 		BAF21FE121AEF56D005BE449 /* GetCitiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FE021AEF56D005BE449 /* GetCitiesInteractor.swift */; };
 		BAF21FE321AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FE221AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift */; };
+		BAF21FE621AF4726005BE449 /* DistanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FE421AF4726005BE449 /* DistanceTableViewCell.swift */; };
+		BAF21FE721AF4726005BE449 /* DistanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF21FE521AF4726005BE449 /* DistanceTableViewCell.xib */; };
 		BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */; };
 		BAF74D7221936FEE00E731DC /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D7121936FEE00E731DC /* EventAnnotation.swift */; };
 /* End PBXBuildFile section */
@@ -238,6 +240,8 @@
 		BAF21FDE21AEF51A005BE449 /* CityAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAPI.swift; sourceTree = "<group>"; };
 		BAF21FE021AEF56D005BE449 /* GetCitiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesInteractor.swift; sourceTree = "<group>"; };
 		BAF21FE221AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BAF21FE421AF4726005BE449 /* DistanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceTableViewCell.swift; sourceTree = "<group>"; };
+		BAF21FE521AF4726005BE449 /* DistanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistanceTableViewCell.xib; sourceTree = "<group>"; };
 		BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventDetailViewController+MapKit.swift"; sourceTree = "<group>"; };
 		BAF74D7121936FEE00E731DC /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -454,6 +458,8 @@
 				BA65EDE7219ED28B00B26C96 /* SearchTableViewCell.xib */,
 				BA0C52D821ADA7ED00C3D1E5 /* EventTypeTableViewCell.swift */,
 				BA0C52D921ADA7ED00C3D1E5 /* EventTypeTableViewCell.xib */,
+				BAF21FE421AF4726005BE449 /* DistanceTableViewCell.swift */,
+				BAF21FE521AF4726005BE449 /* DistanceTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -597,6 +603,7 @@
 				BA59883C217691340065D77D /* GoogleService-Info.plist in Resources */,
 				BAA6AE64218F74440029F421 /* SectionHeaderCollectionReusableView.xib in Resources */,
 				BA1E2D9C21920878006D3CBD /* EventDetailCollectionViewCell.xib in Resources */,
+				BAF21FE721AF4726005BE449 /* DistanceTableViewCell.xib in Resources */,
 				BA5CF75D2180788A00419990 /* EventsViewController.xib in Resources */,
 				BA5CF75C2180788A00419990 /* LoginViewController.xib in Resources */,
 				BA59883A217690C60065D77D /* Podfile in Resources */,
@@ -742,6 +749,7 @@
 				BACDE3E921A9493B007452F0 /* OptionalExtensions.swift in Sources */,
 				BA602D302181AD320075B64B /* User.swift in Sources */,
 				BA5C731321A33D1F00CE40EB /* Search.swift in Sources */,
+				BAF21FE621AF4726005BE449 /* DistanceTableViewCell.swift in Sources */,
 				BA09DE0721AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
 				BA09DDFD21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift in Sources */,
@@ -952,7 +960,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VJ3XGT65D5;
 				INFOPLIST_FILE = ForEvents/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -970,7 +981,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VJ3XGT65D5;
 				INFOPLIST_FILE = ForEvents/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -987,7 +1001,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEventsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEventsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1004,7 +1022,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEventsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEventsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

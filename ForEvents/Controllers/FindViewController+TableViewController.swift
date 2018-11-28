@@ -11,37 +11,69 @@ import UIKit
 extension FindViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (Global.eventTypesCheck?.count)!
+        if tableView == eventTypeTableView {
+            return (Global.eventTypesCheck?.count)!
+        } else {
+            return (Constants.distances.count)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = eventTypeTableViewCellId
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! EventTypeTableViewCell
-        let eventTypeCheck: EventTypeCheck = Global.eventTypesCheck![indexPath.row]
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        if eventTypeCheck.check {
-            cell.accessoryType = .checkmark
+        if tableView == eventTypeTableView {
+            let identifier = eventTypeTableViewCellId
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! EventTypeTableViewCell
+            let eventTypeCheck: EventTypeCheck = Global.eventTypesCheck![indexPath.row]
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            if eventTypeCheck.check {
+                cell.accessoryType = .checkmark
+            } else {
+                cell.accessoryType = .none
+            }
+            cell.refresh(eventTypeCheck: eventTypeCheck, index: indexPath.row)
+            return cell
         } else {
-            cell.accessoryType = .none
+            let identifier = distanceTableViewCellId
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! DistanceTableViewCell
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            cell.refresh(distance: Constants.distances[indexPath.row], index: indexPath.row)
+            return cell
         }
-        cell.refresh(eventTypeCheck: eventTypeCheck, index: indexPath.row)
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! EventTypeTableViewCell
-        let index = Global.eventTypesCheck?.index(where: {$0.name == cell.eventTypeLabel.text})
-        Global.eventTypesCheck![index!].check = false
-        cell.accessoryType = .none
-        tableView.rectForRow(at: indexPath)
+        if tableView == eventTypeTableView {
+            let cell = tableView.cellForRow(at: indexPath) as! EventTypeTableViewCell
+            let index = Global.eventTypesCheck?.index(where: {$0.name == cell.eventTypeLabel.text})
+            Global.eventTypesCheck![index!].check = false
+            cell.accessoryType = .none
+            tableView.rectForRow(at: indexPath)
+        } else {
+            let cell = tableView.cellForRow(at: indexPath) as! DistanceTableViewCell
+            cell.accessoryType = .checkmark
+            tableView.rectForRow(at: indexPath)
+        }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! EventTypeTableViewCell
-        let index = Global.eventTypesCheck?.index(where: {$0.name == cell.eventTypeLabel.text})
-        Global.eventTypesCheck![index!].check = true
-        cell.accessoryType = .checkmark
-        tableView.rectForRow(at: indexPath)
+        if tableView == eventTypeTableView {
+            let cell = tableView.cellForRow(at: indexPath) as! EventTypeTableViewCell
+            let index = Global.eventTypesCheck?.index(where: {$0.name == cell.eventTypeLabel.text})
+            Global.eventTypesCheck![index!].check = true
+            cell.accessoryType = .checkmark
+            tableView.rectForRow(at: indexPath)
+        } else {
+            let cell = tableView.cellForRow(at: indexPath) as! DistanceTableViewCell
+            cell.accessoryType = .none
+            tableView.rectForRow(at: indexPath)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if tableView != eventTypeTableView {
+            if indexPath.row == 0 && cell.isSelected == true {
+                cell.accessoryType = .checkmark
+            }
+        }
     }
 }
 

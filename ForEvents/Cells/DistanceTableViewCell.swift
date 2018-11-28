@@ -1,24 +1,24 @@
 //
-//  EventTypeTableViewCell.swift
+//  DistanceTableViewCell.swift
 //  ForEvents
 //
-//  Created by luis gomez alonso on 27/11/2018.
+//  Created by luis gomez alonso on 28/11/2018.
 //  Copyright © 2018 4Everyoung.group. All rights reserved.
 //
 
 import UIKit
 
-class EventTypeTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var eventTypeButton: UIButton!
-    @IBOutlet weak var eventTypeLabel: UILabel!
+class DistanceTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var distanceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
     }
     
-    func refresh(eventTypeCheck: EventTypeCheck, index: Int) {
-        self.eventTypeLabel.text = eventTypeCheck.name
+    func refresh(distance: String, index: Int) {
+        self.distanceLabel.text = distance
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

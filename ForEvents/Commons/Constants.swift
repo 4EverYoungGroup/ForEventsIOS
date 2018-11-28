@@ -38,6 +38,13 @@ struct Constants {
     //location
     static let latitudeDefault = 41.512860
     static let longitudeDefault = -5.747090
+    //radio kms
+    static let distances:[String] = [
+        "5 Kilómetros",
+        "10 Kilómetros",
+        "25 Kilómetros",
+        "50 Kilómetros",
+        "100 Kilómetros"]
 }
 
 struct Global {
