@@ -107,6 +107,10 @@ class LoginViewController: UIViewController {
                     //Save user and userID in usersdefaults
                     UserDefaults.standard.setValue(self.userTextField.text, forKey: Constants.username)
                     UserDefaults.standard.setValue(userLogin?.user?.id, forKey: Constants.userID)
+                    let radio = UserDefaults.standard.bool(forKey: Constants.radio)
+                    if !radio {
+                        UserDefaults.standard.setValue(5, forKey: Constants.radio)
+                    }
                     //Go to Events tabBar
                     let eventsTabBarController = createEventsTabBar()
                     //Configure tabbar opaque and black
