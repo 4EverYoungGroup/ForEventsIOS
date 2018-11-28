@@ -7,6 +7,7 @@ def common_pods
     pod 'Kingfisher', '~> 4.0'
     pod 'Parchment'
     pod 'VACalendar'
+    pod 'SearchTextField'
 end
 
 target 'ForEvents' do

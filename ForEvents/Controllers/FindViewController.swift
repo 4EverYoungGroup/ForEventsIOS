@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SearchTextField
 
 class FindViewController: UIViewController {
 
@@ -16,11 +17,16 @@ class FindViewController: UIViewController {
     @IBOutlet weak var km25Button: UIButton!
     @IBOutlet weak var km50Button: UIButton!
     @IBOutlet weak var km100Button: UIButton!
-    
+    @IBOutlet weak var cityTextField: SearchTextField!
+    @IBOutlet weak var positionSwitchControl: UISwitch!
+    @IBOutlet weak var queryTextField: UITextField!
     let eventTypeTableViewCellId = "EventTypeTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Configure search text field
+        self.configureSearchTextField()
         
         //Configure km buttons
         self.configureKmsButtons()
@@ -64,6 +70,26 @@ class FindViewController: UIViewController {
             self.eventTypeTableView.dataSource = self
             self.eventTypeTableView.reloadData()
             
+        }
+    }
+    
+    func citiesDownload(queryText: String) {
+        let citiesInteractor: GetCitiesInteractor = GetCitiesInteractorNSURLSessionImpl()
+        
+        citiesInteractor.execute(queryText: queryText) { (cities: [City]?) in
+            // OK
+            if cities != nil {
+                //Create array with cities name result
+                var citiesNames: [String] = []
+                for city in cities! {
+                    citiesNames.append(city.city+" "+city.province!)
+                }
+                // Set new items to filter
+                self.cityTextField.filterStrings(citiesNames)
+                
+                // Stop loading indicator
+                self.cityTextField.stopLoadingIndicator()
+            }
         }
     }
 
@@ -160,5 +186,47 @@ class FindViewController: UIViewController {
             km50Button.setImage(nil, for: .normal)
             km100Button.setImage(nil, for: .normal)
         }
+    }
+    
+    fileprivate func configureSearchTextField() {
+        cityTextField.startVisibleWithoutInteraction = false
+        // Set a visual theme (SearchTextFieldTheme). By default it's the light theme
+        cityTextField.theme = SearchTextFieldTheme.darkTheme()
+        
+        // Modify current theme properties
+        cityTextField.theme.font = UIFont(name: "AvenirNext-Bold", size: 13)!
+        cityTextField.theme.bgColor = .black
+        cityTextField.theme.borderColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+        cityTextField.theme.separatorColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
+        cityTextField.theme.cellHeight = 50
+        
+        // Set specific comparision options - Default: .caseInsensitive
+        cityTextField.comparisonOptions = [.caseInsensitive]
+        
+        // Handle item selection - Default behaviour: item title set to the text field
+        cityTextField.itemSelectionHandler = { filteredResults, itemPosition in
+            // Just in case you need the item position
+            let item = filteredResults[itemPosition]
+            
+            // Do whatever you want with the picked item
+            self.cityTextField!.text = item.title
+        }
+        
+        // Update data source when the user stops typing
+        cityTextField.userStoppedTypingHandler = {
+            if let criteria = self.cityTextField.text {
+                if criteria.count > 2 {
+                    
+                    // Show loading indicator
+                    self.cityTextField.showLoadingIndicator()
+                    
+                    self.citiesDownload(queryText: criteria)
+                }
+            }
+        } as (() -> Void)
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }

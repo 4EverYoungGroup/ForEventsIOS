@@ -107,6 +107,10 @@
 		BACDE3F321AAA80B007452F0 /* JSONParserEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3F221AAA80B007452F0 /* JSONParserEvent.swift */; };
 		BAD7876D219B4406000A44EC /* ProfileViewController+ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */; };
 		BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */; };
+		BAF21FDD21AEF361005BE449 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FDC21AEF361005BE449 /* City.swift */; };
+		BAF21FDF21AEF51A005BE449 /* CityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FDE21AEF51A005BE449 /* CityAPI.swift */; };
+		BAF21FE121AEF56D005BE449 /* GetCitiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FE021AEF56D005BE449 /* GetCitiesInteractor.swift */; };
+		BAF21FE321AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FE221AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift */; };
 		BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */; };
 		BAF74D7221936FEE00E731DC /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D7121936FEE00E731DC /* EventAnnotation.swift */; };
 /* End PBXBuildFile section */
@@ -230,6 +234,10 @@
 		BACDE3F221AAA80B007452F0 /* JSONParserEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserEvent.swift; sourceTree = "<group>"; };
 		BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+ImagePickerController.swift"; sourceTree = "<group>"; };
 		BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		BAF21FDC21AEF361005BE449 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		BAF21FDE21AEF51A005BE449 /* CityAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAPI.swift; sourceTree = "<group>"; };
+		BAF21FE021AEF56D005BE449 /* GetCitiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesInteractor.swift; sourceTree = "<group>"; };
+		BAF21FE221AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventDetailViewController+MapKit.swift"; sourceTree = "<group>"; };
 		BAF74D7121936FEE00E731DC /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -390,6 +398,8 @@
 				BA0C52D621AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift */,
 				BA0C52E021ADAF2800C3D1E5 /* DownloadEventTypesInteractor.swift */,
 				BA0C52E221ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift */,
+				BAF21FE021AEF56D005BE449 /* GetCitiesInteractor.swift */,
+				BAF21FE221AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -412,6 +422,8 @@
 				BA5C731221A33D1F00CE40EB /* Search.swift */,
 				BA5C731421A33DBD00CE40EB /* Searches.swift */,
 				BA09DE0021AC159D0009FAF4 /* Token.swift */,
+				BAF21FDC21AEF361005BE449 /* City.swift */,
+				BAF21FDE21AEF51A005BE449 /* CityAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -611,6 +623,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
+				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/VACalendar/VACalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -619,6 +632,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VACalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -637,6 +651,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
+				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/VACalendar/VACalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -645,6 +660,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VACalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -714,6 +730,7 @@
 				BA5C731021A32F1700CE40EB /* SearchesViewController.swift in Sources */,
 				BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */,
 				BA0C52E521ADB30A00C3D1E5 /* FindViewController+TableViewController.swift in Sources */,
+				BAF21FDD21AEF361005BE449 /* City.swift in Sources */,
 				BAC5766A218B912600C735C6 /* DownloadEventsInteractor.swift in Sources */,
 				BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */,
 				BAF74D7221936FEE00E731DC /* EventAnnotation.swift in Sources */,
@@ -754,6 +771,7 @@
 				BA0C52E721ADC9DC00C3D1E5 /* EventTypeCheck.swift in Sources */,
 				BA0C52E121ADAF2800C3D1E5 /* DownloadEventTypesInteractor.swift in Sources */,
 				BA20101421A49B99008425CB /* EventsDayViewController+CollectionViewController.swift in Sources */,
+				BAF21FDF21AEF51A005BE449 /* CityAPI.swift in Sources */,
 				BA09DE0521AC6EE40009FAF4 /* UpdateUserInteractor.swift in Sources */,
 				BACDE3EB21A9DA5E007452F0 /* EventAPI.swift in Sources */,
 				BA09DE0121AC159D0009FAF4 /* Token.swift in Sources */,
@@ -762,6 +780,7 @@
 				BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */,
 				BAC1737B2190CE7D000A94A0 /* EventDetailViewController.swift in Sources */,
 				BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */,
+				BAF21FE321AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift in Sources */,
 				BA20100D21A3FF1D008425CB /* NotificationsViewController.swift in Sources */,
 				BA0C52E321ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift in Sources */,
 				BA09DE0321AC33D30009FAF4 /* UserGet.swift in Sources */,
@@ -771,6 +790,7 @@
 				BA5CF7612180CDDE00419990 /* Constants.swift in Sources */,
 				BA5CF7632180D0D500419990 /* StringExtensions.swift in Sources */,
 				BA0C52DF21ADAAD700C3D1E5 /* EventType.swift in Sources */,
+				BAF21FE121AEF56D005BE449 /* GetCitiesInteractor.swift in Sources */,
 				BA602D342181BB4D0075B64B /* ExecuteInteractorImpl.swift in Sources */,
 				BA5CF7522180783400419990 /* Typealias.swift in Sources */,
 				BA5CF74A2180772700419990 /* MapViewController.swift in Sources */,
@@ -932,10 +952,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VJ3XGT65D5;
 				INFOPLIST_FILE = ForEvents/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -953,10 +970,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VJ3XGT65D5;
 				INFOPLIST_FILE = ForEvents/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEvents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -973,11 +987,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEventsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEventsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -994,11 +1004,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ForEventsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.4events.ForEventsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

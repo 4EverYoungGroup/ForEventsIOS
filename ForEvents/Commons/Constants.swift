@@ -28,6 +28,7 @@ struct Constants {
     static let urlGetUserPath = "/apiv1/users/"
     static let urlUpdateUserPath = "/apiv1/users/"
     static let urlEventTypePath = "/apiv1/EventTypes/"
+    static let urlCitiesPath = "/apiv1/cities"
     static let urlPostMethod = "POST"
     static let urlGetMethod = "GET"
     static let urlPutMethod = "PUT"
