@@ -8,8 +8,12 @@
 
 import UIKit
 import SearchTextField
+import CoreLocation
 
-class FindViewController: UIViewController {
+let FindDidPressNotificationName = "FindDidPress"
+let FindKey = "FindKey"
+
+class FindViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var eventTypeTableView: UITableView!
     @IBOutlet weak var distanceTableView: UITableView!
@@ -18,9 +22,12 @@ class FindViewController: UIViewController {
     @IBOutlet weak var queryTextField: UITextField!
     let eventTypeTableViewCellId = "EventTypeTableViewCell"
     let distanceTableViewCellId = "DistanceTableViewCell"
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
         
         //Configure search text field
         self.configureSearchTextField()
@@ -84,8 +91,10 @@ class FindViewController: UIViewController {
             if cities != nil {
                 //Create array with cities name result
                 var citiesNames: [String] = []
+                Global.citiesSelected = []
                 for city in cities! {
-                    citiesNames.append(city.city+" "+city.province!)
+                    citiesNames.append(city.city+"/"+city.province!)
+                    Global.citiesSelected?.append(city)
                 }
                 // Set new items to filter
                 self.cityTextField.filterStrings(citiesNames)
@@ -97,7 +106,57 @@ class FindViewController: UIViewController {
     }
 
     @IBAction func findButtonPress(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        //localidad - posición
+        if !positionSwitchControl.isOn {
+            //recoger posicion localidad
+            if !self.validateCity() {
+                let alert = Alerts().alert(title: Constants.regTitle, message: "Debe de seleccionar una localidad de la lista o su posición actual.")
+                self.cityTextField.becomeFirstResponder()
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+        }
+        //recoger texto
+        guard let text = self.queryTextField.text else { return }
+        //recoger eventtypes marcados
+        guard let arrayEventTypes = Global.eventTypesCheck?.filter({$0.check == true}) else { return }
+        //recoger radio
+        print(Global.distanceInMetres)
+        //Send find prameters selected notifications for update event collectionView
+        let findDict = [
+            "position": Global.citySelectedPosition ?? [0,0],
+            "queryText": text,
+            "eventTypes": arrayEventTypes,
+            "distance": Global.distanceInMetres] as Dictionary
+        let notificationCenter = NotificationCenter.default
+        let notification = Notification(name: Notification.Name(rawValue: FindDidPressNotificationName), object: nil, userInfo: [FindKey: findDict ])
+        self.dismiss(animated: true) {
+            notificationCenter.post(notification)
+        }
+    }
+    
+    @IBAction func positionPress(_ sender: UISwitch) {
+        if positionSwitchControl.isOn {
+            cityTextField.isEnabled = false
+            if CLLocationManager.locationServicesEnabled(){
+                locationManager.startUpdatingLocation()
+            }
+        } else {
+            cityTextField.isEnabled = true
+        }
+    }
+    
+    func validateCity() -> Bool {
+        let cityTextSelected = self.cityTextField.text?.components(separatedBy: "/")
+        let citySelected = Global.citiesSelected?.filter({$0.city == cityTextSelected![0]})
+        if (citySelected?.count)! == 1 {
+            let city: City = citySelected![0]
+            Global.citySelectedPosition = []
+            Global.citySelectedPosition?.append(city.location.coordinates[0])
+            Global.citySelectedPosition?.append(city.location.coordinates[1])
+            return true
+        }
+        return false
     }
     
     fileprivate func configureSearchTextField() {
@@ -140,5 +199,19 @@ class FindViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    //MARK: - location delegate methods to determine user location
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation :CLLocation = locations[0] as CLLocation
+        
+        Global.citySelectedPosition = []
+        Global.citySelectedPosition?.append(Float(userLocation.coordinate.longitude))
+        Global.citySelectedPosition?.append(Float(userLocation.coordinate.latitude))
+    
+        self.locationManager.stopUpdatingLocation()
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        self.locationManager.stopUpdatingLocation()
     }
 }

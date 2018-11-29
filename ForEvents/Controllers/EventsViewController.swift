@@ -28,8 +28,9 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         //Set title
         title = "Eventos"
         
-        //Configure searchBar
-        //self.configureSearch()
+        //Add to notification FindDidPress
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(findDidChange), name: NSNotification.Name(rawValue: FindDidPressNotificationName), object: nil)
         
         //Configure logout Button
         self.configureLogout()
@@ -49,6 +50,12 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.barStyle = .blackTranslucent
+    }
+    
+    deinit {
+        //Delete notification
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
     }
     
     func startEvents() {
@@ -223,5 +230,13 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         loginTabBarController.tabBar.shadowImage = UIImage()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = loginTabBarController
+    }
+    
+    // Mark: - Notifications
+    @objc func findDidChange(notification: Notification) {
+        //Recover findParameters
+        let info = notification.userInfo!
+        //extract the selected day
+        let findParameters = info[FindKey]
     }
 }

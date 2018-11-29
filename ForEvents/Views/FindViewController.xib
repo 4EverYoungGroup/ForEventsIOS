@@ -60,6 +60,9 @@
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f5Y-ps-61y">
                             <rect key="frame" x="305.5" y="52" width="59.5" height="31"/>
                             <color key="onTintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="positionPress:" destination="-1" eventType="valueChanged" id="LNA-IA-9lm"/>
+                            </connections>
                         </switch>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EZO-LX-yOF">
                             <rect key="frame" x="15" y="93" width="374" height="30"/>

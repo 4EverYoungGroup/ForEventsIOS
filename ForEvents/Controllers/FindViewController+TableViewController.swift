@@ -50,6 +50,8 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.cellForRow(at: indexPath) as! DistanceTableViewCell
             cell.accessoryType = .checkmark
+            let distanceKms = Int(cell.distanceLabel.text!) ?? 5
+            Global.distanceInMetres = distanceKms * 1000
             tableView.rectForRow(at: indexPath)
         }
     }

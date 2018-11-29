@@ -39,15 +39,18 @@ struct Constants {
     static let latitudeDefault = 41.512860
     static let longitudeDefault = -5.747090
     //radio kms
-    static let distances:[String] = [
-        "5 Kilómetros",
-        "10 Kilómetros",
-        "25 Kilómetros",
-        "50 Kilómetros",
-        "100 Kilómetros"]
+    static let distances:[Int] = [
+        5,
+        10,
+        25,
+        50,
+        100]
 }
 
 struct Global {
     static var events: Events? = nil
     static var eventTypesCheck: [EventTypeCheck]? = []
+    static var citiesSelected: [City]? = []
+    static var citySelectedPosition: [Float]? = []
+    static var distanceInMetres = 5000
 }

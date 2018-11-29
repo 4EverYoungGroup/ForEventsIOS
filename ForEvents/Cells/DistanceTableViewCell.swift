@@ -17,8 +17,8 @@ class DistanceTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func refresh(distance: String, index: Int) {
-        self.distanceLabel.text = distance
+    func refresh(distance: Int, index: Int) {
+        self.distanceLabel.text = String(distance)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
