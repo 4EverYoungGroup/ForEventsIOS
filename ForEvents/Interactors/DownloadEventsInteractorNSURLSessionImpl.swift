@@ -9,14 +9,30 @@
 import Foundation
 
 class DownloadEventsInteractorNSURLSessionImpl: DownloadEventsInteractor {
-    func execute(onSuccess: @escaping (Events) -> Void, onError: errorClosure) {
+    func execute(params: Dictionary<String, Any>,
+                 onSuccess: @escaping (Events) -> Void, onError: errorClosure) {
+        //recover find parameters
+        let position: [Float] = params["position"] as! [Float]
+        var queryTextString: String? = nil
+        if let queryText: String = params["queryText"] as? String {
+            queryTextString = queryText
+        }
+        var eventTypeString: String? = nil
+        if let eventTypes: [EventTypeCheck] = params["eventTypes"] as? [EventTypeCheck] {
+            let eventTypeID = eventTypes.map({String($0.id)})
+            eventTypeString = eventTypeID.joined(separator: ",")
+        }
+        let distance: Int = params["distance"] as! Int
+        
         var urlComponents = URLComponents()
         urlComponents.scheme = Constants.urlScheme
         urlComponents.host = Constants.urlHost
         urlComponents.path = Constants.urlEventsPath
         urlComponents.queryItems = [
             URLQueryItem(name: "sort", value: "begin_date"),
-            URLQueryItem(name: "location", value: String(Constants.latitudeDefault)+","+String(Constants.longitudeDefault)+",1400000"),
+            URLQueryItem(name: "event_typeId", value: eventTypeString),
+            URLQueryItem(name: "queryText", value: queryTextString),
+            URLQueryItem(name: "location", value: String(position[0])+","+String(position[1])+","+String(distance)),
             URLQueryItem(name: "media", value: "url"),
             URLQueryItem(name: "event_type", value: "name")]
         
@@ -65,8 +81,9 @@ class DownloadEventsInteractorNSURLSessionImpl: DownloadEventsInteractor {
         task.resume()
     }
     
-    func execute(onSuccess: @escaping (Events) -> Void) {
-        execute(onSuccess: onSuccess, onError: nil)
+    func execute(params: Dictionary<String, Any>,
+                 onSuccess: @escaping (Events) -> Void) {
+        execute(params: params, onSuccess: onSuccess, onError: nil)
     }
     
     func checkStatusCode(response:URLResponse?) -> Bool {

@@ -37,15 +37,21 @@ class AssistsViewController: UIViewController {
         let nibCell = UINib(nibName: eventCollectionViewCellId, bundle: nil)
         assistsCollectionView.register(nibCell, forCellWithReuseIdentifier: eventCollectionViewCellId)
         
-        ExecuteInteractorImpl().execute {
-            assistsDownload()
-        }
+        /*ExecuteInteractorImpl().execute {
+            let params = [
+                "position": [Float(Constants.longitudeDefault),
+                             Float(Constants.latitudeDefault)],
+                "queryText": nil,
+                "eventTypes": nil,
+                "distance": 5000] as Dictionary
+            assistsDownload(params: params as Dictionary<String, Any>)
+        }*/
     }
     
-    func assistsDownload() {
+    func assistsDownload(params: Dictionary<String, Any>) {
         let downloadEventsInteractor: DownloadEventsInteractor = DownloadAssistsInteractorFakeImpl()
         
-        downloadEventsInteractor.execute { (events: Events) in
+        downloadEventsInteractor.execute(params: params) { (events: Events) in
             // Todo OK
             self.events = events
             

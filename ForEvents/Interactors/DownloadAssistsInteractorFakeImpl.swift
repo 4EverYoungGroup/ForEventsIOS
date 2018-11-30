@@ -9,11 +9,11 @@
 import Foundation
 
 class DownloadAssistsInteractorFakeImpl: DownloadEventsInteractor {
-    func execute(onSuccess: @escaping (Events) -> Void) {
-        execute(onSuccess: onSuccess, onError: nil)
+    func execute(params: Dictionary<String, Any>, onSuccess: @escaping (Events) -> Void) {
+        execute(params: params, onSuccess: onSuccess, onError: nil)
     }
     
-    func execute(onSuccess: @escaping (Events) -> Void, onError: errorClosure = nil) {
+    func execute(params: Dictionary<String, Any>, onSuccess: @escaping (Events) -> Void, onError: errorClosure = nil) {
         let events = Events()
         
         for i in 0...3 {

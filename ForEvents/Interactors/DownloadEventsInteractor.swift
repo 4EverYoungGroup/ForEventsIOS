@@ -9,6 +9,8 @@
 import Foundation
 
 protocol DownloadEventsInteractor {
-    func execute(onSuccess: @escaping (Events) -> Void, onError: errorClosure)
-    func execute(onSuccess: @escaping (Events) -> Void)
+    func execute(params: Dictionary<String, Any>,
+                 onSuccess: @escaping (Events) -> Void, onError: errorClosure)
+    func execute(params: Dictionary<String, Any>,
+                 onSuccess: @escaping (Events) -> Void)
 }

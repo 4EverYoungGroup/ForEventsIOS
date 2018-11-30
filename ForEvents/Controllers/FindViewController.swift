@@ -152,8 +152,8 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         if (citySelected?.count)! == 1 {
             let city: City = citySelected![0]
             Global.citySelectedPosition = []
-            Global.citySelectedPosition?.append(city.location.coordinates[0])
             Global.citySelectedPosition?.append(city.location.coordinates[1])
+            Global.citySelectedPosition?.append(city.location.coordinates[0])
             return true
         }
         return false
@@ -206,8 +206,8 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         let userLocation :CLLocation = locations[0] as CLLocation
         
         Global.citySelectedPosition = []
-        Global.citySelectedPosition?.append(Float(userLocation.coordinate.longitude))
         Global.citySelectedPosition?.append(Float(userLocation.coordinate.latitude))
+        Global.citySelectedPosition?.append(Float(userLocation.coordinate.longitude))
     
         self.locationManager.stopUpdatingLocation()
     }

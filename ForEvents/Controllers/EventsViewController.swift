@@ -27,7 +27,6 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         
         //Set title
         title = "Eventos"
-        
         //Add to notification FindDidPress
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(findDidChange), name: NSNotification.Name(rawValue: FindDidPressNotificationName), object: nil)
@@ -71,24 +70,31 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         eventsCollectionView.register(nibCell, forCellWithReuseIdentifier: eventCollectionViewCellId)
         
         ExecuteInteractorImpl().execute {
-            eventsDownload()
+            //TODO pass self location or favorite city location
+            let params = [
+                "position": [Float(Constants.latitudeDefault),
+                             Float(Constants.longitudeDefault)],
+                "queryText": nil,
+                "eventTypes": nil,
+                "distance": 5000] as Dictionary
+            eventsDownload(params: params as Dictionary<String, Any>)
         }
     }
 
-    func eventsDownload() {
+    func eventsDownload(params: Dictionary<String, Any>) {
         let downloadEventsInteractor: DownloadEventsInteractor = DownloadEventsInteractorNSURLSessionImpl()
         
-        downloadEventsInteractor.execute { (events: Events) in
+        downloadEventsInteractor.execute(params: params) { (events: Events) in
             // Todo OK
-            if events.count() > 0 {
+            //if events.count() > 0 {
                 Global.events = events
                 
                 self.eventsCollectionView.delegate = self
                 self.eventsCollectionView.dataSource = self
                 self.eventsCollectionView.reloadData()
-            } else {
+            //} else {
                 //TODO alert with no events
-            }
+            //}
         }
     }
     
@@ -197,13 +203,13 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
             // If authorized when in use
             manager.startUpdatingLocation()
             self.locationAuth = true
-            self.startEvents()
+            //self.startEvents()
             break
         case .authorizedAlways:
             // If always authorized
             manager.startUpdatingLocation()
             self.locationAuth = true
-            self.startEvents()
+            //self.startEvents()
             break
         case .restricted:
             break
@@ -238,5 +244,6 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         let info = notification.userInfo!
         //extract the selected day
         let findParameters = info[FindKey]
+        eventsDownload(params: findParameters as! Dictionary<String, Any>)
     }
 }
