@@ -15,8 +15,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     var originCall: String?
     
-    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
-    
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var psw1TextField: UITextField!
     @IBOutlet weak var psw2TextField: UITextField!

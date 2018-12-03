@@ -116,6 +116,10 @@
 		BAF21FE721AF4726005BE449 /* DistanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF21FE521AF4726005BE449 /* DistanceTableViewCell.xib */; };
 		BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */; };
 		BAF74D7221936FEE00E731DC /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF74D7121936FEE00E731DC /* EventAnnotation.swift */; };
+		BAF920FF21B59F6F007D0E06 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF920FE21B59F6F007D0E06 /* Transaction.swift */; };
+		BAF9210121B5A426007D0E06 /* TransactionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9210021B5A426007D0E06 /* TransactionInteractor.swift */; };
+		BAF9210321B5A499007D0E06 /* TransactionInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9210221B5A499007D0E06 /* TransactionInteractorNSURLSessionImpl.swift */; };
+		BAF9210521B5B8A5007D0E06 /* TransactionAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF9210421B5B8A5007D0E06 /* TransactionAdd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +250,10 @@
 		BAF21FE521AF4726005BE449 /* DistanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DistanceTableViewCell.xib; sourceTree = "<group>"; };
 		BAF74D6F21936C8900E731DC /* EventDetailViewController+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventDetailViewController+MapKit.swift"; sourceTree = "<group>"; };
 		BAF74D7121936FEE00E731DC /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
+		BAF920FE21B59F6F007D0E06 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		BAF9210021B5A426007D0E06 /* TransactionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInteractor.swift; sourceTree = "<group>"; };
+		BAF9210221B5A499007D0E06 /* TransactionInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BAF9210421B5B8A5007D0E06 /* TransactionAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAdd.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +415,8 @@
 				BA0C52E221ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift */,
 				BAF21FE021AEF56D005BE449 /* GetCitiesInteractor.swift */,
 				BAF21FE221AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift */,
+				BAF9210021B5A426007D0E06 /* TransactionInteractor.swift */,
+				BAF9210221B5A499007D0E06 /* TransactionInteractorNSURLSessionImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -431,6 +441,8 @@
 				BA09DE0021AC159D0009FAF4 /* Token.swift */,
 				BAF21FDC21AEF361005BE449 /* City.swift */,
 				BAF21FDE21AEF51A005BE449 /* CityAPI.swift */,
+				BAF920FE21B59F6F007D0E06 /* Transaction.swift */,
+				BAF9210421B5B8A5007D0E06 /* TransactionAdd.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -776,6 +788,7 @@
 				BACDE3F021AA9E47007452F0 /* MapEvent.swift in Sources */,
 				BA5CF74F2180777500419990 /* UIviewController+Additions.swift in Sources */,
 				BA5CF7432180769400419990 /* LoginViewController.swift in Sources */,
+				BAF9210521B5B8A5007D0E06 /* TransactionAdd.swift in Sources */,
 				BA602D322181B6970075B64B /* ExecuteInteractor.swift in Sources */,
 				BA65EDEC219F3B6E00B26C96 /* AssistsViewController.swift in Sources */,
 				BAC28898219C3709000AA7B2 /* UIViewAssists+constraints.swift in Sources */,
@@ -790,12 +803,15 @@
 				BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */,
 				BA5C731521A33DBD00CE40EB /* Searches.swift in Sources */,
 				BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */,
+				BAF9210321B5A499007D0E06 /* TransactionInteractorNSURLSessionImpl.swift in Sources */,
 				BAC1737B2190CE7D000A94A0 /* EventDetailViewController.swift in Sources */,
+				BAF9210121B5A426007D0E06 /* TransactionInteractor.swift in Sources */,
 				BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */,
 				BAF21FE321AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift in Sources */,
 				BA20100D21A3FF1D008425CB /* NotificationsViewController.swift in Sources */,
 				BA0C52E321ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift in Sources */,
 				BA09DE0321AC33D30009FAF4 /* UserGet.swift in Sources */,
+				BAF920FF21B59F6F007D0E06 /* Transaction.swift in Sources */,
 				BA5C731B21A3424600CE40EB /* SearchesViewController+TableViewController.swift in Sources */,
 				BA5CF7532180783400419990 /* Alerts.swift in Sources */,
 				BA5CF74B2180772700419990 /* ProfileViewController.swift in Sources */,

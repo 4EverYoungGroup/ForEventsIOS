@@ -25,9 +25,11 @@ struct UserLogin: Codable {
 
 struct UserApiLogin: Codable {
     let id: String
+    let city: City?
     
     enum CodingKeys: String, CodingKey
     {
         case id = "_id"
+        case city
     }
 }

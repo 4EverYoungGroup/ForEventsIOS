@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Event {
+public class Event: Codable {
     var id: String
     var name: String
     var description: String? = nil
@@ -27,6 +27,7 @@ public class Event {
     var eventType: String? = nil
     var latitude: Float? = nil
     var longitude: Float? = nil
+    var transactionId: String? = nil
     var images: [String] = []
     
     

@@ -111,6 +111,14 @@ class LoginViewController: UIViewController {
                     if !radio {
                         UserDefaults.standard.setValue(5, forKey: Constants.radio)
                     }
+                    //Save user position from favorite city
+                    if userLogin?.user?.city != nil {
+                        Global.citySelectedPosition = []
+                    Global.citySelectedPosition?.append((userLogin?.user?.city?.location.coordinates[1])!)
+                    Global.citySelectedPosition?.append((userLogin?.user?.city?.location.coordinates[0])!)
+                    } else {
+                        Global.citySelectedPosition = []
+                    }
                     //Go to Events tabBar
                     let eventsTabBarController = createEventsTabBar()
                     //Configure tabbar opaque and black

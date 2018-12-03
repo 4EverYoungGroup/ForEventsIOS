@@ -9,13 +9,12 @@
 import UIKit
 import CoreLocation
 
-class EventsViewController: UIViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, CLLocationManagerDelegate {
+class EventsViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     
     let eventCollectionViewCellId = "EventCollectionViewCell"
     let headerCollectionViewId = "SectionHeader"
-    var resultSearchController : UISearchController!
     
     let locationManager = CLLocationManager()
     var locationAuth: Bool = false
@@ -69,11 +68,17 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
         let nibCell = UINib(nibName: eventCollectionViewCellId, bundle: nil)
         eventsCollectionView.register(nibCell, forCellWithReuseIdentifier: eventCollectionViewCellId)
         
+        //TODO recoger posicion antes de llamar a API
+        if Global.citySelectedPosition?.count == 0 {
+            if CLLocationManager.locationServicesEnabled(){
+                locationManager.startUpdatingLocation()
+            }
+        }
+        
         ExecuteInteractorImpl().execute {
             //TODO pass self location or favorite city location
             let params = [
-                "position": [Float(Constants.latitudeDefault),
-                             Float(Constants.longitudeDefault)],
+                "position": Global.citySelectedPosition ?? [0,0],
                 "queryText": nil,
                 "eventTypes": nil,
                 "distance": 5000] as Dictionary
@@ -96,31 +101,6 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
                 //TODO alert with no events
             //}
         }
-    }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
-        // TODO implement search
-        let searchString = searchController.searchBar.text
-        
-        if resultSearchController.isActive == true {
-            self.navigationItem.rightBarButtonItem = nil
-        }  else {
-            self.configureFind()
-        }
-    }
-    
-    func configureSearch() {
-        self.resultSearchController = UISearchController(searchResultsController:  nil)
-        self.resultSearchController.searchResultsUpdater = (self as UISearchResultsUpdating)
-        self.resultSearchController.delegate = (self as UISearchControllerDelegate)
-        self.resultSearchController.searchBar.delegate = (self as UISearchBarDelegate)
-        self.resultSearchController.hidesNavigationBarDuringPresentation = false
-        self.resultSearchController.dimsBackgroundDuringPresentation = true
-        self.definesPresentationContext = true
-        self.navigationItem.titleView = resultSearchController.searchBar
-        let cancelButtonAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes , for: .normal)
     }
     
     func configureFind() {
@@ -190,7 +170,11 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let currentLocation = locations.last!
-        print("Current location: \(currentLocation)")
+        Global.citySelectedPosition = []
+        Global.citySelectedPosition?.append(Float(currentLocation.coordinate.latitude))
+        Global.citySelectedPosition?.append(Float(currentLocation.coordinate.longitude))
+        
+        self.locationManager.stopUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -203,17 +187,23 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
             // If authorized when in use
             manager.startUpdatingLocation()
             self.locationAuth = true
-            //self.startEvents()
+            if UserDefaults.standard.bool(forKey: Constants.locationAuth) == false {
+                self.startEvents()
+                UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
+            }
             break
         case .authorizedAlways:
             // If always authorized
             manager.startUpdatingLocation()
-            self.locationAuth = true
-            //self.startEvents()
+            if UserDefaults.standard.bool(forKey: Constants.locationAuth) == false {
+                self.startEvents()
+                UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
+            }
             break
         case .restricted:
             break
         case .denied:
+            UserDefaults.standard.setValue(false, forKey: Constants.locationAuth)
             // If restricted by e.g. parental controls. User can't enable Location Services
             let alert = UIAlertController(title: "Localización no disponible", message: "Por favor, habilite la localización en Ajustes", preferredStyle: .alert)
             

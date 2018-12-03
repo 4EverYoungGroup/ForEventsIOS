@@ -14,6 +14,7 @@ struct Constants {
     static let username = "username"
     static let userID = "userID"
     static let radio = "radio"
+    static let locationAuth = "locationAuth"
     //email validation reg-expression
     static let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     static let regTitle = "Registro ForEvents"
@@ -30,12 +31,16 @@ struct Constants {
     static let urlUpdateUserPath = "/apiv1/users/"
     static let urlEventTypePath = "/apiv1/EventTypes/"
     static let urlCitiesPath = "/apiv1/cities"
+    static let urlTransactionsPath = "/apiv1/transactions"
     static let urlPostMethod = "POST"
     static let urlGetMethod = "GET"
     static let urlPutMethod = "PUT"
     static let urlDelMethod = "DELETE"
     static let urlHeadersConst = "Content-Type"
     static let urlJsonContentType = "application/json"
+    //transactions
+    static let transactionAdd = "insert"
+    static let transactionDelete = "delete"
     //location
     static let latitudeDefault = 41.512860
     static let longitudeDefault = -5.747090
