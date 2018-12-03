@@ -30,7 +30,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         
         //Configure search text field
-        self.configureSearchTextField()
+        configureSearchTextField(textField: cityTextField)
         
         //Configure activity indicator
         view.addSubview(activityIndicator)
@@ -82,44 +82,27 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
             
         }
     }
-    
-    func citiesDownload(queryText: String) {
-        let citiesInteractor: GetCitiesInteractor = GetCitiesInteractorNSURLSessionImpl()
-        
-        citiesInteractor.execute(queryText: queryText) { (cities: [City]?) in
-            // OK
-            if cities != nil {
-                //Create array with cities name result
-                var citiesNames: [String] = []
-                Global.citiesSelected = []
-                for city in cities! {
-                    citiesNames.append(city.city+"/"+city.province!)
-                    Global.citiesSelected?.append(city)
-                }
-                // Set new items to filter
-                self.cityTextField.filterStrings(citiesNames)
-                
-                // Stop loading indicator
-                self.cityTextField.stopLoadingIndicator()
-            }
-        }
-    }
 
     @IBAction func findButtonPress(_ sender: UIButton) {
         //localidad - posición
         if !positionSwitchControl.isOn {
             //recoger posicion localidad
             if !self.validateCity() {
-                let alert = Alerts().alert(title: Constants.regTitle, message: "Debe de seleccionar una localidad de la lista o su posición actual.")
+                let alert = Alerts().alert(title: Constants.findTitle, message: "Debe de seleccionar una localidad de la lista o su posición actual.")
                 self.cityTextField.becomeFirstResponder()
                 self.present(alert, animated: true, completion: nil)
                 return
             }
         }
-        //recoger texto
-        guard let text = self.queryTextField.text else { return }
         //recoger eventtypes marcados
         guard let arrayEventTypes = Global.eventTypesCheck?.filter({$0.check == true}) else { return }
+        if arrayEventTypes.count == 0 {
+            let alert = Alerts().alert(title: Constants.findTitle, message: "Debe de seleccionar al menos una categoría.")
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        //recoger texto
+        guard let text = self.queryTextField.text else { return }
         //recoger radio
         print(Global.distanceInMetres)
         //Send find prameters selected notifications for update event collectionView
@@ -133,6 +116,10 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         self.dismiss(animated: true) {
             notificationCenter.post(notification)
         }
+    }
+    
+    @IBAction func cancelButtonPress(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func positionPress(_ sender: UISwitch) {
@@ -157,44 +144,6 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
             return true
         }
         return false
-    }
-    
-    fileprivate func configureSearchTextField() {
-        cityTextField.startVisibleWithoutInteraction = false
-        // Set a visual theme (SearchTextFieldTheme). By default it's the light theme
-        cityTextField.theme = SearchTextFieldTheme.darkTheme()
-        
-        // Modify current theme properties
-        cityTextField.theme.font = UIFont(name: "AvenirNext-Bold", size: 13)!
-        cityTextField.theme.bgColor = .black
-        cityTextField.theme.borderColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-        cityTextField.theme.separatorColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
-        cityTextField.theme.cellHeight = 50
-        
-        // Set specific comparision options - Default: .caseInsensitive
-        cityTextField.comparisonOptions = [.caseInsensitive]
-        
-        // Handle item selection - Default behaviour: item title set to the text field
-        cityTextField.itemSelectionHandler = { filteredResults, itemPosition in
-            // Just in case you need the item position
-            let item = filteredResults[itemPosition]
-            
-            // Do whatever you want with the picked item
-            self.cityTextField!.text = item.title
-        }
-        
-        // Update data source when the user stops typing
-        cityTextField.userStoppedTypingHandler = {
-            if let criteria = self.cityTextField.text {
-                if criteria.count > 2 {
-                    
-                    // Show loading indicator
-                    self.cityTextField.showLoadingIndicator()
-                    
-                    self.citiesDownload(queryText: criteria)
-                }
-            }
-        } as (() -> Void)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

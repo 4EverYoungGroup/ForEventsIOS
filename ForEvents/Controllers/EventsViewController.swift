@@ -228,6 +228,7 @@ class EventsViewController: UIViewController, UISearchControllerDelegate, UISear
     }
     
     func logoutUser() {
+        UserDefaults.standard.set(false, forKey: "hasLoginKey")
         let loginTabBarController = createLoginTabBar()
         //Show login in tabbar
         loginTabBarController.selectedIndex = 0

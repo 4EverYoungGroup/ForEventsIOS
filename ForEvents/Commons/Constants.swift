@@ -18,6 +18,7 @@ struct Constants {
     static let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     static let regTitle = "Registro ForEvents"
     static let loginTitle = "Login ForEvents"
+    static let findTitle = "Búsqueda ForEvents"
     //url parameters
     static let urlScheme = "https"
     static let urlHost = "services.4events.net"
@@ -51,6 +52,7 @@ struct Global {
     static var events: Events? = nil
     static var eventTypesCheck: [EventTypeCheck]? = []
     static var citiesSelected: [City]? = []
+    static var citySelectedId: String?
     static var citySelectedPosition: [Float]? = []
     static var distanceInMetres = 5000
 }

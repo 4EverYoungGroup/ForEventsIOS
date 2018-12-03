@@ -14,14 +14,9 @@ class GetCitiesInteractorNSURLSessionImpl: GetCitiesInteractor {
         urlComponents.scheme = Constants.urlScheme
         urlComponents.host = Constants.urlHost
         urlComponents.path = Constants.urlCitiesPath
-        if let username = UserDefaults.standard.value(forKey: Constants.username) {
-            if let tokenValue = checkToken(username: username as! String) {
-                urlComponents.queryItems = [
-                    URLQueryItem(name: "limit", value: "200"),
-                    URLQueryItem(name: "queryText", value: queryText),
-                    URLQueryItem(name: "token", value: tokenValue)]
-            }
-        }
+        urlComponents.queryItems = [
+            URLQueryItem(name: "limit", value: "200"),
+            URLQueryItem(name: "queryText", value: queryText)]
         
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         

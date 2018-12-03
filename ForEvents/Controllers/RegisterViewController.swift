@@ -7,19 +7,22 @@
 //
 
 import UIKit
+import SearchTextField
 
 let activityIndicator = UIActivityIndicatorView(style: .gray)
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     var originCall: String?
+    
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var psw1TextField: UITextField!
     @IBOutlet weak var psw2TextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var lastnameTextField: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var cityTextField: SearchTextField!
     @IBOutlet weak var provinceTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var zipCodeTextField: UITextField!
@@ -31,6 +34,11 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cityTextField.delegate = self
+        
+        //Configure search text field
+        configureSearchTextField(textField: cityTextField)
         
         self.navigationController?.navigationBar.tintColor = .white
 
@@ -130,12 +138,19 @@ class RegisterViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
             return false
         }
+        //Recover favorite city province country and zipcode selected
+        if !self.validateCity() {
+            let alert = Alerts().alert(title: Constants.findTitle, message: "Debe de seleccionar una localidad de la lista.")
+            self.cityTextField.becomeFirstResponder()
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
         return true
     }
     
     func registerUser() {
         
-        let user = User(email: userTextField.text!, password: psw1TextField.text!, firstname: nameTextField.text!, profile: "User", lastname: lastnameTextField.text, country: countryTextField.text, province: provinceTextField.text, zipCode: zipCodeTextField.text, city: nil, alias: aliasTextField.text, gender: gender, birthdayDate: nil)
+        let user = User(email: userTextField.text!, password: psw1TextField.text!, firstname: nameTextField.text!, profile: "User", lastname: lastnameTextField.text, country: countryTextField.text, province: provinceTextField.text, zipCode: zipCodeTextField.text, city: Global.citySelectedId, alias: aliasTextField.text, gender: gender, birthdayDate: nil)
         
         let registerUserInteractor: RegisterUserInteractor = RegisterUserInteractorNSURLSessionImpl()
         
@@ -145,17 +160,22 @@ class RegisterViewController: UIViewController {
                 UserDefaults.standard.setValue(self.userTextField.text, forKey: Constants.username)
                 self.tabBarController?.selectedIndex = 0
             } else {
-                guard let message = responseApi!.errors![0].message else { return }
-                let alert = Alerts().alert(title: Constants.regTitle, message: message)
+                if let message = responseApi?.message {
+                    let alert = Alerts().alert(title: Constants.regTitle, message: message)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    guard let message = responseApi!.errors![0].message else { return }
+                    let alert = Alerts().alert(title: Constants.regTitle, message: message)
+                    self.present(alert, animated: true, completion: nil)
+                }
                 self.nameTextField.becomeFirstResponder()
-                self.present(alert, animated: true, completion: nil)
             }
         }
     }
     
     func updateUser() {
         
-        let user = User(email: userTextField.text!, password: psw1TextField.text, firstname: nameTextField.text!, profile: "User", lastname: lastnameTextField.text, country: countryTextField.text, province: provinceTextField.text, zipCode: zipCodeTextField.text, city: nil, alias: aliasTextField.text, gender: gender, birthdayDate: nil)
+        let user = User(email: userTextField.text!, password: psw1TextField.text, firstname: nameTextField.text!, profile: "User", lastname: lastnameTextField.text, country: countryTextField.text, province: provinceTextField.text, zipCode: zipCodeTextField.text, city: Global.citySelectedId, alias: aliasTextField.text, gender: gender, birthdayDate: nil)
         
         let upadateUserInteractor: UpdateUserInteractor = UpdateUserInteractorNSURLSessionImpl()
         
@@ -252,8 +272,47 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    func validateCity() -> Bool {
+        if self.cityTextField.text != "" {
+            let cityTextSelected = self.cityTextField.text?.components(separatedBy: "/")
+            let citySelected = Global.citiesSelected?.filter({$0.city == cityTextSelected![0]})
+            if (citySelected?.count)! == 1 {
+                let city: City = citySelected![0]
+                Global.citySelectedPosition = []
+                self.provinceTextField.text = city.province
+                self.countryTextField.text = city.country
+                self.zipCodeTextField.text = city.zipCode
+                Global.citySelectedId = city.id
+                return true
+            }
+        } else {
+            return true
+        }
+        return false
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        if textField == cityTextField {
+            //Recover favorite city province country and zipcode selected
+            if !self.validateCity() {
+                let alert = Alerts().alert(title: Constants.findTitle, message: "Debe de seleccionar una localidad de la lista o no poner nada.")
+                self.cityTextField.becomeFirstResponder()
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == cityTextField {
+            cityTextField.text = ""
+            provinceTextField.text = ""
+            countryTextField.text = ""
+            zipCodeTextField.text = ""
+        }
     }
 }

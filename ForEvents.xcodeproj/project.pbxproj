@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6AA6434291FCE4FC56E01430 /* Pods_ForEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C105BB7677DFCF0CBFD4AC7 /* Pods_ForEvents.framework */; };
 		A709ADFA605E282969AA5840 /* Pods_ForEventsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9820569C11C02EFE44C387A7 /* Pods_ForEventsTests.framework */; };
+		BA05873121B3F43E008B4875 /* ConfigureSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA05873021B3F43E008B4875 /* ConfigureSearchTextField.swift */; };
 		BA09DDFB21AC0AF20009FAF4 /* GetUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DDFA21AC0AF20009FAF4 /* GetUserInteractor.swift */; };
 		BA09DDFD21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DDFC21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift */; };
 		BA09DE0121AC159D0009FAF4 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0021AC159D0009FAF4 /* Token.swift */; };
@@ -134,6 +135,7 @@
 		94B2021C0C5DDA398A29DB0A /* Pods-ForEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForEvents.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForEvents/Pods-ForEvents.release.xcconfig"; sourceTree = "<group>"; };
 		9820569C11C02EFE44C387A7 /* Pods_ForEventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForEventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C105BB7677DFCF0CBFD4AC7 /* Pods_ForEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA05873021B3F43E008B4875 /* ConfigureSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureSearchTextField.swift; sourceTree = "<group>"; };
 		BA09DDFA21AC0AF20009FAF4 /* GetUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInteractor.swift; sourceTree = "<group>"; };
 		BA09DDFC21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BA09DE0021AC159D0009FAF4 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				BA477547218378BC00B8AA40 /* createTabBar.swift */,
 				BA1E2D972191AC63006D3CBD /* String+Image.swift */,
 				BAF74D7121936FEE00E731DC /* EventAnnotation.swift */,
+				BA05873021B3F43E008B4875 /* ConfigureSearchTextField.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -761,6 +764,7 @@
 				BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */,
 				BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */,
 				BACDE3F321AAA80B007452F0 /* JSONParserEvent.swift in Sources */,
+				BA05873121B3F43E008B4875 /* ConfigureSearchTextField.swift in Sources */,
 				BAC173772190BCB4000A94A0 /* FindViewController.swift in Sources */,
 				BA1F8E7A21A0128200037716 /* CustomColors.swift in Sources */,
 				BA5F70BE21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift in Sources */,
