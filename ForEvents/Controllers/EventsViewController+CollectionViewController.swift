@@ -46,7 +46,11 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCollectionViewId, for: indexPath) as! SectionHeaderCollectionReusableView
         
-        header.headerLabel.text = "EVENTOS"
+        if Global.citySelectedName != nil {
+            header.headerLabel.text = "EVENTOS de \(Global.citySelectedName ?? "")"
+        } else {
+            header.headerLabel.text = "EVENTOS de su posición"
+        }
         return header
     }
     

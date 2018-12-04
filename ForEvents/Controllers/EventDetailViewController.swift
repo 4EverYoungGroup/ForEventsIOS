@@ -154,6 +154,7 @@ class EventDetailViewController: UIViewController {
     func registerTransaction(action: String) {
         
         let eventId = self.event?.id
+        //TODO comprobar que de eventsList llega bien el transactionID
         let transactionId = event?.transactionId
         
         let transactionInteractor: TransactionInteractor = TransactionInteractorNSURLSessionImpl()

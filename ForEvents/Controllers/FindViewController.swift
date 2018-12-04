@@ -27,7 +27,16 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
+        //If user not auth location disabled position button
+        if UserDefaults.standard.bool(forKey: Constants.locationAuth) == false {
+            positionSwitchControl.isEnabled = false
+        } else {
+            locationManager.delegate = self
+        }
+        
+        if Global.citySelectedName != nil {
+            self.cityTextField.text = Global.citySelectedName
+        }
         
         //Configure search text field
         configureSearchTextField(textField: cityTextField)
@@ -92,7 +101,11 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
                 self.cityTextField.becomeFirstResponder()
                 self.present(alert, animated: true, completion: nil)
                 return
+            } else {
+                Global.citySelectedName = self.cityTextField.text
             }
+        } else {
+            Global.citySelectedName = nil
         }
         //recoger eventtypes marcados
         guard let arrayEventTypes = Global.eventTypesCheck?.filter({$0.check == true}) else { return }
@@ -126,6 +139,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         if positionSwitchControl.isOn {
             cityTextField.isEnabled = false
             if CLLocationManager.locationServicesEnabled(){
+                locationManager.delegate = self
                 locationManager.startUpdatingLocation()
             }
         } else {
@@ -158,7 +172,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         Global.citySelectedPosition?.append(Float(userLocation.coordinate.latitude))
         Global.citySelectedPosition?.append(Float(userLocation.coordinate.longitude))
     
-        self.locationManager.stopUpdatingLocation()
+        manager.stopUpdatingLocation()
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         self.locationManager.stopUpdatingLocation()

@@ -113,11 +113,10 @@ class LoginViewController: UIViewController {
                     }
                     //Save user position from favorite city
                     if userLogin?.user?.city != nil {
-                        Global.citySelectedPosition = []
-                    Global.citySelectedPosition?.append((userLogin?.user?.city?.location.coordinates[1])!)
-                    Global.citySelectedPosition?.append((userLogin?.user?.city?.location.coordinates[0])!)
-                    } else {
-                        Global.citySelectedPosition = []
+                    UserDefaults.standard.setValue(userLogin?.user?.city?.location.coordinates[1], forKey: Constants.latitudeFavorite)
+                    UserDefaults.standard.setValue(userLogin?.user?.city?.location.coordinates[0], forKey: Constants.longitudeFavorite)
+                        let cityName = "\(userLogin?.user?.city?.city ?? "")/\(userLogin?.user?.city?.province ?? "")"
+                        UserDefaults.standard.setValue(cityName, forKey: Constants.cityNameFavorite)
                     }
                     //Go to Events tabBar
                     let eventsTabBarController = createEventsTabBar()

@@ -17,7 +17,6 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
     let headerCollectionViewId = "SectionHeader"
     
     let locationManager = CLLocationManager()
-    var locationAuth: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +37,23 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         //Validate location Authorization
         self.validateLocationAuthorization()
         
-        if  locationAuth == true {
+        //If user has favorite city start with them
+        if let latitudeFavorite: Float = UserDefaults.standard.value(forKey: Constants.latitudeFavorite) as? Float,
+           let longitudeFavorite: Float = UserDefaults.standard.value(forKey: Constants.longitudeFavorite) as? Float,
+           let cityNameFavorite: String = UserDefaults.standard.value(forKey: Constants.cityNameFavorite) as? String {
+            Global.citySelectedPosition = []
+            Global.citySelectedPosition?.append(latitudeFavorite)
+            Global.citySelectedPosition?.append(longitudeFavorite)
+            Global.citySelectedName = cityNameFavorite
             self.startEvents()
+        } else {
+            if UserDefaults.standard.bool(forKey: Constants.locationAuth) == true {
+                if CLLocationManager.locationServicesEnabled(){
+                    locationManager.startUpdatingLocation()
+                }
+            }
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,13 +80,6 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         //register cell
         let nibCell = UINib(nibName: eventCollectionViewCellId, bundle: nil)
         eventsCollectionView.register(nibCell, forCellWithReuseIdentifier: eventCollectionViewCellId)
-        
-        //TODO recoger posicion antes de llamar a API
-        if Global.citySelectedPosition?.count == 0 {
-            if CLLocationManager.locationServicesEnabled(){
-                locationManager.startUpdatingLocation()
-            }
-        }
         
         ExecuteInteractorImpl().execute {
             //TODO pass self location or favorite city location
@@ -148,7 +154,7 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         let status  = CLLocationManager.authorizationStatus()
         if status == .notDetermined {
             locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
+            //locationManager.startUpdatingLocation()
         }
         
         if status == .denied || status == .restricted {
@@ -162,19 +168,25 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         
         if status == .authorizedAlways || status == .authorizedWhenInUse {
             locationManager.delegate = self
-            locationManager.startUpdatingLocation()
-            self.locationAuth = true
-            self.locationManager.stopUpdatingLocation()
+            //locationManager.startUpdatingLocation()
+            UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
+            //self.locationManager.stopUpdatingLocation()
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let currentLocation = locations.last!
-        Global.citySelectedPosition = []
-        Global.citySelectedPosition?.append(Float(currentLocation.coordinate.latitude))
-        Global.citySelectedPosition?.append(Float(currentLocation.coordinate.longitude))
-        
-        self.locationManager.stopUpdatingLocation()
+        if Global.citySelectedPosition?.count == 0 {
+            let currentLocation = locations.last!
+            Global.citySelectedPosition = []
+            Global.citySelectedPosition?.append(Float(currentLocation.coordinate.latitude))
+            Global.citySelectedPosition?.append(Float(currentLocation.coordinate.longitude))
+            manager.stopUpdatingLocation()
+            manager.delegate = nil
+        } else {
+            manager.stopUpdatingLocation()
+            manager.delegate = nil
+        }
+        self.startEvents()
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -186,9 +198,8 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         case .authorizedWhenInUse:
             // If authorized when in use
             manager.startUpdatingLocation()
-            self.locationAuth = true
             if UserDefaults.standard.bool(forKey: Constants.locationAuth) == false {
-                self.startEvents()
+                //self.startEvents()
                 UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
             }
             break
@@ -196,7 +207,7 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
             // If always authorized
             manager.startUpdatingLocation()
             if UserDefaults.standard.bool(forKey: Constants.locationAuth) == false {
-                self.startEvents()
+                //self.startEvents()
                 UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
             }
             break

@@ -15,6 +15,9 @@ struct Constants {
     static let userID = "userID"
     static let radio = "radio"
     static let locationAuth = "locationAuth"
+    static let latitudeFavorite = "latitudeFavorite"
+    static let longitudeFavorite = "longitudeFavorite"
+    static let cityNameFavorite = "cityNameFavorite"
     //email validation reg-expression
     static let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     static let regTitle = "Registro ForEvents"
@@ -59,5 +62,6 @@ struct Global {
     static var citiesSelected: [City]? = []
     static var citySelectedId: String?
     static var citySelectedPosition: [Float]? = []
+    static var citySelectedName: String? = nil
     static var distanceInMetres = 5000
 }
