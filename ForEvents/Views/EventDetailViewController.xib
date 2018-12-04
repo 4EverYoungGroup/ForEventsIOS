@@ -84,46 +84,35 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B08-hU-xGn">
-                            <rect key="frame" x="20" y="207" width="400" height="150"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="150" id="YcD-bp-rfQ"/>
-                            </constraints>
-                            <string key="text">Lorem fistrum sexuarl fistro por la gloria de mi madre a gramenawer no puedor la caidita ese pedazo de te voy a borrar el cerito ese hombree quietooor. Pupita te va a hasé pupitaa sexuarl ahorarr te voy a borrar el cerito te va a hasé pupitaa hasta luego Lucas ahorarr torpedo hasta luego Lucas. Sexuarl papaar papaar ese que llega por la gloria de mi madre sexuarl diodeno a peich. Hasta luego Lucas ese hombree condemor papaar papaar torpedo a peich jarl. Fistro pupita quietooor diodeno está la cosa muy malar por la gloria de mi madre condemor sexuarl no te digo trigo por no llamarte Rodrigor pupita ese que llega. Se calle ustée ese hombree a gramenawer pecador a peich por la gloria de mi madre. Me cago en tus muelas llevame al sircoo ese hombree ese hombree se calle ustée a peich ahorarr papaar papaar te voy a borrar el cerito pecador sexuarl.</string>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hjY-qV-vDv">
                             <rect key="frame" x="20" y="377" width="400" height="200"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="200" id="Tvb-ZE-m9h"/>
                             </constraints>
                         </mapView>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Pgy-1C-8IA">
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Pgy-1C-8IA">
                             <rect key="frame" x="20" y="21" width="400" height="23.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Del" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-X8-3Go">
-                                    <rect key="frame" x="0.0" y="0.0" width="28" height="23.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Del" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-X8-3Go">
+                                    <rect key="frame" x="0.0" y="0.0" width="29.5" height="23.5"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="12/12/2018 19:00 h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bT-qY-DJj">
-                                    <rect key="frame" x="42" y="0.0" width="158" height="23.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="12/12/2018 19:00 h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="4bT-qY-DJj">
+                                    <rect key="frame" x="34.5" y="0.0" width="169.5" height="23.5"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="al" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwK-dh-4a7">
-                                    <rect key="frame" x="214" y="0.0" width="14" height="23.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="al" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="rwK-dh-4a7">
+                                    <rect key="frame" x="209" y="0.0" width="15" height="23.5"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="12/12/2018 19:00 h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUw-cA-HIn">
-                                    <rect key="frame" x="242" y="0.0" width="158" height="23.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="12/12/2018 19:00 h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="pUw-cA-HIn">
+                                    <rect key="frame" x="229" y="0.0" width="171" height="23.5"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -215,24 +204,34 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outdoor" translatesAutoresizingMaskIntoConstraints="NO" id="DJY-HS-Kvp">
                             <rect key="frame" x="346" y="113" width="44" height="30"/>
                         </imageView>
+                        <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B08-hU-xGn">
+                            <rect key="frame" x="20" y="207" width="400" height="150"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="YcD-bp-rfQ"/>
+                            </constraints>
+                            <string key="text">Lorem fistrum sexuarl fistro por la gloria de mi madre a gramenawer no puedor la caidita ese pedazo de te voy a borrar el cerito ese hombree quietooor. Pupita te va a hasé pupitaa sexuarl ahorarr te voy a borrar el cerito te va a hasé pupitaa hasta luego Lucas ahorarr torpedo hasta luego Lucas. Sexuarl papaar papaar ese que llega por la gloria de mi madre sexuarl diodeno a peich. Hasta luego Lucas ese hombree condemor papaar papaar torpedo a peich jarl. Fistro pupita quietooor diodeno está la cosa muy malar por la gloria de mi madre condemor sexuarl no te digo trigo por no llamarte Rodrigor pupita ese que llega. Se calle ustée ese hombree a gramenawer pecador a peich por la gloria de mi madre. Me cago en tus muelas llevame al sircoo ese hombree ese hombree se calle ustée a peich ahorarr papaar papaar te voy a borrar el cerito pecador sexuarl.</string>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="B08-hU-xGn" firstAttribute="trailing" secondItem="hjY-qV-vDv" secondAttribute="trailing" id="192-37-oWl"/>
                         <constraint firstAttribute="trailing" secondItem="DJY-HS-Kvp" secondAttribute="trailing" constant="50" id="1Tl-2Z-y3s"/>
                         <constraint firstItem="4c5-8c-ORu" firstAttribute="leading" secondItem="54w-mT-X6R" secondAttribute="leading" constant="20" id="3xk-X8-gdO"/>
                         <constraint firstItem="Z3h-8Y-UuT" firstAttribute="leading" secondItem="54w-mT-X6R" secondAttribute="leading" constant="23" id="58t-xf-h7i"/>
+                        <constraint firstItem="Pgy-1C-8IA" firstAttribute="leading" secondItem="54w-mT-X6R" secondAttribute="leading" constant="20" id="5Wf-t2-7J4"/>
                         <constraint firstItem="DJY-HS-Kvp" firstAttribute="leading" secondItem="4c5-8c-ORu" secondAttribute="trailing" constant="50" id="CLV-rF-Ft6"/>
                         <constraint firstItem="XWi-ig-WQI" firstAttribute="top" secondItem="54w-mT-X6R" secondAttribute="top" constant="82" id="DqB-Of-rX1"/>
                         <constraint firstItem="hjY-qV-vDv" firstAttribute="top" secondItem="B08-hU-xGn" secondAttribute="bottom" constant="20" id="Jbt-HE-JXt"/>
                         <constraint firstItem="Pgy-1C-8IA" firstAttribute="centerX" secondItem="54w-mT-X6R" secondAttribute="centerX" id="KJw-Ej-m6V"/>
-                        <constraint firstItem="Pgy-1C-8IA" firstAttribute="leading" secondItem="54w-mT-X6R" secondAttribute="leading" constant="20" id="Kiv-gx-2IU"/>
                         <constraint firstItem="B08-hU-xGn" firstAttribute="top" secondItem="wWG-A4-gmb" secondAttribute="bottom" constant="8" id="LqH-id-MF9"/>
                         <constraint firstAttribute="bottom" secondItem="hjY-qV-vDv" secondAttribute="bottom" constant="20" id="MZH-u4-T9v"/>
-                        <constraint firstItem="B08-hU-xGn" firstAttribute="top" secondItem="54w-mT-X6R" secondAttribute="top" constant="207" id="Neo-5I-ETQ"/>
                         <constraint firstItem="4c5-8c-ORu" firstAttribute="top" secondItem="XWi-ig-WQI" secondAttribute="bottom" constant="7.5" id="UQz-eE-cQK"/>
                         <constraint firstItem="Z3h-8Y-UuT" firstAttribute="top" secondItem="Pgy-1C-8IA" secondAttribute="bottom" constant="10" id="Yyg-LP-QrZ"/>
-                        <constraint firstAttribute="trailing" secondItem="Pgy-1C-8IA" secondAttribute="trailing" constant="20" id="ZcY-dS-6uX"/>
                         <constraint firstItem="wWG-A4-gmb" firstAttribute="trailing" secondItem="B08-hU-xGn" secondAttribute="trailing" id="cnG-f3-PGK"/>
+                        <constraint firstAttribute="trailing" secondItem="Pgy-1C-8IA" secondAttribute="trailing" constant="20" id="hcI-Vf-sDj"/>
                         <constraint firstItem="B08-hU-xGn" firstAttribute="leading" secondItem="hjY-qV-vDv" secondAttribute="leading" id="mfO-hh-135"/>
                         <constraint firstItem="XWi-ig-WQI" firstAttribute="top" secondItem="Z3h-8Y-UuT" secondAttribute="bottom" constant="4" id="nig-xE-1jO"/>
                         <constraint firstItem="Pgy-1C-8IA" firstAttribute="centerX" secondItem="wWG-A4-gmb" secondAttribute="centerX" id="o4f-76-Flc"/>
