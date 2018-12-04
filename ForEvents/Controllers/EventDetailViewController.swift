@@ -16,7 +16,15 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var assistButton: UIButton!
     @IBOutlet weak var photosLabel: UILabel!
     @IBOutlet weak var eventDateLabel: UILabel!
+    @IBOutlet weak var eventDateEndLabel: UILabel!
+    @IBOutlet weak var eventAddressLabel: UILabel!
+    @IBOutlet weak var eventZipcodeLabel: UILabel!
     @IBOutlet weak var eventCityLabel: UILabel!
+    @IBOutlet weak var eventProvinceLabel: UILabel!
+    @IBOutlet weak var eventMaxVisitorsLabel: UILabel!
+    @IBOutlet weak var eventPriceLabel: UILabel!
+    @IBOutlet weak var eventMinAgeLabel: UILabel!
+    @IBOutlet weak var outdoorIndoorImage: UIImageView!
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventDesTextView: UITextView!
     @IBOutlet weak var eventMap: MKMapView!
@@ -147,7 +155,27 @@ class EventDetailViewController: UIViewController {
             let day = ""
             self.eventDateLabel.text = "\(day) h"
         }
+        if let date = event?.endDate {
+            let day = formatter.string(from: date)
+            self.eventDateEndLabel.text = "\(day) h"
+        } else {
+            let day = ""
+            self.eventDateEndLabel.text = "\(day) h"
+        }
+        self.eventAddressLabel.text = event?.address
+        self.eventZipcodeLabel.text = event?.zipCode
         self.eventCityLabel.text = event?.city
+        self.eventProvinceLabel.text = event?.province
+        self.eventMaxVisitorsLabel.text = "\(event?.maxVisitors ?? 0)"
+        if (event?.free)! {
+            self.eventPriceLabel.text = "0"
+        } else {
+            self.eventPriceLabel.text = "\(Int((event?.price)!))"
+        }
+        self.eventMinAgeLabel.text = "\(event?.minAge ?? 0)"
+        if (event?.indoor)! {
+            self.outdoorIndoorImage.image = UIImage(named: "indoor")
+        }
         self.eventDesTextView.text = event?.description
     }
     
