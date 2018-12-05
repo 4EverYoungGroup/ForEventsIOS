@@ -6,8 +6,11 @@
 //  Copyright © 2018 4Everyoung.group. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import UserNotifications
 import Firebase
+import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        self.registerForPushNotifications(application)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()

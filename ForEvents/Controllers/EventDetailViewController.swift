@@ -48,6 +48,11 @@ class EventDetailViewController: UIViewController {
         photosLabel.layer.cornerRadius = 5
         photosLabel.layer.borderWidth = 1
         photosLabel.layer.borderColor = UIColor.white.cgColor
+        
+        //Save transactionId
+        if event?.transactionId != nil {
+            Global.transactionIdLast = event?.transactionId
+        }
         //Configure event labels
         self.putLabelsText()
         
@@ -177,17 +182,25 @@ class EventDetailViewController: UIViewController {
             self.outdoorIndoorImage.image = UIImage(named: "indoor")
         }
         self.eventDesTextView.text = event?.description
+        //Put assistButton in green if event has been pussed previously
+        if event?.transactionId != nil {
+            self.assistButton.setTitleColor(.black, for: .normal)
+            self.assistButton.backgroundColor = .green
+            self.assistButton.isSelected = true
+        } else {
+            self.assistButton.setTitleColor(.white, for: .normal)
+            self.assistButton.backgroundColor = .gray
+            self.assistButton.isSelected = false
+        }
     }
     
     func registerTransaction(action: String) {
         
         let eventId = self.event?.id
-        //TODO comprobar que de eventsList llega bien el transactionID
-        let transactionId = event?.transactionId
         
         let transactionInteractor: TransactionInteractor = TransactionInteractorNSURLSessionImpl()
         
-        transactionInteractor.execute(action: action, eventId: eventId, transactionId: transactionId) { (responseApi: ResponseApi?) in
+        transactionInteractor.execute(action: action, eventId: eventId, transactionId: Global.transactionIdLast) { (responseApi: ResponseApi?) in
             if responseApi == nil {
                 if self.assistButton.isSelected {
                     self.assistButton.setTitleColor(.white, for: .normal)
@@ -203,7 +216,7 @@ class EventDetailViewController: UIViewController {
                     let alert = Alerts().alert(title: Constants.regTitle, message: message)
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    guard let message = responseApi!.errors![0].message else { return }
+                    guard let message = responseApi?.error?.message else { return }
                     let alert = Alerts().alert(title: Constants.regTitle, message: message)
                     self.present(alert, animated: true, completion: nil)
                 }

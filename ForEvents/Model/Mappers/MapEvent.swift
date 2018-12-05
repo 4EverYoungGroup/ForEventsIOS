@@ -26,7 +26,11 @@ func mapEventAPIIntoEvent(eventAPI: EventAPI) -> Event {
     event.eventType = eventAPI.eventType?.name ?? ""
     event.longitude = eventAPI.location.coordinates[0]
     event.latitude = eventAPI.location.coordinates[1]
-    //event.transactionId = eventAPI.transactions?._id ?? ""
+    if eventAPI.transactions.count > 0 {
+        event.transactionId = eventAPI.transactions[0]?._id
+    } else {
+        event.transactionId = nil
+    }
     var images: [String] = []
     if eventAPI.media != nil {
         for image in (eventAPI.media!) {

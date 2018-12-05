@@ -31,7 +31,7 @@ struct EventAPI: Codable {
     let minAge: Int?
     let eventType: NameEventType?
     let location: Coordinates
-    //let transactions: Trans?
+    let transactions: [Trans?]
     let media: [ImageURL]?
     
     enum CodingKeys: String, CodingKey
@@ -53,7 +53,7 @@ struct EventAPI: Codable {
         case minAge = "min_age"
         case eventType = "event_type"
         case location
-        //case transactions
+        case transactions
         case media
     }
 }

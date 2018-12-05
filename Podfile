@@ -4,6 +4,7 @@ use_frameworks!
 
 def common_pods
     pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
     pod 'Kingfisher', '~> 4.0'
     pod 'Parchment'
     pod 'VACalendar'

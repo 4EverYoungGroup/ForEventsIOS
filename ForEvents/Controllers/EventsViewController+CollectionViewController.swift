@@ -30,7 +30,6 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let eventDetailViewController = EventDetailViewController()
         let event: Event = ((Global.events?.get(index: indexPath.row))!)
         eventDetailViewController.event = event
-        
         navigationController?.pushViewController(eventDetailViewController, animated: true)
     }
     

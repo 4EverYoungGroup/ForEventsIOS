@@ -27,7 +27,11 @@ class TransactionInteractorNSURLSessionImpl: TransactionInteractor {
         
         // Specify this request as being a POST method
         var request = URLRequest(url: url)
-        request.httpMethod = Constants.urlPostMethod
+        if action == Constants.transactionAdd {
+            request.httpMethod = Constants.urlPostMethod
+        } else {
+            request.httpMethod = Constants.urlDelMethod
+        }
         // Make sure that we include headers specifying that our request's HTTP body
         // will be JSON encoded
         var headers = request.allHTTPHeaderFields ?? [:]
@@ -35,11 +39,11 @@ class TransactionInteractorNSURLSessionImpl: TransactionInteractor {
         request.allHTTPHeaderFields = headers
         
         if action == Constants.transactionAdd {
-            let transactionAdd = TransactionAdd(eventId: eventId!)
+            let transactionApi = TransactionApi(transactionId: nil, createDate: nil, eventId: eventId, userId: nil)
             // Now let's encode out Post struct into JSON data...
             let encoder = JSONEncoder()
             do {
-                let jsonData = try encoder.encode(transactionAdd)
+                let jsonData = try encoder.encode(transactionApi)
                 // ... and set our request's HTTP body
                 request.httpBody = jsonData
             } catch {
@@ -57,7 +61,21 @@ class TransactionInteractorNSURLSessionImpl: TransactionInteractor {
                 if error == nil {
                     activityIndicator.removeFromSuperview()
                     if (self.checkStatusCode(response: response)) {
-                        onSuccess(nil)
+                        if action == Constants.transactionAdd {
+                            //prepare TransactionApi
+                            do {
+                                let decoder = JSONDecoder()
+                                let response = try decoder.decode(TransactionApiResponse.self, from:
+                                    data!)
+                                Global.transactionIdLast = response.data.transactionId
+                                onSuccess(nil)
+                            } catch let parsingError {
+                                //TODO alert with error
+                                print("Error", parsingError)
+                            }
+                        } else {
+                            onSuccess(nil)
+                        }
                     } else {
                         //prepare responseApi
                         do {

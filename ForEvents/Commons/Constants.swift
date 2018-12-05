@@ -34,7 +34,7 @@ struct Constants {
     static let urlUpdateUserPath = "/apiv1/users/"
     static let urlEventTypePath = "/apiv1/EventTypes/"
     static let urlCitiesPath = "/apiv1/cities"
-    static let urlTransactionsPath = "/apiv1/transactions"
+    static let urlTransactionsPath = "/apiv1/transactions/"
     static let urlPostMethod = "POST"
     static let urlGetMethod = "GET"
     static let urlPutMethod = "PUT"
@@ -64,4 +64,5 @@ struct Global {
     static var citySelectedPosition: [Float]? = []
     static var citySelectedName: String? = nil
     static var distanceInMetres = 5000
+    static var transactionIdLast: String? = nil
 }

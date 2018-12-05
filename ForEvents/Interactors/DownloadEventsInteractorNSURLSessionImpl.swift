@@ -24,6 +24,8 @@ class DownloadEventsInteractorNSURLSessionImpl: DownloadEventsInteractor {
         }
         let distance: Int = params["distance"] as! Int
         
+        let userId = UserDefaults.standard.value(forKey: Constants.userID)
+        
         var urlComponents = URLComponents()
         urlComponents.scheme = Constants.urlScheme
         urlComponents.host = Constants.urlHost
@@ -34,7 +36,8 @@ class DownloadEventsInteractorNSURLSessionImpl: DownloadEventsInteractor {
             URLQueryItem(name: "queryText", value: queryTextString),
             URLQueryItem(name: "location", value: String(position[0])+","+String(position[1])+","+String(distance)),
             URLQueryItem(name: "media", value: "url"),
-            URLQueryItem(name: "event_type", value: "name")]
+            URLQueryItem(name: "event_type", value: "name"),
+            URLQueryItem(name: "userId", value: (userId as! String))]
         
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         

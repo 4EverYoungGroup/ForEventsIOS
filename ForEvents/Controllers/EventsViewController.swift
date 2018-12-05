@@ -37,10 +37,18 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         //Validate location Authorization
         self.validateLocationAuthorization()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //Configure navigationBar opaque and black, status bar white
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.barStyle = .blackTranslucent
+        
         //If user has favorite city start with them
         if let latitudeFavorite: Float = UserDefaults.standard.value(forKey: Constants.latitudeFavorite) as? Float,
-           let longitudeFavorite: Float = UserDefaults.standard.value(forKey: Constants.longitudeFavorite) as? Float,
-           let cityNameFavorite: String = UserDefaults.standard.value(forKey: Constants.cityNameFavorite) as? String {
+            let longitudeFavorite: Float = UserDefaults.standard.value(forKey: Constants.longitudeFavorite) as? Float,
+            let cityNameFavorite: String = UserDefaults.standard.value(forKey: Constants.cityNameFavorite) as? String {
             Global.citySelectedPosition = []
             Global.citySelectedPosition?.append(latitudeFavorite)
             Global.citySelectedPosition?.append(longitudeFavorite)
@@ -53,14 +61,6 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
         }
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //Configure navigationBar opaque and black, status bar white
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.barStyle = .blackTranslucent
     }
     
     deinit {
@@ -99,7 +99,7 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
             // Todo OK
             //if events.count() > 0 {
                 Global.events = events
-                
+                Global.transactionIdLast = nil
                 self.eventsCollectionView.delegate = self
                 self.eventsCollectionView.dataSource = self
                 self.eventsCollectionView.reloadData()
