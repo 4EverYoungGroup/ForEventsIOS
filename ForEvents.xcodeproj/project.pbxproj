@@ -16,6 +16,9 @@
 		BA09DE0321AC33D30009FAF4 /* UserGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0221AC33D30009FAF4 /* UserGet.swift */; };
 		BA09DE0521AC6EE40009FAF4 /* UpdateUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0421AC6EE40009FAF4 /* UpdateUserInteractor.swift */; };
 		BA09DE0721AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA09DE0621AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift */; };
+		BA0B1F4421B928C800649146 /* FavoriteSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B1F4321B928C800649146 /* FavoriteSearchInteractor.swift */; };
+		BA0B1F4621B9296900649146 /* FavoriteSearchInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B1F4521B9296900649146 /* FavoriteSearchInteractorNSURLSessionImpl.swift */; };
+		BA0B1F4821B9359800649146 /* FavoriteSearchApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0B1F4721B9359800649146 /* FavoriteSearchApiResponse.swift */; };
 		BA0C52D521AD611A00C3D1E5 /* DeleteUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52D421AD611A00C3D1E5 /* DeleteUserInteractor.swift */; };
 		BA0C52D721AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52D621AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift */; };
 		BA0C52DA21ADA7ED00C3D1E5 /* EventTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52D821ADA7ED00C3D1E5 /* EventTypeTableViewCell.swift */; };
@@ -149,6 +152,9 @@
 		BA09DE0221AC33D30009FAF4 /* UserGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGet.swift; sourceTree = "<group>"; };
 		BA09DE0421AC6EE40009FAF4 /* UpdateUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInteractor.swift; sourceTree = "<group>"; };
 		BA09DE0621AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BA0B1F4321B928C800649146 /* FavoriteSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchInteractor.swift; sourceTree = "<group>"; };
+		BA0B1F4521B9296900649146 /* FavoriteSearchInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BA0B1F4721B9359800649146 /* FavoriteSearchApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchApiResponse.swift; sourceTree = "<group>"; };
 		BA0C52D421AD611A00C3D1E5 /* DeleteUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInteractor.swift; sourceTree = "<group>"; };
 		BA0C52D621AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BA0C52D821ADA7ED00C3D1E5 /* EventTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypeTableViewCell.swift; sourceTree = "<group>"; };
@@ -427,6 +433,8 @@
 				BAF21FE221AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift */,
 				BAF9210021B5A426007D0E06 /* TransactionInteractor.swift */,
 				BAF9210221B5A499007D0E06 /* TransactionInteractorNSURLSessionImpl.swift */,
+				BA0B1F4321B928C800649146 /* FavoriteSearchInteractor.swift */,
+				BA0B1F4521B9296900649146 /* FavoriteSearchInteractorNSURLSessionImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -454,6 +462,7 @@
 				BAF920FE21B59F6F007D0E06 /* Transaction.swift */,
 				BAF9210421B5B8A5007D0E06 /* TransactionApi.swift */,
 				BA6D626B21B83BD900671CC3 /* TransactionApiResponse.swift */,
+				BA0B1F4721B9359800649146 /* FavoriteSearchApiResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -796,12 +805,14 @@
 				BA09DE0721AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
 				BA09DDFD21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift in Sources */,
+				BA0B1F4421B928C800649146 /* FavoriteSearchInteractor.swift in Sources */,
 				BA0C52DA21ADA7ED00C3D1E5 /* EventTypeTableViewCell.swift in Sources */,
 				BACDE3ED21A9DF5A007452F0 /* DownloadEventsInteractorNSURLSessionImpl.swift in Sources */,
 				BA20101121A498C1008425CB /* EventsDayViewController.swift in Sources */,
 				BA65EDE8219ED28B00B26C96 /* SearchTableViewCell.swift in Sources */,
 				BA5CF7492180772700419990 /* EventsViewController.swift in Sources */,
 				BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */,
+				BA0B1F4821B9359800649146 /* FavoriteSearchApiResponse.swift in Sources */,
 				BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */,
 				BACDE3F321AAA80B007452F0 /* JSONParserEvent.swift in Sources */,
 				BA05873121B3F43E008B4875 /* ConfigureSearchTextField.swift in Sources */,
@@ -820,6 +831,7 @@
 				BA602D322181B6970075B64B /* ExecuteInteractor.swift in Sources */,
 				BA65EDEC219F3B6E00B26C96 /* AssistsViewController.swift in Sources */,
 				BA6D626C21B83BD900671CC3 /* TransactionApiResponse.swift in Sources */,
+				BA0B1F4621B9296900649146 /* FavoriteSearchInteractorNSURLSessionImpl.swift in Sources */,
 				BAC28898219C3709000AA7B2 /* UIViewAssists+constraints.swift in Sources */,
 				BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */,
 				BA0C52E721ADC9DC00C3D1E5 /* EventTypeCheck.swift in Sources */,

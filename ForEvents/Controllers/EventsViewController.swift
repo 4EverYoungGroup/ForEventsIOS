@@ -18,6 +18,10 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     
+    var filterButton: UIBarButtonItem = UIBarButtonItem()
+    var startButtonOff: UIBarButtonItem = UIBarButtonItem()
+    var startButtonOn: UIBarButtonItem = UIBarButtonItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +36,7 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         //Configure logout Button
         self.configureLogout()
         //Configure find Button
-        self.configureFind()
+        self.configureFindAndStart()
         
         //Validate location Authorization
         self.validateLocationAuthorization()
@@ -53,6 +57,7 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
             Global.citySelectedPosition?.append(latitudeFavorite)
             Global.citySelectedPosition?.append(longitudeFavorite)
             Global.citySelectedName = cityNameFavorite
+            
             self.startEvents()
         } else {
             if UserDefaults.standard.bool(forKey: Constants.locationAuth) == true {
@@ -82,13 +87,13 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         eventsCollectionView.register(nibCell, forCellWithReuseIdentifier: eventCollectionViewCellId)
         
         ExecuteInteractorImpl().execute {
-            //TODO pass self location or favorite city location
-            let params = [
+            //Pass self location or favorite city location
+            Global.findParamsDict = [
                 "position": Global.citySelectedPosition ?? [0,0],
                 "queryText": nil,
                 "eventTypes": nil,
                 "distance": 5000] as Dictionary
-            eventsDownload(params: params as Dictionary<String, Any>)
+            eventsDownload(params: Global.findParamsDict as Dictionary<String, Any>)
         }
     }
 
@@ -109,12 +114,17 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func configureFind() {
-        var filterButton: UIBarButtonItem = UIBarButtonItem()
+    func configureFindAndStart() {
         let image = UIImage(named: "find")?.withRenderingMode(.alwaysOriginal)
         filterButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(findTapped))
-        filterButton.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font: UIFont(name: "AvenirNext-Bold", size: 17)!], for: .normal)
-        navigationItem.rightBarButtonItem = filterButton
+        
+        let imageOff = UIImage(named: "start")?.withRenderingMode(.alwaysOriginal)
+        startButtonOff = UIBarButtonItem(image: imageOff, style: .plain, target: self, action: #selector(startTappedOff))
+        
+        let imageOn = UIImage(named: "startFilled")?.withRenderingMode(.alwaysOriginal)
+        startButtonOn = UIBarButtonItem(image: imageOn, style: .plain, target: self, action: #selector(startTappedOn))
+        
+        navigationItem.rightBarButtonItems = [filterButton, startButtonOff]
     }
     
     func configureLogout() {
@@ -129,6 +139,27 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         let filterViewController = FindViewController()
         filterViewController.modalPresentationStyle = .overFullScreen
         present(filterViewController, animated: true, completion: nil)
+    }
+    
+    @objc func startTappedOff() {
+        showFavoriteSearchDialog(title: "4Events",
+                                 subtitle: "Guardar búsqueda como favorita.",
+                                 actionTitle: "Guardar",
+                                 cancelTitle: "Cancelar",
+                                 inputPlaceholder: "Nombre búsqueda",
+                                 inputKeyboardType: .default)
+        { (input:String?) in
+            print("El nombre de la búsqueda es: \(input ?? "")")
+            ExecuteInteractorImpl().execute {
+                //Pass dictionary with find params and favoriteSearch name
+                self.saveFavoriteSearch(params: Global.findParamsDict as Dictionary<String, Any>, name: input ?? "Sin nombre", action: Constants.favoriteSearchAdd, favoriteSearchId: nil)
+            }
+        }
+    }
+    
+    @objc func startTappedOn() {
+        self.navigationItem.setRightBarButtonItems([filterButton, startButtonOff], animated: false)
+        
     }
     
     @objc func logoutTapped() {
@@ -147,6 +178,26 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         print(viewController)
+    }
+    
+    func saveFavoriteSearch(params: Dictionary<String, Any>?, name: String?, action: String, favoriteSearchId: String?) {
+        let favoriteSearchInteractor: FavoriteSearchInteractor = FavoriteSearchInteractorNSURLSessionImpl()
+        
+        favoriteSearchInteractor.execute(params: params, name: name, action: action, favoriteSearchId: nil) { (responseApi: ResponseApi?) in
+            // Todo OK
+            if responseApi == nil {
+                self.navigationItem.setRightBarButtonItems([self.filterButton, self.startButtonOn], animated: false)
+            } else {
+                if let message = responseApi?.message {
+                    let alert = Alerts().alert(title: Constants.regTitle, message: message)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    guard let message = responseApi?.error?.message else { return }
+                    let alert = Alerts().alert(title: Constants.regTitle, message: message)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     func validateLocationAuthorization() {
@@ -247,5 +298,31 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         //extract the selected day
         let findParameters = info[FindKey]
         eventsDownload(params: findParameters as! Dictionary<String, Any>)
+    }
+    
+    func showFavoriteSearchDialog(title:String? = nil,
+                                  subtitle:String? = nil,
+                                  actionTitle:String? = nil,
+                                  cancelTitle:String? = nil,
+                                  inputPlaceholder:String? = nil,
+                                  inputKeyboardType:UIKeyboardType = UIKeyboardType.default,
+                                  cancelHandler: ((UIAlertAction) -> Swift.Void)? = nil,
+                                  actionHandler: ((_ text: String?) -> Void)? = nil) {
+        
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        alert.addTextField { (textField:UITextField) in
+            textField.placeholder = inputPlaceholder
+            textField.keyboardType = inputKeyboardType
+        }
+        alert.addAction(UIAlertAction(title: actionTitle, style: .destructive, handler: { (action:UIAlertAction) in
+            guard let textField =  alert.textFields?.first else {
+                actionHandler?(nil)
+                return
+            }
+            actionHandler?(textField.text)
+        }))
+        alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: cancelHandler))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

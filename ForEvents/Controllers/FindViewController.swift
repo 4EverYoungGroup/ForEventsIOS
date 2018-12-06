@@ -119,13 +119,13 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         //recoger radio
         print(Global.distanceInMetres)
         //Send find prameters selected notifications for update event collectionView
-        let findDict = [
+        Global.findParamsDict = [
             "position": Global.citySelectedPosition ?? [0,0],
             "queryText": text,
             "eventTypes": arrayEventTypes,
             "distance": Global.distanceInMetres] as Dictionary
         let notificationCenter = NotificationCenter.default
-        let notification = Notification(name: Notification.Name(rawValue: FindDidPressNotificationName), object: nil, userInfo: [FindKey: findDict ])
+        let notification = Notification(name: Notification.Name(rawValue: FindDidPressNotificationName), object: nil, userInfo: [FindKey: Global.findParamsDict ])
         self.dismiss(animated: true) {
             notificationCenter.post(notification)
         }

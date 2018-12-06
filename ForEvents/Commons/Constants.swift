@@ -35,6 +35,7 @@ struct Constants {
     static let urlEventTypePath = "/apiv1/EventTypes/"
     static let urlCitiesPath = "/apiv1/cities"
     static let urlTransactionsPath = "/apiv1/transactions/"
+    static let urlFavoriteSearchPath = "/apiv1/favoriteSearches"
     static let urlPostMethod = "POST"
     static let urlGetMethod = "GET"
     static let urlPutMethod = "PUT"
@@ -44,6 +45,9 @@ struct Constants {
     //transactions
     static let transactionAdd = "insert"
     static let transactionDelete = "delete"
+    //favoriteSearch
+    static let favoriteSearchAdd = "insert"
+    static let favoriteSearchDelete = "delete"
     //location
     static let latitudeDefault = 41.512860
     static let longitudeDefault = -5.747090
@@ -65,4 +69,6 @@ struct Global {
     static var citySelectedName: String? = nil
     static var distanceInMetres = 5000
     static var transactionIdLast: String? = nil
+    static var favoriteSearchIdLast: String? = nil
+    static var findParamsDict = Dictionary<String, AnyObject>()
 }
