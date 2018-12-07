@@ -158,8 +158,20 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @objc func startTappedOn() {
-        self.navigationItem.setRightBarButtonItems([filterButton, startButtonOff], animated: false)
+        //Delete favoriteSearch - Alert
+        let deleteFavoriteSearchAlertController = UIAlertController (title: "Atención, ha solicitado borrar su búsqueda", message: "Esta acción borrará su búsqueda favorita.", preferredStyle: .alert)
         
+        let settingsAction = UIAlertAction(title: "Borrar", style: .destructive) { (_) -> Void in
+            //Delete favoriteSearch
+            ExecuteInteractorImpl().execute {
+                //Pass favoriteSearchId
+                self.saveFavoriteSearch(params: Global.findParamsDict as Dictionary<String, Any>, name: nil, action: Constants.favoriteSearchDelete, favoriteSearchId: Global.favoriteSearchIdLast)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        deleteFavoriteSearchAlertController .addAction(settingsAction)
+        deleteFavoriteSearchAlertController .addAction(cancelAction)
+        self.present(deleteFavoriteSearchAlertController, animated: true, completion: nil)
     }
     
     @objc func logoutTapped() {
@@ -183,10 +195,14 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
     func saveFavoriteSearch(params: Dictionary<String, Any>?, name: String?, action: String, favoriteSearchId: String?) {
         let favoriteSearchInteractor: FavoriteSearchInteractor = FavoriteSearchInteractorNSURLSessionImpl()
         
-        favoriteSearchInteractor.execute(params: params, name: name, action: action, favoriteSearchId: nil) { (responseApi: ResponseApi?) in
+        favoriteSearchInteractor.execute(params: params, name: name, action: action, favoriteSearchId: favoriteSearchId) { (responseApi: ResponseApi?) in
             // Todo OK
             if responseApi == nil {
-                self.navigationItem.setRightBarButtonItems([self.filterButton, self.startButtonOn], animated: false)
+                if action == Constants.favoriteSearchAdd {
+                    self.navigationItem.setRightBarButtonItems([self.filterButton, self.startButtonOn], animated: false)
+                } else {
+                    self.navigationItem.setRightBarButtonItems([self.filterButton, self.startButtonOff], animated: false)
+                }
             } else {
                 if let message = responseApi?.message {
                     let alert = Alerts().alert(title: Constants.regTitle, message: message)
@@ -298,6 +314,7 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         //extract the selected day
         let findParameters = info[FindKey]
         eventsDownload(params: findParameters as! Dictionary<String, Any>)
+        self.navigationItem.setRightBarButtonItems([self.filterButton, self.startButtonOff], animated: false)
     }
     
     func showFavoriteSearchDialog(title:String? = nil,

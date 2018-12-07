@@ -17,7 +17,7 @@ class FavoriteSearchInteractorNSURLSessionImpl: FavoriteSearchInteractor {
         var eventTypeString: String? = nil
         var distance: Int = 0
         let userId = UserDefaults.standard.value(forKey: Constants.userID)
-        let name = name!
+        //let name = name!
         
         if action == Constants.favoriteSearchAdd {
             //recover find parameters
@@ -35,13 +35,19 @@ class FavoriteSearchInteractorNSURLSessionImpl: FavoriteSearchInteractor {
         var urlComponents = URLComponents()
         urlComponents.scheme = Constants.urlScheme
         urlComponents.host = Constants.urlHost
-        urlComponents.path = Constants.urlFavoriteSearchPath
-        urlComponents.queryItems = [
-            URLQueryItem(name: "name", value: name),
-            URLQueryItem(name: "event_type", value: eventTypeString),
-            URLQueryItem(name: "queryText", value: queryTextString),
-            URLQueryItem(name: "location", value: String(position[0])+","+String(position[1])+","+String(distance)),
-            URLQueryItem(name: "userId", value: (userId as! String))]
+        if action == Constants.favoriteSearchAdd {
+            urlComponents.path = Constants.urlFavoriteSearchPath
+            urlComponents.queryItems = [
+                URLQueryItem(name: "name", value: name),
+                URLQueryItem(name: "event_type", value: eventTypeString),
+                URLQueryItem(name: "queryText", value: queryTextString),
+                URLQueryItem(name: "location", value: String(position[0])+","+String(position[1])+","+String(distance)),
+                URLQueryItem(name: "userId", value: (userId as! String))]
+        } else {
+            urlComponents.path = Constants.urlFavoriteSearchPath+"/"+favoriteSearchId!
+            urlComponents.queryItems = [
+                URLQueryItem(name: "userId", value: (userId as! String))]
+        }
         
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
         
