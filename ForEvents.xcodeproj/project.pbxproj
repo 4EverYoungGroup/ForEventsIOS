@@ -120,6 +120,7 @@
 		BAE4316F21BBD0A8008FA34A /* FavoriteSearchsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4316E21BBD0A8008FA34A /* FavoriteSearchsAPI.swift */; };
 		BAE4317121BBD30D008FA34A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4317021BBD30D008FA34A /* Search.swift */; };
 		BAE4317321BBD5E8008FA34A /* JSONParserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4317221BBD5E8008FA34A /* JSONParserSearch.swift */; };
+		BAE4317521BC5876008FA34A /* UserUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4317421BC5876008FA34A /* UserUpdate.swift */; };
 		BAF21FDD21AEF361005BE449 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FDC21AEF361005BE449 /* City.swift */; };
 		BAF21FDF21AEF51A005BE449 /* CityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FDE21AEF51A005BE449 /* CityAPI.swift */; };
 		BAF21FE121AEF56D005BE449 /* GetCitiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FE021AEF56D005BE449 /* GetCitiesInteractor.swift */; };
@@ -267,6 +268,7 @@
 		BAE4316E21BBD0A8008FA34A /* FavoriteSearchsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchsAPI.swift; sourceTree = "<group>"; };
 		BAE4317021BBD30D008FA34A /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		BAE4317221BBD5E8008FA34A /* JSONParserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserSearch.swift; sourceTree = "<group>"; };
+		BAE4317421BC5876008FA34A /* UserUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdate.swift; sourceTree = "<group>"; };
 		BAF21FDC21AEF361005BE449 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		BAF21FDE21AEF51A005BE449 /* CityAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAPI.swift; sourceTree = "<group>"; };
 		BAF21FE021AEF56D005BE449 /* GetCitiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesInteractor.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				BA602D2F2181AD320075B64B /* User.swift */,
 				BA47754121831E5E00B8AA40 /* UserLogin.swift */,
 				BA09DE0221AC33D30009FAF4 /* UserGet.swift */,
+				BAE4317421BC5876008FA34A /* UserUpdate.swift */,
 				BA602D40218226C40075B64B /* ResponseApi.swift */,
 				BAC57665218B8F4900C735C6 /* Event.swift */,
 				BACDE3EA21A9DA5E007452F0 /* EventAPI.swift */,
@@ -809,6 +812,7 @@
 				BA0C52E521ADB30A00C3D1E5 /* FindViewController+TableViewController.swift in Sources */,
 				BAF21FDD21AEF361005BE449 /* City.swift in Sources */,
 				BA1D60A621B7086B00AF5F2F /* AppDelegate+Notifications.swift in Sources */,
+				BAE4317521BC5876008FA34A /* UserUpdate.swift in Sources */,
 				BAC5766A218B912600C735C6 /* DownloadEventsInteractor.swift in Sources */,
 				BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */,
 				BAF74D7221936FEE00E731DC /* EventAnnotation.swift in Sources */,

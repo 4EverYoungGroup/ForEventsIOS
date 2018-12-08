@@ -9,7 +9,7 @@
 import Foundation
 
 protocol GetUserInteractor {
-    func execute(userID: String, onSuccess: @escaping (User?) -> Void, onError: errorClosure)
-    func execute(userID: String, onSuccess: @escaping (User?) -> Void)
+    func execute(userID: String, onSuccess: @escaping (GetUser?) -> Void, onError: errorClosure)
+    func execute(userID: String, onSuccess: @escaping (GetUser?) -> Void)
 }
 

@@ -78,8 +78,8 @@ class UpdateUserInteractorNSURLSessionImpl: UpdateUserInteractor {
                     //if (self.checkStatusCode(response: response)) {
                         do {
                             let decoder = JSONDecoder()
-                            let userGet = try decoder.decode(UserGet.self, from: data!)
-                            let user = userGet.user
+                            let userUpdate = try decoder.decode(UserUpdate.self, from: data!)
+                            let user = userUpdate.user
                             //return User
                             onSuccess(user)
                         } catch let parsingError {

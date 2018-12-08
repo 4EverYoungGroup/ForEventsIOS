@@ -9,7 +9,7 @@
 import Foundation
 
 class GetUserInteractorNSURLSessionImpl: GetUserInteractor {
-    func execute(userID: String, onSuccess: @escaping (User?) -> Void, onError: errorClosure) {
+    func execute(userID: String, onSuccess: @escaping (GetUser?) -> Void, onError: errorClosure) {
         var urlComponents = URLComponents()
         urlComponents.scheme = Constants.urlScheme
         urlComponents.host = Constants.urlHost
@@ -65,7 +65,7 @@ class GetUserInteractorNSURLSessionImpl: GetUserInteractor {
         task.resume()
     }
     
-    func execute(userID: String, onSuccess: @escaping (User?) -> Void) {
+    func execute(userID: String, onSuccess: @escaping (GetUser?) -> Void) {
         execute(userID: userID, onSuccess: onSuccess, onError: nil)
     }
     

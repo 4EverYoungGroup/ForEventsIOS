@@ -207,13 +207,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             
             let getUserInteractor: GetUserInteractor = GetUserInteractorNSURLSessionImpl()
             
-            getUserInteractor.execute(userID: userID as! String) { (user: User?) in
+            getUserInteractor.execute(userID: userID as! String) { (user: GetUser?) in
                 if user != nil {
                     self.userTextField.text = user?.email
                     self.userTextField.isUserInteractionEnabled = false
                     self.nameTextField.text = user?.firstname
                     self.lastnameTextField.text = user?.lastname
-                    self.cityTextField.text = user?.city
+                    self.cityTextField.text = user?.city?.city
                     self.provinceTextField.text = user?.province
                     self.countryTextField.text = user?.country
                     self.zipCodeTextField.text = user?.zipCode
