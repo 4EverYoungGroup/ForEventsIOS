@@ -19,7 +19,9 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     func refresh(search: Search, index: Int) {
-        self.searchTextLabel.text = search.query
+        let dict = convertToDictionary(text: search.query)
+        print(dict)
+        self.searchTextLabel.text = search.name
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         self.dateSearchLabel.text = "\(dateFormatter.string(from: search.createDate))"
@@ -29,6 +31,17 @@ class SearchTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
     }
     
 }

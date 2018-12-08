@@ -114,6 +114,7 @@ class LoginViewController: UIViewController {
                     //Save user position from favorite city
                     if userLogin?.user?.city != nil {
                    
+                        UserDefaults.standard.set(true, forKey: "hasCity")
                         Global.citiesSelected?.append((userLogin?.user?.city)!)
                     UserDefaults.standard.setValue(userLogin?.user?.city?.location.coordinates[1], forKey: Constants.latitudeFavorite)
                     UserDefaults.standard.setValue(userLogin?.user?.city?.location.coordinates[0], forKey: Constants.longitudeFavorite)

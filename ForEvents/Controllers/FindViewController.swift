@@ -34,10 +34,6 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.delegate = self
         }
         
-        if Global.citySelectedName != nil {
-            self.cityTextField.text = Global.citySelectedName
-        }
-        
         //Configure search text field
         configureSearchTextField(textField: cityTextField)
         
@@ -117,7 +113,6 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         //recoger texto
         guard let text = self.queryTextField.text else { return }
         //recoger radio
-        print(Global.distanceInMetres)
         //Send find prameters selected notifications for update event collectionView
         Global.findParamsDict = [
             "position": Global.citySelectedPosition ?? [0,0],

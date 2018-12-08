@@ -53,10 +53,9 @@
 		BA5C730D21A2D91400CE40EB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C730C21A2D91400CE40EB /* DateExtensions.swift */; };
 		BA5C731021A32F1700CE40EB /* SearchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C730E21A32F1700CE40EB /* SearchesViewController.swift */; };
 		BA5C731121A32F1700CE40EB /* SearchesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5C730F21A32F1700CE40EB /* SearchesViewController.xib */; };
-		BA5C731321A33D1F00CE40EB /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C731221A33D1F00CE40EB /* Search.swift */; };
 		BA5C731521A33DBD00CE40EB /* Searches.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C731421A33DBD00CE40EB /* Searches.swift */; };
 		BA5C731721A33E6100CE40EB /* DownloadSearchesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C731621A33E6100CE40EB /* DownloadSearchesInteractor.swift */; };
-		BA5C731921A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C731821A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift */; };
+		BA5C731921A33EB100CE40EB /* DownloadSearchesInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C731821A33EB100CE40EB /* DownloadSearchesInteractorNSURLSessionImpl.swift */; };
 		BA5C731B21A3424600CE40EB /* SearchesViewController+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C731A21A3424600CE40EB /* SearchesViewController+TableViewController.swift */; };
 		BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF73B21806C9F00419990 /* KeychainTokenItem.swift */; };
 		BA5CF73E21806F8A00419990 /* ValidateToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CF73D21806F8A00419990 /* ValidateToken.swift */; };
@@ -114,6 +113,13 @@
 		BACDE3F321AAA80B007452F0 /* JSONParserEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDE3F221AAA80B007452F0 /* JSONParserEvent.swift */; };
 		BAD7876D219B4406000A44EC /* ProfileViewController+ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */; };
 		BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */; };
+		BAE4316721BBBEFB008FA34A /* DownloadAssistsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4316621BBBEFB008FA34A /* DownloadAssistsInteractor.swift */; };
+		BAE4316921BBBF50008FA34A /* DownloadAssistsInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4316821BBBF50008FA34A /* DownloadAssistsInteractorNSURLSessionImpl.swift */; };
+		BAE4316B21BBC1E2008FA34A /* TransactionsListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4316A21BBC1E2008FA34A /* TransactionsListAPI.swift */; };
+		BAE4316D21BBC36E008FA34A /* JSONParserTransList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4316C21BBC36E008FA34A /* JSONParserTransList.swift */; };
+		BAE4316F21BBD0A8008FA34A /* FavoriteSearchsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4316E21BBD0A8008FA34A /* FavoriteSearchsAPI.swift */; };
+		BAE4317121BBD30D008FA34A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4317021BBD30D008FA34A /* Search.swift */; };
+		BAE4317321BBD5E8008FA34A /* JSONParserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE4317221BBD5E8008FA34A /* JSONParserSearch.swift */; };
 		BAF21FDD21AEF361005BE449 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FDC21AEF361005BE449 /* City.swift */; };
 		BAF21FDF21AEF51A005BE449 /* CityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FDE21AEF51A005BE449 /* CityAPI.swift */; };
 		BAF21FE121AEF56D005BE449 /* GetCitiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF21FE021AEF56D005BE449 /* GetCitiesInteractor.swift */; };
@@ -194,10 +200,9 @@
 		BA5C730C21A2D91400CE40EB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		BA5C730E21A32F1700CE40EB /* SearchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchesViewController.swift; sourceTree = "<group>"; };
 		BA5C730F21A32F1700CE40EB /* SearchesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchesViewController.xib; sourceTree = "<group>"; };
-		BA5C731221A33D1F00CE40EB /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		BA5C731421A33DBD00CE40EB /* Searches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searches.swift; sourceTree = "<group>"; };
 		BA5C731621A33E6100CE40EB /* DownloadSearchesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSearchesInteractor.swift; sourceTree = "<group>"; };
-		BA5C731821A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSearchesInteractorFakeImpl.swift; sourceTree = "<group>"; };
+		BA5C731821A33EB100CE40EB /* DownloadSearchesInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSearchesInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BA5C731A21A3424600CE40EB /* SearchesViewController+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchesViewController+TableViewController.swift"; sourceTree = "<group>"; };
 		BA5CF73B21806C9F00419990 /* KeychainTokenItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainTokenItem.swift; sourceTree = "<group>"; };
 		BA5CF73D21806F8A00419990 /* ValidateToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateToken.swift; sourceTree = "<group>"; };
@@ -255,6 +260,13 @@
 		BACDE3F221AAA80B007452F0 /* JSONParserEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserEvent.swift; sourceTree = "<group>"; };
 		BAD7876C219B4406000A44EC /* ProfileViewController+ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+ImagePickerController.swift"; sourceTree = "<group>"; };
 		BAD7876E219B493C000A44EC /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		BAE4316621BBBEFB008FA34A /* DownloadAssistsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAssistsInteractor.swift; sourceTree = "<group>"; };
+		BAE4316821BBBF50008FA34A /* DownloadAssistsInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAssistsInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BAE4316A21BBC1E2008FA34A /* TransactionsListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListAPI.swift; sourceTree = "<group>"; };
+		BAE4316C21BBC36E008FA34A /* JSONParserTransList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserTransList.swift; sourceTree = "<group>"; };
+		BAE4316E21BBD0A8008FA34A /* FavoriteSearchsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSearchsAPI.swift; sourceTree = "<group>"; };
+		BAE4317021BBD30D008FA34A /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		BAE4317221BBD5E8008FA34A /* JSONParserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParserSearch.swift; sourceTree = "<group>"; };
 		BAF21FDC21AEF361005BE449 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		BAF21FDE21AEF51A005BE449 /* CityAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAPI.swift; sourceTree = "<group>"; };
 		BAF21FE021AEF56D005BE449 /* GetCitiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesInteractor.swift; sourceTree = "<group>"; };
@@ -420,7 +432,7 @@
 				BACDE3EC21A9DF5A007452F0 /* DownloadEventsInteractorNSURLSessionImpl.swift */,
 				BAC2889B219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift */,
 				BA5C731621A33E6100CE40EB /* DownloadSearchesInteractor.swift */,
-				BA5C731821A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift */,
+				BA5C731821A33EB100CE40EB /* DownloadSearchesInteractorNSURLSessionImpl.swift */,
 				BA09DDFA21AC0AF20009FAF4 /* GetUserInteractor.swift */,
 				BA09DDFC21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift */,
 				BA09DE0421AC6EE40009FAF4 /* UpdateUserInteractor.swift */,
@@ -435,6 +447,8 @@
 				BAF9210221B5A499007D0E06 /* TransactionInteractorNSURLSessionImpl.swift */,
 				BA0B1F4321B928C800649146 /* FavoriteSearchInteractor.swift */,
 				BA0B1F4521B9296900649146 /* FavoriteSearchInteractorNSURLSessionImpl.swift */,
+				BAE4316621BBBEFB008FA34A /* DownloadAssistsInteractor.swift */,
+				BAE4316821BBBF50008FA34A /* DownloadAssistsInteractorNSURLSessionImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -454,7 +468,7 @@
 				BA0C52DC21ADAA8D00C3D1E5 /* EventTypeAPI.swift */,
 				BA0C52DE21ADAAD700C3D1E5 /* EventType.swift */,
 				BA0C52E621ADC9DC00C3D1E5 /* EventTypeCheck.swift */,
-				BA5C731221A33D1F00CE40EB /* Search.swift */,
+				BAE4317021BBD30D008FA34A /* Search.swift */,
 				BA5C731421A33DBD00CE40EB /* Searches.swift */,
 				BA09DE0021AC159D0009FAF4 /* Token.swift */,
 				BAF21FDC21AEF361005BE449 /* City.swift */,
@@ -462,7 +476,9 @@
 				BAF920FE21B59F6F007D0E06 /* Transaction.swift */,
 				BAF9210421B5B8A5007D0E06 /* TransactionApi.swift */,
 				BA6D626B21B83BD900671CC3 /* TransactionApiResponse.swift */,
+				BAE4316A21BBC1E2008FA34A /* TransactionsListAPI.swift */,
 				BA0B1F4721B9359800649146 /* FavoriteSearchApiResponse.swift */,
+				BAE4316E21BBD0A8008FA34A /* FavoriteSearchsAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -511,6 +527,8 @@
 			isa = PBXGroup;
 			children = (
 				BACDE3F221AAA80B007452F0 /* JSONParserEvent.swift */,
+				BAE4316C21BBC36E008FA34A /* JSONParserTransList.swift */,
+				BAE4317221BBD5E8008FA34A /* JSONParserSearch.swift */,
 			);
 			path = JSONParser;
 			sourceTree = "<group>";
@@ -771,6 +789,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA5C730D21A2D91400CE40EB /* DateExtensions.swift in Sources */,
+				BAE4316921BBBF50008FA34A /* DownloadAssistsInteractorNSURLSessionImpl.swift in Sources */,
 				BA65EDEF219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift in Sources */,
 				BAC5766C218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift in Sources */,
 				BAC57672218B97A200C735C6 /* EventCollectionViewCell.swift in Sources */,
@@ -794,20 +813,23 @@
 				BA5CF7442180769400419990 /* RegisterViewController.swift in Sources */,
 				BAF74D7221936FEE00E731DC /* EventAnnotation.swift in Sources */,
 				BA0C52DD21ADAA8D00C3D1E5 /* EventTypeAPI.swift in Sources */,
-				BA5C731921A33EB100CE40EB /* DownloadSearchesInteractorFakeImpl.swift in Sources */,
+				BA5C731921A33EB100CE40EB /* DownloadSearchesInteractorNSURLSessionImpl.swift in Sources */,
 				BA477548218378BC00B8AA40 /* createTabBar.swift in Sources */,
 				BAC57666218B8F4900C735C6 /* Event.swift in Sources */,
+				BAE4316F21BBD0A8008FA34A /* FavoriteSearchsAPI.swift in Sources */,
 				BAA6AE63218F74440029F421 /* SectionHeaderCollectionReusableView.swift in Sources */,
 				BACDE3E921A9493B007452F0 /* OptionalExtensions.swift in Sources */,
 				BA602D302181AD320075B64B /* User.swift in Sources */,
-				BA5C731321A33D1F00CE40EB /* Search.swift in Sources */,
 				BAF21FE621AF4726005BE449 /* DistanceTableViewCell.swift in Sources */,
 				BA09DE0721AC6F450009FAF4 /* UpdateUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA602D41218226C40075B64B /* ResponseApi.swift in Sources */,
+				BAE4316B21BBC1E2008FA34A /* TransactionsListAPI.swift in Sources */,
+				BAE4316D21BBC36E008FA34A /* JSONParserTransList.swift in Sources */,
 				BA09DDFD21AC0B6A0009FAF4 /* GetUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA0B1F4421B928C800649146 /* FavoriteSearchInteractor.swift in Sources */,
 				BA0C52DA21ADA7ED00C3D1E5 /* EventTypeTableViewCell.swift in Sources */,
 				BACDE3ED21A9DF5A007452F0 /* DownloadEventsInteractorNSURLSessionImpl.swift in Sources */,
+				BAE4317121BBD30D008FA34A /* Search.swift in Sources */,
 				BA20101121A498C1008425CB /* EventsDayViewController.swift in Sources */,
 				BA65EDE8219ED28B00B26C96 /* SearchTableViewCell.swift in Sources */,
 				BA5CF7492180772700419990 /* EventsViewController.swift in Sources */,
@@ -823,6 +845,7 @@
 				BAD7876D219B4406000A44EC /* ProfileViewController+ImagePickerController.swift in Sources */,
 				BA5C731721A33E6100CE40EB /* DownloadSearchesInteractor.swift in Sources */,
 				BAC2889C219C45C3000AA7B2 /* DownloadAssistsInteractorFakeImpl.swift in Sources */,
+				BAE4316721BBBEFB008FA34A /* DownloadAssistsInteractor.swift in Sources */,
 				BA5CF74C2180772700419990 /* CalendarViewController.swift in Sources */,
 				BACDE3F021AA9E47007452F0 /* MapEvent.swift in Sources */,
 				BA5CF74F2180777500419990 /* UIviewController+Additions.swift in Sources */,
@@ -841,6 +864,7 @@
 				BA09DE0521AC6EE40009FAF4 /* UpdateUserInteractor.swift in Sources */,
 				BACDE3EB21A9DA5E007452F0 /* EventAPI.swift in Sources */,
 				BA09DE0121AC159D0009FAF4 /* Token.swift in Sources */,
+				BAE4317321BBD5E8008FA34A /* JSONParserSearch.swift in Sources */,
 				BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */,
 				BA5C731521A33DBD00CE40EB /* Searches.swift in Sources */,
 				BAD7876F219B493C000A44EC /* UserDefaultsExtensions.swift in Sources */,

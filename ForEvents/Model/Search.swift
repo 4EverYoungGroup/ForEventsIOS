@@ -8,13 +8,23 @@
 
 import Foundation
 
-public class Search {
-    var query: String
-    var createDate: Date
-    var eventsTypes: [String] = []
+public class Search: Codable {
     
-    public init(query: String, createDate: Date) {
-        self.query = query
-        self.createDate = createDate
+    let eventType: [String]?
+    let id: String
+    let user: String
+    let query: String
+    let name: String
+    let createDate: Date
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case eventType = "event_type"
+        case id = "_id"
+        case user
+        case query
+        case name = "name_search"
+        case createDate = "create_date"
     }
+    
 }

@@ -41,6 +41,26 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         //Validate location Authorization
         self.validateLocationAuthorization()
         
+        //If user has favorite city start with them
+        if UserDefaults.standard.bool(forKey: Constants.hasCity) == true {
+            if let latitudeFavorite: Float = UserDefaults.standard.value(forKey: Constants.latitudeFavorite) as? Float,
+                let longitudeFavorite: Float = UserDefaults.standard.value(forKey: Constants.longitudeFavorite) as? Float,
+                let cityNameFavorite: String = UserDefaults.standard.value(forKey: Constants.cityNameFavorite) as? String {
+                Global.citySelectedPosition = []
+                Global.citySelectedPosition?.append(latitudeFavorite)
+                Global.citySelectedPosition?.append(longitudeFavorite)
+                Global.citySelectedName = cityNameFavorite
+                
+                self.startEvents()
+            }
+        } else {
+            if UserDefaults.standard.bool(forKey: Constants.locationAuth) == true {
+                if CLLocationManager.locationServicesEnabled(){
+                    Global.citySelectedPosition = []
+                    locationManager.startUpdatingLocation()
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,24 +68,6 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.barStyle = .blackTranslucent
-        
-        //If user has favorite city start with them
-        if let latitudeFavorite: Float = UserDefaults.standard.value(forKey: Constants.latitudeFavorite) as? Float,
-            let longitudeFavorite: Float = UserDefaults.standard.value(forKey: Constants.longitudeFavorite) as? Float,
-            let cityNameFavorite: String = UserDefaults.standard.value(forKey: Constants.cityNameFavorite) as? String {
-            Global.citySelectedPosition = []
-            Global.citySelectedPosition?.append(latitudeFavorite)
-            Global.citySelectedPosition?.append(longitudeFavorite)
-            Global.citySelectedName = cityNameFavorite
-            
-            self.startEvents()
-        } else {
-            if UserDefaults.standard.bool(forKey: Constants.locationAuth) == true {
-                if CLLocationManager.locationServicesEnabled(){
-                    locationManager.startUpdatingLocation()
-                }
-            }
-        }
     }
     
     deinit {
@@ -266,7 +268,6 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
             // If authorized when in use
             manager.startUpdatingLocation()
             if UserDefaults.standard.bool(forKey: Constants.locationAuth) == false {
-                //self.startEvents()
                 UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
             }
             break
@@ -274,7 +275,6 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
             // If always authorized
             manager.startUpdatingLocation()
             if UserDefaults.standard.bool(forKey: Constants.locationAuth) == false {
-                //self.startEvents()
                 UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
             }
             break
@@ -297,6 +297,10 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
     
     func logoutUser() {
         UserDefaults.standard.set(false, forKey: "hasLoginKey")
+        UserDefaults.standard.removeObject(forKey: Constants.latitudeFavorite)
+        UserDefaults.standard.removeObject(forKey: Constants.longitudeFavorite)
+        UserDefaults.standard.removeObject(forKey: Constants.cityNameFavorite)
+        UserDefaults.standard.set(false, forKey: "hasCity")
         let loginTabBarController = createLoginTabBar()
         //Show login in tabbar
         loginTabBarController.selectedIndex = 0
@@ -314,7 +318,6 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         //extract the selected day
         let findParameters = info[FindKey]
         eventsDownload(params: findParameters as! Dictionary<String, Any>)
-        self.navigationItem.setRightBarButtonItems([self.filterButton, self.startButtonOff], animated: false)
     }
     
     func showFavoriteSearchDialog(title:String? = nil,

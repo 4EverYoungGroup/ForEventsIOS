@@ -11,6 +11,7 @@ import Foundation
 struct Constants {
     //userDefaults
     static let hasLoginKey = "hasLoginKey"
+    static let hasCity = "hasCity"
     static let username = "username"
     static let userID = "userID"
     static let radio = "radio"
@@ -35,6 +36,7 @@ struct Constants {
     static let urlEventTypePath = "/apiv1/EventTypes/"
     static let urlCitiesPath = "/apiv1/cities"
     static let urlTransactionsPath = "/apiv1/transactions/"
+    static let urlTransactionsListPath = "/apiv1/transactions/list"
     static let urlFavoriteSearchPath = "/apiv1/favoriteSearches"
     static let urlPostMethod = "POST"
     static let urlGetMethod = "GET"

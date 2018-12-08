@@ -44,7 +44,7 @@ class SearchesViewController: UIViewController {
     }
     
     func searchesDownload() {
-        let downloadSearchesInteractor: DownloadSearchesInteractor = DownloadSearchesInteractorFakeImpl()
+        let downloadSearchesInteractor: DownloadSearchesInteractor = DownloadSearchesInteractorNSURLSessionImpl()
         
         downloadSearchesInteractor.execute { (searches: Searches) in
             // Todo OK
