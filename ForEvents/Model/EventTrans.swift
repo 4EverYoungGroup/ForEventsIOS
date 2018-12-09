@@ -1,19 +1,14 @@
 //
-//  EventAPI.swift
+//  EventTrans.swift
 //  ForEvents
 //
-//  Created by luis gomez alonso on 24/11/2018.
+//  Created by luis gomez alonso on 09/12/2018.
 //  Copyright © 2018 4Everyoung.group. All rights reserved.
 //
 
 import Foundation
 
-struct ResponseEvent: Codable {
-    let ok: Bool
-    let result: [EventAPI]
-}
-
-struct EventAPI: Codable {
+struct EventTrans: Codable {
     let id: String
     let name: String
     let description: String?
@@ -31,7 +26,7 @@ struct EventAPI: Codable {
     let minAge: Int?
     let eventType: NameEventType?
     let location: Coordinates
-    let transactions: [Trans]?
+    let transactions: [String]?
     let media: [ImageURL]?
     
     enum CodingKeys: String, CodingKey
@@ -57,16 +52,3 @@ struct EventAPI: Codable {
         case media
     }
 }
-struct Coordinates: Codable {
-    let coordinates: [Float]
-}
-struct Trans: Codable {
-    let _id: String
-}
-struct ImageURL: Codable {
-    let url: String
-}
-struct NameEventType: Codable {
-    let name: String
-}
-

@@ -89,6 +89,8 @@
 		BA65EDED219F3B6E00B26C96 /* AssistsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA65EDEB219F3B6E00B26C96 /* AssistsViewController.xib */; };
 		BA65EDEF219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65EDEE219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift */; };
 		BA6D626C21B83BD900671CC3 /* TransactionApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6D626B21B83BD900671CC3 /* TransactionApiResponse.swift */; };
+		BA9B708B21BD091300290314 /* EventTrans.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B708A21BD091300290314 /* EventTrans.swift */; };
+		BA9B708D21BD0AD400290314 /* MapEventTrans.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B708C21BD0AD400290314 /* MapEventTrans.swift */; };
 		BAA6AE63218F74440029F421 /* SectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA6AE61218F74440029F421 /* SectionHeaderCollectionReusableView.swift */; };
 		BAA6AE64218F74440029F421 /* SectionHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA6AE62218F74440029F421 /* SectionHeaderCollectionReusableView.xib */; };
 		BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */; };
@@ -237,6 +239,8 @@
 		BA65EDEB219F3B6E00B26C96 /* AssistsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssistsViewController.xib; sourceTree = "<group>"; };
 		BA65EDEE219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssistsViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
 		BA6D626B21B83BD900671CC3 /* TransactionApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionApiResponse.swift; sourceTree = "<group>"; };
+		BA9B708A21BD091300290314 /* EventTrans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrans.swift; sourceTree = "<group>"; };
+		BA9B708C21BD0AD400290314 /* MapEventTrans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEventTrans.swift; sourceTree = "<group>"; };
 		BAA6AE61218F74440029F421 /* SectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		BAA6AE62218F74440029F421 /* SectionHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		BAB1E28321870679004CBC48 /* RecoverUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverUserInteractor.swift; sourceTree = "<group>"; };
@@ -471,6 +475,7 @@
 				BA0C52DC21ADAA8D00C3D1E5 /* EventTypeAPI.swift */,
 				BA0C52DE21ADAAD700C3D1E5 /* EventType.swift */,
 				BA0C52E621ADC9DC00C3D1E5 /* EventTypeCheck.swift */,
+				BA9B708A21BD091300290314 /* EventTrans.swift */,
 				BAE4317021BBD30D008FA34A /* Search.swift */,
 				BA5C731421A33DBD00CE40EB /* Searches.swift */,
 				BA09DE0021AC159D0009FAF4 /* Token.swift */,
@@ -522,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				BACDE3EF21AA9E47007452F0 /* MapEvent.swift */,
+				BA9B708C21BD0AD400290314 /* MapEventTrans.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -805,6 +811,7 @@
 				BA5CF73E21806F8A00419990 /* ValidateToken.swift in Sources */,
 				BA5CF73C21806C9F00419990 /* KeychainTokenItem.swift in Sources */,
 				BA0C52D721AD616500C3D1E5 /* DeleteUserInteractorNSURLSessionImpl.swift in Sources */,
+				BA9B708D21BD0AD400290314 /* MapEventTrans.swift in Sources */,
 				BAB1E286218706FA004CBC48 /* RecoverUserInteractorNSURLSessionImpl.swift in Sources */,
 				BA09DDFB21AC0AF20009FAF4 /* GetUserInteractor.swift in Sources */,
 				BA5C731021A32F1700CE40EB /* SearchesViewController.swift in Sources */,
@@ -844,6 +851,7 @@
 				BA05873121B3F43E008B4875 /* ConfigureSearchTextField.swift in Sources */,
 				BAC173772190BCB4000A94A0 /* FindViewController.swift in Sources */,
 				BA1F8E7A21A0128200037716 /* CustomColors.swift in Sources */,
+				BA9B708B21BD091300290314 /* EventTrans.swift in Sources */,
 				BA5F70BE21920BF0006F32F0 /* EventDetailViewController+CollectionViewController.swift in Sources */,
 				BAB1E28421870679004CBC48 /* RecoverUserInteractor.swift in Sources */,
 				BAD7876D219B4406000A44EC /* ProfileViewController+ImagePickerController.swift in Sources */,

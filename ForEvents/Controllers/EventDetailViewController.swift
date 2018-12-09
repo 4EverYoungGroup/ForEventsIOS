@@ -31,6 +31,7 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var detailScrollView: UIScrollView!
     
     var event: Event?
+    var assists: Bool = false
     
     let eventDetailCollectionViewCellId = "EventDetailCollectionViewCell"
     
@@ -182,15 +183,23 @@ class EventDetailViewController: UIViewController {
             self.outdoorIndoorImage.image = UIImage(named: "indoor")
         }
         self.eventDesTextView.text = event?.description
-        //Put assistButton in green if event has been pussed previously
-        if event?.transactionId != nil {
+        //Put assistButton in green when previous is assists list
+        if assists {
             self.assistButton.setTitleColor(.black, for: .normal)
             self.assistButton.backgroundColor = .green
             self.assistButton.isSelected = true
+            self.assistButton.isEnabled = false
         } else {
-            self.assistButton.setTitleColor(.white, for: .normal)
-            self.assistButton.backgroundColor = .gray
-            self.assistButton.isSelected = false
+            //Put assistButton in green if event has been pussed previously
+            if event?.transactionId != nil {
+                self.assistButton.setTitleColor(.black, for: .normal)
+                self.assistButton.backgroundColor = .green
+                self.assistButton.isSelected = true
+            } else {
+                self.assistButton.setTitleColor(.white, for: .normal)
+                self.assistButton.backgroundColor = .gray
+                self.assistButton.isSelected = false
+            }
         }
     }
     

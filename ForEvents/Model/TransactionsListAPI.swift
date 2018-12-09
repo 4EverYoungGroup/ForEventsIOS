@@ -22,7 +22,7 @@ struct ResponseTransList: Codable {
 struct TransList: Codable {
     let id: String
     let createDate: Date
-    let event: EventAPI
+    let event: EventTrans
     let user: User
     
     enum CodingKeys: String, CodingKey

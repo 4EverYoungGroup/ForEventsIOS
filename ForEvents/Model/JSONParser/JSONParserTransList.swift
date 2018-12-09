@@ -34,7 +34,7 @@ func parseTransList(data: Data) -> Events {
             //Map TransactionCodable to Transaction class
             for transList in result {
                 let transEvent = transList.event
-                let event = mapEventAPIIntoEvent(eventAPI: transEvent)
+                let event = mapEventTransIntoEvent(eventTrans: transEvent)
                 events.add(event: event)
             }
         }

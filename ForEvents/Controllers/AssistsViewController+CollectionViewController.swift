@@ -30,6 +30,7 @@ extension AssistsViewController: UICollectionViewDelegate, UICollectionViewDataS
         let eventDetailViewController = EventDetailViewController()
         let event: Event = ((self.events?.get(index: indexPath.row))!)
         eventDetailViewController.event = event
+        eventDetailViewController.assists = true
         
         navigationController?.pushViewController(eventDetailViewController, animated: true)
     }
