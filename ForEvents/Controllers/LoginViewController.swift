@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         // Put username in userTextField
-        if let username = UserDefaults.standard.value(forKey: Constants.username) {
+        if let username = UserDefaults.standard.value(forKey: Constants.useremail) {
             self.userTextField.text = username as? String
         }
     }
@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
             //Configure activity indicator
             view.addSubview(activityIndicator)
             activityIndicator.frame = view.bounds
+            activityIndicator.style = .whiteLarge
             activityIndicator.startAnimating()
             
             ExecuteInteractorImpl().execute {
@@ -52,6 +53,7 @@ class LoginViewController: UIViewController {
         if self.validateRecover() {
             //Configure activity indicator
             view.addSubview(activityIndicator)
+            activityIndicator.style = .whiteLarge
             activityIndicator.frame = view.bounds
             activityIndicator.startAnimating()
             
@@ -104,9 +106,11 @@ class LoginViewController: UIViewController {
                 //Save token in keychain
                 if let token: String = userLogin?.token {
                     self.saveTokenInKeychain(token: token)
-                    //Save user and userID in usersdefaults
-                    UserDefaults.standard.setValue(self.userTextField.text, forKey: Constants.username)
+                    //Save useremail, userID, username and radio in usersdefaults
+                    UserDefaults.standard.setValue(self.userTextField.text, forKey: Constants.useremail)
                     UserDefaults.standard.setValue(userLogin?.user?.id, forKey: Constants.userID)
+                    UserDefaults.standard.setValue(userLogin?.user?.firstName, forKey: Constants.userFirstName)
+                    UserDefaults.standard.setValue(userLogin?.user?.lastName, forKey: Constants.userLastName)
                     let radio = UserDefaults.standard.bool(forKey: Constants.radio)
                     if !radio {
                         UserDefaults.standard.setValue(5, forKey: Constants.radio)

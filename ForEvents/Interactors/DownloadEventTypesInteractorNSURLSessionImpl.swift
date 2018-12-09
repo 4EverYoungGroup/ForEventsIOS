@@ -14,7 +14,7 @@ class DownloadEventTypesInteractorNSURLSessionImpl: DownloadEventTypesInteractor
         urlComponents.scheme = Constants.urlScheme
         urlComponents.host = Constants.urlHost
         urlComponents.path = Constants.urlEventTypePath
-        if let username = UserDefaults.standard.value(forKey: Constants.username) {
+        if let username = UserDefaults.standard.value(forKey: Constants.useremail) {
             if let tokenValue = checkToken(username: username as! String) {
                 urlComponents.queryItems = [
                     URLQueryItem(name: "sort", value: "name"),

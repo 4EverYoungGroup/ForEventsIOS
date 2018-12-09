@@ -10,8 +10,6 @@ import UIKit
 
 class SearchesViewController: UIViewController {
     
-    var searches: Searches?
-    
     @IBOutlet weak var searchesTableView: UITableView!
     
     let searchTableViewCellId = "SearchTableViewCell"
@@ -32,6 +30,7 @@ class SearchesViewController: UIViewController {
         //Configure activity indicator
         view.addSubview(activityIndicator)
         activityIndicator.frame = view.bounds
+        activityIndicator.style = .whiteLarge
         activityIndicator.startAnimating()
         
         let nibCell = UINib(nibName: searchTableViewCellId, bundle: nil)
@@ -48,7 +47,7 @@ class SearchesViewController: UIViewController {
         
         downloadSearchesInteractor.execute { (searches: Searches) in
             // Todo OK
-            self.searches = searches
+            Global.searches = searches
             
             self.searchesTableView.delegate = self
             self.searchesTableView.dataSource = self

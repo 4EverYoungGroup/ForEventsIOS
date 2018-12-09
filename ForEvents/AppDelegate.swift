@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Check if app have a token
         if UserDefaults.standard.bool(forKey: Constants.hasLoginKey) == true {
-            if let username = UserDefaults.standard.value(forKey: Constants.username) {
+            if let username = UserDefaults.standard.value(forKey: Constants.useremail) {
                 if checkToken(username: username as! String) != nil {
                     let eventsTabBarController = createEventsTabBar()
                     //Configure tabbar opaque and black
@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             let loginTabBarController = createLoginTabBar()
             // Check if app have a username, then register screen is show
-            let username = UserDefaults.standard.value(forKey: Constants.username)
+            let username = UserDefaults.standard.value(forKey: Constants.useremail)
             if username == nil {
                 loginTabBarController.selectedIndex = 1
             }

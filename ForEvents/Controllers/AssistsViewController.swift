@@ -32,6 +32,7 @@ class AssistsViewController: UIViewController {
         //Configure activity indicator
         view.addSubview(activityIndicator)
         activityIndicator.frame = view.bounds
+        activityIndicator.style = .whiteLarge
         activityIndicator.startAnimating()
         
         let nibCell = UINib(nibName: eventCollectionViewCellId, bundle: nil)

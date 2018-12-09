@@ -18,7 +18,7 @@ class TransactionInteractorNSURLSessionImpl: TransactionInteractor {
         } else {
             urlComponents.path = Constants.urlTransactionsPath+transactionId!
         }
-        if let username = UserDefaults.standard.value(forKey: Constants.username) {
+        if let username = UserDefaults.standard.value(forKey: Constants.useremail) {
             if let tokenValue = checkToken(username: username as! String) {
                 urlComponents.queryItems = [URLQueryItem(name: "token", value: tokenValue)]
             }

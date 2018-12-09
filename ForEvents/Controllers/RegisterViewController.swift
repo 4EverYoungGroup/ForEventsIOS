@@ -62,6 +62,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 //Configure activity indicator
                 view.addSubview(activityIndicator)
                 activityIndicator.frame = view.bounds
+                activityIndicator.style = .whiteLarge
                 activityIndicator.startAnimating()
                 
                 ExecuteInteractorImpl().execute {
@@ -73,6 +74,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 //Configure activity indicator
                 view.addSubview(activityIndicator)
                 activityIndicator.frame = view.bounds
+                activityIndicator.style = .whiteLarge
                 activityIndicator.startAnimating()
                 
                 ExecuteInteractorImpl().execute {
@@ -154,8 +156,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
         registerUserInteractor.execute(user: user) { (responseApi: ResponseApi?) in
             if responseApi == nil {
-                UserDefaults.standard.set(true, forKey: Constants.username)
-                UserDefaults.standard.setValue(self.userTextField.text, forKey: Constants.username)
+                UserDefaults.standard.set(true, forKey: Constants.useremail)
+                UserDefaults.standard.setValue(self.userTextField.text, forKey: Constants.useremail)
                 self.tabBarController?.selectedIndex = 0
             } else {
                 if let message = responseApi?.message {

@@ -14,7 +14,7 @@ class GetUserInteractorNSURLSessionImpl: GetUserInteractor {
         urlComponents.scheme = Constants.urlScheme
         urlComponents.host = Constants.urlHost
         urlComponents.path = Constants.urlGetUserPath+userID
-        if let username = UserDefaults.standard.value(forKey: Constants.username) {
+        if let username = UserDefaults.standard.value(forKey: Constants.useremail) {
             if let tokenValue = checkToken(username: username as! String) {
                 urlComponents.queryItems = [URLQueryItem(name: "token", value: tokenValue)]
             }

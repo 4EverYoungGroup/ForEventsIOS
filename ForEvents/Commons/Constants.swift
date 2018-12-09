@@ -12,8 +12,10 @@ struct Constants {
     //userDefaults
     static let hasLoginKey = "hasLoginKey"
     static let hasCity = "hasCity"
-    static let username = "username"
+    static let useremail = "useremail"
     static let userID = "userID"
+    static let userFirstName = "userFirstName"
+    static let userLastName = "userLastName"
     static let radio = "radio"
     static let locationAuth = "locationAuth"
     static let latitudeFavorite = "latitudeFavorite"
@@ -65,6 +67,7 @@ struct Constants {
 struct Global {
     static var events: Events? = nil
     static var eventTypesCheck: [EventTypeCheck]? = []
+    static var eventTypesCheckSearch: [EventTypeCheck]? = []
     static var citiesSelected: [City]? = []
     static var citySelectedId: String?
     static var citySelectedPosition: [Float]? = []
@@ -73,4 +76,6 @@ struct Global {
     static var transactionIdLast: String? = nil
     static var favoriteSearchIdLast: String? = nil
     static var findParamsDict = Dictionary<String, AnyObject>()
+    static var searchParamsDict = Dictionary<String, AnyObject>()
+    static var searches: Searches? = nil
 }

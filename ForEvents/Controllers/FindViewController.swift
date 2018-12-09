@@ -40,6 +40,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         //Configure activity indicator
         view.addSubview(activityIndicator)
         activityIndicator.frame = view.bounds
+        activityIndicator.style = .whiteLarge
         activityIndicator.startAnimating()
         
         let nibCell = UINib(nibName: eventTypeTableViewCellId, bundle: nil)
