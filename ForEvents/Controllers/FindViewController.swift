@@ -24,7 +24,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     let distanceTableViewCellId = "DistanceTableViewCell"
     let locationManager = CLLocationManager()
     let radio: Int? = (UserDefaults.standard.value(forKey: Constants.radio) as! Int)
-    let arrayEventTypes: [String]? = (UserDefaults.standard.value(forKey: Constants.eventTypesCheckPref) as! [String])
+    var arrayEventTypes: [String]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,19 +50,14 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         let nibCellD = UINib(nibName: distanceTableViewCellId, bundle: nil)
         distanceTableView.register(nibCellD, forCellReuseIdentifier: distanceTableViewCellId)
         
-        if Global.eventTypesCheck?.count == 0 {
-            ExecuteInteractorImpl().execute {
-                eventTypesDownload()
-            }
-        } else {
-            activityIndicator.removeFromSuperview()
-            self.eventTypeTableView.reloadData()
+        if let arrayEventTypesString = UserDefaults.standard.value(forKey: Constants.eventTypesCheckPref) as? [String] {
+            self.arrayEventTypes = []
+            self.arrayEventTypes = arrayEventTypesString
         }
         
-        //Configure radio distances
-        self.distanceTableView.delegate = self
-        self.distanceTableView.dataSource = self
-        self.distanceTableView.reloadData()
+        ExecuteInteractorImpl().execute {
+            eventTypesDownload()
+        }
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +76,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         downloadEventTypesInteractor.execute { (eventTypes: [EventType]?) in
             // Todo OK
             if eventTypes != nil {
+                Global.eventTypesCheck = []
                 for eventT in eventTypes! {
                     let eventTypesCheck = EventTypeCheck(id: eventT.id!, name: eventT.name, check: true)
                     Global.eventTypesCheck?.append(eventTypesCheck)
@@ -89,10 +85,10 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
             //If userdefault is empty from eventtypes inicialize with all
             if self.arrayEventTypes == nil {
                 guard let arrayEventTypesCheck = Global.eventTypesCheck?.filter({$0.check == true}) else { return }
-                let arrayEventTypes = arrayEventTypesCheck.map({ (element) -> String in
+                self.arrayEventTypes = arrayEventTypesCheck.map({ (element) -> String in
                     return element.id
                 })
-                UserDefaults.standard.setValue(arrayEventTypes, forKey: Constants.eventTypesCheckPref)
+                UserDefaults.standard.setValue(self.arrayEventTypes, forKey: Constants.eventTypesCheckPref)
             }
             
             self.eventTypeTableView.delegate = self

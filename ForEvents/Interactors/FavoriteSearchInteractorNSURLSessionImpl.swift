@@ -38,7 +38,7 @@ class FavoriteSearchInteractorNSURLSessionImpl: FavoriteSearchInteractor {
         if action == Constants.favoriteSearchAdd {
             urlComponents.path = Constants.urlFavoriteSearchPath
             urlComponents.queryItems = [
-                URLQueryItem(name: "name", value: name),
+                URLQueryItem(name: "name_search", value: name),
                 URLQueryItem(name: "event_type", value: eventTypeString),
                 URLQueryItem(name: "queryText", value: queryTextString),
                 URLQueryItem(name: "location", value: String(position[0])+","+String(position[1])+","+String(distance)),

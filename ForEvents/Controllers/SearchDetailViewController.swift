@@ -88,7 +88,7 @@ class SearchDetailViewController: UIViewController {
         if let eventTypes: String = Global.searchParamsDict["event_type"] as? String {
             evenTypesArray = eventTypes.components(separatedBy: ",")
         }
-        self.searchNameLabel.text = (Global.searchParamsDict["name"] as! String)
+        self.searchNameLabel.text = (Global.searchParamsDict["name_search"] as! String)
 
     }
     

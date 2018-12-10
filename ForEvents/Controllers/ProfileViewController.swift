@@ -102,7 +102,11 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func createPageMenu() {
-        
+        //Configure activity indicator
+        view.addSubview(activityIndicator)
+        activityIndicator.frame = view.bounds
+        activityIndicator.style = .whiteLarge
+        activityIndicator.startAnimating()
         //Add the viewcontrollers to pagemenu
         let firstViewController = AssistsViewController()
         let secondViewController = SearchesViewController()
