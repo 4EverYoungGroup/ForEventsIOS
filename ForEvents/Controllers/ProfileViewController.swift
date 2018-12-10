@@ -106,7 +106,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         //Add the viewcontrollers to pagemenu
         let firstViewController = AssistsViewController()
         let secondViewController = SearchesViewController()
-        let thirdViewController = NotificationsViewController()
+        let thirdViewController = PreferencesViewController()
         let viewControllers = [firstViewController, secondViewController, thirdViewController]
         let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
         //Configure pagemenu

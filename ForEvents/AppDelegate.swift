@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //UserDefaults.standard.removeObject(forKey: "hasLoginKey")
         //UserDefaults.standard.removeObject(forKey: "username")
+        //UserDefaults.standard.removeObject(forKey: "radio")
         
         // Check if app have a token
         if UserDefaults.standard.bool(forKey: Constants.hasLoginKey) == true {

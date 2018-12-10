@@ -12,6 +12,7 @@ class DistanceTableViewCell: UITableViewCell {
     
     @IBOutlet weak var distanceLabel: UILabel!
     
+    @IBOutlet weak var kmsLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

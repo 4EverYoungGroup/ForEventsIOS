@@ -35,11 +35,12 @@
 		BA1E2D9B21920878006D3CBD /* EventDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */; };
 		BA1E2D9C21920878006D3CBD /* EventDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */; };
 		BA1F8E7A21A0128200037716 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F8E7921A0128200037716 /* CustomColors.swift */; };
-		BA20100D21A3FF1D008425CB /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20100B21A3FF1D008425CB /* NotificationsViewController.swift */; };
-		BA20100E21A3FF1D008425CB /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA20100C21A3FF1D008425CB /* NotificationsViewController.xib */; };
+		BA20100D21A3FF1D008425CB /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20100B21A3FF1D008425CB /* PreferencesViewController.swift */; };
+		BA20100E21A3FF1D008425CB /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA20100C21A3FF1D008425CB /* PreferencesViewController.xib */; };
 		BA20101121A498C1008425CB /* EventsDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20100F21A498C1008425CB /* EventsDayViewController.swift */; };
 		BA20101221A498C1008425CB /* EventsDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA20101021A498C1008425CB /* EventsDayViewController.xib */; };
 		BA20101421A49B99008425CB /* EventsDayViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20101321A49B99008425CB /* EventsDayViewController+CollectionViewController.swift */; };
+		BA38600321BE6E94001E2798 /* PreferencesViewController+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA38600221BE6E94001E2798 /* PreferencesViewController+TableViewController.swift */; };
 		BA47754221831E5E00B8AA40 /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA47754121831E5E00B8AA40 /* UserLogin.swift */; };
 		BA4775442183225400B8AA40 /* LoginUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4775432183225400B8AA40 /* LoginUserInteractor.swift */; };
 		BA4775462183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4775452183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift */; };
@@ -184,11 +185,12 @@
 		BA1E2D9921920878006D3CBD /* EventDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA1E2D9A21920878006D3CBD /* EventDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		BA1F8E7921A0128200037716 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
-		BA20100B21A3FF1D008425CB /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
-		BA20100C21A3FF1D008425CB /* NotificationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
+		BA20100B21A3FF1D008425CB /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		BA20100C21A3FF1D008425CB /* PreferencesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesViewController.xib; sourceTree = "<group>"; };
 		BA20100F21A498C1008425CB /* EventsDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDayViewController.swift; sourceTree = "<group>"; };
 		BA20101021A498C1008425CB /* EventsDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsDayViewController.xib; sourceTree = "<group>"; };
 		BA20101321A49B99008425CB /* EventsDayViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsDayViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
+		BA38600221BE6E94001E2798 /* PreferencesViewController+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreferencesViewController+TableViewController.swift"; sourceTree = "<group>"; };
 		BA47754121831E5E00B8AA40 /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		BA4775432183225400B8AA40 /* LoginUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractor.swift; sourceTree = "<group>"; };
 		BA4775452183230B00B8AA40 /* LoginUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
@@ -404,7 +406,8 @@
 				BA5C731A21A3424600CE40EB /* SearchesViewController+TableViewController.swift */,
 				BA9B709321BD8D5000290314 /* SearchDetailViewController.swift */,
 				BA9B709621BD9F8E00290314 /* SearchDetailViewController+TableViewController.swift */,
-				BA20100B21A3FF1D008425CB /* NotificationsViewController.swift */,
+				BA20100B21A3FF1D008425CB /* PreferencesViewController.swift */,
+				BA38600221BE6E94001E2798 /* PreferencesViewController+TableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -424,7 +427,7 @@
 				BA65EDEB219F3B6E00B26C96 /* AssistsViewController.xib */,
 				BA5C730F21A32F1700CE40EB /* SearchesViewController.xib */,
 				BA9B709221BD8D5000290314 /* SearchDetailViewController.xib */,
-				BA20100C21A3FF1D008425CB /* NotificationsViewController.xib */,
+				BA20100C21A3FF1D008425CB /* PreferencesViewController.xib */,
 				BA59882021768F100065D77D /* Assets.xcassets */,
 				BA59882221768F100065D77D /* LaunchScreen.storyboard */,
 			);
@@ -671,7 +674,7 @@
 				BA5CF75B2180788A00419990 /* ProfileViewController.xib in Resources */,
 				BA5CF75F2180788A00419990 /* RegisterViewController.xib in Resources */,
 				BA65EDED219F3B6E00B26C96 /* AssistsViewController.xib in Resources */,
-				BA20100E21A3FF1D008425CB /* NotificationsViewController.xib in Resources */,
+				BA20100E21A3FF1D008425CB /* PreferencesViewController.xib in Resources */,
 				BA59882421768F100065D77D /* LaunchScreen.storyboard in Resources */,
 				BA5CF75A2180788A00419990 /* CalendarViewController.xib in Resources */,
 				BAC173782190BCB4000A94A0 /* FindViewController.xib in Resources */,
@@ -859,6 +862,7 @@
 				BAC5766E218B947500C735C6 /* EventsViewController+CollectionViewController.swift in Sources */,
 				BA0B1F4821B9359800649146 /* FavoriteSearchApiResponse.swift in Sources */,
 				BAF74D7021936C8900E731DC /* EventDetailViewController+MapKit.swift in Sources */,
+				BA38600321BE6E94001E2798 /* PreferencesViewController+TableViewController.swift in Sources */,
 				BACDE3F321AAA80B007452F0 /* JSONParserEvent.swift in Sources */,
 				BA05873121B3F43E008B4875 /* ConfigureSearchTextField.swift in Sources */,
 				BAC173772190BCB4000A94A0 /* FindViewController.swift in Sources */,
@@ -897,7 +901,7 @@
 				BAF9210121B5A426007D0E06 /* TransactionInteractor.swift in Sources */,
 				BA602D362181BBC40075B64B /* RegisterUserInteractor.swift in Sources */,
 				BAF21FE321AEF5F1005BE449 /* GetCitiesInteractorNSURLSessionImpl.swift in Sources */,
-				BA20100D21A3FF1D008425CB /* NotificationsViewController.swift in Sources */,
+				BA20100D21A3FF1D008425CB /* PreferencesViewController.swift in Sources */,
 				BA0C52E321ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift in Sources */,
 				BA09DE0321AC33D30009FAF4 /* UserGet.swift in Sources */,
 				BAF920FF21B59F6F007D0E06 /* Transaction.swift in Sources */,

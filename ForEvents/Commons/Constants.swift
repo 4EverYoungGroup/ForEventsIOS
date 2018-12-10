@@ -21,11 +21,13 @@ struct Constants {
     static let latitudeFavorite = "latitudeFavorite"
     static let longitudeFavorite = "longitudeFavorite"
     static let cityNameFavorite = "cityNameFavorite"
+    static let eventTypesCheckPref = "eventTypesCheckPref"
     //email validation reg-expression
     static let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     static let regTitle = "Registro ForEvents"
     static let loginTitle = "Login ForEvents"
     static let findTitle = "Búsqueda ForEvents"
+    static let preferenceTitle = "Preferencias ForEvents"
     //url parameters
     static let urlScheme = "https"
     static let urlHost = "services.4events.net"
@@ -53,26 +55,25 @@ struct Constants {
     static let favoriteSearchAdd = "insert"
     static let favoriteSearchDelete = "delete"
     //location
-    static let latitudeDefault = 41.512860
-    static let longitudeDefault = -5.747090
     //radio kms
     static let distances:[Int] = [
+        1,
         5,
         10,
         25,
-        50,
-        100]
+        50]
 }
 
 struct Global {
     static var events: Events? = nil
     static var eventTypesCheck: [EventTypeCheck]? = []
     static var eventTypesCheckSearch: [EventTypeCheck]? = []
+    static var eventTypesCheckPref: [EventTypeCheck]? = []
     static var citiesSelected: [City]? = []
     static var citySelectedId: String?
     static var citySelectedPosition: [Float]? = []
     static var citySelectedName: String? = nil
-    static var distanceInMetres = 5000
+    static var distanceInMetres = 1000
     static var transactionIdLast: String? = nil
     static var favoriteSearchIdLast: String? = nil
     static var findParamsDict = Dictionary<String, AnyObject>()

@@ -47,6 +47,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="distanceLabel" destination="1ny-lq-sMf" id="hAa-NU-Sa1"/>
+                <outlet property="kmsLabel" destination="TPK-2D-evX" id="6r9-bN-ylY"/>
             </connections>
             <point key="canvasLocation" x="136.80000000000001" y="153.82308845577214"/>
         </tableViewCell>

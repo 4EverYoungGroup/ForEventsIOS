@@ -23,6 +23,8 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     let eventTypeTableViewCellId = "EventTypeTableViewCell"
     let distanceTableViewCellId = "DistanceTableViewCell"
     let locationManager = CLLocationManager()
+    let radio: Int? = (UserDefaults.standard.value(forKey: Constants.radio) as! Int)
+    let arrayEventTypes = (UserDefaults.standard.value(forKey: Constants.eventTypesCheckPref) as! [String])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,8 +68,11 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let indexPath = NSIndexPath(row: 0, section: 0)
-        distanceTableView.selectRow(at: indexPath as IndexPath, animated: false, scrollPosition: .none)
+        //Mark the distance preferred by the user, default first
+        if (radio == nil) {
+            let indexPath = NSIndexPath(row: 0, section: 0)
+            distanceTableView.selectRow(at: indexPath as IndexPath, animated: false, scrollPosition: .none)
+        }
     }
     
     func eventTypesDownload() {

@@ -48,7 +48,7 @@ class SearchDetailViewController: UIViewController {
         if let radio = Int(radio) {
             radioInt = radio
         } else {
-            radioInt = 5000
+            radioInt = 1000
         }
         Global.findParamsDict = [
             "position": [Float(latitude), Float(longitude)],

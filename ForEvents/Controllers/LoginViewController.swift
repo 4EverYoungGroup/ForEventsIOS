@@ -113,7 +113,7 @@ class LoginViewController: UIViewController {
                     UserDefaults.standard.setValue(userLogin?.user?.lastName, forKey: Constants.userLastName)
                     let radio = UserDefaults.standard.bool(forKey: Constants.radio)
                     if !radio {
-                        UserDefaults.standard.setValue(5, forKey: Constants.radio)
+                        UserDefaults.standard.setValue(1, forKey: Constants.radio)
                     }
                     //Save user position from favorite city
                     if userLogin?.user?.city != nil {
