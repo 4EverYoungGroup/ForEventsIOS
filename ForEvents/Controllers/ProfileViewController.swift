@@ -56,9 +56,6 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
-        //Create PageMenu
-        self.createPageMenu()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +63,9 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.barStyle = .blackTranslucent
+        
+        //Create PageMenu
+        self.createPageMenu()
     }
 
     @IBAction func userButtonPress(_ sender: UIButton) {

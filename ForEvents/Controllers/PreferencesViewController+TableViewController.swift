@@ -26,10 +26,15 @@ extension PreferencesViewController: UITableViewDelegate, UITableViewDataSource 
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             cell.backgroundColor = .black
             cell.eventTypeLabel.textColor = .white
-            if eventTypeCheck.check {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
+            if self.arrayEventTypes != nil {
+                for event in self.arrayEventTypes! {
+                    if event == eventTypeCheck.id {
+                        cell.accessoryType = .checkmark
+                        break
+                    } else {
+                        cell.accessoryType = .none
+                    }
+                }
             }
             cell.refresh(eventTypeCheck: eventTypeCheck, index: indexPath.row)
             return cell

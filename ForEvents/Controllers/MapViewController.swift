@@ -164,6 +164,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
+        //Delete previous annotations
+        let allAnnotations = self.eventsMapView.annotations
+        self.eventsMapView.removeAnnotations(allAnnotations)
         // Create anotation for event
         if let numberEvents = Global.events?.count() {
             for i in 0..<numberEvents {

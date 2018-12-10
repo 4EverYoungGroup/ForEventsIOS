@@ -55,4 +55,24 @@ class SearchesViewController: UIViewController {
             
         }
     }
+    
+    func deleteFavoriteSearch(params: Dictionary<String, Any>?, name: String?, action: String, favoriteSearchId: String?) {
+        let favoriteSearchInteractor: FavoriteSearchInteractor = FavoriteSearchInteractorNSURLSessionImpl()
+        
+        favoriteSearchInteractor.execute(params: params, name: name, action: action, favoriteSearchId: favoriteSearchId) { (responseApi: ResponseApi?) in
+            // Todo OK
+            if responseApi == nil {
+                self.searchesDownload()
+            } else {
+                if let message = responseApi?.message {
+                    let alert = Alerts().alert(title: Constants.regTitle, message: message)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    guard let message = responseApi?.error?.message else { return }
+                    let alert = Alerts().alert(title: Constants.regTitle, message: message)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
 }

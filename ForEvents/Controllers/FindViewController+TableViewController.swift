@@ -24,12 +24,14 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! EventTypeTableViewCell
             let eventTypeCheck: EventTypeCheck = Global.eventTypesCheck![indexPath.row]
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
-            for event in self.arrayEventTypes {
-                if event == eventTypeCheck.id {
-                    cell.accessoryType = .checkmark
-                    break
-                } else {
-                    cell.accessoryType = .none
+            if self.arrayEventTypes != nil {
+                for event in self.arrayEventTypes! {
+                    if event == eventTypeCheck.id {
+                        cell.accessoryType = .checkmark
+                        break
+                    } else {
+                        cell.accessoryType = .none
+                    }
                 }
             }
             

@@ -15,7 +15,8 @@ class PreferencesViewController: UIViewController {
     
     let eventTypeTableViewCellId = "EventTypeTableViewCell"
     let distanceTableViewCellId = "DistanceTableViewCell"
-    let radio: Int? = (UserDefaults.standard.value(forKey: Constants.radio) as! Int)
+    var radio: Int? = (UserDefaults.standard.value(forKey: Constants.radio) as! Int)
+    var arrayEventTypes: [String]? = (UserDefaults.standard.value(forKey: Constants.eventTypesCheckPref) as! [String])
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -35,17 +36,16 @@ class PreferencesViewController: UIViewController {
         eventTypesTableView.register(nibCell, forCellReuseIdentifier: eventTypeTableViewCellId)
         let nibCellD = UINib(nibName: distanceTableViewCellId, bundle: nil)
         distancesTableView.register(nibCellD, forCellReuseIdentifier: distanceTableViewCellId)
-        
-        //Recover eventTypes
-        ExecuteInteractorImpl().execute {
-            eventTypesDownload()
-        }
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //Recover eventTypes
+        ExecuteInteractorImpl().execute {
+            eventTypesDownload()
+        }
         //Mark the distance preferred by the user, default first
         if (radio == nil) {
             let indexPath = NSIndexPath(row: 0, section: 0)
@@ -76,11 +76,22 @@ class PreferencesViewController: UIViewController {
         downloadEventTypesInteractor.execute { (eventTypes: [EventType]?) in
             // Todo OK
             if eventTypes != nil {
+                Global.eventTypesCheckPref = []
                 for eventT in eventTypes! {
                     let eventTypesCheck = EventTypeCheck(id: eventT.id!, name: eventT.name, check: true)
                     Global.eventTypesCheckPref?.append(eventTypesCheck)
                 }
             }
+            //If userdefault is empty from eventtypes inicialize with all
+            if self.arrayEventTypes == nil {
+                guard let arrayEventTypesCheck = Global.eventTypesCheckPref?.filter({$0.check == true}) else { return }
+                self.arrayEventTypes = arrayEventTypesCheck.map({ (element) -> String in
+                    return element.id
+                })
+                UserDefaults.standard.setValue(self.arrayEventTypes, forKey: Constants.eventTypesCheckPref)
+            }
+            //Update radio from user defautls
+            self.radio = (UserDefaults.standard.value(forKey: Constants.radio) as! Int)
             
             self.eventTypesTableView.delegate = self
             self.eventTypesTableView.dataSource = self

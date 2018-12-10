@@ -24,7 +24,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
     let distanceTableViewCellId = "DistanceTableViewCell"
     let locationManager = CLLocationManager()
     let radio: Int? = (UserDefaults.standard.value(forKey: Constants.radio) as! Int)
-    let arrayEventTypes = (UserDefaults.standard.value(forKey: Constants.eventTypesCheckPref) as! [String])
+    let arrayEventTypes: [String]? = (UserDefaults.standard.value(forKey: Constants.eventTypesCheckPref) as! [String])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +85,14 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
                     let eventTypesCheck = EventTypeCheck(id: eventT.id!, name: eventT.name, check: true)
                     Global.eventTypesCheck?.append(eventTypesCheck)
                 }
+            }
+            //If userdefault is empty from eventtypes inicialize with all
+            if self.arrayEventTypes == nil {
+                guard let arrayEventTypesCheck = Global.eventTypesCheck?.filter({$0.check == true}) else { return }
+                let arrayEventTypes = arrayEventTypesCheck.map({ (element) -> String in
+                    return element.id
+                })
+                UserDefaults.standard.setValue(arrayEventTypes, forKey: Constants.eventTypesCheckPref)
             }
             
             self.eventTypeTableView.delegate = self

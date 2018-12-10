@@ -40,7 +40,22 @@ extension SearchesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        print("delete")
+        let search: Search = ((Global.searches?.get(index: indexPath.row))!)
+        //Delete favoriteSearch - Alert
+        let deleteFavoriteSearchAlertController = UIAlertController (title: "Atención, ha solicitado borrar su búsqueda", message: "Esta acción borrará su búsqueda favorita.", preferredStyle: .alert)
+        
+        let settingsAction = UIAlertAction(title: "Borrar", style: .destructive) { (_) -> Void in
+            //Delete favoriteSearch
+            ExecuteInteractorImpl().execute {
+                //Pass favoriteSearchId
+                self.deleteFavoriteSearch(params: Global.findParamsDict as Dictionary<String, Any>, name: nil, action: Constants.favoriteSearchDelete, favoriteSearchId: search.id)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        deleteFavoriteSearchAlertController .addAction(settingsAction)
+        deleteFavoriteSearchAlertController .addAction(cancelAction)
+        self.present(deleteFavoriteSearchAlertController, animated: true, completion: nil)
+        
     }
     
     func convertToDictionary(text: String) -> [String: Any]? {
