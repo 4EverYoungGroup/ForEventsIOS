@@ -44,6 +44,7 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
             cell.refresh(distance: Constants.distances[indexPath.row], index: indexPath.row)
             if self.radio == Constants.distances[indexPath.row] {
                 cell.accessoryType = .checkmark
+                Global.distanceInMetres = Constants.distances[indexPath.row] * 1000
                 let indexPath = NSIndexPath(row: indexPath.row, section: 0)
                 distanceTableView.selectRow(at: indexPath as IndexPath, animated: false, scrollPosition: .none)
             }
