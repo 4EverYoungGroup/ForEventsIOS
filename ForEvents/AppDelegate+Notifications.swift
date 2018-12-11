@@ -50,13 +50,25 @@ extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
         print("NOTIFICATION: Received data message => \(notification)")
     }
     
+    func application(received remoteMessage: MessagingRemoteMessage)
+    {
+        // What message comes here?
+        
+        print("remoteMessage.appData : ", remoteMessage.appData)
+        
+    }
+    
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("NOTIFICATION: Registration token  =>  \(fcmToken)")
+        UserDefaults.standard.setValue(fcmToken, forKey: Constants.tokenDevice)
     }
     
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
         UIApplication.shared.applicationIconBadgeNumber = 0
         print("NOTIFICATION: Received data message => \(remoteMessage.appData)")
+        guard let data = try? JSONSerialization.data(withJSONObject: remoteMessage.appData, options:.prettyPrinted),
+            let prettyPrinted = String(data: data, encoding: .utf8) else { return }
+        print("Received direct channel message:\n\(prettyPrinted)")
     }
     
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {

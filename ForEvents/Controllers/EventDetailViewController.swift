@@ -32,6 +32,8 @@ class EventDetailViewController: UIViewController {
     
     var event: Event?
     var assists: Bool = false
+    var userLatitude: Double?
+    var userLongitude: Double?
     
     let eventDetailCollectionViewCellId = "EventDetailCollectionViewCell"
     
@@ -39,6 +41,12 @@ class EventDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Recover user location
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+        }
         
         //Configure assistButton aspect
         //assistButton.backgroundColor = .clear
@@ -231,5 +239,17 @@ class EventDetailViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    //MARK: - location delegate methods to determine user location
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation :CLLocation = locations[0] as CLLocation
+        self.userLatitude = userLocation.coordinate.latitude
+        self.userLongitude = userLocation.coordinate.longitude
+        
+        manager.stopUpdatingLocation()
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        self.locationManager.stopUpdatingLocation()
     }
 }

@@ -82,8 +82,8 @@ extension EventDetailViewController: CLLocationManagerDelegate, MKMapViewDelegat
         if let annotation = view.annotation as? EventAnnotation {
             let event = annotation.getEvent()
             
-            let source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(Global.citySelectedPosition![0]), longitude: Double(Global.citySelectedPosition![1]))))
-            source.name = Global.citySelectedName
+            let source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: self.userLatitude ?? Double(Global.citySelectedPosition![0]), longitude: self.userLongitude ?? Double(Global.citySelectedPosition![1]))))
+            source.name = "Su posición"
             
             let destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(event.latitude!), longitude:    Double(event.longitude!))))
             destination.name = event.name

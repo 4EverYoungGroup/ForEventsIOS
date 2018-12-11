@@ -22,6 +22,7 @@ struct Constants {
     static let longitudeFavorite = "longitudeFavorite"
     static let cityNameFavorite = "cityNameFavorite"
     static let eventTypesCheckPref = "eventTypesCheckPref"
+    static let tokenDevice = "tokenDevice"
     //email validation reg-expression
     static let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     static let regTitle = "Registro ForEvents"

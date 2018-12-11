@@ -57,6 +57,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = loginTabBarController
         }
         
+        // Check if launched from notification
+        let notificationOption = launchOptions?[.remoteNotification]
+        
+        if let notification = notificationOption as? [String: AnyObject],
+            let aps = notification["aps"] as? [String: AnyObject] {
+            
+            // 2
+            print(aps)
+            
+        }
+        
         return true
     }
     

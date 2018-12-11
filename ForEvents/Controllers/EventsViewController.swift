@@ -38,9 +38,6 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         //Configure find Button
         self.configureFindAndStart()
         
-        //Validate location Authorization
-        self.validateLocationAuthorization()
-        
         //If user has favorite city start with them
         if UserDefaults.standard.bool(forKey: Constants.hasCity) == true {
             if let latitudeFavorite: Float = UserDefaults.standard.value(forKey: Constants.latitudeFavorite) as? Float,
@@ -51,16 +48,9 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
                 Global.citySelectedPosition?.append(longitudeFavorite)
                 Global.citySelectedName = cityNameFavorite
                 
-                self.startEvents()
-            }
-        } else {
-            if UserDefaults.standard.bool(forKey: Constants.locationAuth) == true {
-                if CLLocationManager.locationServicesEnabled(){
-                    Global.citySelectedPosition = []
-                    locationManager.startUpdatingLocation()
-                }
             }
         }
+        self.startEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +59,7 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.barStyle = .blackTranslucent
         //Reload events if assists button is press in detail
-        eventsDownload(params: Global.findParamsDict as Dictionary<String, Any>)
+        //eventsDownload(params: Global.findParamsDict as Dictionary<String, Any>)
     }
     
     deinit {
@@ -227,83 +217,6 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
                     self.present(alert, animated: true, completion: nil)
                 }
             }
-        }
-    }
-    
-    func validateLocationAuthorization() {
-        
-        let status  = CLLocationManager.authorizationStatus()
-        if status == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
-            //locationManager.startUpdatingLocation()
-        }
-        
-        if status == .denied || status == .restricted {
-            let alert = UIAlertController(title: "Localización no disponible", message: "Por favor, habilite la localización en Ajustes", preferredStyle: .alert)
-            
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okAction)
-            
-            present(alert, animated: true, completion: nil)
-        }
-        
-        if status == .authorizedAlways || status == .authorizedWhenInUse {
-            locationManager.delegate = self
-            //locationManager.startUpdatingLocation()
-            UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
-            //self.locationManager.stopUpdatingLocation()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if Global.citySelectedPosition?.count == 0 {
-            let currentLocation = locations.last!
-            Global.citySelectedPosition = []
-            Global.citySelectedPosition?.append(Float(currentLocation.coordinate.latitude))
-            Global.citySelectedPosition?.append(Float(currentLocation.coordinate.longitude))
-            manager.stopUpdatingLocation()
-            manager.delegate = nil
-        } else {
-            manager.stopUpdatingLocation()
-            manager.delegate = nil
-        }
-        self.startEvents()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .notDetermined:
-            // If status has not yet been determied, ask for authorization
-            manager.requestWhenInUseAuthorization()
-            break
-        case .authorizedWhenInUse:
-            // If authorized when in use
-            manager.startUpdatingLocation()
-            if UserDefaults.standard.bool(forKey: Constants.locationAuth) == false {
-                UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
-            }
-            break
-        case .authorizedAlways:
-            // If always authorized
-            manager.startUpdatingLocation()
-            if UserDefaults.standard.bool(forKey: Constants.locationAuth) == false {
-                UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
-            }
-            break
-        case .restricted:
-            break
-        case .denied:
-            UserDefaults.standard.setValue(false, forKey: Constants.locationAuth)
-            // If restricted by e.g. parental controls. User can't enable Location Services
-            let alert = UIAlertController(title: "Localización no disponible", message: "Por favor, habilite la localización en Ajustes", preferredStyle: .alert)
-            
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okAction)
-            
-            present(alert, animated: true, completion: nil)
-            break
-        default:
-            break
         }
     }
     

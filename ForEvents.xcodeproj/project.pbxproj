@@ -29,6 +29,9 @@
 		BA0C52E321ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52E221ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift */; };
 		BA0C52E521ADB30A00C3D1E5 /* FindViewController+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52E421ADB30A00C3D1E5 /* FindViewController+TableViewController.swift */; };
 		BA0C52E721ADC9DC00C3D1E5 /* EventTypeCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C52E621ADC9DC00C3D1E5 /* EventTypeCheck.swift */; };
+		BA1A397D21C04BFF0066212C /* SaveTokenDeviceInUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A397C21C04BFF0066212C /* SaveTokenDeviceInUserInteractor.swift */; };
+		BA1A397F21C04C8A0066212C /* SaveTokenDeviceInUserInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A397E21C04C8A0066212C /* SaveTokenDeviceInUserInteractorNSURLSessionImpl.swift */; };
+		BA1A398321C05AED0066212C /* TokenFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A398221C05AED0066212C /* TokenFB.swift */; };
 		BA1D60A621B7086B00AF5F2F /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D60A521B7086B00AF5F2F /* AppDelegate+Notifications.swift */; };
 		BA1D60A821B729C400AF5F2F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1D60A721B729C400AF5F2F /* UserNotifications.framework */; };
 		BA1E2D982191AC63006D3CBD /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E2D972191AC63006D3CBD /* String+Image.swift */; };
@@ -178,6 +181,9 @@
 		BA0C52E221ADAFB700C3D1E5 /* DownloadEventTypesInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadEventTypesInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		BA0C52E421ADB30A00C3D1E5 /* FindViewController+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FindViewController+TableViewController.swift"; sourceTree = "<group>"; };
 		BA0C52E621ADC9DC00C3D1E5 /* EventTypeCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypeCheck.swift; sourceTree = "<group>"; };
+		BA1A397C21C04BFF0066212C /* SaveTokenDeviceInUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTokenDeviceInUserInteractor.swift; sourceTree = "<group>"; };
+		BA1A397E21C04C8A0066212C /* SaveTokenDeviceInUserInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTokenDeviceInUserInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
+		BA1A398221C05AED0066212C /* TokenFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenFB.swift; sourceTree = "<group>"; };
 		BA1D60A421B7079800AF5F2F /* ForEvents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ForEvents.entitlements; sourceTree = "<group>"; };
 		BA1D60A521B7086B00AF5F2F /* AppDelegate+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Notifications.swift"; sourceTree = "<group>"; };
 		BA1D60A721B729C400AF5F2F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -467,6 +473,8 @@
 				BA0B1F4521B9296900649146 /* FavoriteSearchInteractorNSURLSessionImpl.swift */,
 				BAE4316621BBBEFB008FA34A /* DownloadAssistsInteractor.swift */,
 				BAE4316821BBBF50008FA34A /* DownloadAssistsInteractorNSURLSessionImpl.swift */,
+				BA1A397C21C04BFF0066212C /* SaveTokenDeviceInUserInteractor.swift */,
+				BA1A397E21C04C8A0066212C /* SaveTokenDeviceInUserInteractorNSURLSessionImpl.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -499,6 +507,7 @@
 				BAE4316A21BBC1E2008FA34A /* TransactionsListAPI.swift */,
 				BA0B1F4721B9359800649146 /* FavoriteSearchApiResponse.swift */,
 				BAE4316E21BBD0A8008FA34A /* FavoriteSearchsAPI.swift */,
+				BA1A398221C05AED0066212C /* TokenFB.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -813,7 +822,9 @@
 				BA5C730D21A2D91400CE40EB /* DateExtensions.swift in Sources */,
 				BAE4316921BBBF50008FA34A /* DownloadAssistsInteractorNSURLSessionImpl.swift in Sources */,
 				BA65EDEF219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift in Sources */,
+				BA1A397D21C04BFF0066212C /* SaveTokenDeviceInUserInteractor.swift in Sources */,
 				BAC5766C218B916B00C735C6 /* DownloadEventsInteractorFakeImpl.swift in Sources */,
+				BA1A397F21C04C8A0066212C /* SaveTokenDeviceInUserInteractorNSURLSessionImpl.swift in Sources */,
 				BAC57672218B97A200C735C6 /* EventCollectionViewCell.swift in Sources */,
 				BA0C52D521AD611A00C3D1E5 /* DeleteUserInteractor.swift in Sources */,
 				BA602D382181BC9B0075B64B /* RegisterUserInteractorNSURLSessionImpl.swift in Sources */,
@@ -880,6 +891,7 @@
 				BA5CF7432180769400419990 /* LoginViewController.swift in Sources */,
 				BAF9210521B5B8A5007D0E06 /* TransactionApi.swift in Sources */,
 				BA602D322181B6970075B64B /* ExecuteInteractor.swift in Sources */,
+				BA1A398321C05AED0066212C /* TokenFB.swift in Sources */,
 				BA65EDEC219F3B6E00B26C96 /* AssistsViewController.swift in Sources */,
 				BA6D626C21B83BD900671CC3 /* TransactionApiResponse.swift in Sources */,
 				BA0B1F4621B9296900649146 /* FavoriteSearchInteractorNSURLSessionImpl.swift in Sources */,

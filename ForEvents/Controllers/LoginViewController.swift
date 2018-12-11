@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import CoreLocation
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, CLLocationManagerDelegate {
     
     var tokenItems: [KeychainTokenItem] = []
     let createLoginButtonTag = 0
     let loginButtonTag = 1
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        
         //Gesture to hide keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -124,13 +129,13 @@ class LoginViewController: UIViewController {
                     UserDefaults.standard.setValue(userLogin?.user?.city?.location.coordinates[0], forKey: Constants.longitudeFavorite)
                         let cityName = "\(userLogin?.user?.city?.city ?? "")/\(userLogin?.user?.city?.province ?? "")"
                         UserDefaults.standard.setValue(cityName, forKey: Constants.cityNameFavorite)
+                    } else {
+                        //Validate location Authorization
+                        self.validateLocationAuthorization()
                     }
-                    //Go to Events tabBar
-                    let eventsTabBarController = createEventsTabBar()
-                    //Configure tabbar opaque and black
-                    eventsTabBarController.tabBar.isOpaque = true
-                    eventsTabBarController.tabBar.barTintColor = .black
-                    UIApplication.shared.keyWindow?.rootViewController = eventsTabBarController
+                    ExecuteInteractorImpl().execute {
+                        self.updateTokenDeviceUser()
+                    }
                 }
             }
         }
@@ -155,6 +160,31 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func updateTokenDeviceUser() {
+        
+        let saveTokenDeviceInUserInteractor: SaveTokenDeviceInUserInteractor = SaveTokenDeviceInUserInteractorNSURLSessionImpl()
+        
+        saveTokenDeviceInUserInteractor.execute() { (responseApi: ResponseApi?) in
+            if responseApi == nil {
+                //Go to Events tabBar
+                let eventsTabBarController = createEventsTabBar()
+                //Configure tabbar opaque and black
+                eventsTabBarController.tabBar.isOpaque = true
+                eventsTabBarController.tabBar.barTintColor = .black
+                UIApplication.shared.keyWindow?.rootViewController = eventsTabBarController
+            } else {
+                if let message = responseApi?.message {
+                    let alert = Alerts().alert(title: Constants.regTitle, message: message)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    guard let message = responseApi!.errors![0].message else { return }
+                    let alert = Alerts().alert(title: Constants.regTitle, message: message)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
     func saveTokenInKeychain(token: String) {
         //Save Token and user defaults with haslogin and username
         UserDefaults.standard.set(true, forKey: "hasLoginKey")
@@ -175,5 +205,77 @@ class LoginViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    //MARK Location
+    func validateLocationAuthorization() {
+        
+        let status  = CLLocationManager.authorizationStatus()
+        if status == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+            //locationManager.startUpdatingLocation()
+        }
+        
+        if status == .denied || status == .restricted {
+            let alert = UIAlertController(title: "Localización no disponible", message: "Por favor, habilite la localización en Ajustes", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            
+            present(alert, animated: true, completion: nil)
+        }
+        
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
+            locationManager.delegate = self
+            //locationManager.startUpdatingLocation()
+            UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
+            //self.locationManager.stopUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let currentLocation = locations.last!
+        Global.citySelectedPosition = []
+        Global.citySelectedPosition?.append(Float(currentLocation.coordinate.latitude))
+        Global.citySelectedPosition?.append(Float(currentLocation.coordinate.longitude))
+        manager.stopUpdatingLocation()
+        manager.delegate = nil
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            // If status has not yet been determied, ask for authorization
+            manager.requestWhenInUseAuthorization()
+            break
+        case .authorizedWhenInUse:
+            // If authorized when in use
+            manager.startUpdatingLocation()
+            if UserDefaults.standard.bool(forKey: Constants.locationAuth) == false {
+                UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
+            }
+            break
+        case .authorizedAlways:
+            // If always authorized
+            manager.startUpdatingLocation()
+            if UserDefaults.standard.bool(forKey: Constants.locationAuth) == false {
+                UserDefaults.standard.setValue(true, forKey: Constants.locationAuth)
+            }
+            break
+        case .restricted:
+            break
+        case .denied:
+            UserDefaults.standard.setValue(false, forKey: Constants.locationAuth)
+            // If restricted by e.g. parental controls. User can't enable Location Services
+            let alert = UIAlertController(title: "Localización no disponible", message: "Por favor, habilite la localización en Ajustes", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            
+            present(alert, animated: true, completion: nil)
+            break
+        default:
+            break
+        }
     }
 }
