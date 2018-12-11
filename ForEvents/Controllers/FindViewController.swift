@@ -122,7 +122,6 @@ class FindViewController: UIViewController, CLLocationManagerDelegate {
         }
         //recoger texto
         guard let text = self.queryTextField.text else { return }
-        //recoger radio
         //Send find prameters selected notifications for update event collectionView
         Global.findParamsDict = [
             "position": Global.citySelectedPosition ?? [0,0],

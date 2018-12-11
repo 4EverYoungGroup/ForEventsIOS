@@ -13,70 +13,86 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventCollectionViewCell" id="gTV-IL-0wX" customClass="EventCollectionViewCell" customModule="ForEvents" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="230"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="230"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kkz-TF-Sck">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="156"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="156" id="YGM-8V-qhX"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="155"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evento de Prueba" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEG-V3-niF">
                         <rect key="frame" x="0.0" y="157" width="300" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="24" id="Tbf-Qp-HBK"/>
+                            <constraint firstAttribute="height" constant="24" id="wJ5-Hh-X60"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1Ze-9g-Jc2">
-                        <rect key="frame" x="3" y="179.5" width="294" height="20.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1Ze-9g-Jc2">
+                        <rect key="frame" x="3" y="182" width="294" height="23.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="12/12/2018 19:00 h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMR-YT-SaS">
-                                <rect key="frame" x="0.0" y="0.0" width="234" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <rect key="frame" x="0.0" y="0.0" width="146" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Madrid" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="EmQ-i6-UYf">
-                                <rect key="frame" x="236" y="0.0" width="58" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/12/2018 23:00 h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="EmQ-i6-UYf">
+                                <rect key="frame" x="148" y="0.0" width="146" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20.5" id="twP-by-LNI"/>
-                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Caz-rT-PmQ">
+                        <rect key="frame" x="3" y="206.5" width="294" height="23.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Gastronomía" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Wym-kT-ddE">
+                                <rect key="frame" x="0.0" y="0.0" width="146" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Madrid/Madrid" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1JB-R1-NWm">
+                                <rect key="frame" x="148" y="0.0" width="146" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                     </stackView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="1Ze-9g-Jc2" secondAttribute="trailing" constant="3" id="2oV-ox-kNo"/>
-                <constraint firstItem="kkz-TF-Sck" firstAttribute="trailing" secondItem="FEG-V3-niF" secondAttribute="trailing" id="4Oc-zn-qpi"/>
-                <constraint firstItem="1Ze-9g-Jc2" firstAttribute="top" secondItem="kkz-TF-Sck" secondAttribute="bottom" constant="23.5" id="DYB-hI-fHO"/>
-                <constraint firstItem="kkz-TF-Sck" firstAttribute="centerX" secondItem="1Ze-9g-Jc2" secondAttribute="centerX" id="HxJ-RP-emP"/>
-                <constraint firstItem="kkz-TF-Sck" firstAttribute="leading" secondItem="FEG-V3-niF" secondAttribute="leading" id="JmC-eB-nGz"/>
-                <constraint firstItem="1Ze-9g-Jc2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="Qrn-8N-62m"/>
-                <constraint firstItem="FEG-V3-niF" firstAttribute="top" secondItem="kkz-TF-Sck" secondAttribute="bottom" constant="1" id="U1V-81-h2H"/>
-                <constraint firstAttribute="bottom" secondItem="1Ze-9g-Jc2" secondAttribute="bottom" id="U7h-M1-J0m"/>
-                <constraint firstItem="kkz-TF-Sck" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="idi-Cd-C2V"/>
-                <constraint firstItem="kkz-TF-Sck" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sLo-Bk-dIk"/>
+                <constraint firstItem="1Ze-9g-Jc2" firstAttribute="top" secondItem="FEG-V3-niF" secondAttribute="bottom" constant="1" id="8DQ-cs-2Of"/>
+                <constraint firstItem="1Ze-9g-Jc2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="8r1-38-5Z6"/>
+                <constraint firstItem="FEG-V3-niF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ISr-lA-lnk"/>
+                <constraint firstItem="Caz-rT-PmQ" firstAttribute="top" secondItem="1Ze-9g-Jc2" secondAttribute="bottom" constant="1" id="JUK-5r-Ovs"/>
+                <constraint firstAttribute="trailing" secondItem="Caz-rT-PmQ" secondAttribute="trailing" constant="3" id="Jm9-br-WLm"/>
+                <constraint firstAttribute="bottom" secondItem="Caz-rT-PmQ" secondAttribute="bottom" id="MbW-QR-S1s"/>
+                <constraint firstItem="Caz-rT-PmQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="Ywr-uB-bGV"/>
+                <constraint firstAttribute="trailing" secondItem="FEG-V3-niF" secondAttribute="trailing" id="Zso-lZ-Niq"/>
+                <constraint firstAttribute="trailing" secondItem="1Ze-9g-Jc2" secondAttribute="trailing" constant="3" id="bke-sz-9G3"/>
+                <constraint firstItem="kkz-TF-Sck" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gAB-S8-4tH"/>
+                <constraint firstAttribute="trailing" secondItem="kkz-TF-Sck" secondAttribute="trailing" id="gAj-Ea-Ju3"/>
+                <constraint firstItem="kkz-TF-Sck" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hHZ-vz-6N6"/>
+                <constraint firstItem="FEG-V3-niF" firstAttribute="top" secondItem="kkz-TF-Sck" secondAttribute="bottom" constant="2" id="ujH-5N-cfx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="300" height="244"/>
             <connections>
-                <outlet property="eventCityCell" destination="EmQ-i6-UYf" id="oyL-dE-GWt"/>
+                <outlet property="eventCityCell" destination="1JB-R1-NWm" id="IXB-Xn-Iad"/>
                 <outlet property="eventDateCell" destination="rMR-YT-SaS" id="0X7-cB-05w"/>
+                <outlet property="eventEndDateCell" destination="EmQ-i6-UYf" id="Ngw-O4-qeL"/>
                 <outlet property="eventImageCell" destination="kkz-TF-Sck" id="pUJ-rW-Ewj"/>
                 <outlet property="eventNameCell" destination="FEG-V3-niF" id="QPh-XQ-bCm"/>
+                <outlet property="eventTypeCell" destination="Wym-kT-ddE" id="a3J-ZJ-mMf"/>
             </connections>
-            <point key="canvasLocation" x="10.144927536231885" y="137.94642857142856"/>
+            <point key="canvasLocation" x="10.144927536231885" y="136.60714285714286"/>
         </collectionViewCell>
     </objects>
 </document>

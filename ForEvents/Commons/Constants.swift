@@ -27,6 +27,7 @@ struct Constants {
     static let regTitle = "Registro ForEvents"
     static let loginTitle = "Login ForEvents"
     static let findTitle = "Búsqueda ForEvents"
+    static let eventTitle = "Eventos de ForEvents"
     static let preferenceTitle = "Preferencias ForEvents"
     //url parameters
     static let urlScheme = "https"

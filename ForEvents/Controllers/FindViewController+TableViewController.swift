@@ -24,6 +24,8 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! EventTypeTableViewCell
             let eventTypeCheck: EventTypeCheck = Global.eventTypesCheck![indexPath.row]
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            cell.backgroundColor = .black
+            cell.eventTypeLabel.textColor = .white
             if self.arrayEventTypes != nil {
                 for event in self.arrayEventTypes! {
                     if event == eventTypeCheck.id {
@@ -41,6 +43,8 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
             let identifier = distanceTableViewCellId
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! DistanceTableViewCell
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            cell.backgroundColor = .black
+            cell.distanceLabel.textColor = .white
             cell.refresh(distance: Constants.distances[indexPath.row], index: indexPath.row)
             if self.radio == Constants.distances[indexPath.row] {
                 cell.accessoryType = .checkmark

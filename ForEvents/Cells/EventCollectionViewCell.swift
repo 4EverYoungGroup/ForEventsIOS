@@ -15,6 +15,8 @@ class EventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var eventNameCell: UILabel!
     @IBOutlet weak var eventImageCell: UIImageView!
     @IBOutlet weak var eventDateCell: UILabel!
+    @IBOutlet weak var eventEndDateCell: UILabel!
+    @IBOutlet weak var eventTypeCell: UILabel!
     @IBOutlet weak var eventCityCell: UILabel!
     
     override func awakeFromNib() {
@@ -46,12 +48,14 @@ class EventCollectionViewCell: UICollectionViewCell {
             let day = ""
             self.eventDateCell.text = "\(day) h"
         }
-        self.eventCityCell.text = event.city
-        //if event.free == true {
-        //    self.eventFreeCell.text = "Entrada libre"
-        //} else {
-        //    self.eventFreeCell.text = "\(String(format: "%.02f€", event.price!))"
-        //}
-        //self.eventTypeCell.text = event.eventType
+        if let date = event.endDate {
+            let day = formatter.string(from: date)
+            self.eventEndDateCell.text = "\(day) h"
+        } else {
+            let day = ""
+            self.eventEndDateCell.text = "\(day) h"
+        }
+        self.eventCityCell.text = "\(event.city ?? "")/\(event.province ?? "")"
+        self.eventTypeCell.text = event.eventType
     }
 }

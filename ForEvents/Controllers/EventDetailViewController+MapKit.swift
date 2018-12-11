@@ -23,6 +23,7 @@ extension EventDetailViewController: CLLocationManagerDelegate, MKMapViewDelegat
         
         let annotation = EventAnnotation(coordinate: eventLocation.coordinate,
                                         title: event.name,
+                                        subtitle: event.city,
                                         event: event)
         
         self.eventMap.addAnnotation(annotation)
@@ -54,12 +55,13 @@ extension EventDetailViewController: CLLocationManagerDelegate, MKMapViewDelegat
             if event!.images.isEmpty == false {
                 let url = URL(string: event!.images[0])
                 eventImageview.kf.setImage(with: url)
-            } else {
-                let url = URL(string: "https://cdn.pixabay.com/photo/2017/11/24/10/43/admission-2974645_960_720.jpg")
-                eventImageview.kf.setImage(with: url)
             }
             
-            let rigthButton = UIButton(type: .detailDisclosure)
+            var rigthButton = UIButton(type: .detailDisclosure)
+            let mapsButton = UIButton(frame: CGRect(origin: CGPoint.zero,
+                                                    size: CGSize(width: 30, height: 30)))
+            mapsButton.setBackgroundImage(UIImage(named: "maps"), for: .normal)
+            rigthButton = mapsButton
             let leftButton = eventImageview
             leftButton.frame.size.height = 30
             leftButton.frame.size.width = 44
@@ -73,4 +75,20 @@ extension EventDetailViewController: CLLocationManagerDelegate, MKMapViewDelegat
         return pinView
     }
     
+    // The event that is executed when clicking on one of the pins is picked up
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        // The annotation data is obtained and the detail is invoked
+        if let annotation = view.annotation as? EventAnnotation {
+            let event = annotation.getEvent()
+            
+            let source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(Global.citySelectedPosition![0]), longitude: Double(Global.citySelectedPosition![1]))))
+            source.name = Global.citySelectedName
+            
+            let destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: Double(event.latitude!), longitude:    Double(event.longitude!))))
+            destination.name = event.name
+            
+            MKMapItem.openMaps(with: [source, destination], launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+        }
+    }
 }

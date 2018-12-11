@@ -68,6 +68,8 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.barStyle = .blackTranslucent
+        //Reload events if assists button is press in detail
+        eventsDownload(params: Global.findParamsDict as Dictionary<String, Any>)
     }
     
     deinit {
@@ -90,12 +92,21 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         eventsCollectionView.register(nibCell, forCellWithReuseIdentifier: eventCollectionViewCellId)
         
         ExecuteInteractorImpl().execute {
+            //Recover radio in user default
+            var radioInMeters: Int = 0
+            if let radio = (UserDefaults.standard.value(forKey: Constants.radio) as? Int) {
+                radioInMeters = radio * 1000
+                Global.distanceInMetres = radioInMeters
+            } else {
+                radioInMeters = 1000
+                Global.distanceInMetres = radioInMeters
+            }
             //Pass self location or favorite city location
             Global.findParamsDict = [
                 "position": Global.citySelectedPosition ?? [0,0],
                 "queryText": nil,
                 "eventTypes": nil,
-                "distance": 5000] as Dictionary
+                "distance": radioInMeters] as Dictionary
             eventsDownload(params: Global.findParamsDict as Dictionary<String, Any>)
         }
     }
@@ -105,15 +116,16 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         
         downloadEventsInteractor.execute(params: params) { (events: Events) in
             // Todo OK
-            //if events.count() > 0 {
-                Global.events = events
-                Global.transactionIdLast = nil
-                self.eventsCollectionView.delegate = self
-                self.eventsCollectionView.dataSource = self
-                self.eventsCollectionView.reloadData()
-            //} else {
-                //TODO alert with no events
-            //}
+            Global.events = events
+            Global.transactionIdLast = nil
+            self.eventsCollectionView.delegate = self
+            self.eventsCollectionView.dataSource = self
+            self.eventsCollectionView.reloadData()
+            //Alert with no events
+            if events.count() == 0 {
+                let alert = Alerts().alert(title: Constants.eventTitle, message: "De momento no tenemos eventos para esa búsqueda.")
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
@@ -152,7 +164,6 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
                                  inputPlaceholder: "Nombre búsqueda",
                                  inputKeyboardType: .default)
         { (input:String?) in
-            print("El nombre de la búsqueda es: \(input ?? "")")
             ExecuteInteractorImpl().execute {
                 //Pass dictionary with find params and favoriteSearch name
                 self.saveFavoriteSearch(params: Global.findParamsDict as Dictionary<String, Any>, name: input ?? "Sin nombre", action: Constants.favoriteSearchAdd, favoriteSearchId: nil)
@@ -314,6 +325,8 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
     
     // Mark: - Notifications
     @objc func findDidChange(notification: Notification) {
+        //Uncheck star if it was marked as search favorite
+        self.navigationItem.setRightBarButtonItems([self.filterButton, self.startButtonOff], animated: false)
         //Recover findParameters
         let info = notification.userInfo!
         //extract the selected day

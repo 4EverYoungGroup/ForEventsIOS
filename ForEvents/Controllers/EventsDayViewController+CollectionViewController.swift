@@ -33,9 +33,9 @@ extension EventsDayViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIScreen.main.bounds.height > UIScreen.main.bounds.width {
-            return CGSize(width: (UIScreen.main.bounds.width - 40), height: (200 * (UIScreen.main.bounds.width - 40)) / 300 )
+            return CGSize(width: (UIScreen.main.bounds.width - 40), height: (250 * (UIScreen.main.bounds.width - 40)) / 300 )
         } else {
-            return CGSize(width: (UIScreen.main.bounds.width - 150)/2, height: (200 * (UIScreen.main.bounds.width - 150)/2) / 300 )
+            return CGSize(width: (UIScreen.main.bounds.width - 150)/2, height: (250 * (UIScreen.main.bounds.width - 150)/2) / 300 )
         }
     }
     

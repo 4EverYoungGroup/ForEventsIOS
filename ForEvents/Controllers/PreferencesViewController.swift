@@ -16,7 +16,7 @@ class PreferencesViewController: UIViewController {
     let eventTypeTableViewCellId = "EventTypeTableViewCell"
     let distanceTableViewCellId = "DistanceTableViewCell"
     var radio: Int? = (UserDefaults.standard.value(forKey: Constants.radio) as! Int)
-    var arrayEventTypes: [String]? = (UserDefaults.standard.value(forKey: Constants.eventTypesCheckPref) as! [String])
+    var arrayEventTypes: [String]? = []
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -42,6 +42,10 @@ class PreferencesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if let arrayEventTypesString = UserDefaults.standard.value(forKey: Constants.eventTypesCheckPref) as? [String] {
+            self.arrayEventTypes = []
+            self.arrayEventTypes = arrayEventTypesString
+        }
         //Recover eventTypes
         ExecuteInteractorImpl().execute {
             eventTypesDownload()
@@ -83,7 +87,7 @@ class PreferencesViewController: UIViewController {
                 }
             }
             //If userdefault is empty from eventtypes inicialize with all
-            if self.arrayEventTypes == nil {
+            if self.arrayEventTypes?.count == 0 {
                 guard let arrayEventTypesCheck = Global.eventTypesCheckPref?.filter({$0.check == true}) else { return }
                 self.arrayEventTypes = arrayEventTypesCheck.map({ (element) -> String in
                     return element.id

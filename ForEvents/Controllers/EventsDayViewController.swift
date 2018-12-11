@@ -19,7 +19,7 @@ class EventsDayViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        self.title = "Eventos del día"
+        self.title = "Eventos del día según su búsqueda"
         view.backgroundColor = .black
     }
     
@@ -62,14 +62,21 @@ class EventsDayViewController: UIViewController {
         formatter.dateFormat = "dd-MM-yyyy"
         let daySelected = formatter.string(from: eventsDay ?? Date())
         if let numberEvents = eventsG?.count() {
+            var eventDay = false
             for i in 0..<numberEvents {
                 let event : Event = ((Global.events?.get(index: i))!)
                 if let date = event.beginDate {
                     let day = formatter.string(from: date)
                     if day == daySelected {
                         self.eventsDaySelect.append(event)
+                        eventDay = true
                     }
                 }
+            }
+            //Alert with no events
+            if !eventDay {
+                let alert = Alerts().alert(title: Constants.eventTitle, message: "No hay evento el día que ha marcado para su búsqueda. Seleccione los días con punto.")
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }

@@ -131,14 +131,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         downloadEventsInteractor.execute(params: params) { (events: Events) in
             // Todo OK
-            //if events.count() > 0 {
             Global.events = events
             Global.transactionIdLast = nil
             //Create map
             self.createMap()
-            //} else {
-            //TODO alert with no events
-            //}
+            if events.count() == 0 {
+                //Alert with no events
+                let alert = Alerts().alert(title: Constants.eventTitle, message: "De momento no tenemos eventos para esa búsqueda.")
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
@@ -184,6 +185,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let annotation = EventAnnotation(coordinate: eventLocation.coordinate,
                                          title: event.name,
+                                         subtitle: event.city,
                                          event: event)
         
         self.eventsMapView.addAnnotation(annotation)
@@ -197,7 +199,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         
         // An identifier is created for the pin
-        let pinID = "shopPin"
+        let pinID = "eventPin"
         
         // Asked to assign an annotation to the pin
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: pinID)
@@ -216,9 +218,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let eventImageview = UIImageView()
             if event.images.isEmpty == false {
                 let url = URL(string: event.images[0])
-                eventImageview.kf.setImage(with: url)
-            } else {
-                let url = URL(string: "https://cdn.pixabay.com/photo/2017/11/24/10/43/admission-2974645_960_720.jpg")
                 eventImageview.kf.setImage(with: url)
             }
             

@@ -19,6 +19,8 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! EventTypeTableViewCell
         let eventTypeCheck: EventTypeCheck = Global.eventTypesCheckSearch![indexPath.row]
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        cell.backgroundColor = .black
+        cell.eventTypeLabel.textColor = .white
         for i in 0..<self.evenTypesArray.count {
             if eventTypeCheck.id == self.evenTypesArray[i] {
                 cell.accessoryType = .checkmark
