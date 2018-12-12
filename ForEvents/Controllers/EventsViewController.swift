@@ -221,11 +221,11 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func logoutUser() {
-        UserDefaults.standard.set(false, forKey: "hasLoginKey")
+        UserDefaults.standard.set(false, forKey: Constants.hasLoginKey)
         UserDefaults.standard.removeObject(forKey: Constants.latitudeFavorite)
         UserDefaults.standard.removeObject(forKey: Constants.longitudeFavorite)
         UserDefaults.standard.removeObject(forKey: Constants.cityNameFavorite)
-        UserDefaults.standard.set(false, forKey: "hasCity")
+        UserDefaults.standard.set(false, forKey: Constants.hasCity)
         let loginTabBarController = createLoginTabBar()
         //Show login in tabbar
         loginTabBarController.selectedIndex = 0

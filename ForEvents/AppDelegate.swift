@@ -26,13 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        //UserDefaults.standard.removeObject(forKey: "hasLoginKey")
-        //UserDefaults.standard.removeObject(forKey: "username")
-        //UserDefaults.standard.removeObject(forKey: "radio")
-        //UserDefaults.standard.removeObject(forKey: Constants.eventTypesCheckPref)
-        
         // Check if app have a token
-        if UserDefaults.standard.bool(forKey: Constants.hasLoginKey) == true {
+        if  UserDefaults.standard.bool(forKey: Constants.hasLoginKey) == true {
             if let username = UserDefaults.standard.value(forKey: Constants.useremail) {
                 if checkToken(username: username as! String) != nil {
                     let eventsTabBarController = createEventsTabBar()

@@ -258,9 +258,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func deleteUser() {
+        UserDefaults.standard.set(false, forKey: Constants.hasLoginKey)
+        UserDefaults.standard.removeObject(forKey: Constants.latitudeFavorite)
+        UserDefaults.standard.removeObject(forKey: Constants.longitudeFavorite)
+        UserDefaults.standard.removeObject(forKey: Constants.cityNameFavorite)
+        UserDefaults.standard.set(false, forKey: Constants.hasCity)
         let deleteUserInteractor: DeleteUserInteractor = DeleteUserInteractorNSURLSessionImpl()
         
-        deleteUserInteractor.execute { 
+        deleteUserInteractor.execute {
             let loginTabBarController = createLoginTabBar()
             //Show login in tabbar
             loginTabBarController.selectedIndex = 0
