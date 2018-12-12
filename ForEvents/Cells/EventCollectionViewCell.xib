@@ -92,7 +92,7 @@
                 <outlet property="eventNameCell" destination="FEG-V3-niF" id="QPh-XQ-bCm"/>
                 <outlet property="eventTypeCell" destination="Wym-kT-ddE" id="a3J-ZJ-mMf"/>
             </connections>
-            <point key="canvasLocation" x="10.144927536231885" y="136.60714285714286"/>
+            <point key="canvasLocation" x="42" y="120"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -59,7 +59,7 @@ class EventsViewController: UIViewController, CLLocationManagerDelegate {
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.barStyle = .blackTranslucent
         //Reload events if assists button is press in detail
-        //eventsDownload(params: Global.findParamsDict as Dictionary<String, Any>)
+        eventsDownload(params: Global.findParamsDict as Dictionary<String, Any>)
     }
     
     deinit {

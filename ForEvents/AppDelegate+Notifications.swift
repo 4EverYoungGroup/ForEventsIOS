@@ -34,46 +34,23 @@ extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
         print(deviceTokenString)
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notifiction: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        processNotification(notifiction)
-        completionHandler(.badge)
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        processNotification(response.notification)
-        completionHandler()
-    }
-    
-    private func processNotification(_ notification: UNNotification) {
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        print("NOTIFICATION: Received data message => \(notification)")
-    }
-    
-    func application(received remoteMessage: MessagingRemoteMessage)
-    {
-        // What message comes here?
-        
-        print("remoteMessage.appData : ", remoteMessage.appData)
-        
-    }
-    
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("NOTIFICATION: Registration token  =>  \(fcmToken)")
         UserDefaults.standard.setValue(fcmToken, forKey: Constants.tokenDevice)
     }
     
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        
         UIApplication.shared.applicationIconBadgeNumber = 0
-        print("NOTIFICATION: Received data message => \(remoteMessage.appData)")
-        guard let data = try? JSONSerialization.data(withJSONObject: remoteMessage.appData, options:.prettyPrinted),
-            let prettyPrinted = String(data: data, encoding: .utf8) else { return }
-        print("Received direct channel message:\n\(prettyPrinted)")
+        //Recover from notification eventId.
+        guard let data = try? JSONSerialization.data(withJSONObject: userInfo, options: []) as Data else { return }
+        let decoder = JSONDecoder()
+        let notificationDict = try? decoder.decode(NotificationEvent.self, from: data)
+        let eventId = notificationDict?.eventId
+        let notificationEventViewController = NotificationEventViewController()
+        notificationEventViewController.eventId = eventId
+        window?.rootViewController?.present(notificationEventViewController, animated: true, completion: nil)
+        
     }
-    
-    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
-        print("[RemoteNotification] didRefreshRegistrationToken: \(fcmToken)")
-    }
-    
     
 }

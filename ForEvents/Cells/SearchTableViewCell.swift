@@ -19,8 +19,6 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     func refresh(search: Search, index: Int) {
-        //let dict = convertToDictionary(text: search.query)
-        //print(dict)
         self.searchTextLabel.text = search.name
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"

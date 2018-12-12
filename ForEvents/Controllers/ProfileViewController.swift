@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
             userButton.setBackgroundImage(userPhoto, for: .normal)
         }
         //Set user name and city
-        self.userName.text = "\((UserDefaults.standard.value(forKey: Constants.userFirstName) as! String)) \((UserDefaults.standard.value(forKey: Constants.userLastName) as! String))"
+        self.userName.text = "\((UserDefaults.standard.value(forKey: Constants.userFirstName) as! String))"
         self.userCity.text = Global.citySelectedName
         
         //Set user location
