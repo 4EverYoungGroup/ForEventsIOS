@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -58,7 +58,6 @@
 		BA59882421768F100065D77D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA59882221768F100065D77D /* LaunchScreen.storyboard */; };
 		BA59882F21768F100065D77D /* ForEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59882E21768F100065D77D /* ForEventsTests.swift */; };
 		BA59883A217690C60065D77D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BA598839217690C60065D77D /* Podfile */; };
-		BA59883C217691340065D77D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA59883B217691340065D77D /* GoogleService-Info.plist */; };
 		BA5C730D21A2D91400CE40EB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C730C21A2D91400CE40EB /* DateExtensions.swift */; };
 		BA5C731021A32F1700CE40EB /* SearchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C730E21A32F1700CE40EB /* SearchesViewController.swift */; };
 		BA5C731121A32F1700CE40EB /* SearchesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA5C730F21A32F1700CE40EB /* SearchesViewController.xib */; };
@@ -97,6 +96,7 @@
 		BA65EDEC219F3B6E00B26C96 /* AssistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65EDEA219F3B6E00B26C96 /* AssistsViewController.swift */; };
 		BA65EDED219F3B6E00B26C96 /* AssistsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA65EDEB219F3B6E00B26C96 /* AssistsViewController.xib */; };
 		BA65EDEF219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA65EDEE219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift */; };
+		BA6A8DC1237972690067FAE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA6A8DC0237972690067FAE7 /* GoogleService-Info.plist */; };
 		BA6D626C21B83BD900671CC3 /* TransactionApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6D626B21B83BD900671CC3 /* TransactionApiResponse.swift */; };
 		BA9B708B21BD091300290314 /* EventTrans.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B708A21BD091300290314 /* EventTrans.swift */; };
 		BA9B708D21BD0AD400290314 /* MapEventTrans.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B708C21BD0AD400290314 /* MapEventTrans.swift */; };
@@ -220,7 +220,6 @@
 		BA59882E21768F100065D77D /* ForEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEventsTests.swift; sourceTree = "<group>"; };
 		BA59883021768F100065D77D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA598839217690C60065D77D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BA59883B217691340065D77D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA5C730C21A2D91400CE40EB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		BA5C730E21A32F1700CE40EB /* SearchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchesViewController.swift; sourceTree = "<group>"; };
 		BA5C730F21A32F1700CE40EB /* SearchesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchesViewController.xib; sourceTree = "<group>"; };
@@ -259,6 +258,7 @@
 		BA65EDEA219F3B6E00B26C96 /* AssistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistsViewController.swift; sourceTree = "<group>"; };
 		BA65EDEB219F3B6E00B26C96 /* AssistsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssistsViewController.xib; sourceTree = "<group>"; };
 		BA65EDEE219F424F00B26C96 /* AssistsViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssistsViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
+		BA6A8DC0237972690067FAE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA6D626B21B83BD900671CC3 /* TransactionApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionApiResponse.swift; sourceTree = "<group>"; };
 		BA9B708A21BD091300290314 /* EventTrans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrans.swift; sourceTree = "<group>"; };
 		BA9B708C21BD0AD400290314 /* MapEventTrans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEventTrans.swift; sourceTree = "<group>"; };
@@ -366,7 +366,7 @@
 				BA5CF73921806A2F00419990 /* Interactors */,
 				BA5CF73A21806A4200419990 /* Model */,
 				BA59882521768F100065D77D /* Info.plist */,
-				BA59883B217691340065D77D /* GoogleService-Info.plist */,
+				BA6A8DC0237972690067FAE7 /* GoogleService-Info.plist */,
 				BA5CF74D2180775800419990 /* Extensions */,
 			);
 			path = ForEvents;
@@ -711,8 +711,8 @@
 				BA0C52DB21ADA7ED00C3D1E5 /* EventTypeTableViewCell.xib in Resources */,
 				BAC57673218B97A200C735C6 /* EventCollectionViewCell.xib in Resources */,
 				BA5CF75E2180788A00419990 /* MapViewController.xib in Resources */,
-				BA59883C217691340065D77D /* GoogleService-Info.plist in Resources */,
 				BAA6AE64218F74440029F421 /* SectionHeaderCollectionReusableView.xib in Resources */,
+				BA6A8DC1237972690067FAE7 /* GoogleService-Info.plist in Resources */,
 				BA1E2D9C21920878006D3CBD /* EventDetailCollectionViewCell.xib in Resources */,
 				BAF21FE721AF4726005BE449 /* DistanceTableViewCell.xib in Resources */,
 				BA1A398921C0F9D40066212C /* NotificationEventViewController.xib in Resources */,
@@ -737,29 +737,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ForEventsTests/Pods-ForEventsTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/VACalendar/VACalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ForEventsTests/Pods-ForEventsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VACalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ForEventsTests/Pods-ForEventsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForEventsTests/Pods-ForEventsTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ForEventsTests/Pods-ForEventsTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		65D2D8613B67C116F02B94A1 /* [CP] Embed Pods Frameworks */ = {
@@ -767,29 +754,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ForEvents/Pods-ForEvents-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/VACalendar/VACalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ForEvents/Pods-ForEvents-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VACalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ForEvents/Pods-ForEvents-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForEvents/Pods-ForEvents-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ForEvents/Pods-ForEvents-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6D5828EDB67893FC0C581A9D /* [CP] Check Pods Manifest.lock */ = {

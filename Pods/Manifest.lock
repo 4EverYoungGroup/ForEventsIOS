@@ -72,7 +72,7 @@ DEPENDENCIES:
   - VACalendar
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -104,4 +104,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5c6ad6e8cea8affa58ca14b9f6334622eff13176
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.3
